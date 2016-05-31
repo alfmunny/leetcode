@@ -95,24 +95,3 @@ public:
 };
 
 
-int main() 
-{
-	std::vector<std::pair<int, int>> p;
-
-	p.push_back(std::make_pair(0, 1));
-	p.push_back(std::make_pair(0, 2));
-	p.push_back(std::make_pair(1, 2));
-
-	CourseSchedule2 cs2;
-
-	std::vector<int> res = cs2.findOrder(3, p);
-	
-	for (auto i : res)
-	{
-		std::cout << i << std::endl;
-	}
-
-	system("PAUSE");
-	return 0;
-}
-
