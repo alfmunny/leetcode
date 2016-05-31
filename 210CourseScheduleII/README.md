@@ -28,10 +28,10 @@ Subscribe to see which companies asked this question
 1.	It's a directed graph problem, scince the vetices may have their parent pointing at them. So generate the graph first.
 	The graph is mainly an array of vectors:
 
-	0: 1, 2 (Course 0 has two prerequisites: 1 and 2)
-	1: 3
-	2: 7
-	...
-	...
+		0: 1, 2 (Course 0 has two prerequisites: 1 and 2)
+		1: 3
+		2: 7
+		...
+		...
 
 2.	Use depth-first-search to check if the graph contains a circle. If yes, it means "it is impossible to finish all courses".
