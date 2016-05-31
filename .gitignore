@@ -27,6 +27,8 @@
 *.out
 *.app
 
+DEBUG/
+
 # =========================
 # Operating System Files
 # =========================
@@ -77,3 +79,6 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+leetcode.vcxproj.user
+*.filters
+leetcode.vcxproj
