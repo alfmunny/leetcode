@@ -1,40 +1,32 @@
 #include <iostream>
-#include "21MergeTwoSortedLists\MergeTwoSortedLists.h"
+#include <queue>
+#include "108ConvertSortedArrayToBinarySearchTree\sortedArrayToBST.h"
+
+void printTree(TreeNode * root)
+{
+    if (!root)  return;
+
+    std::queue<TreeNode*> q;
+    q.push(root);
+
+    while (! q.empty())
+    {
+        TreeNode* current = q.front();
+        std::cout << current->val << std::endl;
+        q.pop();
+        if(current->left)
+            q.push(current->left);
+        if(current->right)
+            q.push(current->right);
+    }
+}
 
 int main() 
 {
-	int a[] = {2, 4, 5, 6};
-	int b[] = {1, 1, 1,1,1};
+	vector<int> a = {2, 4, 5, 6};
 
-	ListNode* L1 = new ListNode(0);
-	ListNode* L2 = new ListNode(0);
-	ListNode* End1 = L1;
-	ListNode* End2 = L2;
-	
-	for (int i : a) {
-		ListNode* tmp = new ListNode(i);
-		End1->next = tmp;
-		End1 = End1->next;
-	}
-
-	for (int i : b)
-	{
-		ListNode* tmp = new ListNode(i);
-		End2->next = tmp;
-		End2 = End2->next;
-	}
-
-	MergeTwoSortedLists m;
-	ListNode* res = m.mergeTwoLists(L1, L2);
-
-	ListNode* head = res;
-
-	while (head)
-	{
-		std::cout << head->val << std::endl;
-		head = head->next;
-	}
-
+    TreeNode* root = sortedArrayToBST(a);
+    printTree(root);
 	system("PAUSE");
 	return 0;
 }

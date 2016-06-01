@@ -35,7 +35,7 @@ ListNode * MergeTwoSortedLists::mergeTwoLists(ListNode * l1, ListNode* l2)
 				if (tmp2->val < tmp->next->val)
 				{
 					l2 = tmp2->next;
-					tmp2->next = tmp->next;
+				    tmp2->next = tmp->next;
 					tmp->next = tmp2;
 					tmp2 = l2;
 				}
@@ -64,6 +64,8 @@ ListNode * MergeTwoSortedLists::mergeTwoLists(ListNode * l1, ListNode* l2)
 
 	return l3;
 }
+
+
 
 
 ListNode * MergeTwoSortedLists::mergeTwoListsRecursive(ListNode * l1, ListNode * l2)
