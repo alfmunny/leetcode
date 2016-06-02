@@ -13,11 +13,6 @@ TreeNode* sortedArrayToBST(vector<int>& nums)
 
     TreeNode* root = new TreeNode(nums[index]);
 
-    if (nums.size() == 1)
-    {
-        return root;
-    }
-
     vector<int> vector_left(nums.begin(), nums.begin() + index);
     vector<int> vector_right(nums.begin() + index + 1, nums.end());
 
