@@ -1,32 +1,20 @@
 #include <iostream>
 #include <queue>
-#include "108ConvertSortedArrayToBinarySearchTree\sortedArrayToBST.h"
-
-void printTree(TreeNode * root)
-{
-    if (!root)  return;
-
-    std::queue<TreeNode*> q;
-    q.push(root);
-
-    while (! q.empty())
-    {
-        TreeNode* current = q.front();
-        std::cout << current->val << std::endl;
-        q.pop();
-        if(current->left)
-            q.push(current->left);
-        if(current->right)
-            q.push(current->right);
-    }
-}
+#include "16ThreeSUMClosest\ThreeSumClosest.h"
 
 int main() 
 {
-	vector<int> a = {2, 4, 5, 6};
+	vector<int> a = {-1, 2, 1, -4, 8, -100, 7};
 
-    TreeNode* root = sortedArrayToBST(a);
-    printTree(root);
+    int res = threeSumClosest(a, 1);
+
+    vector<int> b = quickSort(a, 0, a.size() - 1);
+
+    for (int i : b)
+    {
+        std::cout << i << std::endl;
+    }
+
 	system("PAUSE");
 	return 0;
 }
