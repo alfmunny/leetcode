@@ -55,11 +55,3 @@ int threeSumClosest(vector<int>& nums, int target)
     }
     return res;
 }
-
-void test()
-{
-    vector<int> a = {2, 3, 2, -1, 1};
-
-    int res = threeSumClosest(a, 1);
-    cout << res << endl;
-}

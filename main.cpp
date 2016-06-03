@@ -1,11 +1,13 @@
 #include <iostream>
 #include <queue>
-#include "16ThreeSUMClosest\ThreeSumClosest.h"
+#include "119 Pascal'sTriangleII\PascalsTriangleII.h"
 
 int main() 
 {
-    test();
-
+    for (int i : pascalTriangleGetRow(6))
+    {
+        std::cout << i << " ";
+    }
 	system("PAUSE");
     return 0;
 }
