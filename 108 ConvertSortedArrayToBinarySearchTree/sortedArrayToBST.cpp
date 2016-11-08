@@ -3,7 +3,6 @@
 
 TreeNode* sortedArrayToBST(vector<int>& nums) 
 {
-
     if (nums.size() == 0)
     {
         return NULL;
