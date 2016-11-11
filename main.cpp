@@ -1,7 +1,7 @@
 #include <iostream>
 #include <queue>
 #include <ctime>
-#include "442 Find All Duplicates in an Array\solution.h"
+#include "274 H-Index\solution.h"
 
 int main() 
 {
@@ -11,11 +11,7 @@ int main()
     time_t start = time(NULL);
 
     Solution x;
-
-    for (int i : x.findDuplicates(n))
-    {
-        std::cout << i << ", ";
-    }
+    std::cout << x.hIndex(n) << ", " << INT_MIN << ", " << INT_MAX;
 
     time_t end = time(NULL);
 
