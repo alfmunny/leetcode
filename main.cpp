@@ -3,6 +3,7 @@
 #include <ctime>
 #include <map>
 #include <stack>
+#include "290 Word Pattern\word_pattern.h"
 
 int main() 
 {
@@ -10,6 +11,11 @@ int main()
     std::string s = "[()]{";
 
     time_t start = time(NULL);
+    WordPattern x;
+    std::string pattern = "abba";
+    std::string str = "boy girl girl boy";
+
+    std::cout << x.wordPattern(pattern, str) << std::endl;
 
     time_t end = time(NULL);
 
