@@ -3,7 +3,7 @@
 #include <ctime>
 #include <map>
 #include <stack>
-#include "290 Word Pattern\word_pattern.h"
+#include "338 Counting Bits\countBits.h"
 
 int main() 
 {
@@ -11,11 +11,13 @@ int main()
     std::string s = "[()]{";
 
     time_t start = time(NULL);
-    WordPattern x;
-    std::string pattern = "abba";
-    std::string str = "boy girl girl boy";
+    CountBits x;
 
-    std::cout << x.wordPattern(pattern, str) << std::endl;
+    for(int i : x.countBitsVersion1(5))
+        std::cout <<  i << std::endl;
+
+    for(int i : x.countBitsVersion2(5))
+        std::cout <<  i << std::endl;
 
     time_t end = time(NULL);
 
