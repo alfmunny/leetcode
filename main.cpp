@@ -3,7 +3,7 @@
 #include <ctime>
 #include <map>
 #include <stack>
-#include "338 Counting Bits\countBits.h"
+#include "204 Count Primes\count_primes.cpp"
 
 int main() 
 {
@@ -11,13 +11,9 @@ int main()
     std::string s = "[()]{";
 
     time_t start = time(NULL);
-    CountBits x;
+    Solution x;
 
-    for(int i : x.countBitsVersion1(5))
-        std::cout <<  i << std::endl;
-
-    for(int i : x.countBitsVersion2(5))
-        std::cout <<  i << std::endl;
+    std::cout << x.countPrimes(24999);
 
     time_t end = time(NULL);
 
