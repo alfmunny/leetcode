@@ -3,7 +3,7 @@
 #include <ctime>
 #include <map>
 #include <stack>
-#include "204 Count Primes\count_primes.cpp"
+#include "166 FractionToRecurringDecimal\fraction_recurring.h"
 
 int main() 
 {
@@ -13,7 +13,10 @@ int main()
     time_t start = time(NULL);
     Solution x;
 
-    std::cout << x.countPrimes(24999);
+    // -1 -2147483648
+    long long a = -1;
+    long long b = -2147483648;
+    std::cout << x.fractionToDecimal(a, -b);
 
     time_t end = time(NULL);
 
