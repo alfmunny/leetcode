@@ -3,7 +3,7 @@
 #include <ctime>
 #include <map>
 #include <stack>
-#include "78 Subsets\subsets.h"
+#include "315 CountSmaller\countSmaller.h"
 
 int main()
 {
@@ -11,20 +11,15 @@ int main()
     std::string s = "[()]{";
 
     time_t start = time(NULL);
-    vector<int> nums = { 1, 2, 3 };
+    vector<int> nums = { 5, 2, 6, 1 };
     Solution x;
 
     // -1 -2147483648
 
-    for (vector<int> vv : x.subsets(nums))
+    for (int v : x.countSmaller(nums))
     {
-        for (int v : vv)
-            std::cout << v << ", ";
-
-        std::cout << std::endl;
+       std::cout << v << ", ";
     }
-
-
 
     time_t end = time(NULL);
 
