@@ -3,7 +3,7 @@
 #include <ctime>
 #include <map>
 #include <stack>
-#include "315 CountSmaller\countSmaller.h"
+#include "383 Ransom Note\ransom_note.h"
 
 int main()
 {
@@ -11,15 +11,13 @@ int main()
     std::string s = "[()]{";
 
     time_t start = time(NULL);
-    vector<int> nums = { 5, 2, 6, 1 };
     Solution x;
+    std::string ransomNote = "aa";
+    std::string magazine = "ab";
 
     // -1 -2147483648
 
-    for (int v : x.countSmaller(nums))
-    {
-       std::cout << v << ", ";
-    }
+   std::cout << x.canConstruct(ransomNote, magazine);
 
     time_t end = time(NULL);
 
