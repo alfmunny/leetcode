@@ -3,7 +3,7 @@
 #include <ctime>
 #include <map>
 #include <stack>
-#include "383 Ransom Note\ransom_note.h"
+#include "86 Partition List\partition_list.h"
 
 int main()
 {
@@ -14,10 +14,36 @@ int main()
     Solution x;
     std::string ransomNote = "aa";
     std::string magazine = "ab";
+    ListNode* head = new ListNode(8);
+    ListNode* p = head;
+    p->next = new ListNode(4);
+    p = p->next;
+    p->next = new ListNode(2);
+    p = p->next;
+    p->next = new ListNode(3);
+    p = p->next;
+
+    p = head;
+
+    while (p)
+    {
+        std::cout << p->val << ", ";
+        p = p->next;
+    }
 
     // -1 -2147483648
 
-   std::cout << x.canConstruct(ransomNote, magazine);
+    ListNode* ret = x.partition(head, 3);
+    p = ret;
+
+    std::cout << std::endl;
+
+    while (p)
+    {
+        std::cout << p->val << ", ";
+        p = p->next;
+    }
+
 
     time_t end = time(NULL);
 
