@@ -3,7 +3,7 @@
 #include <ctime>
 #include <map>
 #include <stack>
-#include "86 Partition List\partition_list.h"
+#include "350 Intersection of Two Arrays II\intersection_two_arrays2.h"
 
 int main()
 {
@@ -12,38 +12,14 @@ int main()
 
     time_t start = time(NULL);
     Solution x;
-    std::string ransomNote = "aa";
-    std::string magazine = "ab";
-    ListNode* head = new ListNode(8);
-    ListNode* p = head;
-    p->next = new ListNode(4);
-    p = p->next;
-    p->next = new ListNode(2);
-    p = p->next;
-    p->next = new ListNode(3);
-    p = p->next;
 
-    p = head;
+    std::vector<int> nums1 = { 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, };
+    std::vector<int> nums2 = { 1,213,32,43,5,46,3,1,2 };
 
-    while (p)
+    for (int i : x.intersect(nums1, nums2))
     {
-        std::cout << p->val << ", ";
-        p = p->next;
+        std::cout << i << ", ";
     }
-
-    // -1 -2147483648
-
-    ListNode* ret = x.partition(head, 3);
-    p = ret;
-
-    std::cout << std::endl;
-
-    while (p)
-    {
-        std::cout << p->val << ", ";
-        p = p->next;
-    }
-
 
     time_t end = time(NULL);
 
