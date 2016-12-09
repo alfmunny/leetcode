@@ -2,32 +2,27 @@
 
 vector<int> Solution::intersect(vector<int>& nums1, vector<int>& nums2)
 {
-    unordered_map<int, int> map1;
-    unordered_map<int, int> map2;
-    
-    for(int x : nums1)
-    {
-        ++map1[x];
-    }
-    
-    for(int x : nums2)
-    {
-        ++map2[x];
-    }
-    
-    vector<int> ret;
-    
-    for(auto & x : map1)
-    {
-        if(map2.count(x.first) > 0)
+        sort(nums1.begin(), nums1.end());
+        sort(nums2.begin(), nums2.end());
+        
+        vector<int> ret;
+        
+        int p1 = 0;
+        int p2 = 0;
+        
+        while((p1 < nums1.size()) && (p2 < nums2.size()))
         {
-            int val = std::min(map2[x.first], x.second);
-            
-            for(int i = 0; i < val; ++i)
-            {
-                ret.push_back(x.first);
+            if(nums1[p1] == nums2[p2]) 
+            { 
+                ret.push_back(nums1[p1]);
+                p1++;
+                p2++;
             }
+            else if(nums1[p1] > nums2[p2]) 
+                ++p2;
+            else 
+                ++p1;
         }
-    }
-    return ret;
+        
+        return ret;
 }
