@@ -2,7 +2,6 @@
 #include <vector>
 using namespace std;
 
-
 class FlippingImage {
 
 public:
@@ -26,7 +25,6 @@ public:
     }
 };
 
-
 int main() {
     FlippingImage x;
     vector<int> a{1, 0, 0, 1, 0};
@@ -35,7 +33,6 @@ int main() {
     vector<int> d{1, 0, 1, 1, 1};
 
     vector<vector<int>> matrix(4);
-
 
     matrix.push_back(a);
     matrix.push_back(b);
@@ -50,7 +47,6 @@ int main() {
     }
 
     x.flippAndInvertImage(matrix);
-
 
     for (auto i : matrix)
     {
