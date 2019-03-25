@@ -5,19 +5,19 @@
 class Solution1 {
     public:
         std::vector<int> memo;
-        int robe(std::vector<int>& nums) {
+        int rob(std::vector<int>& nums) {
             memo = std::vector<int>(nums.size(), -1);
-            return robeRecursive(nums, nums.size() - 1);
+            return robRecursive(nums, nums.size() - 1);
         }
 
-        int robeRecursive(std::vector<int>& nums, int n) {
+        int robRecursive(std::vector<int>& nums, int n) {
             if (n<0) return 0;
             if (n>nums.size() - 1) return 0;
 
             if (memo[n]>=0) 
                 return memo[n];
             else 
-                memo[n] = std::max((robeRecursive(nums, n - 2) + nums[n]), robeRecursive(nums, n-1));
+                memo[n] = std::max((robRecursive(nums, n - 2) + nums[n]), robRecursive(nums, n-1));
             return memo[n];
         }
 };
@@ -26,7 +26,7 @@ class Solution1 {
 
 class Solution2 {
     public:
-        int robe(std::vector<int>& nums) {
+        int rob(std::vector<int>& nums) {
             int n = nums.size();
 
             if (n==0) return 0;
@@ -45,12 +45,37 @@ class Solution2 {
         }
 };
 
+/* Iterative Solution without memory array*/
+
+class Solution3 {
+    public:
+        int rob(std::vector<int>& nums) {
+            int n = nums.size();
+
+            if (n==0) return 0;
+
+            int prev1 = 0;
+            int prev2 = nums[0];
+            int tmp = 0;
+
+            /* pay attention to the starting point of i */ 
+            for (size_t i = 1; i < n; ++i) 
+            {
+                tmp = std::max(prev1 + nums[i], prev2);
+                prev1 = prev2;
+                prev2 = tmp;
+            } 
+
+            return prev2;
+        }
+};
+
 int main() {
-    Solution2 y;
+    Solution3 y;
 
     std::vector<int> nums{1,2,3,1};
 
-    int ret = y.robe(nums);
+    int ret = y.rob(nums);
 
     std::cout << ret;
 
