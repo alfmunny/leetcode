@@ -1,3 +1,6 @@
+#include <iostream>
+#include <algorithm>
+
 class Solution {
     public:
         int diameterOfBinaryTree(TreeNode* root) {
@@ -11,6 +14,6 @@ class Solution {
             int r = depth(root->right, n);
             int l = depth(root->left, n);
             if (n<r+l) n = r+l;
-            return max(l, r) + 1;
+            return std::max(l, r) + 1;
         }
 };
