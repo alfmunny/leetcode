@@ -44,8 +44,8 @@ class Solution2 {
             hash[0] = 1;
             for ( size_t i = 0; i < nums.size(); ++i ) {
                 sum += nums[i];
+                if (hash.find(sum - k) != hash.end()) ret += hash[sum - k];
                 hash[sum]++;
-                if (hash.find(sum - k) != hash.end()) ret++;
             }
 
             return ret;
@@ -54,8 +54,8 @@ class Solution2 {
 
 int main() {
     Solution2 x;
-    std::vector<int> nums = { 1, 2, 3, 1, 2, 3, 1, 2, 3 };
-    int res = x.subarraySum(nums, 3);
+    std::vector<int> nums = { 0,0,0,0,0,0,0,0,0,0};
+    int res = x.subarraySum(nums, 0);
     std::cout << res << std::endl;
     return 0;
 }

@@ -34,7 +34,8 @@ After go through a row, you can overwrite the row with next row.
 ##  Solution 2
 
 Use hash map two remember the frequncy of every sum.
-If hash[sum - k] exists, it means the nums in between can be added upto k, then result + 1
+If hash[sum - k] exists, it means the nums in between can be added upto k, then **result += hash[sum -k]** 
+(!!! Every time the sum has appeared, it should be counted in, because every one can result to sum k upto current position)
 
 nums = 1, 2, 3
 k = 3
@@ -44,5 +45,5 @@ hash = {0:1} (when sum - k = 0, result + 1)
 |---------|------------|-------------------|----------------------|
 | sum     | 1          | 3                 | 6                    |
 | sum - k | -2         | 0(exists in hash) | 3(exists in hash)    |
-| result  | 0          | 1                 | 2                    |
+| result  | 0          | 0 + hash[0] = 1   | 1 + hash[3] = 2      |
 
