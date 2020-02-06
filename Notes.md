@@ -15,3 +15,14 @@ Postorder
 #### Breath-First Traversal
 
 by level. Application of queue.
+
+
+## Binary Search
+
+### Basics
+
+### Find rightmost
+No. 34
+
+### Find leftmost
+No. 34
