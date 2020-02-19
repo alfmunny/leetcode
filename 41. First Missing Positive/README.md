@@ -44,14 +44,13 @@ Run in O(n) time and uses constant extra space
 
 1. Say the length of the array is l, the number must be in 1...l+1 (also l possible numbers)
 
-        For example
+	For example 
 
-        [1, 2, 3, 4], the first missing positive is 5.
+    [1, 2, 3, 4], the first missing positive is 5.
 
-        [7, 8, 9, 10], the first missing positive is 1
-    
-        It means you can use the array as a constant space. The result must be (one of the indexes + 1).
+    [7, 8, 9, 10], the first missing positive is 1
 
+    It means you can use the array as a constant space. The result must be (one of the indexes + 1).
 
 2. We put the number in the right place. When it is 10, we swap it with A[9].
 After all the numbers are in the right place, the first one, whose index + 1 != number, it is the missing one
