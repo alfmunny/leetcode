@@ -6,16 +6,18 @@ Example 1:
 
 Input: [1,2,0]
 Output: 3
+
 Example 2:
 
 Input: [3,4,-1,1]
 Output: 2
+
 Example 3:
 
 Input: [7,8,9,11,12]
 Output: 1
 
-Notes:
+## Notes:
 
 Run in O(n) time and uses constant extra space
 
@@ -33,7 +35,7 @@ It means you can use the array as a constant space. The result must be (one of t
 After all the numbers are in the right place, the first one, whose index + 1 != number, it is the missing one
 
 
-Important:
+## Important:
 
 1. Use the `while` to swap the numbers. Only `if` can not do the same job.
 
@@ -53,6 +55,8 @@ And the process stops. Because 4 is already in the right place. You miss to put 
 So you have to do it recursively, with `while`.
 
 
+## Solution
+
 ```python
 class Solution(object):
     def firstMissingPositive(self, nums):
@@ -69,4 +73,3 @@ class Solution(object):
         return l + 1
 
 ```
-
