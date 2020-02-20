@@ -17,6 +17,24 @@ Example 3:
 Input: [7,8,9,11,12]
 Output: 1
 
+## Notes
+
+Run in O(n) time and uses constant extra space
+
+1. Say the length of the array is l, the number must be in 1...l+1 (also l possible numbers)
+
+	For example 
+
+    [1, 2, 3, 4], the first missing positive is 5.
+
+    [7, 8, 9, 10], the first missing positive is 1
+
+    It means you can use the array as a constant space. The result must be (one of the indexes + 1).
+
+2. We put the number in the right place. When it is 10, we swap it with A[9].
+After all the numbers are in the right place, the first one, whose index + 1 != number, it is the missing one
+
+
 ## Important
 
 Use the `while` to swap the numbers. Only `if` can not do the same job.
@@ -36,24 +54,6 @@ Second Loop: swap 4 and 1
 And the process stops. Because 4 is already in the right place. You miss to put the 1 in the right place.
 
 So you have to do it recursively, with `while`.
-
-
-## Notes
-
-Run in O(n) time and uses constant extra space
-
-1. Say the length of the array is l, the number must be in 1...l+1 (also l possible numbers)
-
-	For example 
-
-    [1, 2, 3, 4], the first missing positive is 5.
-
-    [7, 8, 9, 10], the first missing positive is 1
-
-    It means you can use the array as a constant space. The result must be (one of the indexes + 1).
-
-2. We put the number in the right place. When it is 10, we swap it with A[9].
-After all the numbers are in the right place, the first one, whose index + 1 != number, it is the missing one
 
 
 ## Solution
