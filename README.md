@@ -1,23 +1,18 @@
 
 # Table of Contents
 
-1.  [LeetCode](#org120af48):leetcode:
-    1.  [41. First Missing Positive](#orgd6a4968):hard:array:
-        1.  [Notes:](#org321622f)
-        2.  [Important](#org7fc172d)
-        3.  [Solution:](#orgbb44cc5)
-    2.  [48. Rotate Image](#orgec3800b):medium:array:
-        1.  [Notes](#orgdf4dc20)
-        2.  [Solution](#orgb256582)
+-   [LeetCode](#orgc910850)
+    -   [41. First Missing Positive](#org897544e)
+    -   [48. Rotate Image](#org3737f5e)
 
 
-<a id="org120af48"></a>
+<a id="orgc910850"></a>
 
 # LeetCode     :leetcode:
 
 
 
-<a id="orgd6a4968"></a>
+<a id="org897544e"></a>
 
 ## 41. First Missing Positive     :hard:array:
 
@@ -43,8 +38,6 @@
     Your algorithm should run in O(n) time and uses constant extra space.
 
 
-<a id="org321622f"></a>
-
 ### Notes:
 
 Run in O(n) time and uses constant extra space
@@ -63,8 +56,6 @@ Run in O(n) time and uses constant extra space
 
 After all the numbers are in the right place, the first one, whose index + 1 != number, it is the missing one
 
-
-<a id="org7fc172d"></a>
 
 ### Important
 
@@ -87,8 +78,6 @@ And the process stops. Because 4 is already in the right place. You miss to put 
 So you have to do it recursively, with \`while\`.
 
 
-<a id="orgbb44cc5"></a>
-
 ### Solution:
 
     class Solution(object):
@@ -108,7 +97,7 @@ So you have to do it recursively, with \`while\`.
     print(Solution().firstMissingPositive([1, -1, 3, 4]))
 
 
-<a id="orgec3800b"></a>
+<a id="org3737f5e"></a>
 
 ## [48. Rotate Image](https://leetcode.com/problems/rotate-image/)     :medium:array:
 
@@ -153,8 +142,6 @@ So you have to do it recursively, with \`while\`.
       [16, 7,10,11]
     ]
 
-
-<a id="orgdf4dc20"></a>
 
 ### Notes
 
@@ -245,8 +232,6 @@ So you have to do it recursively, with \`while\`.
     </tbody>
     </table>
 
-
-<a id="orgb256582"></a>
 
 ### Solution
 
