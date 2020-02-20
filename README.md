@@ -1,18 +1,19 @@
 
 # Table of Contents
 
--   [LeetCode](#orgb556daa)
-    -   [41. First Missing Positive](#orge4e3efa)
-    -   [48. Rotate Image](#org2515c27)
+-   [LeetCode](#org3380f02)
+    -   [41. First Missing Positive](#org39ffc99)
+    -   [48. Rotate Image](#org57194cc)
+    -   [53. Maximum Subarray](#org6c343bf)
 
 
-<a id="orgb556daa"></a>
+<a id="org3380f02"></a>
 
 # LeetCode     :leetcode:
 
 
 
-<a id="orge4e3efa"></a>
+<a id="org39ffc99"></a>
 
 ## [41. First Missing Positive](https://leetcode.com/problems/first-missing-positive/)     :hard:array:constant_memory:
 
@@ -97,7 +98,7 @@ So you have to do it recursively, with \`while\`.
     print(Solution().firstMissingPositive([1, -1, 3, 4]))
 
 
-<a id="org2515c27"></a>
+<a id="org57194cc"></a>
 
 ## [48. Rotate Image](https://leetcode.com/problems/rotate-image/)     :medium:array:constant_memory:
 
@@ -279,4 +280,53 @@ So you have to do it recursively, with \`while\`.
         matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
         Solution().rotate(matrix)
         [print(*line) for line in matrix]
+
+
+<a id="org6c343bf"></a>
+
+## [53. Maximum Subarray](https://leetcode.com/problems/maximum-subarray/)     :easy:array:dp:
+
+    Share
+    Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.
+    
+    Example:
+    
+    Input: [-2,1,-3,4,-1,2,1,-5,4],
+    Output: 6
+    Explanation: [4,-1,2,1] has the largest sum = 6.
+    Follow up:
+    
+    If you have figured out the O(n) solution, try coding another solution using the divide and conquer approach, which is more subtle.
+
+
+### Notes
+
+Dynamic programming problem.
+
+Use nums[i] always store the maximum sum.
+
+maxSum(i) = maxSum(i-1) + nums[i] only if maxSum(i-1) > 0
+
+
+### Solution
+
+    class Solution(object):
+        def maxSubArray(self, nums):
+            """
+            :type nums: List[int]
+            :rtype: int
+            """
+    
+            if len(nums) == 0:
+                return 0
+    
+            ret = nums[0]
+    
+            for i in range(1, len(nums)):
+                if nums[i - 1] > 0:
+                    nums[i] += nums[i - 1]
+    
+                ret = max(ret, nums[i])
+    
+            return ret
 
