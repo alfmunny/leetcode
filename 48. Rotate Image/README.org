@@ -47,21 +47,22 @@ rotate the input matrix in-place such that it becomes:
 ** Notes
 
 1. There is a naive solution, to do it one by one.
+   
+   *Important*: 
 
-*Important*: 
-
-You go from the outside into the middle. So the main loop is half of the dimension.
-
-The inner loop should also shrink its size everytime. Begins at i and ends and n-2-i, *not n-1-i*. 
-Because you don't want to swap the last one. The last one n-1-i has already been swapped with the i.
+   You go from the outside into the middle. So the main loop is half of the dimension. 
+   
+   The inner loop should also shrink its size everytime. Begins at i and ends and n-2-i, *not n-1-i*. 
+   
+   Because you don't want to swap the last one. The last one n-1-i has already been swapped with the i.
 
 2. Second solution is with a small trick.
 
-Swap the diagnoal elements and reverse each line in the matrix.
+   Swap the diagnoal elements and reverse each line in the matrix.
 
-| 1 | 2 | 3 | swap | 1 | 4 | 7 | reverse | 7 | 4 | 1 |
-| 4 | 5 | 6 | ---> | 2 | 5 | 8 | ------> | 8 | 5 | 2 |
-| 7 | 8 | 9 |      | 3 | 6 | 9 |         | 9 | 6 | 3 |
+   | 1 | 2 | 3 | swap | 1 | 4 | 7 | reverse | 7 | 4 | 1 |
+   | 4 | 5 | 6 | ---> | 2 | 5 | 8 | ------> | 8 | 5 | 2 |
+   | 7 | 8 | 9 |      | 3 | 6 | 9 |         | 9 | 6 | 3 |
 
 ** Solution
 
