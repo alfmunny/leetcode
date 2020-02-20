@@ -1,10 +1,11 @@
-# Created 2020-02-20 Thu 17:27
-#+OPTIONS: toc:2
+# Created 2020-02-20 Thu 17:48
+#+OPTIONS: toc:nil
 #+OPTIONS: tags:not-in-toc
 #+TITLE: 
 #+AUTHOR: yzhang
 * LeetCode                                                         :leetcode:
 #+export_file_name: ~/Projects/playground/leetcode/README.org
+#+toc: headlines 2
 ** 41. First Missing Positive                                    :hard:array:
 
 #+begin_example
