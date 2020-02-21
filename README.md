@@ -1,19 +1,19 @@
 
 # Table of Contents
 
--   [LeetCode](#org3380f02)
-    -   [41. First Missing Positive](#org39ffc99)
-    -   [48. Rotate Image](#org57194cc)
-    -   [53. Maximum Subarray](#org6c343bf)
+-   [LeetCode](#orgf77daa0)
+    -   [41. First Missing Positive](#orgac9a43f)
+    -   [48. Rotate Image](#orgd486658)
+    -   [53. Maximum Subarray](#orge8edaec)
 
 
-<a id="org3380f02"></a>
+<a id="orgf77daa0"></a>
 
 # LeetCode     :leetcode:
 
 
 
-<a id="org39ffc99"></a>
+<a id="orgac9a43f"></a>
 
 ## [41. First Missing Positive](https://leetcode.com/problems/first-missing-positive/)     :hard:array:constant_memory:
 
@@ -98,7 +98,7 @@ So you have to do it recursively, with \`while\`.
     print(Solution().firstMissingPositive([1, -1, 3, 4]))
 
 
-<a id="org57194cc"></a>
+<a id="orgd486658"></a>
 
 ## [48. Rotate Image](https://leetcode.com/problems/rotate-image/)     :medium:array:constant_memory:
 
@@ -282,7 +282,7 @@ So you have to do it recursively, with \`while\`.
         [print(*line) for line in matrix]
 
 
-<a id="org6c343bf"></a>
+<a id="orge8edaec"></a>
 
 ## [53. Maximum Subarray](https://leetcode.com/problems/maximum-subarray/)     :easy:array:dp:
 
@@ -310,23 +310,44 @@ maxSum(i) = maxSum(i-1) + nums[i] only if maxSum(i-1) > 0
 
 ### Solution
 
-    class Solution(object):
-        def maxSubArray(self, nums):
-            """
-            :type nums: List[int]
-            :rtype: int
-            """
-    
-            if len(nums) == 0:
-                return 0
-    
-            ret = nums[0]
-    
-            for i in range(1, len(nums)):
-                if nums[i - 1] > 0:
-                    nums[i] += nums[i - 1]
-    
-                ret = max(ret, nums[i])
-    
-            return ret
+-   Solution 1: use a extra dp array
+
+        class Solution(object):
+            def maxSubArray(self, nums):
+                """
+                :type nums: List[int]
+                :rtype: int
+                """
+                curSum = maxSum = nums[0]
+        
+                for num in nums[1:]:
+                  curSum = max(num, curSum+num)
+                  maxSum = max(curSum, maxSum)
+        
+                return maxSum
+        
+        print(Solution().maxSubArray([-2,1,-3,4,-1,2,1,-5,4]))
+
+-   Solution 2: no extra space, in place modify
+
+        class Solution(object):
+            def maxSubArray(self, nums):
+                """
+                :type nums: List[int]
+                :rtype: int
+                """
+        
+                if len(nums) == 0:
+                    return 0
+        
+                ret = nums[0]
+        
+                for i in range(1, len(nums)):
+                    if nums[i - 1] > 0:
+                        nums[i] += nums[i - 1]
+        
+                    ret = max(ret, nums[i])
+        
+                return ret
+        print(Solution().maxSubArray([-2,1,-3,4,-1,2,1,-5,4]))
 
