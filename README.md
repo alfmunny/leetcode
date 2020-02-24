@@ -4,14 +4,15 @@
 
 # Table of Contents
 
--   [LeetCode](#org91c1d6a)
-    -   [41. First Missing Positive](#org53e90a9)
-    -   [48. Rotate Image](#orga9b0928)
-    -   [53. Maximum Subarray](#org775aa0f)
-    -   [55. Jump Game](#orgdc77cf1)
+-   [LeetCode](#orgc8978fe)
+    -   [41. First Missing Positive](#org30696ee)
+    -   [48. Rotate Image](#orgad72fd2)
+    -   [53. Maximum Subarray](#orgd3c9f9c)
+    -   [55. Jump Game](#orgf560854)
+    -   [62. Unique Paths](#org174ef1f)
 
 
-<a id="org53e90a9"></a>
+<a id="org30696ee"></a>
 
 ## [41. First Missing Positive](https://leetcode.com/problems/first-missing-positive/)
 
@@ -95,7 +96,7 @@ After all the numbers are in the right place, the first one, whose index + 1 != 
     print(Solution().firstMissingPositive([1, -1, 3, 4]))
 
 
-<a id="orga9b0928"></a>
+<a id="orgad72fd2"></a>
 
 ## [48. Rotate Image](https://leetcode.com/problems/rotate-image/)
 
@@ -279,7 +280,7 @@ After all the numbers are in the right place, the first one, whose index + 1 != 
         [print(*line) for line in matrix]
 
 
-<a id="org775aa0f"></a>
+<a id="orgd3c9f9c"></a>
 
 ## [53. Maximum Subarray](https://leetcode.com/problems/maximum-subarray/)
 
@@ -348,7 +349,7 @@ maxSum(i) = maxSum(i-1) + nums[i] only if maxSum(i-1) > 0
         print(Solution().maxSubArray([-2,1,-3,4,-1,2,1,-5,4]))
 
 
-<a id="orgdc77cf1"></a>
+<a id="orgf560854"></a>
 
 ## [55. Jump Game](https://leetcode.com/problems/jump-game/)
 
@@ -412,4 +413,44 @@ maxSum(i) = maxSum(i-1) + nums[i] only if maxSum(i-1) > 0
         
         print(Solution().canJump([ 2,3,1,1,4 ]))
         print(Solution().canJump([ 3,2,1,0,4 ] ))
+
+
+<a id="org174ef1f"></a>
+
+## [62. Unique Paths](https://leetcode.com/problems/unique-paths/)
+
+    A robot is located at the top-left corner of a m x n grid (marked 'Start' in the diagram below).
+    
+    The robot can only move either down or right at any point in time. The robot is trying to reach the bottom-right corner of the grid (marked 'Finish' in the diagram below).
+    
+    How many possible unique paths are there?
+    
+    Note: m and n will be at most 100.
+    
+    Example 1:
+    
+    Input: m = 3, n = 2
+    Output: 3
+    Explanation:
+    From the top-left corner, there are a total of 3 ways to reach the bottom-right corner:
+    1. Right -> Right -> Down
+    2. Right -> Down -> Right
+    3. Down -> Right -> Right
+    Example 2:
+    
+    Input: m = 7, n = 3
+    Output: 28
+
+
+### Solution
+
+    class Solution():
+        def uniquePath(self, m, n):
+            dp = [1] * n
+    
+            for i in range(1, m):
+                for j in range(1, n):
+                    dp[j] = dp[j - 1] + dp[j]
+    
+            return dp[-1] if m and n else 0
 
