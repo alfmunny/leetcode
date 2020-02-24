@@ -4,9 +4,11 @@
 #+OPTIONS: tags:nil
 #+TITLE: 
 #+AUTHOR: yzhang
-* LeetCode
-#+export_file_name: ~/Projects/playground/leetcode/README.md
-#+toc: headlines 2
+* LeetCode :TOC_2_gh:
+  - [[#41-first-missing-positive][41. First Missing Positive]]
+  - [[#48-rotate-image][48. Rotate Image]]
+  - [[#53-maximum-subarray][53. Maximum Subarray]]
+  - [[#55-jump-game][55. Jump Game]]
 
 ** [[https://leetcode.com/problems/first-missing-positive/][41. First Missing Positive]]
 
