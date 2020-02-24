@@ -1,13 +1,15 @@
-  - [LeetCode](#sec-)
-    - [[41. First Missing Positive](https://leetcode.com/problems/first-missing-positive/)](#sec-)
-    - [[48. Rotate Image](https://leetcode.com/problems/rotate-image/)](#sec-)
-    - [[53. Maximum Subarray](https://leetcode.com/problems/maximum-subarray/)](#sec-)
-    - [[55. Jump Game](https://leetcode.com/problems/jump-game/)](#sec-)
-
-# LeetCode     :leetcode:<a id="sec-"></a>
+# LeetCode
 
 
-## [41. First Missing Positive](https://leetcode.com/problems/first-missing-positive/)     :hard:array:constant_memory:<a id="sec-"></a>
+# Table of Contents
+
+-   [LeetCode](#org179ac44)
+    -   [41. First Missing Positive](#org642198b)
+    -   [48. Rotate Image](#org2cd9b4c)
+    -   [53. Maximum Subarray](#orgb6683a4)
+    -   [55. Jump Game](#org7ea1352)
+
+## [41. First Missing Positive](https://leetcode.com/problems/first-missing-positive/)
 
     Given an unsorted integer array, find the smallest missing positive integer.
     
@@ -30,7 +32,7 @@
     
     Your algorithm should run in O(n) time and uses constant extra space.
 
-### Notes:<a id="sec-"></a>
+### Notes:
 
 Run in O(n) time and uses constant extra space
 
@@ -48,7 +50,7 @@ Run in O(n) time and uses constant extra space
 
 After all the numbers are in the right place, the first one, whose index + 1 != number, it is the missing one
 
-### How to put the numer in the right place     :trick:<a id="sec-"></a>
+### How to put the numer in the right place
 
 Use the \`while\` to swap the numbers. Only \`if\` can not do the same job.
 
@@ -68,7 +70,7 @@ And the process stops. Because 4 is already in the right place. You miss to put 
 
 So you have to do it recursively, with \`while\`.
 
-### Solution:<a id="sec-"></a>
+### Solution:
 
 ```python
 class Solution(object):
@@ -88,7 +90,7 @@ class Solution(object):
 print(Solution().firstMissingPositive([1, -1, 3, 4]))
 ```
 
-## [48. Rotate Image](https://leetcode.com/problems/rotate-image/)     :medium:array:constant_memory:<a id="sec-"></a>
+## [48. Rotate Image](https://leetcode.com/problems/rotate-image/)
 
     You are given an n x n 2D matrix representing an image.
     
@@ -131,7 +133,7 @@ print(Solution().firstMissingPositive([1, -1, 3, 4]))
       [16, 7,10,11]
     ]
 
-### Notes<a id="sec-"></a>
+### Notes
 
 -   Naive solution, to do it one by one.
 
@@ -143,7 +145,7 @@ print(Solution().firstMissingPositive([1, -1, 3, 4]))
     
     Because you don't want to swap the last one. The last one n-1-i has already been swapped with the i.
 
--   Another solution: how to rotate a matrix faster     :trick:
+-   Another solution: how to rotate a matrix faster
 
     Swap the diagnoal elements and reverse each line in the matrix.
     
@@ -151,7 +153,7 @@ print(Solution().firstMissingPositive([1, -1, 3, 4]))
     | 4 | 5 | 6 | &#x2014;> | 2 | 5 | 8 | -&#x2013;&#x2014;> | 8 | 5 | 2 |
     | 7 | 8 | 9 |           | 3 | 6 | 9 |                    | 9 | 6 | 3 |
 
-### Solution<a id="sec-"></a>
+### Solution
 
 -   Solution 1: Straightforward
 
@@ -202,7 +204,7 @@ print(Solution().firstMissingPositive([1, -1, 3, 4]))
     [print(*line) for line in matrix]
     ```
 
-## [53. Maximum Subarray](https://leetcode.com/problems/maximum-subarray/)     :easy:array:dp:<a id="sec-"></a>
+## [53. Maximum Subarray](https://leetcode.com/problems/maximum-subarray/)
 
     Share
     Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.
@@ -216,7 +218,7 @@ print(Solution().firstMissingPositive([1, -1, 3, 4]))
     
     If you have figured out the O(n) solution, try coding another solution using the divide and conquer approach, which is more subtle.
 
-### Notes<a id="sec-"></a>
+### Notes
 
 Dynamic programming problem.
 
@@ -224,7 +226,7 @@ Use nums[i] always store the maximum sum.
 
 maxSum(i) = maxSum(i-1) + nums[i] only if maxSum(i-1) > 0
 
-### Solution<a id="sec-"></a>
+### Solution
 
 -   Solution 1: use a extra dp array
 
@@ -271,7 +273,7 @@ maxSum(i) = maxSum(i-1) + nums[i] only if maxSum(i-1) > 0
     print(Solution().maxSubArray([-2,1,-3,4,-1,2,1,-5,4]))
     ```
 
-## [55. Jump Game](https://leetcode.com/problems/jump-game/)     :medium:array:greedy:<a id="sec-"></a>
+## [55. Jump Game](https://leetcode.com/problems/jump-game/)
 
     Given an array of non-negative integers, you are initially positioned at the first index of the array.
     
@@ -291,7 +293,7 @@ maxSum(i) = maxSum(i-1) + nums[i] only if maxSum(i-1) > 0
     Explanation: You will always arrive at index 3 no matter what. Its maximum
                  jump length is 0, which makes it impossible to reach the last index.
 
-### Notes<a id="sec-"></a>
+### Notes
 
 1.  Greedy alogrithm. Start from head, always remember the furthest reachable index.
     
@@ -305,7 +307,7 @@ maxSum(i) = maxSum(i-1) + nums[i] only if maxSum(i-1) > 0
     lastPos = i if i + nums[i] >= lastPos
     ```
 
-### Solition<a id="sec-"></a>
+### Solition
 
 -   Solution 1: start from head
 
