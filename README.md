@@ -1,19 +1,20 @@
 
 # Table of Contents
 
--   [LeetCode](#orgf77daa0)
-    -   [41. First Missing Positive](#orgac9a43f)
-    -   [48. Rotate Image](#orgd486658)
-    -   [53. Maximum Subarray](#orge8edaec)
+-   [LeetCode](#org3672b4f)
+    -   [41. First Missing Positive](#org5106e8a)
+    -   [48. Rotate Image](#org3e777bf)
+    -   [53. Maximum Subarray](#orgf2e5a0b)
+    -   [55. Jump Game](#org69bc7aa)
 
 
-<a id="orgf77daa0"></a>
+<a id="org3672b4f"></a>
 
 # LeetCode     :leetcode:
 
 
 
-<a id="orgac9a43f"></a>
+<a id="org5106e8a"></a>
 
 ## [41. First Missing Positive](https://leetcode.com/problems/first-missing-positive/)     :hard:array:constant_memory:
 
@@ -98,7 +99,7 @@ So you have to do it recursively, with \`while\`.
     print(Solution().firstMissingPositive([1, -1, 3, 4]))
 
 
-<a id="orgd486658"></a>
+<a id="org3e777bf"></a>
 
 ## [48. Rotate Image](https://leetcode.com/problems/rotate-image/)     :medium:array:constant_memory:
 
@@ -282,7 +283,7 @@ So you have to do it recursively, with \`while\`.
         [print(*line) for line in matrix]
 
 
-<a id="orge8edaec"></a>
+<a id="orgf2e5a0b"></a>
 
 ## [53. Maximum Subarray](https://leetcode.com/problems/maximum-subarray/)     :easy:array:dp:
 
@@ -350,4 +351,70 @@ maxSum(i) = maxSum(i-1) + nums[i] only if maxSum(i-1) > 0
         
                 return ret
         print(Solution().maxSubArray([-2,1,-3,4,-1,2,1,-5,4]))
+
+
+<a id="org69bc7aa"></a>
+
+## [55. Jump Game](https://leetcode.com/problems/jump-game/)     :medium:array:greedy:
+
+    55. Jump Game
+    
+    Given an array of non-negative integers, you are initially positioned at the first index of the array.
+    
+    Each element in the array represents your maximum jump length at that position.
+    
+    Determine if you are able to reach the last index.
+    
+    Example 1:
+    
+    Input: [2,3,1,1,4]
+    Output: true
+    Explanation: Jump 1 step from index 0 to 1, then 3 steps to the last index.
+    Example 2:
+    
+    Input: [3,2,1,0,4]
+    Output: false
+    Explanation: You will always arrive at index 3 no matter what. Its maximum
+                 jump length is 0, which makes it impossible to reach the last index.
+
+
+### Notes
+
+1.  Greedy alogrithm. Start from head, always remember the furthest reachable index.
+    
+        reach = max(i + nums[i], reach) if i <= reach
+
+1.  Greedy algotithm. Start from tail, always remember the last position it can reach.
+
+
+### Solition
+
+-   Solution 1: start from head
+
+        class Solution():
+            def canJump(self, nums):
+                reach = 0
+        
+                for i in range(len(nums)):
+                    if i <= reach:
+                        reach = max(i + nums[i], reach)
+        
+                return reach >= len(nums) - 1
+        
+        print(Solution().canJump([ 2,3,1,1,4 ]))
+        print(Solution().canJump([ 3,2,1,0,4 ] ))
+
+-   Solution 2: start from tail
+
+        class Solution():
+            def canJump(self, nums):
+                lastPos = len(nums) - 1
+                for i in reversed(range(len(nums))):
+                    if i + nums[i] >= lastPos:
+                        lastPos = i
+        
+                return lastPos == 0
+        
+        print(Solution().canJump([ 2,3,1,1,4 ]))
+        print(Solution().canJump([ 3,2,1,0,4 ] ))
 
