@@ -1,22 +1,13 @@
+  - [LeetCode](#sec-)
+    - [[41. First Missing Positive](https://leetcode.com/problems/first-missing-positive/)](#sec-)
+    - [[48. Rotate Image](https://leetcode.com/problems/rotate-image/)](#sec-)
+    - [[53. Maximum Subarray](https://leetcode.com/problems/maximum-subarray/)](#sec-)
+    - [[55. Jump Game](https://leetcode.com/problems/jump-game/)](#sec-)
 
-# Table of Contents
-
--   [LeetCode](#org3672b4f)
-    -   [41. First Missing Positive](#org5106e8a)
-    -   [48. Rotate Image](#org3e777bf)
-    -   [53. Maximum Subarray](#orgf2e5a0b)
-    -   [55. Jump Game](#org69bc7aa)
-
-
-<a id="org3672b4f"></a>
-
-# LeetCode     :leetcode:
+# LeetCode     :leetcode:<a id="sec-"></a>
 
 
-
-<a id="org5106e8a"></a>
-
-## [41. First Missing Positive](https://leetcode.com/problems/first-missing-positive/)     :hard:array:constant_memory:
+## [41. First Missing Positive](https://leetcode.com/problems/first-missing-positive/)     :hard:array:constant_memory:<a id="sec-"></a>
 
     Given an unsorted integer array, find the smallest missing positive integer.
     
@@ -39,14 +30,13 @@
     
     Your algorithm should run in O(n) time and uses constant extra space.
 
-
-### Notes:
+### Notes:<a id="sec-"></a>
 
 Run in O(n) time and uses constant extra space
 
 1.  Say the length of the array is l, the number must be in 1&#x2026;l+1 (also l possible numbers)
     
-    For example 
+    For example
     
     [1, 2, 3, 4], the first missing positive is 5.
     
@@ -58,8 +48,7 @@ Run in O(n) time and uses constant extra space
 
 After all the numbers are in the right place, the first one, whose index + 1 != number, it is the missing one
 
-
-### How to put the numer in the right place     :trick:
+### How to put the numer in the right place     :trick:<a id="sec-"></a>
 
 Use the \`while\` to swap the numbers. Only \`if\` can not do the same job.
 
@@ -79,29 +68,27 @@ And the process stops. Because 4 is already in the right place. You miss to put 
 
 So you have to do it recursively, with \`while\`.
 
+### Solution:<a id="sec-"></a>
 
-### Solution:
+```python
+class Solution(object):
+    def firstMissingPositive(self, nums):
+        l = len(nums)
+        for i in range(l):
+            # Note!: here has to be using while
+            while (nums[i] > 0 and nums[i] <= l and nums[nums[i] - 1] != nums[i]):
+                nums[nums[i]-1], nums[i] = nums[i], nums[nums[i]-1]
 
-    class Solution(object):
-        def firstMissingPositive(self, nums):
-            l = len(nums)
-            for i in range(l):
-                # Note!: here has to be using while
-                while (nums[i] > 0 and nums[i] <= l and nums[nums[i] - 1] != nums[i]):
-                    nums[nums[i]-1], nums[i] = nums[i], nums[nums[i]-1]
-    
-            for i, n in enumerate(nums):
-                if (n != i+1):
-                    return i + 1
-    
-            return l + 1
-    
-    print(Solution().firstMissingPositive([1, -1, 3, 4]))
+        for i, n in enumerate(nums):
+            if (n != i+1):
+                return i + 1
 
+        return l + 1
 
-<a id="org3e777bf"></a>
+print(Solution().firstMissingPositive([1, -1, 3, 4]))
+```
 
-## [48. Rotate Image](https://leetcode.com/problems/rotate-image/)     :medium:array:constant_memory:
+## [48. Rotate Image](https://leetcode.com/problems/rotate-image/)     :medium:array:constant_memory:<a id="sec-"></a>
 
     You are given an n x n 2D matrix representing an image.
     
@@ -144,16 +131,15 @@ So you have to do it recursively, with \`while\`.
       [16, 7,10,11]
     ]
 
-
-### Notes
+### Notes<a id="sec-"></a>
 
 -   Naive solution, to do it one by one.
 
-    **Important**: 
+    **Important**:
     
-    You go from the outside into the middle. So the main loop is half of the dimension. 
+    You go from the outside into the middle. So the main loop is half of the dimension.
     
-    The inner loop should also shrink its size everytime. Begins at i and ends and n-2-i, **not n-1-i**. 
+    The inner loop should also shrink its size everytime. Begins at i and ends and n-2-i, **not n-1-i**.
     
     Because you don't want to swap the last one. The last one n-1-i has already been swapped with the i.
 
@@ -161,131 +147,62 @@ So you have to do it recursively, with \`while\`.
 
     Swap the diagnoal elements and reverse each line in the matrix.
     
-    <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-    
-    
-    <colgroup>
-    <col  class="org-right" />
-    
-    <col  class="org-right" />
-    
-    <col  class="org-right" />
-    
-    <col  class="org-left" />
-    
-    <col  class="org-right" />
-    
-    <col  class="org-right" />
-    
-    <col  class="org-right" />
-    
-    <col  class="org-left" />
-    
-    <col  class="org-right" />
-    
-    <col  class="org-right" />
-    
-    <col  class="org-right" />
-    </colgroup>
-    <tbody>
-    <tr>
-    <td class="org-right">1</td>
-    <td class="org-right">2</td>
-    <td class="org-right">3</td>
-    <td class="org-left">swap</td>
-    <td class="org-right">1</td>
-    <td class="org-right">4</td>
-    <td class="org-right">7</td>
-    <td class="org-left">reverse</td>
-    <td class="org-right">7</td>
-    <td class="org-right">4</td>
-    <td class="org-right">1</td>
-    </tr>
-    
-    
-    <tr>
-    <td class="org-right">4</td>
-    <td class="org-right">5</td>
-    <td class="org-right">6</td>
-    <td class="org-left">&#x2014;></td>
-    <td class="org-right">2</td>
-    <td class="org-right">5</td>
-    <td class="org-right">8</td>
-    <td class="org-left">-&#x2013;&#x2014;></td>
-    <td class="org-right">8</td>
-    <td class="org-right">5</td>
-    <td class="org-right">2</td>
-    </tr>
-    
-    
-    <tr>
-    <td class="org-right">7</td>
-    <td class="org-right">8</td>
-    <td class="org-right">9</td>
-    <td class="org-left">&#xa0;</td>
-    <td class="org-right">3</td>
-    <td class="org-right">6</td>
-    <td class="org-right">9</td>
-    <td class="org-left">&#xa0;</td>
-    <td class="org-right">9</td>
-    <td class="org-right">6</td>
-    <td class="org-right">3</td>
-    </tr>
-    </tbody>
-    </table>
+    | 1 | 2 | 3 | swap      | 1 | 4 | 7 | reverse            | 7 | 4 | 1 |
+    | 4 | 5 | 6 | &#x2014;> | 2 | 5 | 8 | -&#x2013;&#x2014;> | 8 | 5 | 2 |
+    | 7 | 8 | 9 |           | 3 | 6 | 9 |                    | 9 | 6 | 3 |
 
-
-### Solution
+### Solution<a id="sec-"></a>
 
 -   Solution 1: Straightforward
 
-        class Solution(object):
-            def rotate(self, matrix):
-                """
-                :type matrix: List[List[int]]
-                :rtype: None Do not return anything, modify matrix in-place instead.
-                """
-                n = len(matrix)
-        
-                for i in range(n//2):
-                    # Shrink the dimension
-                    # Do not include the last element
-                    for j in range(i, n-i-1):
-                        tmp = matrix[i][j]
-                        matrix[i][j] = matrix[n-1-j][i]
-                        matrix[n-1-j][i] = matrix[n-1-i][n-1-j]
-                        matrix[n-1-i][n-1-j] = matrix[j][n-1-i]
-                        matrix[j][n-1-i] = tmp
-        
-        matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
-        Solution().rotate(matrix)
-        [print(*line) for line in matrix]
+    ```python
+    class Solution(object):
+        def rotate(self, matrix):
+            """
+            :type matrix: List[List[int]]
+            :rtype: None Do not return anything, modify matrix in-place instead.
+            """
+            n = len(matrix)
+    
+            for i in range(n//2):
+                # Shrink the dimension
+                # Do not include the last element
+                for j in range(i, n-i-1):
+                    tmp = matrix[i][j]
+                    matrix[i][j] = matrix[n-1-j][i]
+                    matrix[n-1-j][i] = matrix[n-1-i][n-1-j]
+                    matrix[n-1-i][n-1-j] = matrix[j][n-1-i]
+                    matrix[j][n-1-i] = tmp
+    
+    matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+    Solution().rotate(matrix)
+    [print(*line) for line in matrix]
+    ```
 
 -   Solution 2:
 
-        class Solution(object):
-            def rotate(self, matrix):
-                """
-                :type matrix: List[List[int]]
-                :rtype: None Do not return anything, modify matrix in-place instead.
-                """
-                n = len(matrix)
-        
-                for i in range(n):
-                    for j in range(i, n):
-                        matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
-        
-                for i in range(n):
-                    matrix[i].reverse()
-        
-        matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
-        Solution().rotate(matrix)
-        [print(*line) for line in matrix]
+    ```python
+    class Solution(object):
+        def rotate(self, matrix):
+            """
+            :type matrix: List[List[int]]
+            :rtype: None Do not return anything, modify matrix in-place instead.
+            """
+            n = len(matrix)
+    
+            for i in range(n):
+                for j in range(i, n):
+                    matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
+    
+            for i in range(n):
+                matrix[i].reverse()
+    
+    matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+    Solution().rotate(matrix)
+    [print(*line) for line in matrix]
+    ```
 
-
-<a id="orgf2e5a0b"></a>
-
-## [53. Maximum Subarray](https://leetcode.com/problems/maximum-subarray/)     :easy:array:dp:
+## [53. Maximum Subarray](https://leetcode.com/problems/maximum-subarray/)     :easy:array:dp:<a id="sec-"></a>
 
     Share
     Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.
@@ -299,8 +216,7 @@ So you have to do it recursively, with \`while\`.
     
     If you have figured out the O(n) solution, try coding another solution using the divide and conquer approach, which is more subtle.
 
-
-### Notes
+### Notes<a id="sec-"></a>
 
 Dynamic programming problem.
 
@@ -308,57 +224,55 @@ Use nums[i] always store the maximum sum.
 
 maxSum(i) = maxSum(i-1) + nums[i] only if maxSum(i-1) > 0
 
-
-### Solution
+### Solution<a id="sec-"></a>
 
 -   Solution 1: use a extra dp array
 
-        class Solution(object):
-            def maxSubArray(self, nums):
-                """
-                :type nums: List[int]
-                :rtype: int
-                """
-                curSum = maxSum = nums[0]
-        
-                for num in nums[1:]:
-                  curSum = max(num, curSum+num)
-                  maxSum = max(curSum, maxSum)
-        
-                return maxSum
-        
-        print(Solution().maxSubArray([-2,1,-3,4,-1,2,1,-5,4]))
+    ```python
+    class Solution(object):
+        def maxSubArray(self, nums):
+            """
+            :type nums: List[int]
+            :rtype: int
+            """
+            curSum = maxSum = nums[0]
+    
+            for num in nums[1:]:
+              curSum = max(num, curSum+num)
+              maxSum = max(curSum, maxSum)
+    
+            return maxSum
+    
+    print(Solution().maxSubArray([-2,1,-3,4,-1,2,1,-5,4]))
+    ```
 
 -   Solution 2: no extra space, in place modify
 
-        class Solution(object):
-            def maxSubArray(self, nums):
-                """
-                :type nums: List[int]
-                :rtype: int
-                """
-        
-                if len(nums) == 0:
-                    return 0
-        
-                ret = nums[0]
-        
-                for i in range(1, len(nums)):
-                    if nums[i - 1] > 0:
-                        nums[i] += nums[i - 1]
-        
-                    ret = max(ret, nums[i])
-        
-                return ret
-        print(Solution().maxSubArray([-2,1,-3,4,-1,2,1,-5,4]))
-
-
-<a id="org69bc7aa"></a>
-
-## [55. Jump Game](https://leetcode.com/problems/jump-game/)     :medium:array:greedy:
-
-    55. Jump Game
+    ```python
+    class Solution(object):
+        def maxSubArray(self, nums):
+            """
+            :type nums: List[int]
+            :rtype: int
+            """
     
+            if len(nums) == 0:
+                return 0
+    
+            ret = nums[0]
+    
+            for i in range(1, len(nums)):
+                if nums[i - 1] > 0:
+                    nums[i] += nums[i - 1]
+    
+                ret = max(ret, nums[i])
+    
+            return ret
+    print(Solution().maxSubArray([-2,1,-3,4,-1,2,1,-5,4]))
+    ```
+
+## [55. Jump Game](https://leetcode.com/problems/jump-game/)     :medium:array:greedy:<a id="sec-"></a>
+
     Given an array of non-negative integers, you are initially positioned at the first index of the array.
     
     Each element in the array represents your maximum jump length at that position.
@@ -377,44 +291,51 @@ maxSum(i) = maxSum(i-1) + nums[i] only if maxSum(i-1) > 0
     Explanation: You will always arrive at index 3 no matter what. Its maximum
                  jump length is 0, which makes it impossible to reach the last index.
 
-
-### Notes
+### Notes<a id="sec-"></a>
 
 1.  Greedy alogrithm. Start from head, always remember the furthest reachable index.
     
-        reach = max(i + nums[i], reach) if i <= reach
+    ```python
+    reach = max(i + nums[i], reach) if i <= reach
+    ```
 
-1.  Greedy algotithm. Start from tail, always remember the last position it can reach.
+2.  Greedy algotithm. Start from tail, always remember the last position it can reach.
+    
+    ```python
+    lastPos = i if i + nums[i] >= lastPos
+    ```
 
-
-### Solition
+### Solition<a id="sec-"></a>
 
 -   Solution 1: start from head
 
-        class Solution():
-            def canJump(self, nums):
-                reach = 0
-        
-                for i in range(len(nums)):
-                    if i <= reach:
-                        reach = max(i + nums[i], reach)
-        
-                return reach >= len(nums) - 1
-        
-        print(Solution().canJump([ 2,3,1,1,4 ]))
-        print(Solution().canJump([ 3,2,1,0,4 ] ))
+    ```python
+    class Solution():
+        def canJump(self, nums):
+            reach = 0
+    
+            for i in range(len(nums)):
+                if i <= reach:
+                    reach = max(i + nums[i], reach)
+    
+            return reach >= len(nums) - 1
+    
+    print(Solution().canJump([ 2,3,1,1,4 ]))
+    print(Solution().canJump([ 3,2,1,0,4 ] ))
+    ```
 
 -   Solution 2: start from tail
 
-        class Solution():
-            def canJump(self, nums):
-                lastPos = len(nums) - 1
-                for i in reversed(range(len(nums))):
-                    if i + nums[i] >= lastPos:
-                        lastPos = i
-        
-                return lastPos == 0
-        
-        print(Solution().canJump([ 2,3,1,1,4 ]))
-        print(Solution().canJump([ 3,2,1,0,4 ] ))
-
+    ```python
+    class Solution():
+        def canJump(self, nums):
+            lastPos = len(nums) - 1
+            for i in reversed(range(len(nums))):
+                if i + nums[i] >= lastPos:
+                    lastPos = i
+    
+            return lastPos == 0
+    
+    print(Solution().canJump([ 2,3,1,1,4 ]))
+    print(Solution().canJump([ 3,2,1,0,4 ] ))
+    ```
