@@ -4,14 +4,14 @@
 
 # Table of Contents
 
--   [LeetCode](#org282585d)
-    -   [41. First Missing Positive](#orgbf3b0ea)
-    -   [48. Rotate Image](#orgb685615)
-    -   [53. Maximum Subarray](#orge2f74db)
-    -   [55. Jump Game](#org95d8aad)
+-   [LeetCode](#org91c1d6a)
+    -   [41. First Missing Positive](#org53e90a9)
+    -   [48. Rotate Image](#orga9b0928)
+    -   [53. Maximum Subarray](#org775aa0f)
+    -   [55. Jump Game](#orgdc77cf1)
 
 
-<a id="orgbf3b0ea"></a>
+<a id="org53e90a9"></a>
 
 ## [41. First Missing Positive](https://leetcode.com/problems/first-missing-positive/)
 
@@ -55,26 +55,25 @@ Run in O(n) time and uses constant extra space
 
 After all the numbers are in the right place, the first one, whose index + 1 != number, it is the missing one
 
+-   How to put the numer in the right place
 
-### How to put the numer in the right place
-
-Use the \`while\` to swap the numbers. Only \`if\` can not do the same job.
-
-Consider nums = [3, 4, -1, 1].
-
-Only with if:
-
-First Loop: swap 3 and -1
-
-nums = [-1, 4, 3, 1]
-
-Second Loop: swap 4 and 1
-
-nums = [-1, 1, 3, 4]
-
-And the process stops. Because 4 is already in the right place. You miss to put the 1 in the right place.
-
-So you have to do it recursively, with \`while\`.
+    Use the \`while\` to swap the numbers. Only \`if\` can not do the same job.
+    
+    Consider nums = [3, 4, -1, 1].
+    
+    Only with if:
+    
+    First Loop: swap 3 and -1
+    
+    nums = [-1, 4, 3, 1]
+    
+    Second Loop: swap 4 and 1
+    
+    nums = [-1, 1, 3, 4]
+    
+    And the process stops. Because 4 is already in the right place. You miss to put the 1 in the right place.
+    
+    So you have to do it recursively, with \`while\`.
 
 
 ### Solution:
@@ -96,7 +95,7 @@ So you have to do it recursively, with \`while\`.
     print(Solution().firstMissingPositive([1, -1, 3, 4]))
 
 
-<a id="orgb685615"></a>
+<a id="orga9b0928"></a>
 
 ## [48. Rotate Image](https://leetcode.com/problems/rotate-image/)
 
@@ -280,7 +279,7 @@ So you have to do it recursively, with \`while\`.
         [print(*line) for line in matrix]
 
 
-<a id="orge2f74db"></a>
+<a id="org775aa0f"></a>
 
 ## [53. Maximum Subarray](https://leetcode.com/problems/maximum-subarray/)
 
@@ -349,7 +348,7 @@ maxSum(i) = maxSum(i-1) + nums[i] only if maxSum(i-1) > 0
         print(Solution().maxSubArray([-2,1,-3,4,-1,2,1,-5,4]))
 
 
-<a id="org95d8aad"></a>
+<a id="orgdc77cf1"></a>
 
 ## [55. Jump Game](https://leetcode.com/problems/jump-game/)
 

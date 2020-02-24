@@ -1,10 +1,10 @@
-# Created 2020-02-24 Mon 17:21
+# Created 2020-02-24 Mon 17:38
 #+OPTIONS: toc:2
 #+OPTIONS: toc:nil
 #+OPTIONS: tags:nil
 #+TITLE: 
 #+AUTHOR: yzhang
-* LeetCode :TOC_2_gh:
+* LeetCode :TOC_2:
   - [[#41-first-missing-positive][41. First Missing Positive]]
   - [[#48-rotate-image][48. Rotate Image]]
   - [[#53-maximum-subarray][53. Maximum Subarray]]
@@ -52,7 +52,7 @@ Run in O(n) time and uses constant extra space
 2. We put the number in the right place. When it is 10, we swap it with A[9].
 After all the numbers are in the right place, the first one, whose index + 1 != number, it is the missing one
 
-*** How to put the numer in the right place
+**** How to put the numer in the right place
 
 Use the `while` to swap the numbers. Only `if` can not do the same job.
 
@@ -211,7 +211,6 @@ Swap the diagnoal elements and reverse each line in the matrix.
 ** [[https://leetcode.com/problems/maximum-subarray/][53. Maximum Subarray]]
 
 #+begin_example
-  Share
   Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.
 
   Example:
