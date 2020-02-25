@@ -4,17 +4,23 @@
 
 # Table of Contents
 
--   [LeetCode](#orgc8978fe)
-    -   [41. First Missing Positive](#org30696ee)
-    -   [48. Rotate Image](#orgad72fd2)
-    -   [53. Maximum Subarray](#orgd3c9f9c)
-    -   [55. Jump Game](#orgf560854)
-    -   [62. Unique Paths](#org174ef1f)
+-   [LeetCode](#org5c9811a)
+    -   [41. First Missing Positive](#org280d954)
+    -   [48. Rotate Image](#org0deca93)
+    -   [53. Maximum Subarray](#orgb721ad1)
+    -   [55. Jump Game](#orgbe48244)
+    -   [62. Unique Paths](#orgdc461e9)
+    -   [91. Decode Ways](#org64f155b)
+    -   [70. Climbing Stairs](#orga41f1c9)
+    -   [509. Fibonacci Number](#org4b33373)
 
 
-<a id="org30696ee"></a>
+<a id="org280d954"></a>
 
 ## [41. First Missing Positive](https://leetcode.com/problems/first-missing-positive/)
+
+
+### Problem
 
     Given an unsorted integer array, find the smallest missing positive integer.
     
@@ -96,9 +102,12 @@ After all the numbers are in the right place, the first one, whose index + 1 != 
     print(Solution().firstMissingPositive([1, -1, 3, 4]))
 
 
-<a id="orgad72fd2"></a>
+<a id="org0deca93"></a>
 
 ## [48. Rotate Image](https://leetcode.com/problems/rotate-image/)
+
+
+### Problem
 
     You are given an n x n 2D matrix representing an image.
     
@@ -280,9 +289,12 @@ After all the numbers are in the right place, the first one, whose index + 1 != 
         [print(*line) for line in matrix]
 
 
-<a id="orgd3c9f9c"></a>
+<a id="orgb721ad1"></a>
 
 ## [53. Maximum Subarray](https://leetcode.com/problems/maximum-subarray/)
+
+
+### Problem
 
     Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.
     
@@ -349,9 +361,12 @@ maxSum(i) = maxSum(i-1) + nums[i] only if maxSum(i-1) > 0
         print(Solution().maxSubArray([-2,1,-3,4,-1,2,1,-5,4]))
 
 
-<a id="orgf560854"></a>
+<a id="orgbe48244"></a>
 
 ## [55. Jump Game](https://leetcode.com/problems/jump-game/)
+
+
+### Problem
 
     Given an array of non-negative integers, you are initially positioned at the first index of the array.
     
@@ -374,11 +389,17 @@ maxSum(i) = maxSum(i-1) + nums[i] only if maxSum(i-1) > 0
 
 ### Notes
 
-1.  Greedy alogrithm. Start from head, always remember the furthest reachable index.
+Greedy algorithm. There are 2 approaches, from head or from tail.
+
+-   Start from head
+
+    always remember the furthest reachable index.
     
         reach = max(i + nums[i], reach) if i <= reach
 
-2.  Greedy algotithm. Start from tail, always remember the last position it can reach.
+-   Start from tail
+
+    always remember the last position it can reach.
     
         lastPos = i if i + nums[i] >= lastPos
 
@@ -415,9 +436,12 @@ maxSum(i) = maxSum(i-1) + nums[i] only if maxSum(i-1) > 0
         print(Solution().canJump([ 3,2,1,0,4 ] ))
 
 
-<a id="org174ef1f"></a>
+<a id="orgdc461e9"></a>
 
 ## [62. Unique Paths](https://leetcode.com/problems/unique-paths/)
+
+
+### Problem
 
     A robot is located at the top-left corner of a m x n grid (marked 'Start' in the diagram below).
     
@@ -442,15 +466,62 @@ maxSum(i) = maxSum(i-1) + nums[i] only if maxSum(i-1) > 0
     Output: 28
 
 
+### Notes
+
+DP problem. 
+
+-   UniquePath with 2-D DP
+
+    The first row and the first column has the value 1, they all have only one possible way to be reached.
+    
+    How to reach dp[i][j]: 1. reach dp[i-1][j] first 2. rach dp[i][j-1] first.
+    
+    > dp[i][j] = dp[i-1][j] + dp[i][j-1]
+    
+    After you have the edge, you go levelly to the bottom.
+
+-   UniquePath with 1-D DP
+
+        dp[j] = dp[j - 1] + dp[j]
+
+
 ### Solution
 
-    class Solution():
-        def uniquePath(self, m, n):
-            dp = [1] * n
-    
-            for i in range(1, m):
-                for j in range(1, n):
-                    dp[j] = dp[j - 1] + dp[j]
-    
-            return dp[-1] if m and n else 0
+-   Solution 1: 2-D DP
+
+        class Solution():
+            def uniquePath(self, m, n):
+                dp = [[1 for j in range(n)] for i in range(m)]
+                for i in range(1, m):
+                    for j in range(1, n):
+                        dp[i][j] = dp[i][j - 1] + dp[i - 1][j]
+        
+                return dp[-1][-1] if m and n else 0
+
+-   Solution 2: 1-D DP
+
+        class Solution():
+            def uniquePath(self, m, n):
+                dp = [1] * n
+        
+                for i in range(1, m):
+                    for j in range(1, n):
+                        dp[j] = dp[j - 1] + dp[j]
+        
+                return dp[-1] if m and n else 0
+
+
+<a id="org64f155b"></a>
+
+## 91. Decode Ways
+
+
+<a id="orga41f1c9"></a>
+
+## 70. Climbing Stairs
+
+
+<a id="org4b33373"></a>
+
+## 509. Fibonacci Number
 
