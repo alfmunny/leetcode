@@ -4,18 +4,18 @@
 
 # Table of Contents
 
--   [LeetCode](#org8b89394)
-    -   [41. First Missing Positive](#org7a03aec)
-    -   [48. Rotate Image](#org4a8614f)
-    -   [53. Maximum Subarray](#orgc8179d6)
-    -   [55. Jump Game](#org5b8fbf2)
-    -   [62. Unique Paths](#org1c34e28)
-    -   [91. Decode Ways](#orgbe9a3df)
-    -   [70. Climbing Stairs](#org9732d35)
-    -   [509. Fibonacci Number](#orgd14b2a5)
+-   [LeetCode](#org2286f1e)
+    -   [41. First Missing Positive](#org28afddf)
+    -   [48. Rotate Image](#org9d6e5c5)
+    -   [53. Maximum Subarray](#orgc9cc546)
+    -   [55. Jump Game](#orgde1ba16)
+    -   [62. Unique Paths](#org8c0cc44)
+    -   [70. Climbing Stairs](#org24d0171)
+    -   [91. Decode Ways](#orgf09f15b)
+    -   [509. Fibonacci Number](#org6ce986b)
 
 
-<a id="org7a03aec"></a>
+<a id="org28afddf"></a>
 
 ## [41. First Missing Positive](https://leetcode.com/problems/first-missing-positive/)
 
@@ -102,7 +102,7 @@ After all the numbers are in the right place, the first one, whose index + 1 != 
     print(Solution().firstMissingPositive([1, -1, 3, 4]))
 
 
-<a id="org4a8614f"></a>
+<a id="org9d6e5c5"></a>
 
 ## [48. Rotate Image](https://leetcode.com/problems/rotate-image/)
 
@@ -289,7 +289,7 @@ After all the numbers are in the right place, the first one, whose index + 1 != 
         [print(*line) for line in matrix]
 
 
-<a id="orgc8179d6"></a>
+<a id="orgc9cc546"></a>
 
 ## [53. Maximum Subarray](https://leetcode.com/problems/maximum-subarray/)
 
@@ -361,7 +361,7 @@ maxSum(i) = maxSum(i-1) + nums[i] only if maxSum(i-1) > 0
         print(Solution().maxSubArray([-2,1,-3,4,-1,2,1,-5,4]))
 
 
-<a id="org5b8fbf2"></a>
+<a id="orgde1ba16"></a>
 
 ## [55. Jump Game](https://leetcode.com/problems/jump-game/)
 
@@ -436,7 +436,7 @@ Greedy algorithm. There are 2 approaches, from head or from tail.
         print(Solution().canJump([ 3,2,1,0,4 ] ))
 
 
-<a id="org1c34e28"></a>
+<a id="org8c0cc44"></a>
 
 ## [62. Unique Paths](https://leetcode.com/problems/unique-paths/)
 
@@ -516,7 +516,65 @@ It is a DP problem.
                 return dp[-1] if m and n else 0
 
 
-<a id="orgbe9a3df"></a>
+<a id="org24d0171"></a>
+
+## [70. Climbing Stairs](https://leetcode.com/problems/climbing-stairs/)
+
+
+### Problem
+
+    You are climbing a stair case. It takes n steps to reach to the top.
+    
+    Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
+    
+    Note: Given n will be a positive integer.
+    
+    Example 1:
+    
+    Input: 2
+    Output: 2
+    Explanation: There are two ways to climb to the top.
+    1. 1 step + 1 step
+    2. 2 steps
+    Example 2:
+    
+    Input: 3
+    Output: 3
+    Explanation: There are three ways to climb to the top.
+    1. 1 step + 1 step + 1 step
+    2. 1 step + 2 steps
+    3. 2 steps + 1 step
+
+
+### Notes
+
+The distinct ways to take n stair cases:
+
+1.  take one step at last, the distinct ways to take n-1 stair cases  -> f(n-1) ways
+2.  take two steps at last, the distinct ways to take n-2 stair cases -> f(n-2) ways
+
+So f(n) = f(n-1) + f(n-2)
+
+
+### Solution
+
+    class Solution():
+        def climbStairs(self, n):
+            if n < 2:
+                return n
+    
+            dp = [0] * n
+    
+            dp[0] = 1
+            dp[1] = 2
+    
+            for i in range(2, n):
+                dp[i] = dp[i-1] + dp[i-2]
+    
+            return dp[-1]
+
+
+<a id="orgf09f15b"></a>
 
 ## [91. Decode Ways](https://leetcode.com/problems/decode-ways)
 
@@ -583,65 +641,65 @@ DP problem.
             return dp[-1]
 
 
-<a id="org9732d35"></a>
+<a id="org6ce986b"></a>
 
-## [70. Climbing Stairs](https://leetcode.com/problems/climbing-stairs/)
+## [509. Fibonacci Number](https://leetcode.com/problems/fibonacci-number/)
 
 
 ### Problem
 
-    You are climbing a stair case. It takes n steps to reach to the top.
+    The Fibonacci numbers, commonly denoted F(n) form a sequence, called the Fibonacci sequence, such that each number is the sum of the two preceding ones, starting from 0 and 1. That is,
     
-    Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
+    F(0) = 0,   F(1) = 1
+    F(N) = F(N - 1) + F(N - 2), for N > 1.
+    Given N, calculate F(N).
     
-    Note: Given n will be a positive integer.
+     
     
     Example 1:
     
     Input: 2
-    Output: 2
-    Explanation: There are two ways to climb to the top.
-    1. 1 step + 1 step
-    2. 2 steps
+    Output: 1
+    Explanation: F(2) = F(1) + F(0) = 1 + 0 = 1.
     Example 2:
     
     Input: 3
+    Output: 2
+    Explanation: F(3) = F(2) + F(1) = 1 + 1 = 2.
+    Example 3:
+    
+    Input: 4
     Output: 3
-    Explanation: There are three ways to climb to the top.
-    1. 1 step + 1 step + 1 step
-    2. 1 step + 2 steps
-    3. 2 steps + 1 step
+    Explanation: F(4) = F(3) + F(2) = 2 + 1 = 3.
 
 
 ### Notes
 
-The distinct ways to take n stair cases:
+DP Problem.
 
-1.  take one step at last, the distinct ways to take n-1 stair cases  -> f(n-1) ways
-2.  take two steps at last, the distinct ways to take n-2 stair cases -> f(n-2) ways
+**Important**:
 
-So f(n) = f(n-1) + f(n-2)
+Note how long is the dp array. It shoud be N+1, since we start with the number 0.
 
 
 ### Solution
 
-    class Solution():
-        def climbStairs(self, n):
-            if n < 2:
-                return n
+    class Solution(object):
+        def fib(self, N):
+            """
+            :type N: int
+            :rtype: int
+            """
+            if N < 2:
+                return N
     
-            dp = [0] * n
+            dp = [0] * (N + 1)
     
-            dp[0] = 1
-            dp[1] = 2
+            dp[0] = 0
+            dp[1] = 1
     
-            for i in range(2, n):
-                dp[i] = dp[i-1] + dp[i-2]
+            for i in range(2, N + 1):
+                dp[i] = dp[i - 1] + dp[i - 2]
     
             return dp[-1]
-
-
-<a id="orgd14b2a5"></a>
-
-## 509. Fibonacci Number
 
