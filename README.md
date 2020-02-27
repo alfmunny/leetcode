@@ -4,18 +4,18 @@
 
 # Table of Contents
 
--   [LeetCode](#org5c9811a)
-    -   [41. First Missing Positive](#org280d954)
-    -   [48. Rotate Image](#org0deca93)
-    -   [53. Maximum Subarray](#orgb721ad1)
-    -   [55. Jump Game](#orgbe48244)
-    -   [62. Unique Paths](#orgdc461e9)
-    -   [91. Decode Ways](#org64f155b)
-    -   [70. Climbing Stairs](#orga41f1c9)
-    -   [509. Fibonacci Number](#org4b33373)
+-   [LeetCode](#org508c1c7)
+    -   [41. First Missing Positive](#org7b237a2)
+    -   [48. Rotate Image](#org321408b)
+    -   [53. Maximum Subarray](#org01b6277)
+    -   [55. Jump Game](#orgdaf081e)
+    -   [62. Unique Paths](#orga685c16)
+    -   [91. Decode Ways](#org6a8c3eb)
+    -   [70. Climbing Stairs](#org0d01296)
+    -   [509. Fibonacci Number](#org4279718)
 
 
-<a id="org280d954"></a>
+<a id="org7b237a2"></a>
 
 ## [41. First Missing Positive](https://leetcode.com/problems/first-missing-positive/)
 
@@ -102,7 +102,7 @@ After all the numbers are in the right place, the first one, whose index + 1 != 
     print(Solution().firstMissingPositive([1, -1, 3, 4]))
 
 
-<a id="org0deca93"></a>
+<a id="org321408b"></a>
 
 ## [48. Rotate Image](https://leetcode.com/problems/rotate-image/)
 
@@ -289,7 +289,7 @@ After all the numbers are in the right place, the first one, whose index + 1 != 
         [print(*line) for line in matrix]
 
 
-<a id="orgb721ad1"></a>
+<a id="org01b6277"></a>
 
 ## [53. Maximum Subarray](https://leetcode.com/problems/maximum-subarray/)
 
@@ -361,7 +361,7 @@ maxSum(i) = maxSum(i-1) + nums[i] only if maxSum(i-1) > 0
         print(Solution().maxSubArray([-2,1,-3,4,-1,2,1,-5,4]))
 
 
-<a id="orgbe48244"></a>
+<a id="orgdaf081e"></a>
 
 ## [55. Jump Game](https://leetcode.com/problems/jump-game/)
 
@@ -436,7 +436,7 @@ Greedy algorithm. There are 2 approaches, from head or from tail.
         print(Solution().canJump([ 3,2,1,0,4 ] ))
 
 
-<a id="orgdc461e9"></a>
+<a id="orga685c16"></a>
 
 ## [62. Unique Paths](https://leetcode.com/problems/unique-paths/)
 
@@ -468,7 +468,7 @@ Greedy algorithm. There are 2 approaches, from head or from tail.
 
 ### Notes
 
-DP problem. 
+It is a DP problem. 
 
 -   UniquePath with 2-D DP
 
@@ -511,17 +511,79 @@ DP problem.
                 return dp[-1] if m and n else 0
 
 
-<a id="org64f155b"></a>
+<a id="org6a8c3eb"></a>
 
-## 91. Decode Ways
+## [91. Decode Ways](https://leetcode.com/problems/decode-ways)
 
 
-<a id="orga41f1c9"></a>
+### Problem
+
+    A message containing letters from A-Z is being encoded to numbers using the following mapping:
+    
+    'A' -> 1
+    'B' -> 2
+    ...
+    'Z' -> 26
+    Given a non-empty string containing only digits, determine the total number of ways to decode it.
+    
+    Example 1:
+    
+    Input: "12"
+    Output: 2
+    Explanation: It could be decoded as "AB" (1 2) or "L" (12).
+    Example 2:
+    
+    Input: "226"
+    Output: 3
+    Explanation: It could be decoded as "BZ" (2 26), "VF" (22 6), or "BBF" (2 2 6).
+
+
+### Notes
+
+DP problem.
+
+1.  Initialize dp array with dp[0] = 1 as padding, the rest of them are 0.
+2.  Start from the first index of the string.
+    1.  If dp[i] is in range 1 to 9, dp[i] = dp[i-1]. The ways of decode will not increase, if it is 0, it remains 0.
+    2.  If dp[i] is in range 10 to 26, dp[i] += dp[i-1]. The ways of decode increase by one, if it is 00, it remains 0.
+
+**Important**:
+
+1.  Corner cases: "0" -> 0, "1002" -> 0
+2.  Notice the padding
+
+
+### Solution
+
+    class Solution():
+        def numsDecodings(self, s):
+    
+            if not s:
+              return 0
+    
+            n = len(s)
+    
+            dp = [0] * (n + 1)
+    
+            dp[0] = 1
+    
+            for i in range(1, n+1):
+    
+                if s[i-1: i] != '0':
+                    dp[i] = dp[i-1]
+    
+                if i != 1 and '10' <= s[i-2:i] <= '26':
+                    dp[i] += dp[i-2]
+    
+            return dp[-1]
+
+
+<a id="org0d01296"></a>
 
 ## 70. Climbing Stairs
 
 
-<a id="org4b33373"></a>
+<a id="org4279718"></a>
 
 ## 509. Fibonacci Number
 
