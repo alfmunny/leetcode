@@ -4,18 +4,19 @@
 
 # Table of Contents
 
--   [LeetCode](#org2286f1e)
-    -   [41. First Missing Positive](#org28afddf)
-    -   [48. Rotate Image](#org9d6e5c5)
-    -   [53. Maximum Subarray](#orgc9cc546)
-    -   [55. Jump Game](#orgde1ba16)
-    -   [62. Unique Paths](#org8c0cc44)
-    -   [70. Climbing Stairs](#org24d0171)
-    -   [91. Decode Ways](#orgf09f15b)
-    -   [509. Fibonacci Number](#org6ce986b)
+-   [LeetCode](#org2443ade)
+    -   [41. First Missing Positive](#orgf7e9732)
+    -   [48. Rotate Image](#orgf880977)
+    -   [53. Maximum Subarray](#org12ccf2a)
+    -   [55. Jump Game](#orge4fe4e6)
+    -   [62. Unique Paths](#org7f0696a)
+    -   [64. Minimum Path Sum](#orgd3e5f61)
+    -   [70. Climbing Stairs](#org45b87f5)
+    -   [91. Decode Ways](#org71a70fd)
+    -   [509. Fibonacci Number](#org9129768)
 
 
-<a id="org28afddf"></a>
+<a id="orgf7e9732"></a>
 
 ## [41. First Missing Positive](https://leetcode.com/problems/first-missing-positive/)
 
@@ -102,7 +103,7 @@ After all the numbers are in the right place, the first one, whose index + 1 != 
     print(Solution().firstMissingPositive([1, -1, 3, 4]))
 
 
-<a id="org9d6e5c5"></a>
+<a id="orgf880977"></a>
 
 ## [48. Rotate Image](https://leetcode.com/problems/rotate-image/)
 
@@ -289,7 +290,7 @@ After all the numbers are in the right place, the first one, whose index + 1 != 
         [print(*line) for line in matrix]
 
 
-<a id="orgc9cc546"></a>
+<a id="org12ccf2a"></a>
 
 ## [53. Maximum Subarray](https://leetcode.com/problems/maximum-subarray/)
 
@@ -361,7 +362,7 @@ maxSum(i) = maxSum(i-1) + nums[i] only if maxSum(i-1) > 0
         print(Solution().maxSubArray([-2,1,-3,4,-1,2,1,-5,4]))
 
 
-<a id="orgde1ba16"></a>
+<a id="orge4fe4e6"></a>
 
 ## [55. Jump Game](https://leetcode.com/problems/jump-game/)
 
@@ -436,7 +437,7 @@ Greedy algorithm. There are 2 approaches, from head or from tail.
         print(Solution().canJump([ 3,2,1,0,4 ] ))
 
 
-<a id="org8c0cc44"></a>
+<a id="org7f0696a"></a>
 
 ## [62. Unique Paths](https://leetcode.com/problems/unique-paths/)
 
@@ -516,7 +517,144 @@ It is a DP problem.
                 return dp[-1] if m and n else 0
 
 
-<a id="org24d0171"></a>
+<a id="orgd3e5f61"></a>
+
+## [64. Minimum Path Sum](https://leetcode.com/problems/minimum-path-sum/)
+
+
+### Problem
+
+    Given a m x n grid filled with non-negative numbers, find a path from top left to bottom right which minimizes the sum of all numbers along its path.
+    
+    Note: You can only move either down or right at any point in time.
+    
+    Example:
+    
+    Input:
+    [
+      [1,3,1],
+      [1,5,1],
+      [4,2,1]
+    ]
+    Output: 7
+    Explanation: Because the path 1→3→1→1→1 minimizes the sum.
+
+
+### Notes
+
+Thinking: <del>It seems to be a greedy algorithm problem.</del>
+
+It is a dp problem.
+
+dp equation:
+
+dp[i][j] = min(dp[i][j-1], dp[i-1][j]) + grid[i][j]
+
+Remember to handle the edge cases.
+
+
+### Solution
+
+-   Solution 1: 2D DP
+
+    -   Inplace DP
+    
+        class Solution(object):
+            def minPathSum(self, grid):
+                """
+                :type grid: List[List[int]]
+                :rtype: int
+                """
+                m = len(grid)
+                n = len(grid[0])
+        
+                for i in range(m):
+                    for j in range(n):
+                        if i == 0:
+                            if j == 0:
+                                continue
+                            else:
+                                grid[i][j] += grid[i][j-1]
+                        else:
+                            if j == 0:
+                                grid[i][j] += grid[i-1][j]
+                            else:
+                                grid[i][j] += min(grid[i-1][j], grid[i][j-1])
+                return grid[-1][-1] if m and n else 0
+        
+        
+        grid = [[1,3,1],[1,5,1],[4,2,1]]
+        
+        print(Solution().minPathSum(grid))
+    
+    -   Additional DP with auxiliary columns
+    
+        import sys
+        class Solution(object):
+            def minPathSum(self, grid):
+                """
+                :type grid: List[List[int]]
+                :rtype: int
+                """
+                m = len(grid)
+                n = len(grid[0])
+        
+                dp = [[ 0 for i in range(n+1)] for j in range(m+1)]
+        
+                for i in range(len(dp)):
+                  dp[i][0] = sys.maxsize
+        
+                for i in range(len(dp[0])):
+                    dp[0][i] = sys.maxsize
+        
+                dp[1][1] = grid[0][0]
+        
+                for i in range(1, m+1):
+                    for j in range(1, n+1):
+                        if i == 1 and j == 1: 
+                            continue
+                        else:
+                            dp[i][j] = min(dp[i-1][j], dp[i][j-1]) + grid[i-1][j-1]
+        
+        
+                return dp[-1][-1] if m and n else 0
+        
+        
+        grid = [[1,3,1],[1,5,1],[4,2,1]]
+        
+        print(Solution().minPathSum(grid))
+
+-   Solution 2: 1D DP
+
+        import sys
+        class Solution(object):
+            def minPathSum(self, grid):
+                """
+                :type grid: List[List[int]]
+                :rtype: int
+                """
+                m = len(grid)
+                n = len(grid[0])
+        
+                dp = [sys.maxsize for i in range(n+1)]
+                dp[1] = grid[0][0]
+        
+                for i in range(m):
+                    for j in range(n):
+                      if i == 1 and j == 1:
+                          continue
+                      else:
+                        dp[j+1] = min(dp[j+1], dp[j]) + grid[i][j]
+        
+                return dp[-1] if m and n else 0
+        
+        
+        grid = [[1,3,1],[1,5,1],[4,2,1]]
+        
+        print(Solution().minPathSum(grid))
+
+
+<a id="org45b87f5"></a>
 
 ## [70. Climbing Stairs](https://leetcode.com/problems/climbing-stairs/)
 
@@ -574,7 +712,7 @@ So f(n) = f(n-1) + f(n-2)
             return dp[-1]
 
 
-<a id="orgf09f15b"></a>
+<a id="org71a70fd"></a>
 
 ## [91. Decode Ways](https://leetcode.com/problems/decode-ways)
 
@@ -641,7 +779,7 @@ DP problem.
             return dp[-1]
 
 
-<a id="org6ce986b"></a>
+<a id="org9129768"></a>
 
 ## [509. Fibonacci Number](https://leetcode.com/problems/fibonacci-number/)
 
