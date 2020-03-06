@@ -4,19 +4,20 @@
 
 # Table of Contents
 
--   [LeetCode](#org2443ade)
-    -   [41. First Missing Positive](#orgf7e9732)
-    -   [48. Rotate Image](#orgf880977)
-    -   [53. Maximum Subarray](#org12ccf2a)
-    -   [55. Jump Game](#orge4fe4e6)
-    -   [62. Unique Paths](#org7f0696a)
-    -   [64. Minimum Path Sum](#orgd3e5f61)
-    -   [70. Climbing Stairs](#org45b87f5)
-    -   [91. Decode Ways](#org71a70fd)
-    -   [509. Fibonacci Number](#org9129768)
+-   [LeetCode](#org788d86f)
+    -   [41. First Missing Positive](#org081c72d)
+    -   [48. Rotate Image](#orgddf69a6)
+    -   [53. Maximum Subarray](#orgff821bb)
+    -   [55. Jump Game](#orgfd33c8a)
+    -   [62. Unique Paths](#org052796f)
+    -   [64. Minimum Path Sum](#org04e157f)
+    -   [70. Climbing Stairs](#org7969b56)
+    -   [91. Decode Ways](#org67dc564)
+    -   [509. Fibonacci Number](#org5468131)
+    -   [75. Sort Colors](#orgf6f7c97)
 
 
-<a id="orgf7e9732"></a>
+<a id="org081c72d"></a>
 
 ## [41. First Missing Positive](https://leetcode.com/problems/first-missing-positive/)
 
@@ -103,7 +104,7 @@ After all the numbers are in the right place, the first one, whose index + 1 != 
     print(Solution().firstMissingPositive([1, -1, 3, 4]))
 
 
-<a id="orgf880977"></a>
+<a id="orgddf69a6"></a>
 
 ## [48. Rotate Image](https://leetcode.com/problems/rotate-image/)
 
@@ -290,7 +291,7 @@ After all the numbers are in the right place, the first one, whose index + 1 != 
         [print(*line) for line in matrix]
 
 
-<a id="org12ccf2a"></a>
+<a id="orgff821bb"></a>
 
 ## [53. Maximum Subarray](https://leetcode.com/problems/maximum-subarray/)
 
@@ -362,7 +363,7 @@ maxSum(i) = maxSum(i-1) + nums[i] only if maxSum(i-1) > 0
         print(Solution().maxSubArray([-2,1,-3,4,-1,2,1,-5,4]))
 
 
-<a id="orge4fe4e6"></a>
+<a id="orgfd33c8a"></a>
 
 ## [55. Jump Game](https://leetcode.com/problems/jump-game/)
 
@@ -437,7 +438,7 @@ Greedy algorithm. There are 2 approaches, from head or from tail.
         print(Solution().canJump([ 3,2,1,0,4 ] ))
 
 
-<a id="org7f0696a"></a>
+<a id="org052796f"></a>
 
 ## [62. Unique Paths](https://leetcode.com/problems/unique-paths/)
 
@@ -517,7 +518,7 @@ It is a DP problem.
                 return dp[-1] if m and n else 0
 
 
-<a id="orgd3e5f61"></a>
+<a id="org04e157f"></a>
 
 ## [64. Minimum Path Sum](https://leetcode.com/problems/minimum-path-sum/)
 
@@ -654,7 +655,7 @@ Remember to handle the edge cases.
         print(Solution().minPathSum(grid))
 
 
-<a id="org45b87f5"></a>
+<a id="org7969b56"></a>
 
 ## [70. Climbing Stairs](https://leetcode.com/problems/climbing-stairs/)
 
@@ -712,7 +713,7 @@ So f(n) = f(n-1) + f(n-2)
             return dp[-1]
 
 
-<a id="org71a70fd"></a>
+<a id="org67dc564"></a>
 
 ## [91. Decode Ways](https://leetcode.com/problems/decode-ways)
 
@@ -779,7 +780,7 @@ DP problem.
             return dp[-1]
 
 
-<a id="org9129768"></a>
+<a id="org5468131"></a>
 
 ## [509. Fibonacci Number](https://leetcode.com/problems/fibonacci-number/)
 
@@ -840,4 +841,109 @@ Note how long is the dp array. It shoud be N+1, since we start with the number 0
                 dp[i] = dp[i - 1] + dp[i - 2]
     
             return dp[-1]
+
+
+<a id="orgf6f7c97"></a>
+
+## [75. Sort Colors](https://leetcode.com/problems/sort-colors/)
+
+
+### Problem
+
+    Given an array with n objects colored red, white or blue, sort them in-place so that objects of the same color are adjacent, with the colors in the order red, white and blue.
+    
+    Here, we will use the integers 0, 1, and 2 to represent the color red, white, and blue respectively.
+    
+    Note: You are not suppose to use the library's sort function for this problem.
+    
+    Example:
+    
+    Input: [2,0,2,1,1,0]
+    Output: [0,0,1,1,2,2]
+    Follow up:
+    
+    A rather straight forward solution is a two-pass algorithm using counting sort.
+    First, iterate the array counting number of 0's, 1's, and 2's, then overwrite array with total number of 0's, then 1's and followed by 2's.
+    Could you come up with a one-pass algorithm using only constant space?
+
+
+### Notes
+
+-   First attempt is to use two pointer.
+
+    There is a but a corner case: when two pointer are both at 1. How should we move the pointer.
+    
+    We can use a another `while` unter this situation, initialize another pointer and search for 0 or 2 between
+    these two pointers. See Soution 1
+
+-   Three Way Partition
+
+    three pointer, one for each. 
+    
+    **Important**:
+    
+    Notice the condition for `while`: while mi <= hi
+    
+    the middle move forward:
+    
+    1.  middle == 0, switch with left one, left + 1, middle + 1
+    2.  middle == 1, continue
+    3.  middle == 2, swtich with right one, right - 1
+
+
+### Solution
+
+-   Solution 1
+
+        class Solution(object):
+            def sortColors(self, nums):
+                """
+                :type nums: List[int]
+                :rtype: None Do not return anything, modify nums in-place instead.
+                """
+        
+                lo = 0
+                hi = len(nums) - 1
+        
+                while (lo < hi):
+                    if nums[lo] == 0:
+                        lo += 1
+                    elif nums[hi] == 2:
+                        hi -= 1
+                    elif nums[lo] == 1 and nums[hi] == 1:
+                        mi = lo + 1
+                        while (mi < hi):
+                            if nums[mi] == 2 or nums[mi] == 0:
+                                nums[mi], nums[hi] = nums[hi], nums[mi]
+                                break
+                            else:
+                                mi += 1
+                        if mi == hi:
+                            return
+                    else:
+                        nums[lo], nums[hi] = nums[hi], nums[lo]
+
+-   Solution 2: Three way partition
+
+    Notice the condition for `while`:
+    
+    It has to be <=. 
+    Because you every element behind hi, you have seen it. 
+    But not the element at hi. You have to check it at last.
+    
+        class Solution(object):
+            def sortColors(self, nums):
+        
+                lo, mi, hi = 0, 0, len(nums) - 1
+        
+                while mi <= hi: # Nottice!: here has to be <=
+                    if nums[mi] == 0:
+                        nums[mi], nums[lo] = nums[lo], nums[mi]
+                        lo += 1
+                        mi += 1
+                    elif nums[mi] == 2:
+                        nums[mi], nums[hi] = nums[hi], nums[mi]
+                        hi -= 1
+                    else:
+                        mi += 1
 
