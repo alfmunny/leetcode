@@ -4,20 +4,21 @@
 
 # Table of Contents
 
--   [LeetCode](#org788d86f)
-    -   [41. First Missing Positive](#org081c72d)
-    -   [48. Rotate Image](#orgddf69a6)
-    -   [53. Maximum Subarray](#orgff821bb)
-    -   [55. Jump Game](#orgfd33c8a)
-    -   [62. Unique Paths](#org052796f)
-    -   [64. Minimum Path Sum](#org04e157f)
-    -   [70. Climbing Stairs](#org7969b56)
-    -   [91. Decode Ways](#org67dc564)
-    -   [509. Fibonacci Number](#org5468131)
-    -   [75. Sort Colors](#orgf6f7c97)
+-   [LeetCode](#orgc4287a6)
+    -   [41. First Missing Positive](#orgc44c19b)
+    -   [48. Rotate Image](#org0e6bcdd)
+    -   [53. Maximum Subarray](#org18b7b32)
+    -   [55. Jump Game](#org446b52b)
+    -   [62. Unique Paths](#org63332e8)
+    -   [64. Minimum Path Sum](#orgbef0172)
+    -   [70. Climbing Stairs](#org89f9c2e)
+    -   [91. Decode Ways](#org5abb24f)
+    -   [509. Fibonacci Number](#org207a9cf)
+    -   [75. Sort Colors](#org4246449)
+    -   [78. Subsets](#org0e2e8d6)
 
 
-<a id="org081c72d"></a>
+<a id="orgc44c19b"></a>
 
 ## [41. First Missing Positive](https://leetcode.com/problems/first-missing-positive/)
 
@@ -104,7 +105,7 @@ After all the numbers are in the right place, the first one, whose index + 1 != 
     print(Solution().firstMissingPositive([1, -1, 3, 4]))
 
 
-<a id="orgddf69a6"></a>
+<a id="org0e6bcdd"></a>
 
 ## [48. Rotate Image](https://leetcode.com/problems/rotate-image/)
 
@@ -291,7 +292,7 @@ After all the numbers are in the right place, the first one, whose index + 1 != 
         [print(*line) for line in matrix]
 
 
-<a id="orgff821bb"></a>
+<a id="org18b7b32"></a>
 
 ## [53. Maximum Subarray](https://leetcode.com/problems/maximum-subarray/)
 
@@ -363,7 +364,7 @@ maxSum(i) = maxSum(i-1) + nums[i] only if maxSum(i-1) > 0
         print(Solution().maxSubArray([-2,1,-3,4,-1,2,1,-5,4]))
 
 
-<a id="orgfd33c8a"></a>
+<a id="org446b52b"></a>
 
 ## [55. Jump Game](https://leetcode.com/problems/jump-game/)
 
@@ -438,7 +439,7 @@ Greedy algorithm. There are 2 approaches, from head or from tail.
         print(Solution().canJump([ 3,2,1,0,4 ] ))
 
 
-<a id="org052796f"></a>
+<a id="org63332e8"></a>
 
 ## [62. Unique Paths](https://leetcode.com/problems/unique-paths/)
 
@@ -518,7 +519,7 @@ It is a DP problem.
                 return dp[-1] if m and n else 0
 
 
-<a id="org04e157f"></a>
+<a id="orgbef0172"></a>
 
 ## [64. Minimum Path Sum](https://leetcode.com/problems/minimum-path-sum/)
 
@@ -655,7 +656,7 @@ Remember to handle the edge cases.
         print(Solution().minPathSum(grid))
 
 
-<a id="org7969b56"></a>
+<a id="org89f9c2e"></a>
 
 ## [70. Climbing Stairs](https://leetcode.com/problems/climbing-stairs/)
 
@@ -713,7 +714,7 @@ So f(n) = f(n-1) + f(n-2)
             return dp[-1]
 
 
-<a id="org67dc564"></a>
+<a id="org5abb24f"></a>
 
 ## [91. Decode Ways](https://leetcode.com/problems/decode-ways)
 
@@ -780,7 +781,7 @@ DP problem.
             return dp[-1]
 
 
-<a id="org5468131"></a>
+<a id="org207a9cf"></a>
 
 ## [509. Fibonacci Number](https://leetcode.com/problems/fibonacci-number/)
 
@@ -843,7 +844,7 @@ Note how long is the dp array. It shoud be N+1, since we start with the number 0
             return dp[-1]
 
 
-<a id="orgf6f7c97"></a>
+<a id="org4246449"></a>
 
 ## [75. Sort Colors](https://leetcode.com/problems/sort-colors/)
 
@@ -946,4 +947,33 @@ Note how long is the dp array. It shoud be N+1, since we start with the number 0
                         hi -= 1
                     else:
                         mi += 1
+
+
+<a id="org0e2e8d6"></a>
+
+## [78. Subsets](https://leetcode.com/problems/subsets/)
+
+
+### Problem
+
+
+### Notes
+
+
+### Solution
+
+-   Solution 1: dfs
+
+        class Solution(object):
+            def subsets(self, nums):
+                res = []
+                self.dfs(sorted(nums), 0, [], res)
+                return res
+        
+            def dfs(self, nums, index, path, res):
+                res.append(path)
+                for i in xrange(index, len(nums)):
+                    self.dfs(nums, i + 1, path + [nums[i]], res)
+        
+        print(Solution().subsets([1, 2, 3]))
 
