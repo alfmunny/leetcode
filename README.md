@@ -4,21 +4,21 @@
 
 # Table of Contents
 
--   [LeetCode](#orgf444a37)
-    -   [41. First Missing Positive](#org8e2edb9)
-    -   [48. Rotate Image](#org5e44c95)
-    -   [53. Maximum Subarray](#orgd4ae204)
-    -   [55. Jump Game](#org9762616)
-    -   [62. Unique Paths](#org9a61f3e)
-    -   [64. Minimum Path Sum](#org45549d4)
-    -   [70. Climbing Stairs](#org006aea0)
-    -   [91. Decode Ways](#org51f5d22)
-    -   [509. Fibonacci Number](#orgac61ffa)
-    -   [75. Sort Colors](#org4ca172e)
-    -   [78. Subsets](#orge030597)
+-   [LeetCode](#orgd4a0698)
+    -   [41. First Missing Positive](#org342dde0)
+    -   [48. Rotate Image](#orgac85436)
+    -   [53. Maximum Subarray](#orgac33de8)
+    -   [55. Jump Game](#org973fe2a)
+    -   [62. Unique Paths](#org62fdfd0)
+    -   [64. Minimum Path Sum](#orgfb4b3da)
+    -   [70. Climbing Stairs](#orgab9b3d7)
+    -   [91. Decode Ways](#org3d33c60)
+    -   [509. Fibonacci Number](#orgb9f26b3)
+    -   [75. Sort Colors](#orgc474994)
+    -   [78. Subsets](#org993e7ff)
 
 
-<a id="org8e2edb9"></a>
+<a id="org342dde0"></a>
 
 ## [41. First Missing Positive](https://leetcode.com/problems/first-missing-positive/)
 
@@ -105,7 +105,7 @@ After all the numbers are in the right place, the first one, whose index + 1 != 
     print(Solution().firstMissingPositive([1, -1, 3, 4]))
 
 
-<a id="org5e44c95"></a>
+<a id="orgac85436"></a>
 
 ## [48. Rotate Image](https://leetcode.com/problems/rotate-image/)
 
@@ -292,7 +292,7 @@ After all the numbers are in the right place, the first one, whose index + 1 != 
         [print(*line) for line in matrix]
 
 
-<a id="orgd4ae204"></a>
+<a id="orgac33de8"></a>
 
 ## [53. Maximum Subarray](https://leetcode.com/problems/maximum-subarray/)
 
@@ -364,7 +364,7 @@ maxSum(i) = maxSum(i-1) + nums[i] only if maxSum(i-1) > 0
         print(Solution().maxSubArray([-2,1,-3,4,-1,2,1,-5,4]))
 
 
-<a id="org9762616"></a>
+<a id="org973fe2a"></a>
 
 ## [55. Jump Game](https://leetcode.com/problems/jump-game/)
 
@@ -439,7 +439,7 @@ Greedy algorithm. There are 2 approaches, from head or from tail.
         print(Solution().canJump([ 3,2,1,0,4 ] ))
 
 
-<a id="org9a61f3e"></a>
+<a id="org62fdfd0"></a>
 
 ## [62. Unique Paths](https://leetcode.com/problems/unique-paths/)
 
@@ -519,7 +519,7 @@ It is a DP problem.
                 return dp[-1] if m and n else 0
 
 
-<a id="org45549d4"></a>
+<a id="orgfb4b3da"></a>
 
 ## [64. Minimum Path Sum](https://leetcode.com/problems/minimum-path-sum/)
 
@@ -656,7 +656,7 @@ Remember to handle the edge cases.
         print(Solution().minPathSum(grid))
 
 
-<a id="org006aea0"></a>
+<a id="orgab9b3d7"></a>
 
 ## [70. Climbing Stairs](https://leetcode.com/problems/climbing-stairs/)
 
@@ -714,7 +714,7 @@ So f(n) = f(n-1) + f(n-2)
             return dp[-1]
 
 
-<a id="org51f5d22"></a>
+<a id="org3d33c60"></a>
 
 ## [91. Decode Ways](https://leetcode.com/problems/decode-ways)
 
@@ -781,7 +781,7 @@ DP problem.
             return dp[-1]
 
 
-<a id="orgac61ffa"></a>
+<a id="orgb9f26b3"></a>
 
 ## [509. Fibonacci Number](https://leetcode.com/problems/fibonacci-number/)
 
@@ -844,7 +844,7 @@ Note how long is the dp array. It shoud be N+1, since we start with the number 0
             return dp[-1]
 
 
-<a id="org4ca172e"></a>
+<a id="orgc474994"></a>
 
 ## [75. Sort Colors](https://leetcode.com/problems/sort-colors/)
 
@@ -949,7 +949,7 @@ Note how long is the dp array. It shoud be N+1, since we start with the number 0
                         mi += 1
 
 
-<a id="orge030597"></a>
+<a id="org993e7ff"></a>
 
 ## [78. Subsets](https://leetcode.com/problems/subsets/)
 
@@ -984,17 +984,17 @@ Recursion, Backtracking, Bitmask
 
 -   Recursion
 
+    Iterative version:
+    
+        Start from empty array [[]].
         
+        Step 1: Take 1 into consideration, and add 1 to existing array [[], [1]]
+        
+        Step 2: Take 2 into consideration, and add 2 to existing array [[], [1], [2], [1, 2]]
+        
+        Step 3: Take 3 into consideration, and add 3 to existing array [[], [1], [2], [1, 2], [3], [1, 3], [2, 3], [1, 2, 3]]
     
-    Start from empty array [[]].
-    
-    Step 1: Take 1 into consideration, and add 1 to existing array [[], [1]]
-    
-    Step 2: Take 2 into consideration, and add 2 to existing array [[], [1], [2], [1, 2]]
-    
-    Step 3: Take 3 into consideration, and add 3 to existing array [[], [1], [2], [1, 2], [3], [1, 3], [2, 3], [1, 2, 3]]
-    
-    DFS version.
+    DFS version:
     
         [[]]
         [[], [1]],
@@ -1007,7 +1007,7 @@ Recursion, Backtracking, Bitmask
 
 -   Backtrack
 
-    Backtrack needs to know how many step it shoud take to end.
+    Backtrack needs to know how many steps it shoud take to end.
     
         [1, 2, 3]
         
@@ -1017,6 +1017,21 @@ Recursion, Backtracking, Bitmask
         Step 4: subsyes of length 3: [[1, 2, 3]]
 
 -   Bitmask
+
+    > The idea is that we map each subset to a bitmask of length n, 
+    > where 1 on the ith position in bitmask means the presence of nums[i] in the subset, 
+    > and 0 means its absence.
+    
+    [1, 2, 3]
+    
+        [0, 0, 0] -> []
+        [0, 0, 1] -> [3]
+        [0, 1, 0] -> [2]
+        [1, 0, 0] -> [1]
+        [1, 0, 1] -> [1, 3]
+        [0, 1, 1] -> [2, 3]
+        [1, 1, 0] -> [1, 2]
+        [1, 1, 1] -> [1, 2, 3]
 
 
 ### Solution
@@ -1076,4 +1091,15 @@ Recursion, Backtracking, Bitmask
         print(Solution().subsets([1, 2, 3]))
 
 -   Solution 4: bitmask
+
+        
+        class Solution():
+          def subsets(self, nums):
+            n = len(nums)
+            output = []
+            for i in range(2**n, 2**(n+1)):
+              bitmask = bin(i)[3:]
+              output.append([nums[i] for i in range(n) if bitmask[i] == '1' ])
+        
+            return output
 
