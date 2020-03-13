@@ -4,21 +4,21 @@
 
 # Table of Contents
 
--   [LeetCode](#orgc4287a6)
-    -   [41. First Missing Positive](#orgc44c19b)
-    -   [48. Rotate Image](#org0e6bcdd)
-    -   [53. Maximum Subarray](#org18b7b32)
-    -   [55. Jump Game](#org446b52b)
-    -   [62. Unique Paths](#org63332e8)
-    -   [64. Minimum Path Sum](#orgbef0172)
-    -   [70. Climbing Stairs](#org89f9c2e)
-    -   [91. Decode Ways](#org5abb24f)
-    -   [509. Fibonacci Number](#org207a9cf)
-    -   [75. Sort Colors](#org4246449)
-    -   [78. Subsets](#org0e2e8d6)
+-   [LeetCode](#orgf444a37)
+    -   [41. First Missing Positive](#org8e2edb9)
+    -   [48. Rotate Image](#org5e44c95)
+    -   [53. Maximum Subarray](#orgd4ae204)
+    -   [55. Jump Game](#org9762616)
+    -   [62. Unique Paths](#org9a61f3e)
+    -   [64. Minimum Path Sum](#org45549d4)
+    -   [70. Climbing Stairs](#org006aea0)
+    -   [91. Decode Ways](#org51f5d22)
+    -   [509. Fibonacci Number](#orgac61ffa)
+    -   [75. Sort Colors](#org4ca172e)
+    -   [78. Subsets](#orge030597)
 
 
-<a id="orgc44c19b"></a>
+<a id="org8e2edb9"></a>
 
 ## [41. First Missing Positive](https://leetcode.com/problems/first-missing-positive/)
 
@@ -105,7 +105,7 @@ After all the numbers are in the right place, the first one, whose index + 1 != 
     print(Solution().firstMissingPositive([1, -1, 3, 4]))
 
 
-<a id="org0e6bcdd"></a>
+<a id="org5e44c95"></a>
 
 ## [48. Rotate Image](https://leetcode.com/problems/rotate-image/)
 
@@ -292,7 +292,7 @@ After all the numbers are in the right place, the first one, whose index + 1 != 
         [print(*line) for line in matrix]
 
 
-<a id="org18b7b32"></a>
+<a id="orgd4ae204"></a>
 
 ## [53. Maximum Subarray](https://leetcode.com/problems/maximum-subarray/)
 
@@ -364,7 +364,7 @@ maxSum(i) = maxSum(i-1) + nums[i] only if maxSum(i-1) > 0
         print(Solution().maxSubArray([-2,1,-3,4,-1,2,1,-5,4]))
 
 
-<a id="org446b52b"></a>
+<a id="org9762616"></a>
 
 ## [55. Jump Game](https://leetcode.com/problems/jump-game/)
 
@@ -439,7 +439,7 @@ Greedy algorithm. There are 2 approaches, from head or from tail.
         print(Solution().canJump([ 3,2,1,0,4 ] ))
 
 
-<a id="org63332e8"></a>
+<a id="org9a61f3e"></a>
 
 ## [62. Unique Paths](https://leetcode.com/problems/unique-paths/)
 
@@ -519,7 +519,7 @@ It is a DP problem.
                 return dp[-1] if m and n else 0
 
 
-<a id="orgbef0172"></a>
+<a id="org45549d4"></a>
 
 ## [64. Minimum Path Sum](https://leetcode.com/problems/minimum-path-sum/)
 
@@ -656,7 +656,7 @@ Remember to handle the edge cases.
         print(Solution().minPathSum(grid))
 
 
-<a id="org89f9c2e"></a>
+<a id="org006aea0"></a>
 
 ## [70. Climbing Stairs](https://leetcode.com/problems/climbing-stairs/)
 
@@ -714,7 +714,7 @@ So f(n) = f(n-1) + f(n-2)
             return dp[-1]
 
 
-<a id="org5abb24f"></a>
+<a id="org51f5d22"></a>
 
 ## [91. Decode Ways](https://leetcode.com/problems/decode-ways)
 
@@ -781,7 +781,7 @@ DP problem.
             return dp[-1]
 
 
-<a id="org207a9cf"></a>
+<a id="orgac61ffa"></a>
 
 ## [509. Fibonacci Number](https://leetcode.com/problems/fibonacci-number/)
 
@@ -844,7 +844,7 @@ Note how long is the dp array. It shoud be N+1, since we start with the number 0
             return dp[-1]
 
 
-<a id="org4246449"></a>
+<a id="org4ca172e"></a>
 
 ## [75. Sort Colors](https://leetcode.com/problems/sort-colors/)
 
@@ -949,20 +949,79 @@ Note how long is the dp array. It shoud be N+1, since we start with the number 0
                         mi += 1
 
 
-<a id="org0e2e8d6"></a>
+<a id="orge030597"></a>
 
 ## [78. Subsets](https://leetcode.com/problems/subsets/)
 
 
 ### Problem
 
+    Given a set of distinct integers, nums, return all possible subsets (the power set).
+    
+    Note: The solution set must not contain duplicate subsets.
+    
+    Example:
+    
+    Input: nums = [1,2,3]
+    Output:
+    [
+      [3],
+      [1],
+      [2],
+      [1,2,3],
+      [1,3],
+      [2,3],
+      [1,2],
+      []
+    ]
+
 
 ### Notes
+
+Three strategies to solve a subset problem:
+
+Recursion, Backtracking, Bitmask
+
+-   Recursion
+
+        
+    
+    Start from empty array [[]].
+    
+    Step 1: Take 1 into consideration, and add 1 to existing array [[], [1]]
+    
+    Step 2: Take 2 into consideration, and add 2 to existing array [[], [1], [2], [1, 2]]
+    
+    Step 3: Take 3 into consideration, and add 3 to existing array [[], [1], [2], [1, 2], [3], [1, 3], [2, 3], [1, 2, 3]]
+    
+    DFS version.
+    
+        [[]]
+        [[], [1]],
+        [[], [1], [1, 2]]
+        [[], [1], [1, 2], [1, 2, 3]]
+        [[], [1], [1, 2], [1, 2, 3], [1, 3]]
+        [[], [1], [1, 2], [1, 2, 3], [1, 3], [2]]
+        [[], [1], [1, 2], [1, 2, 3], [1, 3], [2], [2, 3]]
+        [[], [1], [1, 2], [1, 2, 3], [1, 3], [2], [2, 3], [3]]
+
+-   Backtrack
+
+    Backtrack needs to know how many step it shoud take to end.
+    
+        [1, 2, 3]
+        
+        Step 1: subsyes of length 0: [[]]
+        Step 2: subsyes of length 1: [[1], [2], [3]]
+        Step 3: subsyes of length 2: [[1, 2], [2, 3], [1, 3]]
+        Step 4: subsyes of length 3: [[1, 2, 3]]
+
+-   Bitmask
 
 
 ### Solution
 
--   Solution 1: dfs
+-   Solution 1: dfs (recursion)
 
         class Solution(object):
             def subsets(self, nums):
@@ -972,8 +1031,49 @@ Note how long is the dp array. It shoud be N+1, since we start with the number 0
         
             def dfs(self, nums, index, path, res):
                 res.append(path)
-                for i in xrange(index, len(nums)):
+                for i in range(index, len(nums)):
                     self.dfs(nums, i + 1, path + [nums[i]], res)
         
         print(Solution().subsets([1, 2, 3]))
+
+-   Solution 2: iterative
+
+        class Solution:
+        
+            def subsets(self, nums):
+                res = [[]]
+                for i in sorted(nums):
+                    res += [item+[i] for item in res]
+        
+                return res
+        
+        print(Solution().subsets([1, 2, 3]))
+
+-   Solution 3: backtrack
+
+        
+        class Solution(object):
+        
+            def subsets(self, nums):
+                output = []
+                for k in range(0, len(nums)+1):
+                    temp = []
+                    self.backtrack(0, k, nums, temp, output)
+        
+                return output
+        
+            def backtrack(self, begin, length, nums, temp, output):
+        
+                if length == len(temp):
+                    output.append(temp[:])
+        
+                for i in range(begin, len(nums)):
+                    temp.append(nums[i])
+                    self.backtrack(i+1, length, nums, temp, output)
+                    temp.pop()
+        
+        
+        print(Solution().subsets([1, 2, 3]))
+
+-   Solution 4: bitmask
 
