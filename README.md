@@ -4,23 +4,24 @@
 
 # Table of Contents
 
--   [LeetCode](#orgd4a0698)
-    -   [41. First Missing Positive](#org342dde0)
-    -   [48. Rotate Image](#orgac85436)
-    -   [53. Maximum Subarray](#orgac33de8)
-    -   [55. Jump Game](#org973fe2a)
-    -   [62. Unique Paths](#org62fdfd0)
-    -   [64. Minimum Path Sum](#orgfb4b3da)
-    -   [70. Climbing Stairs](#orgab9b3d7)
-    -   [91. Decode Ways](#org3d33c60)
-    -   [509. Fibonacci Number](#orgb9f26b3)
-    -   [75. Sort Colors](#orgc474994)
-    -   [78. Subsets](#org993e7ff)
+-   [LeetCode](#org568eb7e)
+    -   [41. First Missing Positive](#org076c2ff)
+    -   [48. Rotate Image](#org1c14508)
+    -   [53. Maximum Subarray](#orgf58502e)
+    -   [55. Jump Game](#org8bc2cf7)
+    -   [62. Unique Paths](#orgc284399)
+    -   [64. Minimum Path Sum](#org2e6f0a7)
+    -   [70. Climbing Stairs](#org2d35635)
+    -   [91. Decode Ways](#org517ff91)
+    -   [509. Fibonacci Number](#org93babbf)
+    -   [75. Sort Colors](#org0eb981c)
+    -   [78. Subsets](#orgfcc6c44)
+    -   [79. Word Search](#org0d550fa)
 
 
-<a id="org342dde0"></a>
+<a id="org076c2ff"></a>
 
-## [41. First Missing Positive](https://leetcode.com/problems/first-missing-positive/)
+## 41. First Missing Positive
 
 
 ### Problem
@@ -47,7 +48,7 @@
     Your algorithm should run in O(n) time and uses constant extra space.
 
 
-### Notes:
+### Notes
 
 Run in O(n) time and uses constant extra space
 
@@ -86,7 +87,7 @@ After all the numbers are in the right place, the first one, whose index + 1 != 
     So you have to do it recursively, with \`while\`.
 
 
-### Solution:
+### Solution
 
     class Solution(object):
         def firstMissingPositive(self, nums):
@@ -105,7 +106,7 @@ After all the numbers are in the right place, the first one, whose index + 1 != 
     print(Solution().firstMissingPositive([1, -1, 3, 4]))
 
 
-<a id="orgac85436"></a>
+<a id="org1c14508"></a>
 
 ## [48. Rotate Image](https://leetcode.com/problems/rotate-image/)
 
@@ -292,7 +293,7 @@ After all the numbers are in the right place, the first one, whose index + 1 != 
         [print(*line) for line in matrix]
 
 
-<a id="orgac33de8"></a>
+<a id="orgf58502e"></a>
 
 ## [53. Maximum Subarray](https://leetcode.com/problems/maximum-subarray/)
 
@@ -364,7 +365,7 @@ maxSum(i) = maxSum(i-1) + nums[i] only if maxSum(i-1) > 0
         print(Solution().maxSubArray([-2,1,-3,4,-1,2,1,-5,4]))
 
 
-<a id="org973fe2a"></a>
+<a id="org8bc2cf7"></a>
 
 ## [55. Jump Game](https://leetcode.com/problems/jump-game/)
 
@@ -439,7 +440,7 @@ Greedy algorithm. There are 2 approaches, from head or from tail.
         print(Solution().canJump([ 3,2,1,0,4 ] ))
 
 
-<a id="org62fdfd0"></a>
+<a id="orgc284399"></a>
 
 ## [62. Unique Paths](https://leetcode.com/problems/unique-paths/)
 
@@ -519,7 +520,7 @@ It is a DP problem.
                 return dp[-1] if m and n else 0
 
 
-<a id="orgfb4b3da"></a>
+<a id="org2e6f0a7"></a>
 
 ## [64. Minimum Path Sum](https://leetcode.com/problems/minimum-path-sum/)
 
@@ -656,7 +657,7 @@ Remember to handle the edge cases.
         print(Solution().minPathSum(grid))
 
 
-<a id="orgab9b3d7"></a>
+<a id="org2d35635"></a>
 
 ## [70. Climbing Stairs](https://leetcode.com/problems/climbing-stairs/)
 
@@ -714,7 +715,7 @@ So f(n) = f(n-1) + f(n-2)
             return dp[-1]
 
 
-<a id="org3d33c60"></a>
+<a id="org517ff91"></a>
 
 ## [91. Decode Ways](https://leetcode.com/problems/decode-ways)
 
@@ -781,7 +782,7 @@ DP problem.
             return dp[-1]
 
 
-<a id="orgb9f26b3"></a>
+<a id="org93babbf"></a>
 
 ## [509. Fibonacci Number](https://leetcode.com/problems/fibonacci-number/)
 
@@ -844,7 +845,7 @@ Note how long is the dp array. It shoud be N+1, since we start with the number 0
             return dp[-1]
 
 
-<a id="orgc474994"></a>
+<a id="org0eb981c"></a>
 
 ## [75. Sort Colors](https://leetcode.com/problems/sort-colors/)
 
@@ -949,9 +950,11 @@ Note how long is the dp array. It shoud be N+1, since we start with the number 0
                         mi += 1
 
 
-<a id="org993e7ff"></a>
+<a id="orgfcc6c44"></a>
 
-## [78. Subsets](https://leetcode.com/problems/subsets/)
+## 78. Subsets
+
+[leetcode](https://leetcode.com/problems/subsets/)
 
 
 ### Problem
@@ -1011,10 +1014,10 @@ Recursion, Backtracking, Bitmask
     
         [1, 2, 3]
         
-        Step 1: subsyes of length 0: [[]]
-        Step 2: subsyes of length 1: [[1], [2], [3]]
-        Step 3: subsyes of length 2: [[1, 2], [2, 3], [1, 3]]
-        Step 4: subsyes of length 3: [[1, 2, 3]]
+        Step 1: subsets of length 0: [[]]
+        Step 2: subsets of length 1: [[1], [2], [3]]
+        Step 3: subsets of length 2: [[1, 2], [2, 3], [1, 3]]
+        Step 4: subsets of length 3: [[1, 2, 3]]
 
 -   Bitmask
 
@@ -1102,4 +1105,71 @@ Recursion, Backtracking, Bitmask
               output.append([nums[i] for i in range(n) if bitmask[i] == '1' ])
         
             return output
+
+
+<a id="org0d550fa"></a>
+
+## 79. Word Search
+
+[leetcode](https://leetcode.com/problems/word-search/)
+
+
+### Problem
+
+    Given a 2D board and a word, find if the word exists in the grid.
+    
+    The word can be constructed from letters of sequentially adjacent cell, where "adjacent" cells are those horizontally or vertically neighboring. The same letter cell may not be used more than once.
+    
+    Example:
+    
+    board =
+    [
+      ['A','B','C','E'],
+      ['S','F','C','S'],
+      ['A','D','E','E']
+    ]
+    
+    Given word = "ABCCED", return true.
+    Given word = "SEE", return true.
+    Given word = "ABCB", return false.
+
+
+### Notes
+
+
+### Solution
+
+-   Solution 1: Backtrack
+
+        class Solution:
+            def exist(self, board, word):
+                m = [[0 for j in range(len(board[0]))] for i in range(len(board))]
+                for i in range(len(board)):
+                    for j in range(len(board[0])):
+                        if self.exist_rec(board, word, i, j, m):
+                            return True
+                return False
+        
+            def exist_rec(self, board, word, i, j, m):
+                if len(word) == 0:
+                    return True
+        
+                if i < 0 or j < 0 or i >= len(board) or j >= len(board[0]):
+                    return False
+        
+                if board[i][j] == word[0] and m[i][j] == 0:
+                    m[i][j] = 1
+        
+                    if self.exist_rec(board, word[1:], i - 1, j, m) or \
+                    self.exist_rec(board, word[1:], i + 1, j, m) or \
+                    self.exist_rec(board, word[1:], i, j - 1, m) or \
+                    self.exist_rec(board, word[1:], i, j + 1, m):
+                        return True
+                    else:
+                        m[i][j] = 0
+        
+                return False
+        
+        board = [["A", "B", "C", "E"], ["S", "F", "C", "S"], ["A", "D", "E", "E"]]
+        word = "ABCCED"
 
