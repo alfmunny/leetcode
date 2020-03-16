@@ -1,28 +1,23 @@
-
 # LeetCode
 
 
 # Table of Contents
 
--   [LeetCode](#org568eb7e)
-    -   [41. First Missing Positive](#org076c2ff)
-    -   [48. Rotate Image](#org1c14508)
-    -   [53. Maximum Subarray](#orgf58502e)
-    -   [55. Jump Game](#org8bc2cf7)
-    -   [62. Unique Paths](#orgc284399)
-    -   [64. Minimum Path Sum](#org2e6f0a7)
-    -   [70. Climbing Stairs](#org2d35635)
-    -   [91. Decode Ways](#org517ff91)
-    -   [509. Fibonacci Number](#org93babbf)
-    -   [75. Sort Colors](#org0eb981c)
-    -   [78. Subsets](#orgfcc6c44)
-    -   [79. Word Search](#org0d550fa)
+-   [LeetCode](#org742f4ba)
+    -   [41 - First Missing Positive](#org4748d6c)
+    -   [48. Rotate Image](#org1b11878)
+    -   [53. Maximum Subarray](#orgdc43943)
+    -   [55. Jump Game](#org0e7c796)
+    -   [62. Unique Paths](#org03eaf0c)
+    -   [64. Minimum Path Sum](#org1ab0959)
+    -   [70. Climbing Stairs](#org4eef6ee)
+    -   [91. Decode Ways](#orga1620d4)
+    -   [509. Fibonacci Number](#orgfc2f9cc)
+    -   [75. Sort Colors](#orgbabffd4)
+    -   [78 - Subsets](#org937a252)
+    -   [79 - Word Search](#org74675d3)
 
-
-<a id="org076c2ff"></a>
-
-## 41. First Missing Positive
-
+## 41 - First Missing Positive
 
 ### Problem
 
@@ -47,14 +42,13 @@
     
     Your algorithm should run in O(n) time and uses constant extra space.
 
-
 ### Notes
 
 Run in O(n) time and uses constant extra space
 
 1.  Say the length of the array is l, the number must be in 1&#x2026;l+1 (also l possible numbers)
     
-    For example 
+    For example
     
     [1, 2, 3, 4], the first missing positive is 5.
     
@@ -86,30 +80,27 @@ After all the numbers are in the right place, the first one, whose index + 1 != 
     
     So you have to do it recursively, with \`while\`.
 
-
 ### Solution
 
-    class Solution(object):
-        def firstMissingPositive(self, nums):
-            l = len(nums)
-            for i in range(l):
-                # Note!: here has to be using while
-                while (nums[i] > 0 and nums[i] <= l and nums[nums[i] - 1] != nums[i]):
-                    nums[nums[i]-1], nums[i] = nums[i], nums[nums[i]-1]
-    
-            for i, n in enumerate(nums):
-                if (n != i+1):
-                    return i + 1
-    
-            return l + 1
-    
-    print(Solution().firstMissingPositive([1, -1, 3, 4]))
+```python
+class Solution(object):
+    def firstMissingPositive(self, nums):
+        l = len(nums)
+        for i in range(l):
+            # Note!: here has to be using while
+            while (nums[i] > 0 and nums[i] <= l and nums[nums[i] - 1] != nums[i]):
+                nums[nums[i]-1], nums[i] = nums[i], nums[nums[i]-1]
 
+        for i, n in enumerate(nums):
+            if (n != i+1):
+                return i + 1
 
-<a id="org1c14508"></a>
+        return l + 1
+
+print(Solution().firstMissingPositive([1, -1, 3, 4]))
+```
 
 ## [48. Rotate Image](https://leetcode.com/problems/rotate-image/)
-
 
 ### Problem
 
@@ -154,16 +145,15 @@ After all the numbers are in the right place, the first one, whose index + 1 != 
       [16, 7,10,11]
     ]
 
-
 ### Notes
 
 -   Naive solution, to do it one by one.
 
-    **Important**: 
+    **Important**:
     
-    You go from the outside into the middle. So the main loop is half of the dimension. 
+    You go from the outside into the middle. So the main loop is half of the dimension.
     
-    The inner loop should also shrink its size everytime. Begins at i and ends and n-2-i, **not n-1-i**. 
+    The inner loop should also shrink its size everytime. Begins at i and ends and n-2-i, **not n-1-i**.
     
     Because you don't want to swap the last one. The last one n-1-i has already been swapped with the i.
 
@@ -171,132 +161,62 @@ After all the numbers are in the right place, the first one, whose index + 1 != 
 
     Swap the diagnoal elements and reverse each line in the matrix.
     
-    <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-    
-    
-    <colgroup>
-    <col  class="org-right" />
-    
-    <col  class="org-right" />
-    
-    <col  class="org-right" />
-    
-    <col  class="org-left" />
-    
-    <col  class="org-right" />
-    
-    <col  class="org-right" />
-    
-    <col  class="org-right" />
-    
-    <col  class="org-left" />
-    
-    <col  class="org-right" />
-    
-    <col  class="org-right" />
-    
-    <col  class="org-right" />
-    </colgroup>
-    <tbody>
-    <tr>
-    <td class="org-right">1</td>
-    <td class="org-right">2</td>
-    <td class="org-right">3</td>
-    <td class="org-left">swap</td>
-    <td class="org-right">1</td>
-    <td class="org-right">4</td>
-    <td class="org-right">7</td>
-    <td class="org-left">reverse</td>
-    <td class="org-right">7</td>
-    <td class="org-right">4</td>
-    <td class="org-right">1</td>
-    </tr>
-    
-    
-    <tr>
-    <td class="org-right">4</td>
-    <td class="org-right">5</td>
-    <td class="org-right">6</td>
-    <td class="org-left">&#x2014;></td>
-    <td class="org-right">2</td>
-    <td class="org-right">5</td>
-    <td class="org-right">8</td>
-    <td class="org-left">-&#x2013;&#x2014;></td>
-    <td class="org-right">8</td>
-    <td class="org-right">5</td>
-    <td class="org-right">2</td>
-    </tr>
-    
-    
-    <tr>
-    <td class="org-right">7</td>
-    <td class="org-right">8</td>
-    <td class="org-right">9</td>
-    <td class="org-left">&#xa0;</td>
-    <td class="org-right">3</td>
-    <td class="org-right">6</td>
-    <td class="org-right">9</td>
-    <td class="org-left">&#xa0;</td>
-    <td class="org-right">9</td>
-    <td class="org-right">6</td>
-    <td class="org-right">3</td>
-    </tr>
-    </tbody>
-    </table>
-
+    | 1 | 2 | 3 | swap      | 1 | 4 | 7 | reverse            | 7 | 4 | 1 |
+    | 4 | 5 | 6 | &#x2014;> | 2 | 5 | 8 | -&#x2013;&#x2014;> | 8 | 5 | 2 |
+    | 7 | 8 | 9 |           | 3 | 6 | 9 |                    | 9 | 6 | 3 |
 
 ### Solution
 
 -   Solution 1: Straightforward
 
-        class Solution(object):
-            def rotate(self, matrix):
-                """
-                :type matrix: List[List[int]]
-                :rtype: None Do not return anything, modify matrix in-place instead.
-                """
-                n = len(matrix)
-        
-                for i in range(n//2):
-                    # Shrink the dimension
-                    # Do not include the last element
-                    for j in range(i, n-i-1):
-                        tmp = matrix[i][j]
-                        matrix[i][j] = matrix[n-1-j][i]
-                        matrix[n-1-j][i] = matrix[n-1-i][n-1-j]
-                        matrix[n-1-i][n-1-j] = matrix[j][n-1-i]
-                        matrix[j][n-1-i] = tmp
-        
-        matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
-        Solution().rotate(matrix)
-        [print(*line) for line in matrix]
+    ```python
+    class Solution(object):
+        def rotate(self, matrix):
+            """
+            :type matrix: List[List[int]]
+            :rtype: None Do not return anything, modify matrix in-place instead.
+            """
+            n = len(matrix)
+    
+            for i in range(n//2):
+                # Shrink the dimension
+                # Do not include the last element
+                for j in range(i, n-i-1):
+                    tmp = matrix[i][j]
+                    matrix[i][j] = matrix[n-1-j][i]
+                    matrix[n-1-j][i] = matrix[n-1-i][n-1-j]
+                    matrix[n-1-i][n-1-j] = matrix[j][n-1-i]
+                    matrix[j][n-1-i] = tmp
+    
+    matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+    Solution().rotate(matrix)
+    [print(*line) for line in matrix]
+    ```
 
 -   Solution 2:
 
-        class Solution(object):
-            def rotate(self, matrix):
-                """
-                :type matrix: List[List[int]]
-                :rtype: None Do not return anything, modify matrix in-place instead.
-                """
-                n = len(matrix)
-        
-                for i in range(n):
-                    for j in range(i, n):
-                        matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
-        
-                for i in range(n):
-                    matrix[i].reverse()
-        
-        matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
-        Solution().rotate(matrix)
-        [print(*line) for line in matrix]
-
-
-<a id="orgf58502e"></a>
+    ```python
+    class Solution(object):
+        def rotate(self, matrix):
+            """
+            :type matrix: List[List[int]]
+            :rtype: None Do not return anything, modify matrix in-place instead.
+            """
+            n = len(matrix)
+    
+            for i in range(n):
+                for j in range(i, n):
+                    matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
+    
+            for i in range(n):
+                matrix[i].reverse()
+    
+    matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+    Solution().rotate(matrix)
+    [print(*line) for line in matrix]
+    ```
 
 ## [53. Maximum Subarray](https://leetcode.com/problems/maximum-subarray/)
-
 
 ### Problem
 
@@ -311,7 +231,6 @@ After all the numbers are in the right place, the first one, whose index + 1 != 
     
     If you have figured out the O(n) solution, try coding another solution using the divide and conquer approach, which is more subtle.
 
-
 ### Notes
 
 Dynamic programming problem.
@@ -320,55 +239,54 @@ Use nums[i] always store the maximum sum.
 
 maxSum(i) = maxSum(i-1) + nums[i] only if maxSum(i-1) > 0
 
-
 ### Solution
 
 -   Solution 1: use a extra dp array
 
-        class Solution(object):
-            def maxSubArray(self, nums):
-                """
-                :type nums: List[int]
-                :rtype: int
-                """
-                curSum = maxSum = nums[0]
-        
-                for num in nums[1:]:
-                  curSum = max(num, curSum+num)
-                  maxSum = max(curSum, maxSum)
-        
-                return maxSum
-        
-        print(Solution().maxSubArray([-2,1,-3,4,-1,2,1,-5,4]))
+    ```python
+    class Solution(object):
+        def maxSubArray(self, nums):
+            """
+            :type nums: List[int]
+            :rtype: int
+            """
+            curSum = maxSum = nums[0]
+    
+            for num in nums[1:]:
+              curSum = max(num, curSum+num)
+              maxSum = max(curSum, maxSum)
+    
+            return maxSum
+    
+    print(Solution().maxSubArray([-2,1,-3,4,-1,2,1,-5,4]))
+    ```
 
 -   Solution 2: no extra space, in place modify
 
-        class Solution(object):
-            def maxSubArray(self, nums):
-                """
-                :type nums: List[int]
-                :rtype: int
-                """
-        
-                if len(nums) == 0:
-                    return 0
-        
-                ret = nums[0]
-        
-                for i in range(1, len(nums)):
-                    if nums[i - 1] > 0:
-                        nums[i] += nums[i - 1]
-        
-                    ret = max(ret, nums[i])
-        
-                return ret
-        print(Solution().maxSubArray([-2,1,-3,4,-1,2,1,-5,4]))
-
-
-<a id="org8bc2cf7"></a>
+    ```python
+    class Solution(object):
+        def maxSubArray(self, nums):
+            """
+            :type nums: List[int]
+            :rtype: int
+            """
+    
+            if len(nums) == 0:
+                return 0
+    
+            ret = nums[0]
+    
+            for i in range(1, len(nums)):
+                if nums[i - 1] > 0:
+                    nums[i] += nums[i - 1]
+    
+                ret = max(ret, nums[i])
+    
+            return ret
+    print(Solution().maxSubArray([-2,1,-3,4,-1,2,1,-5,4]))
+    ```
 
 ## [55. Jump Game](https://leetcode.com/problems/jump-game/)
-
 
 ### Problem
 
@@ -390,7 +308,6 @@ maxSum(i) = maxSum(i-1) + nums[i] only if maxSum(i-1) > 0
     Explanation: You will always arrive at index 3 no matter what. Its maximum
                  jump length is 0, which makes it impossible to reach the last index.
 
-
 ### Notes
 
 Greedy algorithm. There are 2 approaches, from head or from tail.
@@ -399,51 +316,54 @@ Greedy algorithm. There are 2 approaches, from head or from tail.
 
     always remember the furthest reachable index.
     
-        reach = max(i + nums[i], reach) if i <= reach
+    ```python
+    reach = max(i + nums[i], reach) if i <= reach
+    ```
 
 -   Start from tail
 
     always remember the last position it can reach.
     
-        lastPos = i if i + nums[i] >= lastPos
-
+    ```python
+    lastPos = i if i + nums[i] >= lastPos
+    ```
 
 ### Solition
 
 -   Solution 1: start from head
 
-        class Solution():
-            def canJump(self, nums):
-                reach = 0
-        
-                for i in range(len(nums)):
-                    if i <= reach:
-                        reach = max(i + nums[i], reach)
-        
-                return reach >= len(nums) - 1
-        
-        print(Solution().canJump([ 2,3,1,1,4 ]))
-        print(Solution().canJump([ 3,2,1,0,4 ] ))
+    ```python
+    class Solution():
+        def canJump(self, nums):
+            reach = 0
+    
+            for i in range(len(nums)):
+                if i <= reach:
+                    reach = max(i + nums[i], reach)
+    
+            return reach >= len(nums) - 1
+    
+    print(Solution().canJump([ 2,3,1,1,4 ]))
+    print(Solution().canJump([ 3,2,1,0,4 ] ))
+    ```
 
 -   Solution 2: start from tail
 
-        class Solution():
-            def canJump(self, nums):
-                lastPos = len(nums) - 1
-                for i in reversed(range(len(nums))):
-                    if i + nums[i] >= lastPos:
-                        lastPos = i
-        
-                return lastPos == 0
-        
-        print(Solution().canJump([ 2,3,1,1,4 ]))
-        print(Solution().canJump([ 3,2,1,0,4 ] ))
-
-
-<a id="orgc284399"></a>
+    ```python
+    class Solution():
+        def canJump(self, nums):
+            lastPos = len(nums) - 1
+            for i in reversed(range(len(nums))):
+                if i + nums[i] >= lastPos:
+                    lastPos = i
+    
+            return lastPos == 0
+    
+    print(Solution().canJump([ 2,3,1,1,4 ]))
+    print(Solution().canJump([ 3,2,1,0,4 ] ))
+    ```
 
 ## [62. Unique Paths](https://leetcode.com/problems/unique-paths/)
-
 
 ### Problem
 
@@ -469,12 +389,11 @@ Greedy algorithm. There are 2 approaches, from head or from tail.
     Input: m = 7, n = 3
     Output: 28
 
-
 ### Notes
 
-It is a DP problem. 
+It is a DP problem.
 
-1.  There are only two possibilities to arrive at the finish point 
+1.  There are only two possibilities to arrive at the finish point
     1.  arrive at that point from above
     2.  arrive at that point from left
 
@@ -485,45 +404,49 @@ It is a DP problem.
 
 -   UniquePath with 2-D DP
 
-        dp[i][j] = dp[i-1][j] + dp[i][j-1]
+    ```python
+    dp[i][j] = dp[i-1][j] + dp[i][j-1]
+    ```
     
     After you have the edge, you go levelly to the bottom.
 
 -   UniquePath with 1-D DP
 
-        dp[j] = dp[j - 1] + dp[j]
-
+    ```python
+    dp[j] = dp[j - 1] + dp[j]
+    ```
 
 ### Solution
 
 -   Solution 1: 2-D DP
 
-        class Solution():
-            def uniquePath(self, m, n):
-                dp = [[1 for j in range(n)] for i in range(m)]
-                for i in range(1, m):
-                    for j in range(1, n):
-                        dp[i][j] = dp[i][j - 1] + dp[i - 1][j]
-        
-                return dp[-1][-1] if m and n else 0
+    ```python
+    class Solution():
+        def uniquePath(self, m, n):
+            dp = [[1 for j in range(n)] for i in range(m)]
+            for i in range(1, m):
+                for j in range(1, n):
+                    dp[i][j] = dp[i][j - 1] + dp[i - 1][j]
+    
+            return dp[-1][-1] if m and n else 0
+    ```
 
 -   Solution 2: 1-D DP
 
-        class Solution():
-            def uniquePath(self, m, n):
-                dp = [1] * n
-        
-                for i in range(1, m):
-                    for j in range(1, n):
-                        dp[j] = dp[j - 1] + dp[j]
-        
-                return dp[-1] if m and n else 0
-
-
-<a id="org2e6f0a7"></a>
+    ```python
+    class Solution():
+        def uniquePath(self, m, n):
+            dp = [1] * n
+    
+            for i in range(1, m):
+                for j in range(1, n):
+                    dp[j] = dp[j - 1] + dp[j]
+    
+            return dp[-1] if m and n else 0
+    
+    ```
 
 ## [64. Minimum Path Sum](https://leetcode.com/problems/minimum-path-sum/)
-
 
 ### Problem
 
@@ -542,10 +465,9 @@ It is a DP problem.
     Output: 7
     Explanation: Because the path 1→3→1→1→1 minimizes the sum.
 
-
 ### Notes
 
-Thinking: <del>It seems to be a greedy algorithm problem.</del>
+Thinking: ~~It seems to be a greedy algorithm problem.~~
 
 It is a dp problem.
 
@@ -555,112 +477,113 @@ dp[i][j] = min(dp[i][j-1], dp[i-1][j]) + grid[i][j]
 
 Remember to handle the edge cases.
 
-
 ### Solution
 
 -   Solution 1: 2D DP
 
     -   Inplace DP
     
-        class Solution(object):
-            def minPathSum(self, grid):
-                """
-                :type grid: List[List[int]]
-                :rtype: int
-                """
-                m = len(grid)
-                n = len(grid[0])
-        
-                for i in range(m):
-                    for j in range(n):
-                        if i == 0:
-                            if j == 0:
-                                continue
-                            else:
-                                grid[i][j] += grid[i][j-1]
+    ```python
+    class Solution(object):
+        def minPathSum(self, grid):
+            """
+            :type grid: List[List[int]]
+            :rtype: int
+            """
+            m = len(grid)
+            n = len(grid[0])
+    
+            for i in range(m):
+                for j in range(n):
+                    if i == 0:
+                        if j == 0:
+                            continue
                         else:
-                            if j == 0:
-                                grid[i][j] += grid[i-1][j]
-                            else:
-                                grid[i][j] += min(grid[i-1][j], grid[i][j-1])
-                return grid[-1][-1] if m and n else 0
-        
-        
-        grid = [[1,3,1],[1,5,1],[4,2,1]]
-        
-        print(Solution().minPathSum(grid))
+                            grid[i][j] += grid[i][j-1]
+                    else:
+                        if j == 0:
+                            grid[i][j] += grid[i-1][j]
+                        else:
+                            grid[i][j] += min(grid[i-1][j], grid[i][j-1])
+            return grid[-1][-1] if m and n else 0
+    
+    
+    grid = [[1,3,1],[1,5,1],[4,2,1]]
+    
+    print(Solution().minPathSum(grid))
+    ```
     
     -   Additional DP with auxiliary columns
     
-        import sys
-        class Solution(object):
-            def minPathSum(self, grid):
-                """
-                :type grid: List[List[int]]
-                :rtype: int
-                """
-                m = len(grid)
-                n = len(grid[0])
-        
-                dp = [[ 0 for i in range(n+1)] for j in range(m+1)]
-        
-                for i in range(len(dp)):
-                  dp[i][0] = sys.maxsize
-        
-                for i in range(len(dp[0])):
-                    dp[0][i] = sys.maxsize
-        
-                dp[1][1] = grid[0][0]
-        
-                for i in range(1, m+1):
-                    for j in range(1, n+1):
-                        if i == 1 and j == 1: 
-                            continue
-                        else:
-                            dp[i][j] = min(dp[i-1][j], dp[i][j-1]) + grid[i-1][j-1]
-        
-        
-                return dp[-1][-1] if m and n else 0
-        
-        
-        grid = [[1,3,1],[1,5,1],[4,2,1]]
-        
-        print(Solution().minPathSum(grid))
+    ```python
+    import sys
+    class Solution(object):
+        def minPathSum(self, grid):
+            """
+            :type grid: List[List[int]]
+            :rtype: int
+            """
+            m = len(grid)
+            n = len(grid[0])
+    
+            dp = [[ 0 for i in range(n+1)] for j in range(m+1)]
+    
+            for i in range(len(dp)):
+              dp[i][0] = sys.maxsize
+    
+            for i in range(len(dp[0])):
+                dp[0][i] = sys.maxsize
+    
+            dp[1][1] = grid[0][0]
+    
+            for i in range(1, m+1):
+                for j in range(1, n+1):
+                    if i == 1 and j == 1: 
+                        continue
+                    else:
+                        dp[i][j] = min(dp[i-1][j], dp[i][j-1]) + grid[i-1][j-1]
+    
+    
+            return dp[-1][-1] if m and n else 0
+    
+    
+    grid = [[1,3,1],[1,5,1],[4,2,1]]
+    
+    print(Solution().minPathSum(grid))
+    ```
 
 -   Solution 2: 1D DP
 
-        import sys
-        class Solution(object):
-            def minPathSum(self, grid):
-                """
-                :type grid: List[List[int]]
-                :rtype: int
-                """
-                m = len(grid)
-                n = len(grid[0])
-        
-                dp = [sys.maxsize for i in range(n+1)]
-                dp[1] = grid[0][0]
-        
-                for i in range(m):
-                    for j in range(n):
-                      if i == 1 and j == 1:
-                          continue
-                      else:
-                        dp[j+1] = min(dp[j+1], dp[j]) + grid[i][j]
-        
-                return dp[-1] if m and n else 0
-        
-        
-        grid = [[1,3,1],[1,5,1],[4,2,1]]
-        
-        print(Solution().minPathSum(grid))
-
-
-<a id="org2d35635"></a>
+    ```python
+    import sys
+    class Solution(object):
+        def minPathSum(self, grid):
+            """
+            :type grid: List[List[int]]
+            :rtype: int
+            """
+            m = len(grid)
+            n = len(grid[0])
+    
+            dp = [sys.maxsize for i in range(n+1)]
+            dp[1] = grid[0][0]
+    
+            for i in range(m):
+                for j in range(n):
+                  if i == 1 and j == 1:
+                      continue
+                  else:
+                    dp[j+1] = min(dp[j+1], dp[j]) + grid[i][j]
+    
+            return dp[-1] if m and n else 0
+    
+    
+    grid = [[1,3,1],[1,5,1],[4,2,1]]
+    
+    print(Solution().minPathSum(grid))
+    ```
 
 ## [70. Climbing Stairs](https://leetcode.com/problems/climbing-stairs/)
-
 
 ### Problem
 
@@ -686,39 +609,35 @@ Remember to handle the edge cases.
     2. 1 step + 2 steps
     3. 2 steps + 1 step
 
-
 ### Notes
 
 The distinct ways to take n stair cases:
 
-1.  take one step at last, the distinct ways to take n-1 stair cases  -> f(n-1) ways
+1.  take one step at last, the distinct ways to take n-1 stair cases -> f(n-1) ways
 2.  take two steps at last, the distinct ways to take n-2 stair cases -> f(n-2) ways
 
 So f(n) = f(n-1) + f(n-2)
 
-
 ### Solution
 
-    class Solution():
-        def climbStairs(self, n):
-            if n < 2:
-                return n
-    
-            dp = [0] * n
-    
-            dp[0] = 1
-            dp[1] = 2
-    
-            for i in range(2, n):
-                dp[i] = dp[i-1] + dp[i-2]
-    
-            return dp[-1]
+```python
+class Solution():
+    def climbStairs(self, n):
+        if n < 2:
+            return n
 
+        dp = [0] * n
 
-<a id="org517ff91"></a>
+        dp[0] = 1
+        dp[1] = 2
+
+        for i in range(2, n):
+            dp[i] = dp[i-1] + dp[i-2]
+
+        return dp[-1]
+```
 
 ## [91. Decode Ways](https://leetcode.com/problems/decode-ways)
-
 
 ### Problem
 
@@ -741,7 +660,6 @@ So f(n) = f(n-1) + f(n-2)
     Output: 3
     Explanation: It could be decoded as "BZ" (2 26), "VF" (22 6), or "BBF" (2 2 6).
 
-
 ### Notes
 
 DP problem.
@@ -756,36 +674,33 @@ DP problem.
 1.  Corner cases: "0" -> 0, "1002" -> 0
 2.  Notice the padding
 
-
 ### Solution
 
-    class Solution():
-        def numsDecodings(self, s):
-    
-            if not s:
-              return 0
-    
-            n = len(s)
-    
-            dp = [0] * (n + 1)
-    
-            dp[0] = 1
-    
-            for i in range(1, n+1):
-    
-                if s[i-1: i] != '0':
-                    dp[i] = dp[i-1]
-    
-                if i != 1 and '10' <= s[i-2:i] <= '26':
-                    dp[i] += dp[i-2]
-    
-            return dp[-1]
+```python
+class Solution():
+    def numsDecodings(self, s):
 
+        if not s:
+          return 0
 
-<a id="org93babbf"></a>
+        n = len(s)
+
+        dp = [0] * (n + 1)
+
+        dp[0] = 1
+
+        for i in range(1, n+1):
+
+            if s[i-1: i] != '0':
+                dp[i] = dp[i-1]
+
+            if i != 1 and '10' <= s[i-2:i] <= '26':
+                dp[i] += dp[i-2]
+
+        return dp[-1]
+```
 
 ## [509. Fibonacci Number](https://leetcode.com/problems/fibonacci-number/)
-
 
 ### Problem
 
@@ -813,7 +728,6 @@ DP problem.
     Output: 3
     Explanation: F(4) = F(3) + F(2) = 2 + 1 = 3.
 
-
 ### Notes
 
 DP Problem.
@@ -822,33 +736,30 @@ DP Problem.
 
 Note how long is the dp array. It shoud be N+1, since we start with the number 0.
 
-
 ### Solution
 
-    class Solution(object):
-        def fib(self, N):
-            """
-            :type N: int
-            :rtype: int
-            """
-            if N < 2:
-                return N
-    
-            dp = [0] * (N + 1)
-    
-            dp[0] = 0
-            dp[1] = 1
-    
-            for i in range(2, N + 1):
-                dp[i] = dp[i - 1] + dp[i - 2]
-    
-            return dp[-1]
+```python
+class Solution(object):
+    def fib(self, N):
+        """
+        :type N: int
+        :rtype: int
+        """
+        if N < 2:
+            return N
 
+        dp = [0] * (N + 1)
 
-<a id="org0eb981c"></a>
+        dp[0] = 0
+        dp[1] = 1
+
+        for i in range(2, N + 1):
+            dp[i] = dp[i - 1] + dp[i - 2]
+
+        return dp[-1]
+```
 
 ## [75. Sort Colors](https://leetcode.com/problems/sort-colors/)
-
 
 ### Problem
 
@@ -868,19 +779,17 @@ Note how long is the dp array. It shoud be N+1, since we start with the number 0
     First, iterate the array counting number of 0's, 1's, and 2's, then overwrite array with total number of 0's, then 1's and followed by 2's.
     Could you come up with a one-pass algorithm using only constant space?
 
-
 ### Notes
 
 -   First attempt is to use two pointer.
 
     There is a but a corner case: when two pointer are both at 1. How should we move the pointer.
     
-    We can use a another `while` unter this situation, initialize another pointer and search for 0 or 2 between
-    these two pointers. See Soution 1
+    We can use a another `while` unter this situation, initialize another pointer and search for 0 or 2 between these two pointers. See Soution 1
 
 -   Three Way Partition
 
-    three pointer, one for each. 
+    three pointer, one for each.
     
     **Important**:
     
@@ -892,72 +801,70 @@ Note how long is the dp array. It shoud be N+1, since we start with the number 0
     2.  middle == 1, continue
     3.  middle == 2, swtich with right one, right - 1
 
-
 ### Solution
 
 -   Solution 1
 
-        class Solution(object):
-            def sortColors(self, nums):
-                """
-                :type nums: List[int]
-                :rtype: None Do not return anything, modify nums in-place instead.
-                """
-        
-                lo = 0
-                hi = len(nums) - 1
-        
-                while (lo < hi):
-                    if nums[lo] == 0:
-                        lo += 1
-                    elif nums[hi] == 2:
-                        hi -= 1
-                    elif nums[lo] == 1 and nums[hi] == 1:
-                        mi = lo + 1
-                        while (mi < hi):
-                            if nums[mi] == 2 or nums[mi] == 0:
-                                nums[mi], nums[hi] = nums[hi], nums[mi]
-                                break
-                            else:
-                                mi += 1
-                        if mi == hi:
-                            return
-                    else:
-                        nums[lo], nums[hi] = nums[hi], nums[lo]
+    ```python
+    class Solution(object):
+        def sortColors(self, nums):
+            """
+            :type nums: List[int]
+            :rtype: None Do not return anything, modify nums in-place instead.
+            """
+    
+            lo = 0
+            hi = len(nums) - 1
+    
+            while (lo < hi):
+                if nums[lo] == 0:
+                    lo += 1
+                elif nums[hi] == 2:
+                    hi -= 1
+                elif nums[lo] == 1 and nums[hi] == 1:
+                    mi = lo + 1
+                    while (mi < hi):
+                        if nums[mi] == 2 or nums[mi] == 0:
+                            nums[mi], nums[hi] = nums[hi], nums[mi]
+                            break
+                        else:
+                            mi += 1
+                    if mi == hi:
+                        return
+                else:
+                    nums[lo], nums[hi] = nums[hi], nums[lo]
+    
+    ```
 
 -   Solution 2: Three way partition
 
     Notice the condition for `while`:
     
-    It has to be <=. 
-    Because you every element behind hi, you have seen it. 
-    But not the element at hi. You have to check it at last.
+    It has to be <=. Because you every element behind hi, you have seen it. But not the element at hi. You have to check it at last.
     
-        class Solution(object):
-            def sortColors(self, nums):
-        
-                lo, mi, hi = 0, 0, len(nums) - 1
-        
-                while mi <= hi: # Nottice!: here has to be <=
-                    if nums[mi] == 0:
-                        nums[mi], nums[lo] = nums[lo], nums[mi]
-                        lo += 1
-                        mi += 1
-                    elif nums[mi] == 2:
-                        nums[mi], nums[hi] = nums[hi], nums[mi]
-                        hi -= 1
-                    else:
-                        mi += 1
+    ```python
+    class Solution(object):
+        def sortColors(self, nums):
+    
+            lo, mi, hi = 0, 0, len(nums) - 1
+    
+            while mi <= hi: # Nottice!: here has to be <=
+                if nums[mi] == 0:
+                    nums[mi], nums[lo] = nums[lo], nums[mi]
+                    lo += 1
+                    mi += 1
+                elif nums[mi] == 2:
+                    nums[mi], nums[hi] = nums[hi], nums[mi]
+                    hi -= 1
+                else:
+                    mi += 1
+    ```
 
-
-<a id="orgfcc6c44"></a>
-
-## 78. Subsets
-
-[leetcode](https://leetcode.com/problems/subsets/)
-
+## 78 - Subsets
 
 ### Problem
+
+[leetcode](https://leetcode.com/problems/subsets/)
 
     Given a set of distinct integers, nums, return all possible subsets (the power set).
     
@@ -977,7 +884,6 @@ Note how long is the dp array. It shoud be N+1, since we start with the number 0
       [1,2],
       []
     ]
-
 
 ### Notes
 
@@ -1021,9 +927,7 @@ Recursion, Backtracking, Bitmask
 
 -   Bitmask
 
-    > The idea is that we map each subset to a bitmask of length n, 
-    > where 1 on the ith position in bitmask means the presence of nums[i] in the subset, 
-    > and 0 means its absence.
+    > The idea is that we map each subset to a bitmask of length n, where 1 on the ith position in bitmask means the presence of nums[i] in the subset, and 0 means its absence.
     
     [1, 2, 3]
     
@@ -1036,85 +940,90 @@ Recursion, Backtracking, Bitmask
         [1, 1, 0] -> [1, 2]
         [1, 1, 1] -> [1, 2, 3]
 
-
 ### Solution
 
 -   Solution 1: dfs (recursion)
 
-        class Solution(object):
-            def subsets(self, nums):
-                res = []
-                self.dfs(sorted(nums), 0, [], res)
-                return res
-        
-            def dfs(self, nums, index, path, res):
-                res.append(path)
-                for i in range(index, len(nums)):
-                    self.dfs(nums, i + 1, path + [nums[i]], res)
-        
-        print(Solution().subsets([1, 2, 3]))
+    ```python
+    class Solution(object):
+        def subsets(self, nums):
+            res = []
+            self.dfs(sorted(nums), 0, [], res)
+            return res
+    
+        def dfs(self, nums, index, path, res):
+            res.append(path)
+            for i in range(index, len(nums)):
+                self.dfs(nums, i + 1, path + [nums[i]], res)
+    
+    print(Solution().subsets([1, 2, 3]))
+    ```
 
 -   Solution 2: iterative
 
-        class Solution:
-        
-            def subsets(self, nums):
-                res = [[]]
-                for i in sorted(nums):
-                    res += [item+[i] for item in res]
-        
-                return res
-        
-        print(Solution().subsets([1, 2, 3]))
+    ```python
+    class Solution:
+    
+        def subsets(self, nums):
+            res = [[]]
+            for i in sorted(nums):
+                res += [item+[i] for item in res]
+    
+            return res
+    
+    print(Solution().subsets([1, 2, 3]))
+    ```
 
 -   Solution 3: backtrack
 
-        
-        class Solution(object):
-        
-            def subsets(self, nums):
-                output = []
-                for k in range(0, len(nums)+1):
-                    temp = []
-                    self.backtrack(0, k, nums, temp, output)
-        
-                return output
-        
-            def backtrack(self, begin, length, nums, temp, output):
-        
-                if length == len(temp):
-                    output.append(temp[:])
-        
-                for i in range(begin, len(nums)):
-                    temp.append(nums[i])
-                    self.backtrack(i+1, length, nums, temp, output)
-                    temp.pop()
-        
-        
-        print(Solution().subsets([1, 2, 3]))
+    ```python
+    
+    class Solution(object):
+    
+        def subsets(self, nums):
+            output = []
+            for k in range(0, len(nums)+1):
+                temp = []
+                self.backtrack(0, k, nums, temp, output)
+    
+            return output
+    
+        def backtrack(self, begin, length, nums, temp, output):
+    
+            if length == len(temp):
+                output.append(temp[:])
+    
+            for i in range(begin, len(nums)):
+                temp.append(nums[i])
+                self.backtrack(i+1, length, nums, temp, output)
+                temp.pop()
+    
+    
+    print(Solution().subsets([1, 2, 3]))
+    
+    
+    ```
 
 -   Solution 4: bitmask
 
-        
-        class Solution():
-          def subsets(self, nums):
-            n = len(nums)
-            output = []
-            for i in range(2**n, 2**(n+1)):
-              bitmask = bin(i)[3:]
-              output.append([nums[i] for i in range(n) if bitmask[i] == '1' ])
-        
-            return output
+    ```python
+    
+    class Solution():
+      def subsets(self, nums):
+        n = len(nums)
+        output = []
+        for i in range(2**n, 2**(n+1)):
+          bitmask = bin(i)[3:]
+          output.append([nums[i] for i in range(n) if bitmask[i] == '1' ])
+    
+        return output
+    ```
 
-
-<a id="org0d550fa"></a>
-
-## 79. Word Search
-
-[leetcode](https://leetcode.com/problems/word-search/)
-
+## 79 - Word Search
 
 ### Problem
+
+[leetcode](https://leetcode.com/problems/word-search/)
 
     Given a 2D board and a word, find if the word exists in the grid.
     
@@ -1133,43 +1042,42 @@ Recursion, Backtracking, Bitmask
     Given word = "SEE", return true.
     Given word = "ABCB", return false.
 
-
 ### Notes
-
 
 ### Solution
 
 -   Solution 1: Backtrack
 
-        class Solution:
-            def exist(self, board, word):
-                m = [[0 for j in range(len(board[0]))] for i in range(len(board))]
-                for i in range(len(board)):
-                    for j in range(len(board[0])):
-                        if self.exist_rec(board, word, i, j, m):
-                            return True
-                return False
-        
-            def exist_rec(self, board, word, i, j, m):
-                if len(word) == 0:
-                    return True
-        
-                if i < 0 or j < 0 or i >= len(board) or j >= len(board[0]):
-                    return False
-        
-                if board[i][j] == word[0] and m[i][j] == 0:
-                    m[i][j] = 1
-        
-                    if self.exist_rec(board, word[1:], i - 1, j, m) or \
-                    self.exist_rec(board, word[1:], i + 1, j, m) or \
-                    self.exist_rec(board, word[1:], i, j - 1, m) or \
-                    self.exist_rec(board, word[1:], i, j + 1, m):
+    ```python
+    class Solution:
+        def exist(self, board, word):
+            m = [[0 for j in range(len(board[0]))] for i in range(len(board))]
+            for i in range(len(board)):
+                for j in range(len(board[0])):
+                    if self.exist_rec(board, word, i, j, m):
                         return True
-                    else:
-                        m[i][j] = 0
-        
+            return False
+    
+        def exist_rec(self, board, word, i, j, m):
+            if len(word) == 0:
+                return True
+    
+            if i < 0 or j < 0 or i >= len(board) or j >= len(board[0]):
                 return False
-        
-        board = [["A", "B", "C", "E"], ["S", "F", "C", "S"], ["A", "D", "E", "E"]]
-        word = "ABCCED"
-
+    
+            if board[i][j] == word[0] and m[i][j] == 0:
+                m[i][j] = 1
+    
+                if self.exist_rec(board, word[1:], i - 1, j, m) or \
+                self.exist_rec(board, word[1:], i + 1, j, m) or \
+                self.exist_rec(board, word[1:], i, j - 1, m) or \
+                self.exist_rec(board, word[1:], i, j + 1, m):
+                    return True
+                else:
+                    m[i][j] = 0
+    
+            return False
+    
+    board = [["A", "B", "C", "E"], ["S", "F", "C", "S"], ["A", "D", "E", "E"]]
+    word = "ABCCED"
+    ```
