@@ -1,33 +1,34 @@
 
-# Table of Contents
-
--   [LeetCode](#org9f42b24)
-    -   [41 - First Missing Positive](#org3cda760)
-    -   [48 - Rotate Image](#org12169ad)
-    -   [53 - Maximum Subarray](#orgebd1d3f)
-    -   [55 - Jump Game](#org643aaf8)
-    -   [62 - Unique Paths](#org06538f7)
-    -   [64 - Minimum Path Sum](#org4c8ad28)
-    -   [70 - Climbing Stairs](#org9ee2a3e)
-    -   [91 - Decode Ways](#orgdea7caa)
-    -   [509 - Fibonacci Number](#org952ecbe)
-    -   [75 - Sort Colors](#org192e02d)
-    -   [78 - Subsets](#orgf9a58fc)
-    -   [79 - Word Search](#org1fc4d6d)
-    -   [45 - Jump Game II](#orgdb97493)
-    -   [1306 - Jump Game III](#org38c6b0e)
-    -   [84 - Largest Rectangle in Histogram](#org2e3063f)
-    -   [85 - Maximal Rectangle](#orgfe2481b)
-    -   [121 - Best Time to Buy and Sell Stock](#orgdf5cf0e)
-
-
-<a id="org9f42b24"></a>
-
 # LeetCode
 
 
+# Table of Contents
 
-<a id="org3cda760"></a>
+-   [LeetCode](#orgb08000b)
+    -   [41 - First Missing Positive](#org14a9d1d)
+    -   [48 - Rotate Image](#org819efc8)
+    -   [53 - Maximum Subarray](#orgc0539bd)
+    -   [55 - Jump Game](#orgc6c9485)
+    -   [62 - Unique Paths](#org15c3a89)
+    -   [64 - Minimum Path Sum](#org5994eab)
+    -   [70 - Climbing Stairs](#org4c1d323)
+    -   [91 - Decode Ways](#orge89ce2a)
+    -   [509 - Fibonacci Number](#org8b84bdb)
+    -   [75 - Sort Colors](#org60b2f70)
+    -   [78 - Subsets](#org5820cf5)
+    -   [79 - Word Search](#org36f4fc5)
+    -   [45 - Jump Game II](#orgf2253a3)
+    -   [1306 - Jump Game III](#orge186f18)
+    -   [84 - Largest Rectangle in Histogram](#orgcdaf9bc)
+    -   [85 - Maximal Rectangle](#org9f34ac5)
+    -   [121 - Best Time to Buy and Sell Stock](#org20958b8)
+    -   [122 - Best Time to Buy and Sell Stock II](#orgaf18d7a)
+    -   [123 - Best Time to Buy and Sell Stock III](#orgffd61eb)
+    -   [188 - Best Time to Buy and Sell Stock IV](#org36a3955)
+    -   [309 - Best Time to Buy and Sell Stock with Cooldown](#orgafba5aa)
+
+
+<a id="org14a9d1d"></a>
 
 ## 41 - First Missing Positive
 
@@ -112,7 +113,7 @@ After all the numbers are in the right place, the first one, whose index + 1 != 
             return l + 1
 
 
-<a id="org12169ad"></a>
+<a id="org819efc8"></a>
 
 ## 48 - Rotate Image
 
@@ -299,11 +300,9 @@ After all the numbers are in the right place, the first one, whose index + 1 != 
         matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
         Solution().rotate(matrix)
         [print(*line) for line in matrix]
-    
-    [48. Rotate Image](https://leetcode.com/problems/rotate-image/)
 
 
-<a id="orgebd1d3f"></a>
+<a id="orgc0539bd"></a>
 
 ## 53 - Maximum Subarray
 
@@ -377,7 +376,7 @@ maxSum(i) = maxSum(i-1) + nums[i] only if maxSum(i-1) > 0
         print(Solution().maxSubArray([-2,1,-3,4,-1,2,1,-5,4]))
 
 
-<a id="org643aaf8"></a>
+<a id="orgc6c9485"></a>
 
 ## 55 - Jump Game
 
@@ -455,7 +454,7 @@ Greedy algorithm. There are 2 approaches, from head or from tail.
         print(Solution().canJump([ 3,2,1,0,4 ] ))
 
 
-<a id="org06538f7"></a>
+<a id="org15c3a89"></a>
 
 ## 62 - Unique Paths
 
@@ -537,7 +536,7 @@ It is a DP problem.
                 return dp[-1] if m and n else 0
 
 
-<a id="org4c8ad28"></a>
+<a id="org5994eab"></a>
 
 ## 64 - Minimum Path Sum
 
@@ -676,7 +675,7 @@ Remember to handle the edge cases.
         print(Solution().minPathSum(grid))
 
 
-<a id="org9ee2a3e"></a>
+<a id="org4c1d323"></a>
 
 ## 70 - Climbing Stairs
 
@@ -736,7 +735,7 @@ So f(n) = f(n-1) + f(n-2)
             return dp[-1]
 
 
-<a id="orgdea7caa"></a>
+<a id="orge89ce2a"></a>
 
 ## 91 - Decode Ways
 
@@ -805,7 +804,7 @@ DP problem.
             return dp[-1]
 
 
-<a id="org952ecbe"></a>
+<a id="org8b84bdb"></a>
 
 ## 509 - Fibonacci Number
 
@@ -870,7 +869,7 @@ Note how long is the dp array. It shoud be N+1, since we start with the number 0
             return dp[-1]
 
 
-<a id="org192e02d"></a>
+<a id="org60b2f70"></a>
 
 ## 75 - Sort Colors
 
@@ -977,7 +976,7 @@ Note how long is the dp array. It shoud be N+1, since we start with the number 0
                         mi += 1
 
 
-<a id="orgf9a58fc"></a>
+<a id="org5820cf5"></a>
 
 ## 78 - Subsets
 
@@ -1134,7 +1133,7 @@ Recursion, Backtracking, Bitmask
             return output
 
 
-<a id="org1fc4d6d"></a>
+<a id="org36f4fc5"></a>
 
 ## 79 - Word Search
 
@@ -1207,7 +1206,7 @@ Backtrack problem.
         word = "ABCCED"
 
 
-<a id="orgdb97493"></a>
+<a id="orgf2253a3"></a>
 
 ## 45 - Jump Game II
 
@@ -1262,7 +1261,7 @@ Greedy problem.
             return jumps
 
 
-<a id="org38c6b0e"></a>
+<a id="orge186f18"></a>
 
 ## 1306 - Jump Game III
 
@@ -1337,7 +1336,7 @@ Remember to reset the mark if can not find along the path, so that it can search
                 return False
 
 
-<a id="org2e3063f"></a>
+<a id="orgcdaf9bc"></a>
 
 ## 84 - Largest Rectangle in Histogram
 
@@ -1521,7 +1520,7 @@ Two ways of solution.
         print(Solution().largestRectangleArea([2, 1, 5, 6, 2, 3]))
 
 
-<a id="orgfe2481b"></a>
+<a id="org9f34ac5"></a>
 
 ## 85 - Maximal Rectangle
 
@@ -1606,7 +1605,7 @@ Two parts:
     print(Solution().maximalRectangle(maxtrix))
 
 
-<a id="orgdf5cf0e"></a>
+<a id="org20958b8"></a>
 
 ## 121 - Best Time to Buy and Sell Stock
 
@@ -1615,7 +1614,6 @@ Two parts:
 
 ### Problem
 
-    
     Say you have an array for which the ith element is the price of a given stock on day i.
     
     If you were only permitted to complete at most one transaction (i.e., buy one and sell one share of the stock), design an algorithm to find the maximum profit.
@@ -1657,4 +1655,317 @@ Mark the minPrice and the minProfit
                 if price - minPrice > maxProfit:
                     maxProfit = price - minPrice
             return maxProfit
+
+
+<a id="orgaf18d7a"></a>
+
+## 122 - Best Time to Buy and Sell Stock II
+
+[leetcode](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii)
+
+
+### Problem
+
+    Say you have an array for which the ith element is the price of a given stock on day i.
+    
+    Design an algorithm to find the maximum profit. You may complete as many transactions as you like
+    
+    Note: You may not engage in multiple transactions at the same time (i.e., you must sell the stock before you buy again).
+    
+    Example 1:
+    
+    Input: [7,1,5,3,6,4]
+    Output: 7
+    Explanation: Buy on day 2 (price = 1) and sell on day 3 (price = 5), profit = 5-1 = 4.
+                 Then buy on day 4 (price = 3) and sell on day 5 (price = 6), profit = 6-3 = 3.
+    Example 2:
+    
+    Input: [1,2,3,4,5]
+    Output: 4
+    Explanation: Buy on day 1 (price = 1) and sell on day 5 (price = 5), profit = 5-1 = 4.
+                 Note that you cannot buy on day 1, buy on day 2 and sell them later, as you are
+                 engaging multiple transactions at the same time. You must sell before buying again.
+    Example 3:
+    
+    Input: [7,6,4,3,1]
+    Output: 0
+    Explanation: In this case, no transaction is done, i.e. max profit = 0.
+
+
+### Notes
+
+-   Solution 1
+
+    Find the valley and peak, save the local maxProfit, add it up when new valley is found.
+
+-   Solution 2
+
+    Simplify the solution 1:
+    we can sum up the profit when we go up step by step. 
+
+
+### Solution
+
+-   Solution 1:
+
+        class Solution:
+            def maxProfit(self, prices):
+                if not prices:
+                    return 0
+        
+                valley = prices[0]
+                maxProfit = 0
+                res = 0
+        
+                for price in prices:
+                    if price - valley < maxProfit:
+                        valley = price # new valley
+                        res += maxProfit # add the current maxProfit
+                        maxProfit = 0 # reset current maxProfit
+                    else:
+                        maxProfit = price - valley # update the maxProfit when we still go up
+        
+                # remember to add the last maxProfit.
+                # 1. When we are on the peak. maxProfit > 0, it should be added
+                # 2. When we are in the vally, maxProfit = 0, would not affect the value
+                res += maxProfit
+        
+                return res
+
+-   Solution 2:
+
+        class Solution:
+            def maxProfit(self, prices):
+                res = 0
+                for i in range(1, len(prices)):
+                    if (prices[i-1] < prices[i]):
+                        res += prices[i] - prices[i-1]
+                return res
+
+
+<a id="orgffd61eb"></a>
+
+## 123 - Best Time to Buy and Sell Stock III
+
+[leetcode](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/)
+
+
+### Problem
+
+    Say you have an array for which the ith element is the price of a given stock on day i.
+    
+    Design an algorithm to find the maximum profit. You may complete at most two transactions.
+    
+    Note: You may not engage in multiple transactions at the same time (i.e., you must sell the stock before you buy again).
+    
+    Example 1:
+    
+    Input: [3,3,5,0,0,3,1,4]
+    Output: 6
+    Explanation: Buy on day 4 (price = 0) and sell on day 6 (price = 3), profit = 3-0 = 3.
+                 Then buy on day 7 (price = 1) and sell on day 8 (price = 4), profit = 4-1 = 3.
+    Example 2:
+    
+    Input: [1,2,3,4,5]
+    Output: 4
+    Explanation: Buy on day 1 (price = 1) and sell on day 5 (price = 5), profit = 5-1 = 4.
+                 Note that you cannot buy on day 1, buy on day 2 and sell them later, as you are
+                 engaging multiple transactions at the same time. You must sell before buying again.
+    Example 3:
+    
+    Input: [7,6,4,3,1]
+    Output: 0
+    Explanation: In this case, no transaction is done, i.e. max profit = 0.
+
+
+### Notes
+
+A very good article about how to solve this kind of problem generally. [[Reference]​](https://labuladong.gitbook.io/algo/dong-tai-gui-hua-xi-lie/tuan-mie-gu-piao-wen-ti)
+
+DP problem have three main sub problems:
+
+1.  states => DP-Table
+2.  states transition => Transition
+3.  base cases => Padding or Initializtion
+
+DP is also some kind of brute force method. We have to find all the states of the problem.
+And we try to use the sub-states to apply the state transitions to simplify the calculation.
+
+How many states do we have in all:
+
+1.  number of days, n
+2.  numebr of transactions, k = 2
+3.  have the stock or not, 0 or 1
+
+state[n][k][0 or 1] means:
+
+the state at the n-th day, already k times transactions, have or have not the stock in hand.
+
+State Transition:
+
+1.  state[n][k][0] = max(state[n-1][k][0], state[n-1][k][1] + prices)
+    
+    state: I have no stock in hand
+    
+    It can transit from two states:
+    
+    -   I do not have stock yesterday               => state[n-1][k][0]
+    
+    -   I do have stock yesterday, and I sell it    => state[n-1][k][1] + prices
+
+2.  state[n][k][1] = max(state[n-1][k][1], state[n-1][k-1][0] - prices)
+    
+    state: I have stock in hand
+    
+    It can transit from two states:
+    
+    -   I do have stock yesterday                   => state[n-1][k][1]
+    
+    -   I don't have stock yesterday, and I buy it  => state[n-1][k-1][1] - prices
+
+
+### Solution
+
+    class Solution:
+        def maxProfit(self, prices):
+            max_k = 2
+            dp = [ [ [0] * 2 for k in range(max_k + 1) ] for i in range(len(prices))]
+            for i in range(len(prices)):
+                for k in range(1, max_k + 1):
+                    if i == 0:
+                        dp[i][k][0] = 0
+                        dp[i][k][1] = -prices[i]
+                    else:
+                        dp[i][k][0] = max(dp[i-1][k][0], dp[i-1][k][1] + prices[i])
+                        dp[i][k][1] = max(dp[i-1][k][1], dp[i-1][k-1][0] - prices[i])
+    
+            return dp[-1][max_k][0]
+
+Simple Version: reduce the DP-Table
+
+We only have to maintain two 1-dimentional states.
+
+    import sys
+    class Solution:
+        def maxProfit(self, prices):
+            buy = [-sys.maxsize] * 3
+            sell = [0] * 3
+            for price in prices:
+                buy[1] = max(buy[1], sell[0]-price)
+                buy[2] = max(buy[2], sell[1]-price)
+                sell[1] = max(sell[1], buy[1]+price)
+                sell[2] = max(sell[2], buy[2]+price)
+                print(buy)
+                print(sell)
+            return sell[2]
+    
+    print(Solution().maxProfit([3,3,5,0,0,3,1,4]))
+
+
+<a id="org36a3955"></a>
+
+## 188 - Best Time to Buy and Sell Stock IV
+
+[leetcode](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/)
+
+
+### Problem
+
+    Say you have an array for which the i-th element is the price of a given stock on day i.
+    
+    Design an algorithm to find the maximum profit. You may complete at most k transactions.
+    
+    Note:
+    You may not engage in multiple transactions at the same time (ie, you must sell the stock before you buy again).
+    
+    Example 1:
+    
+    Input: [2,4,1], k = 2
+    Output: 2
+    Explanation: Buy on day 1 (price = 2) and sell on day 2 (price = 4), profit = 4-2 = 2.
+    
+    Example 2:
+    
+    Input: [3,2,6,5,0,3], k = 2
+    Output: 7
+    Explanation: Buy on day 2 (price = 2) and sell on day 3 (price = 6), profit = 6-2 = 4.
+                 Then buy on day 5 (price = 0) and sell on day 6 (price = 3), profit = 3-0 = 3.
+
+
+### Notes
+
+See problem 121, 122 and 123.
+
+Note the k.
+If it is too large(>= n/2), treat it as if with infinitive transactions. We don't want to loop through a too large k.
+
+
+### Solution
+
+    class Solution:
+        def maxProfit(self, k, prices):
+            if not prices:
+                return 0
+    
+            n = len(prices)
+            if k >= n//2: # treat it as infinitive transactions
+                res = 0
+                for i in range(1, n):
+                    if prices[i] > prices[i-1]:
+                        res += prices[i] - prices[i-1]
+                return res
+    
+            buy = [-sys.maxsize] * (k+1)
+            sell = [0] * (k+1)
+    
+            for price in prices:
+                for i in range(1, k+1):
+                    buy[i] = max(buy[i], sell[i-1]-price)
+                    sell[i] = max(sell[i], buy[i]+price)
+    
+    
+            return sell[-1]
+
+
+<a id="orgafba5aa"></a>
+
+## 309 - Best Time to Buy and Sell Stock with Cooldown
+
+[leetcode](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown)
+
+
+### Problem
+
+    Say you have an array for which the ith element is the price of a given stock on day i.
+    
+    Design an algorithm to find the maximum profit. You may complete as many transactions as you like (ie, buy one and sell one share of the stock multiple times) with the following restrictions:
+    
+    You may not engage in multiple transactions at the same time (ie, you must sell the stock before you buy again).
+    After you sell your stock, you cannot buy stock on next day. (ie, cooldown 1 day)
+    Example:
+    
+    Input: [1,2,3,0,2]
+    Output: 3 
+    Explanation: transactions = [buy, sell, cooldown, buy, sell]
+
+
+### Notes
+
+
+### Solution
+
+    import sys
+    class Solution:
+        def maxProfit(self, prices):
+            dp_buy = -sys.maxsize
+            dp_sell = 0
+            dp_pre_0 = 0
+    
+            for price in prices:
+                tmp = dp_sell
+                dp_sell = max(dp_sell, dp_buy + price)
+                dp_buy = max(dp_buy, dp_pre_0 - price)
+                dp_pre_0 = tmp
+    
+            return dp_sell
 
