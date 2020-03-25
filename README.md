@@ -4,31 +4,34 @@
 
 # Table of Contents
 
--   [LeetCode](#orgb08000b)
-    -   [41 - First Missing Positive](#org14a9d1d)
-    -   [48 - Rotate Image](#org819efc8)
-    -   [53 - Maximum Subarray](#orgc0539bd)
-    -   [55 - Jump Game](#orgc6c9485)
-    -   [62 - Unique Paths](#org15c3a89)
-    -   [64 - Minimum Path Sum](#org5994eab)
-    -   [70 - Climbing Stairs](#org4c1d323)
-    -   [91 - Decode Ways](#orge89ce2a)
-    -   [509 - Fibonacci Number](#org8b84bdb)
-    -   [75 - Sort Colors](#org60b2f70)
-    -   [78 - Subsets](#org5820cf5)
-    -   [79 - Word Search](#org36f4fc5)
-    -   [45 - Jump Game II](#orgf2253a3)
-    -   [1306 - Jump Game III](#orge186f18)
-    -   [84 - Largest Rectangle in Histogram](#orgcdaf9bc)
-    -   [85 - Maximal Rectangle](#org9f34ac5)
-    -   [121 - Best Time to Buy and Sell Stock](#org20958b8)
-    -   [122 - Best Time to Buy and Sell Stock II](#orgaf18d7a)
-    -   [123 - Best Time to Buy and Sell Stock III](#orgffd61eb)
-    -   [188 - Best Time to Buy and Sell Stock IV](#org36a3955)
-    -   [309 - Best Time to Buy and Sell Stock with Cooldown](#orgafba5aa)
+-   [LeetCode](#org3188f9d)
+    -   [41 - First Missing Positive](#org136a542)
+    -   [48 - Rotate Image](#org5c522b3)
+    -   [53 - Maximum Subarray](#org3dc5052)
+    -   [55 - Jump Game](#org3a7d569)
+    -   [62 - Unique Paths](#org45d8b9a)
+    -   [64 - Minimum Path Sum](#orgae83f76)
+    -   [70 - Climbing Stairs](#org9b1fd56)
+    -   [91 - Decode Ways](#orgc192c56)
+    -   [509 - Fibonacci Number](#org476b3b3)
+    -   [75 - Sort Colors](#orge95309b)
+    -   [78 - Subsets](#org170b2c9)
+    -   [79 - Word Search](#orgbdd1a60)
+    -   [45 - Jump Game II](#orgce70e2d)
+    -   [1306 - Jump Game III](#org8e47a16)
+    -   [84 - Largest Rectangle in Histogram](#org74334e4)
+    -   [85 - Maximal Rectangle](#orgf133717)
+    -   [121 - Best Time to Buy and Sell Stock](#orgadc560d)
+    -   [122 - Best Time to Buy and Sell Stock II](#orgb082b77)
+    -   [123 - Best Time to Buy and Sell Stock III](#orgcd47840)
+    -   [188 - Best Time to Buy and Sell Stock IV](#org3b82b0b)
+    -   [309 - Best Time to Buy and Sell Stock with Cooldown](#orgf7ab624)
+    -   [104 - Maximum Depth of Binary Tree](#org6dfad91)
+    -   [21 - Merge Two Sorted Lists](#org8495836)
+    -   [101 - Symmetric Tree](#orga55a87c)
 
 
-<a id="org14a9d1d"></a>
+<a id="org136a542"></a>
 
 ## 41 - First Missing Positive
 
@@ -113,7 +116,7 @@ After all the numbers are in the right place, the first one, whose index + 1 != 
             return l + 1
 
 
-<a id="org819efc8"></a>
+<a id="org5c522b3"></a>
 
 ## 48 - Rotate Image
 
@@ -302,7 +305,7 @@ After all the numbers are in the right place, the first one, whose index + 1 != 
         [print(*line) for line in matrix]
 
 
-<a id="orgc0539bd"></a>
+<a id="org3dc5052"></a>
 
 ## 53 - Maximum Subarray
 
@@ -376,7 +379,7 @@ maxSum(i) = maxSum(i-1) + nums[i] only if maxSum(i-1) > 0
         print(Solution().maxSubArray([-2,1,-3,4,-1,2,1,-5,4]))
 
 
-<a id="orgc6c9485"></a>
+<a id="org3a7d569"></a>
 
 ## 55 - Jump Game
 
@@ -454,7 +457,7 @@ Greedy algorithm. There are 2 approaches, from head or from tail.
         print(Solution().canJump([ 3,2,1,0,4 ] ))
 
 
-<a id="org15c3a89"></a>
+<a id="org45d8b9a"></a>
 
 ## 62 - Unique Paths
 
@@ -536,7 +539,7 @@ It is a DP problem.
                 return dp[-1] if m and n else 0
 
 
-<a id="org5994eab"></a>
+<a id="orgae83f76"></a>
 
 ## 64 - Minimum Path Sum
 
@@ -675,7 +678,7 @@ Remember to handle the edge cases.
         print(Solution().minPathSum(grid))
 
 
-<a id="org4c1d323"></a>
+<a id="org9b1fd56"></a>
 
 ## 70 - Climbing Stairs
 
@@ -735,7 +738,7 @@ So f(n) = f(n-1) + f(n-2)
             return dp[-1]
 
 
-<a id="orge89ce2a"></a>
+<a id="orgc192c56"></a>
 
 ## 91 - Decode Ways
 
@@ -804,7 +807,7 @@ DP problem.
             return dp[-1]
 
 
-<a id="org8b84bdb"></a>
+<a id="org476b3b3"></a>
 
 ## 509 - Fibonacci Number
 
@@ -869,7 +872,7 @@ Note how long is the dp array. It shoud be N+1, since we start with the number 0
             return dp[-1]
 
 
-<a id="org60b2f70"></a>
+<a id="orge95309b"></a>
 
 ## 75 - Sort Colors
 
@@ -976,7 +979,7 @@ Note how long is the dp array. It shoud be N+1, since we start with the number 0
                         mi += 1
 
 
-<a id="org5820cf5"></a>
+<a id="org170b2c9"></a>
 
 ## 78 - Subsets
 
@@ -1133,7 +1136,7 @@ Recursion, Backtracking, Bitmask
             return output
 
 
-<a id="org36f4fc5"></a>
+<a id="orgbdd1a60"></a>
 
 ## 79 - Word Search
 
@@ -1206,7 +1209,7 @@ Backtrack problem.
         word = "ABCCED"
 
 
-<a id="orgf2253a3"></a>
+<a id="orgce70e2d"></a>
 
 ## 45 - Jump Game II
 
@@ -1261,7 +1264,7 @@ Greedy problem.
             return jumps
 
 
-<a id="orge186f18"></a>
+<a id="org8e47a16"></a>
 
 ## 1306 - Jump Game III
 
@@ -1336,7 +1339,7 @@ Remember to reset the mark if can not find along the path, so that it can search
                 return False
 
 
-<a id="orgcdaf9bc"></a>
+<a id="org74334e4"></a>
 
 ## 84 - Largest Rectangle in Histogram
 
@@ -1520,7 +1523,7 @@ Two ways of solution.
         print(Solution().largestRectangleArea([2, 1, 5, 6, 2, 3]))
 
 
-<a id="org9f34ac5"></a>
+<a id="orgf133717"></a>
 
 ## 85 - Maximal Rectangle
 
@@ -1605,7 +1608,7 @@ Two parts:
     print(Solution().maximalRectangle(maxtrix))
 
 
-<a id="org20958b8"></a>
+<a id="orgadc560d"></a>
 
 ## 121 - Best Time to Buy and Sell Stock
 
@@ -1657,7 +1660,7 @@ Mark the minPrice and the minProfit
             return maxProfit
 
 
-<a id="orgaf18d7a"></a>
+<a id="orgb082b77"></a>
 
 ## 122 - Best Time to Buy and Sell Stock II
 
@@ -1743,7 +1746,7 @@ Mark the minPrice and the minProfit
                 return res
 
 
-<a id="orgffd61eb"></a>
+<a id="orgcd47840"></a>
 
 ## 123 - Best Time to Buy and Sell Stock III
 
@@ -1862,7 +1865,7 @@ We only have to maintain two 1-dimentional states.
     print(Solution().maxProfit([3,3,5,0,0,3,1,4]))
 
 
-<a id="org36a3955"></a>
+<a id="org3b82b0b"></a>
 
 ## 188 - Best Time to Buy and Sell Stock IV
 
@@ -1927,7 +1930,7 @@ If it is too large(>= n/2), treat it as if with infinitive transactions. We don'
             return sell[-1]
 
 
-<a id="orgafba5aa"></a>
+<a id="orgf7ab624"></a>
 
 ## 309 - Best Time to Buy and Sell Stock with Cooldown
 
@@ -1968,4 +1971,147 @@ If it is too large(>= n/2), treat it as if with infinitive transactions. We don'
                 dp_pre_0 = tmp
     
             return dp_sell
+
+
+<a id="org6dfad91"></a>
+
+## 104 - Maximum Depth of Binary Tree
+
+[leetcode](https://leetcode.com/problems/maximum-depth-of-binary-tree/)
+
+
+### Problem
+
+    Given a binary tree, find its maximum depth.
+    
+    The maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.
+    
+    Note: A leaf is a node with no children.
+    
+    Example:
+    
+    Given binary tree [3,9,20,null,null,15,7],
+    
+        3
+       / \
+      9  20
+        /  \
+       15   7
+
+
+### Notes
+
+Recursion is your friend!
+
+
+### Solution
+
+    class Solution:
+        def maxDepth(self, root):
+            return 1 + max(self.maxDepth(root.right), self.maxDepth(root.left)) if root else 0
+
+
+<a id="org8495836"></a>
+
+## 21 - Merge Two Sorted Lists
+
+[leetcode](https://leetcode.com/problems/merge-two-sorted-lists/)
+
+
+### Problem
+
+    Merge two sorted linked lists and return it as a new list. The new list should be made by splicing together the nodes of the first two lists.
+    
+    Example:
+    
+    Input: 1->2->4, 1->3->4
+    Output: 1->1->2->3->4->4
+
+
+### Notes
+
+Recursion is your friend!
+
+
+### Solution
+
+-   Solution 1: Recursive
+
+        class Solution:
+            def mergeTwoLists(self, l1, l2):
+                if not l1:
+                    return l2
+                if not l2:
+                    return l1
+        
+                if l1.val > l2.val:
+                    l2.next = self.mergeTwoLists(l1, l2.next)
+                    return l2
+                else:
+                    l1.next = self.mergeTwoLists(l1.next, l2)
+                    return l1
+
+-   TODO Solution 2: How to do it none recursively
+
+
+<a id="orga55a87c"></a>
+
+## 101 - Symmetric Tree
+
+[leetcode](https://leetcode.com/problems/symmetric-tree/)
+
+
+### Problem
+
+    Given a binary tree, check whether it is a mirror of itself (ie, symmetric around its center).
+    
+    For example, this binary tree [1,2,2,3,4,4,3] is symmetric:
+    
+        1
+       / \
+      2   2
+     / \ / \
+    3  4 4  3
+     
+    
+    But the following [1,2,2,null,3,null,3] is not:
+    
+        1
+       / \
+      2   2
+       \   \
+       3    3
+
+
+### Notes
+
+Recursion !
+
+
+### Solution
+
+-   Solution 1: recursive
+
+        class Solution:
+            def isSymmetric(self, root):
+                if not root:
+                    return True
+                return self.isMirrored(root.left, root.right)
+        
+            def isMirrored(self, left, right):
+        
+                if not left and not right:
+                    return True
+                elif not left:
+                    return False
+                elif not right:
+                    return False
+                else:
+                    if left.val == right.val:
+                        return self.isMirrored(left.left, right.right) and \
+                            self.isMirrored(left.right, right.left)
+                    else:
+                        return False
+
+-   TODO Solution 2: How to solve it non recursively
 
