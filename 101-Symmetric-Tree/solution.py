@@ -18,6 +18,3 @@ class Solution:
                     self.isMirrored(left.right, right.left)
             else:
                 return False
-print("THIS")
-print("THIS")
-print("THIS")

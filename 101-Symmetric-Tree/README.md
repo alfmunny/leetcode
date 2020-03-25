@@ -56,9 +56,6 @@ Recursion !
                         self.isMirrored(left.right, right.left)
                 else:
                     return False
-    print("THIS")
-    print("THIS")
-    print("THIS")
 
 
 ### TODO Solution 2: How to solve it non recursively

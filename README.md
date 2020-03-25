@@ -4,34 +4,34 @@
 
 # Table of Contents
 
--   [LeetCode](#org3188f9d)
-    -   [41 - First Missing Positive](#org136a542)
-    -   [48 - Rotate Image](#org5c522b3)
-    -   [53 - Maximum Subarray](#org3dc5052)
-    -   [55 - Jump Game](#org3a7d569)
-    -   [62 - Unique Paths](#org45d8b9a)
-    -   [64 - Minimum Path Sum](#orgae83f76)
-    -   [70 - Climbing Stairs](#org9b1fd56)
-    -   [91 - Decode Ways](#orgc192c56)
-    -   [509 - Fibonacci Number](#org476b3b3)
-    -   [75 - Sort Colors](#orge95309b)
-    -   [78 - Subsets](#org170b2c9)
-    -   [79 - Word Search](#orgbdd1a60)
-    -   [45 - Jump Game II](#orgce70e2d)
-    -   [1306 - Jump Game III](#org8e47a16)
-    -   [84 - Largest Rectangle in Histogram](#org74334e4)
-    -   [85 - Maximal Rectangle](#orgf133717)
-    -   [121 - Best Time to Buy and Sell Stock](#orgadc560d)
-    -   [122 - Best Time to Buy and Sell Stock II](#orgb082b77)
-    -   [123 - Best Time to Buy and Sell Stock III](#orgcd47840)
-    -   [188 - Best Time to Buy and Sell Stock IV](#org3b82b0b)
-    -   [309 - Best Time to Buy and Sell Stock with Cooldown](#orgf7ab624)
-    -   [104 - Maximum Depth of Binary Tree](#org6dfad91)
-    -   [21 - Merge Two Sorted Lists](#org8495836)
-    -   [101 - Symmetric Tree](#orga55a87c)
+-   [LeetCode](#org2386d11)
+    -   [41 - First Missing Positive](#orgc61600c)
+    -   [48 - Rotate Image](#org4647da3)
+    -   [53 - Maximum Subarray](#org2839516)
+    -   [55 - Jump Game](#orgd316cd6)
+    -   [62 - Unique Paths](#org193f157)
+    -   [64 - Minimum Path Sum](#org8d81b6b)
+    -   [70 - Climbing Stairs](#org1d801bb)
+    -   [91 - Decode Ways](#org0106b8d)
+    -   [509 - Fibonacci Number](#orgeefbfcf)
+    -   [75 - Sort Colors](#org7f5a16d)
+    -   [78 - Subsets](#orgd582ec1)
+    -   [79 - Word Search](#orgeea4342)
+    -   [45 - Jump Game II](#org1568a95)
+    -   [1306 - Jump Game III](#orgf2244b3)
+    -   [84 - Largest Rectangle in Histogram](#orgd72c603)
+    -   [85 - Maximal Rectangle](#org75bd938)
+    -   [121 - Best Time to Buy and Sell Stock](#org774d116)
+    -   [122 - Best Time to Buy and Sell Stock II](#orgefb2bf6)
+    -   [123 - Best Time to Buy and Sell Stock III](#org5f9bd05)
+    -   [188 - Best Time to Buy and Sell Stock IV](#org0949d68)
+    -   [309 - Best Time to Buy and Sell Stock with Cooldown](#org86329f3)
+    -   [104 - Maximum Depth of Binary Tree](#orgc61aab4)
+    -   [21 - Merge Two Sorted Lists](#org31125e4)
+    -   [101 - Symmetric Tree](#orgd688bb7)
 
 
-<a id="org136a542"></a>
+<a id="orgc61600c"></a>
 
 ## 41 - First Missing Positive
 
@@ -116,7 +116,7 @@ After all the numbers are in the right place, the first one, whose index + 1 != 
             return l + 1
 
 
-<a id="org5c522b3"></a>
+<a id="org4647da3"></a>
 
 ## 48 - Rotate Image
 
@@ -305,7 +305,7 @@ After all the numbers are in the right place, the first one, whose index + 1 != 
         [print(*line) for line in matrix]
 
 
-<a id="org3dc5052"></a>
+<a id="org2839516"></a>
 
 ## 53 - Maximum Subarray
 
@@ -379,7 +379,7 @@ maxSum(i) = maxSum(i-1) + nums[i] only if maxSum(i-1) > 0
         print(Solution().maxSubArray([-2,1,-3,4,-1,2,1,-5,4]))
 
 
-<a id="org3a7d569"></a>
+<a id="orgd316cd6"></a>
 
 ## 55 - Jump Game
 
@@ -457,7 +457,7 @@ Greedy algorithm. There are 2 approaches, from head or from tail.
         print(Solution().canJump([ 3,2,1,0,4 ] ))
 
 
-<a id="org45d8b9a"></a>
+<a id="org193f157"></a>
 
 ## 62 - Unique Paths
 
@@ -539,7 +539,7 @@ It is a DP problem.
                 return dp[-1] if m and n else 0
 
 
-<a id="orgae83f76"></a>
+<a id="org8d81b6b"></a>
 
 ## 64 - Minimum Path Sum
 
@@ -678,7 +678,7 @@ Remember to handle the edge cases.
         print(Solution().minPathSum(grid))
 
 
-<a id="org9b1fd56"></a>
+<a id="org1d801bb"></a>
 
 ## 70 - Climbing Stairs
 
@@ -738,7 +738,7 @@ So f(n) = f(n-1) + f(n-2)
             return dp[-1]
 
 
-<a id="orgc192c56"></a>
+<a id="org0106b8d"></a>
 
 ## 91 - Decode Ways
 
@@ -807,7 +807,7 @@ DP problem.
             return dp[-1]
 
 
-<a id="org476b3b3"></a>
+<a id="orgeefbfcf"></a>
 
 ## 509 - Fibonacci Number
 
@@ -872,7 +872,7 @@ Note how long is the dp array. It shoud be N+1, since we start with the number 0
             return dp[-1]
 
 
-<a id="orge95309b"></a>
+<a id="org7f5a16d"></a>
 
 ## 75 - Sort Colors
 
@@ -979,7 +979,7 @@ Note how long is the dp array. It shoud be N+1, since we start with the number 0
                         mi += 1
 
 
-<a id="org170b2c9"></a>
+<a id="orgd582ec1"></a>
 
 ## 78 - Subsets
 
@@ -1136,7 +1136,7 @@ Recursion, Backtracking, Bitmask
             return output
 
 
-<a id="orgbdd1a60"></a>
+<a id="orgeea4342"></a>
 
 ## 79 - Word Search
 
@@ -1209,7 +1209,7 @@ Backtrack problem.
         word = "ABCCED"
 
 
-<a id="orgce70e2d"></a>
+<a id="org1568a95"></a>
 
 ## 45 - Jump Game II
 
@@ -1264,7 +1264,7 @@ Greedy problem.
             return jumps
 
 
-<a id="org8e47a16"></a>
+<a id="orgf2244b3"></a>
 
 ## 1306 - Jump Game III
 
@@ -1339,7 +1339,7 @@ Remember to reset the mark if can not find along the path, so that it can search
                 return False
 
 
-<a id="org74334e4"></a>
+<a id="orgd72c603"></a>
 
 ## 84 - Largest Rectangle in Histogram
 
@@ -1523,7 +1523,7 @@ Two ways of solution.
         print(Solution().largestRectangleArea([2, 1, 5, 6, 2, 3]))
 
 
-<a id="orgf133717"></a>
+<a id="org75bd938"></a>
 
 ## 85 - Maximal Rectangle
 
@@ -1608,7 +1608,7 @@ Two parts:
     print(Solution().maximalRectangle(maxtrix))
 
 
-<a id="orgadc560d"></a>
+<a id="org774d116"></a>
 
 ## 121 - Best Time to Buy and Sell Stock
 
@@ -1660,7 +1660,7 @@ Mark the minPrice and the minProfit
             return maxProfit
 
 
-<a id="orgb082b77"></a>
+<a id="orgefb2bf6"></a>
 
 ## 122 - Best Time to Buy and Sell Stock II
 
@@ -1746,7 +1746,7 @@ Mark the minPrice and the minProfit
                 return res
 
 
-<a id="orgcd47840"></a>
+<a id="org5f9bd05"></a>
 
 ## 123 - Best Time to Buy and Sell Stock III
 
@@ -1865,7 +1865,7 @@ We only have to maintain two 1-dimentional states.
     print(Solution().maxProfit([3,3,5,0,0,3,1,4]))
 
 
-<a id="org3b82b0b"></a>
+<a id="org0949d68"></a>
 
 ## 188 - Best Time to Buy and Sell Stock IV
 
@@ -1930,7 +1930,7 @@ If it is too large(>= n/2), treat it as if with infinitive transactions. We don'
             return sell[-1]
 
 
-<a id="orgf7ab624"></a>
+<a id="org86329f3"></a>
 
 ## 309 - Best Time to Buy and Sell Stock with Cooldown
 
@@ -1973,7 +1973,7 @@ If it is too large(>= n/2), treat it as if with infinitive transactions. We don'
             return dp_sell
 
 
-<a id="org6dfad91"></a>
+<a id="orgc61aab4"></a>
 
 ## 104 - Maximum Depth of Binary Tree
 
@@ -2011,7 +2011,7 @@ Recursion is your friend!
             return 1 + max(self.maxDepth(root.right), self.maxDepth(root.left)) if root else 0
 
 
-<a id="org8495836"></a>
+<a id="org31125e4"></a>
 
 ## 21 - Merge Two Sorted Lists
 
@@ -2054,7 +2054,7 @@ Recursion is your friend!
 -   TODO Solution 2: How to do it none recursively
 
 
-<a id="orga55a87c"></a>
+<a id="orgd688bb7"></a>
 
 ## 101 - Symmetric Tree
 
