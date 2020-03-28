@@ -4,34 +4,37 @@
 
 # Table of Contents
 
--   [LeetCode](#org2386d11)
-    -   [41 - First Missing Positive](#orgc61600c)
-    -   [48 - Rotate Image](#org4647da3)
-    -   [53 - Maximum Subarray](#org2839516)
-    -   [55 - Jump Game](#orgd316cd6)
-    -   [62 - Unique Paths](#org193f157)
-    -   [64 - Minimum Path Sum](#org8d81b6b)
-    -   [70 - Climbing Stairs](#org1d801bb)
-    -   [91 - Decode Ways](#org0106b8d)
-    -   [509 - Fibonacci Number](#orgeefbfcf)
-    -   [75 - Sort Colors](#org7f5a16d)
-    -   [78 - Subsets](#orgd582ec1)
-    -   [79 - Word Search](#orgeea4342)
-    -   [45 - Jump Game II](#org1568a95)
-    -   [1306 - Jump Game III](#orgf2244b3)
-    -   [84 - Largest Rectangle in Histogram](#orgd72c603)
-    -   [85 - Maximal Rectangle](#org75bd938)
-    -   [121 - Best Time to Buy and Sell Stock](#org774d116)
-    -   [122 - Best Time to Buy and Sell Stock II](#orgefb2bf6)
-    -   [123 - Best Time to Buy and Sell Stock III](#org5f9bd05)
-    -   [188 - Best Time to Buy and Sell Stock IV](#org0949d68)
-    -   [309 - Best Time to Buy and Sell Stock with Cooldown](#org86329f3)
-    -   [104 - Maximum Depth of Binary Tree](#orgc61aab4)
-    -   [21 - Merge Two Sorted Lists](#org31125e4)
-    -   [101 - Symmetric Tree](#orgd688bb7)
+-   [LeetCode](#orgcda51e8)
+    -   [41 - First Missing Positive](#orga6c731e)
+    -   [48 - Rotate Image](#org575bd4b)
+    -   [53 - Maximum Subarray](#org18f24d4)
+    -   [55 - Jump Game](#orgce7eaa6)
+    -   [62 - Unique Paths](#orgfe08b35)
+    -   [64 - Minimum Path Sum](#orgfe70ebe)
+    -   [70 - Climbing Stairs](#org6b85062)
+    -   [91 - Decode Ways](#org998a903)
+    -   [509 - Fibonacci Number](#org3e9f584)
+    -   [75 - Sort Colors](#orgb4b62c9)
+    -   [78 - Subsets](#orgb2fdd47)
+    -   [79 - Word Search](#orgade3b8e)
+    -   [45 - Jump Game II](#org177a595)
+    -   [1306 - Jump Game III](#org4b122a4)
+    -   [84 - Largest Rectangle in Histogram](#org3cfebe9)
+    -   [85 - Maximal Rectangle](#org23ce5eb)
+    -   [121 - Best Time to Buy and Sell Stock](#org8faa9e8)
+    -   [122 - Best Time to Buy and Sell Stock II](#orga0f7a9f)
+    -   [123 - Best Time to Buy and Sell Stock III](#org6d99ebf)
+    -   [188 - Best Time to Buy and Sell Stock IV](#org895dda4)
+    -   [309 - Best Time to Buy and Sell Stock with Cooldown](#orge52e1b3)
+    -   [104 - Maximum Depth of Binary Tree](#org27b3f8c)
+    -   [21 - Merge Two Sorted Lists](#org967a7f4)
+    -   [101 - Symmetric Tree](#org00dd672)
+    -   [198 - House Robber](#orgc3e81fc)
+    -   [300 - Longest Increasing Subsequence](#org74ed72b)
+    -   [322 - Coin Change](#org3e33279)
 
 
-<a id="orgc61600c"></a>
+<a id="orga6c731e"></a>
 
 ## 41 - First Missing Positive
 
@@ -116,7 +119,7 @@ After all the numbers are in the right place, the first one, whose index + 1 != 
             return l + 1
 
 
-<a id="org4647da3"></a>
+<a id="org575bd4b"></a>
 
 ## 48 - Rotate Image
 
@@ -305,7 +308,7 @@ After all the numbers are in the right place, the first one, whose index + 1 != 
         [print(*line) for line in matrix]
 
 
-<a id="org2839516"></a>
+<a id="org18f24d4"></a>
 
 ## 53 - Maximum Subarray
 
@@ -379,7 +382,7 @@ maxSum(i) = maxSum(i-1) + nums[i] only if maxSum(i-1) > 0
         print(Solution().maxSubArray([-2,1,-3,4,-1,2,1,-5,4]))
 
 
-<a id="orgd316cd6"></a>
+<a id="orgce7eaa6"></a>
 
 ## 55 - Jump Game
 
@@ -457,7 +460,7 @@ Greedy algorithm. There are 2 approaches, from head or from tail.
         print(Solution().canJump([ 3,2,1,0,4 ] ))
 
 
-<a id="org193f157"></a>
+<a id="orgfe08b35"></a>
 
 ## 62 - Unique Paths
 
@@ -539,7 +542,7 @@ It is a DP problem.
                 return dp[-1] if m and n else 0
 
 
-<a id="org8d81b6b"></a>
+<a id="orgfe70ebe"></a>
 
 ## 64 - Minimum Path Sum
 
@@ -678,7 +681,7 @@ Remember to handle the edge cases.
         print(Solution().minPathSum(grid))
 
 
-<a id="org1d801bb"></a>
+<a id="org6b85062"></a>
 
 ## 70 - Climbing Stairs
 
@@ -738,7 +741,7 @@ So f(n) = f(n-1) + f(n-2)
             return dp[-1]
 
 
-<a id="org0106b8d"></a>
+<a id="org998a903"></a>
 
 ## 91 - Decode Ways
 
@@ -807,7 +810,7 @@ DP problem.
             return dp[-1]
 
 
-<a id="orgeefbfcf"></a>
+<a id="org3e9f584"></a>
 
 ## 509 - Fibonacci Number
 
@@ -872,7 +875,7 @@ Note how long is the dp array. It shoud be N+1, since we start with the number 0
             return dp[-1]
 
 
-<a id="org7f5a16d"></a>
+<a id="orgb4b62c9"></a>
 
 ## 75 - Sort Colors
 
@@ -979,7 +982,7 @@ Note how long is the dp array. It shoud be N+1, since we start with the number 0
                         mi += 1
 
 
-<a id="orgd582ec1"></a>
+<a id="orgb2fdd47"></a>
 
 ## 78 - Subsets
 
@@ -1136,7 +1139,7 @@ Recursion, Backtracking, Bitmask
             return output
 
 
-<a id="orgeea4342"></a>
+<a id="orgade3b8e"></a>
 
 ## 79 - Word Search
 
@@ -1209,7 +1212,7 @@ Backtrack problem.
         word = "ABCCED"
 
 
-<a id="org1568a95"></a>
+<a id="org177a595"></a>
 
 ## 45 - Jump Game II
 
@@ -1264,7 +1267,7 @@ Greedy problem.
             return jumps
 
 
-<a id="orgf2244b3"></a>
+<a id="org4b122a4"></a>
 
 ## 1306 - Jump Game III
 
@@ -1339,7 +1342,7 @@ Remember to reset the mark if can not find along the path, so that it can search
                 return False
 
 
-<a id="orgd72c603"></a>
+<a id="org3cfebe9"></a>
 
 ## 84 - Largest Rectangle in Histogram
 
@@ -1523,7 +1526,7 @@ Two ways of solution.
         print(Solution().largestRectangleArea([2, 1, 5, 6, 2, 3]))
 
 
-<a id="org75bd938"></a>
+<a id="org23ce5eb"></a>
 
 ## 85 - Maximal Rectangle
 
@@ -1608,7 +1611,7 @@ Two parts:
     print(Solution().maximalRectangle(maxtrix))
 
 
-<a id="org774d116"></a>
+<a id="org8faa9e8"></a>
 
 ## 121 - Best Time to Buy and Sell Stock
 
@@ -1660,7 +1663,7 @@ Mark the minPrice and the minProfit
             return maxProfit
 
 
-<a id="orgefb2bf6"></a>
+<a id="orga0f7a9f"></a>
 
 ## 122 - Best Time to Buy and Sell Stock II
 
@@ -1746,7 +1749,7 @@ Mark the minPrice and the minProfit
                 return res
 
 
-<a id="org5f9bd05"></a>
+<a id="org6d99ebf"></a>
 
 ## 123 - Best Time to Buy and Sell Stock III
 
@@ -1865,7 +1868,7 @@ We only have to maintain two 1-dimentional states.
     print(Solution().maxProfit([3,3,5,0,0,3,1,4]))
 
 
-<a id="org0949d68"></a>
+<a id="org895dda4"></a>
 
 ## 188 - Best Time to Buy and Sell Stock IV
 
@@ -1930,7 +1933,7 @@ If it is too large(>= n/2), treat it as if with infinitive transactions. We don'
             return sell[-1]
 
 
-<a id="org86329f3"></a>
+<a id="orge52e1b3"></a>
 
 ## 309 - Best Time to Buy and Sell Stock with Cooldown
 
@@ -1973,7 +1976,7 @@ If it is too large(>= n/2), treat it as if with infinitive transactions. We don'
             return dp_sell
 
 
-<a id="orgc61aab4"></a>
+<a id="org27b3f8c"></a>
 
 ## 104 - Maximum Depth of Binary Tree
 
@@ -2011,7 +2014,7 @@ Recursion is your friend!
             return 1 + max(self.maxDepth(root.right), self.maxDepth(root.left)) if root else 0
 
 
-<a id="org31125e4"></a>
+<a id="org967a7f4"></a>
 
 ## 21 - Merge Two Sorted Lists
 
@@ -2054,7 +2057,7 @@ Recursion is your friend!
 -   TODO Solution 2: How to do it none recursively
 
 
-<a id="orgd688bb7"></a>
+<a id="org00dd672"></a>
 
 ## 101 - Symmetric Tree
 
@@ -2114,4 +2117,156 @@ Recursion !
                         return False
 
 -   TODO Solution 2: How to solve it non recursively
+
+
+<a id="orgc3e81fc"></a>
+
+## 198 - House Robber
+
+[leetcode](https://leetcode.com/problems/house-robber/)
+
+
+### Problem
+
+    You are a professional robber planning to rob houses along a street. Each house has a certain amount of money stashed, the only constraint stopping you from robbing each of them is that adjacent houses have security system connected and it will automatically contact the police if two adjacent houses were broken into on the same night.
+    
+    Given a list of non-negative integers representing the amount of money of each house, determine the maximum amount of money you can rob tonight without alerting the police.
+    
+    Example 1:
+    
+    Input: [1,2,3,1]
+    Output: 4
+    Explanation: Rob house 1 (money = 1) and then rob house 3 (money = 3).
+                 Total amount you can rob = 1 + 3 = 4.
+    Example 2:
+    
+    Input: [2,7,9,3,1]
+    Output: 12
+    Explanation: Rob house 1 (money = 2), rob house 3 (money = 9) and rob house 5 (money = 1).
+                 Total amount you can rob = 2 + 9 + 1 = 12.
+
+
+### Notes
+
+States: 1. house, 2. rob or not rob -> dp[i][0 or 1]
+
+Transition: dp[i][0] = max(dp[i-1][0], dp[i-1][1]), dp[i][1] = dp[i-1][0] + nums[i]
+
+Base Case: dp[0][0] = 0, dp[0][1] = 0
+
+
+### Solution
+
+    class Solution:
+        def rob(self, nums):
+            robbed, notRobbed = 0, 0
+            for i in nums:
+                robbed, notRobbed = notRobbed + i, max(robbed, notRobbed)
+            return max(robbed, notRobbed)
+
+
+<a id="org74ed72b"></a>
+
+## 300 - Longest Increasing Subsequence
+
+[leetcode](https://leetcode.com/problems/longest-increasing-subsequence/)
+
+
+### Problem
+
+    Given an unsorted array of integers, find the length of longest increasing subsequence.
+    
+    Example:
+    
+    Input: [10,9,2,5,3,7,101,18]
+    Output: 4 
+    Explanation: The longest increasing subsequence is [2,3,7,101], therefore the length is 4. 
+    Note:
+    
+    There may be more than one LIS combination, it is only necessary for you to return the length.
+    Your algorithm should run in O(n2) complexity.
+    Follow up: Could you improve it to O(n log n) time complexity?
+
+
+### Notes
+
+-   Solution 1: DP with O(n^2)
+
+    DP problem
+    
+    States: index, dp[index] = longest increasing subsequence at this position
+    
+    Transition: if nums[j] < nums[i]: dp[i] = max(dp[i], dp[j] + 1) 
+    
+    Base Case: dp[0] = 1
+
+-   Solution 2: DP with binary search
+
+
+### Solution
+
+-   Solution 1: DP with O(n^2)
+
+        class Solution:
+            def lengthOfLIS(self, nums):
+                dp = [1] * len(nums)
+        
+                for i in range(1, len(nums)):
+                    for j in range(i):
+                        if nums[j] < nums[i]:
+                            dp[i] = max(dp[i], dp[j] + 1)
+        
+                return max(dp) if nums else 0
+
+-   TODO Solution 2: DP with binary search
+
+
+<a id="org3e33279"></a>
+
+## 322 - Coin Change
+
+[leetcode](https://leetcode.com/problems/coin-change/)
+
+
+### Problem
+
+    You are given coins of different denominations and a total amount of money amount. Write a function to compute the fewest number of coins that you need to make up that amount. If that amount of money cannot be made up by any combination of the coins, return -1.
+    
+    Example 1:
+    
+    Input: coins = [1, 2, 5], amount = 11
+    Output: 3 
+    Explanation: 11 = 5 + 5 + 1
+    Example 2:
+    
+    Input: coins = [2], amount = 3
+    Output: -1
+    
+    Note:
+    You may assume that you have an infinite number of each kind of coin.
+
+
+### Notes
+
+DP problem
+
+States: amount
+
+Transition: dp[i] = min(dp[i], dp[i-coins[j]]+1)
+
+
+### Solution
+
+    class Solution:
+        def coinChange(self, coins, amount):
+            dp = [float('inf')] * (amount + 1)
+    
+            dp[0] = 0
+    
+            for i in range(1, amount + 1):
+                for j in range(len(coins)):
+                    if i - coins[j] >= 0:
+                        dp[i] = min(dp[i], dp[i - coins[j]] + 1)
+    
+            return dp[-1] if dp[-1] != float('inf') else -1
 
