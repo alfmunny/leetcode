@@ -4,37 +4,38 @@
 
 # Table of Contents
 
--   [LeetCode](#orgcda51e8)
-    -   [41 - First Missing Positive](#orga6c731e)
-    -   [48 - Rotate Image](#org575bd4b)
-    -   [53 - Maximum Subarray](#org18f24d4)
-    -   [55 - Jump Game](#orgce7eaa6)
-    -   [62 - Unique Paths](#orgfe08b35)
-    -   [64 - Minimum Path Sum](#orgfe70ebe)
-    -   [70 - Climbing Stairs](#org6b85062)
-    -   [91 - Decode Ways](#org998a903)
-    -   [509 - Fibonacci Number](#org3e9f584)
-    -   [75 - Sort Colors](#orgb4b62c9)
-    -   [78 - Subsets](#orgb2fdd47)
-    -   [79 - Word Search](#orgade3b8e)
-    -   [45 - Jump Game II](#org177a595)
-    -   [1306 - Jump Game III](#org4b122a4)
-    -   [84 - Largest Rectangle in Histogram](#org3cfebe9)
-    -   [85 - Maximal Rectangle](#org23ce5eb)
-    -   [121 - Best Time to Buy and Sell Stock](#org8faa9e8)
-    -   [122 - Best Time to Buy and Sell Stock II](#orga0f7a9f)
-    -   [123 - Best Time to Buy and Sell Stock III](#org6d99ebf)
-    -   [188 - Best Time to Buy and Sell Stock IV](#org895dda4)
-    -   [309 - Best Time to Buy and Sell Stock with Cooldown](#orge52e1b3)
-    -   [104 - Maximum Depth of Binary Tree](#org27b3f8c)
-    -   [21 - Merge Two Sorted Lists](#org967a7f4)
-    -   [101 - Symmetric Tree](#org00dd672)
-    -   [198 - House Robber](#orgc3e81fc)
-    -   [300 - Longest Increasing Subsequence](#org74ed72b)
-    -   [322 - Coin Change](#org3e33279)
+-   [LeetCode](#org5d938c8)
+    -   [41 - First Missing Positive](#org4c8d894)
+    -   [48 - Rotate Image](#org35bf994)
+    -   [53 - Maximum Subarray](#orgcdc993c)
+    -   [55 - Jump Game](#orge6c277d)
+    -   [62 - Unique Paths](#orgf88ca5b)
+    -   [64 - Minimum Path Sum](#org10282bc)
+    -   [70 - Climbing Stairs](#org9136f10)
+    -   [91 - Decode Ways](#orgd05f460)
+    -   [509 - Fibonacci Number](#orgb002837)
+    -   [75 - Sort Colors](#orgbe96d78)
+    -   [78 - Subsets](#orgc828bc4)
+    -   [79 - Word Search](#orgc38b898)
+    -   [45 - Jump Game II](#org505b79e)
+    -   [1306 - Jump Game III](#org9fc4b19)
+    -   [84 - Largest Rectangle in Histogram](#orgbe28933)
+    -   [85 - Maximal Rectangle](#orgffd457c)
+    -   [121 - Best Time to Buy and Sell Stock](#org1e1d50a)
+    -   [122 - Best Time to Buy and Sell Stock II](#orge89d040)
+    -   [123 - Best Time to Buy and Sell Stock III](#orgf3a8f74)
+    -   [188 - Best Time to Buy and Sell Stock IV](#org83ee170)
+    -   [309 - Best Time to Buy and Sell Stock with Cooldown](#orga9494ed)
+    -   [104 - Maximum Depth of Binary Tree](#orge43dcde)
+    -   [21 - Merge Two Sorted Lists](#orgda126c7)
+    -   [101 - Symmetric Tree](#orgc2b1180)
+    -   [198 - House Robber](#orge6d39e1)
+    -   [300 - Longest Increasing Subsequence](#org702c9aa)
+    -   [322 - Coin Change](#org8961cc2)
+    -   [152 - Maximum Product Subarray](#org8a20fc1)
 
 
-<a id="orga6c731e"></a>
+<a id="org4c8d894"></a>
 
 ## 41 - First Missing Positive
 
@@ -119,7 +120,7 @@ After all the numbers are in the right place, the first one, whose index + 1 != 
             return l + 1
 
 
-<a id="org575bd4b"></a>
+<a id="org35bf994"></a>
 
 ## 48 - Rotate Image
 
@@ -308,7 +309,7 @@ After all the numbers are in the right place, the first one, whose index + 1 != 
         [print(*line) for line in matrix]
 
 
-<a id="org18f24d4"></a>
+<a id="orgcdc993c"></a>
 
 ## 53 - Maximum Subarray
 
@@ -382,7 +383,7 @@ maxSum(i) = maxSum(i-1) + nums[i] only if maxSum(i-1) > 0
         print(Solution().maxSubArray([-2,1,-3,4,-1,2,1,-5,4]))
 
 
-<a id="orgce7eaa6"></a>
+<a id="orge6c277d"></a>
 
 ## 55 - Jump Game
 
@@ -460,7 +461,7 @@ Greedy algorithm. There are 2 approaches, from head or from tail.
         print(Solution().canJump([ 3,2,1,0,4 ] ))
 
 
-<a id="orgfe08b35"></a>
+<a id="orgf88ca5b"></a>
 
 ## 62 - Unique Paths
 
@@ -542,7 +543,7 @@ It is a DP problem.
                 return dp[-1] if m and n else 0
 
 
-<a id="orgfe70ebe"></a>
+<a id="org10282bc"></a>
 
 ## 64 - Minimum Path Sum
 
@@ -681,7 +682,7 @@ Remember to handle the edge cases.
         print(Solution().minPathSum(grid))
 
 
-<a id="org6b85062"></a>
+<a id="org9136f10"></a>
 
 ## 70 - Climbing Stairs
 
@@ -741,7 +742,7 @@ So f(n) = f(n-1) + f(n-2)
             return dp[-1]
 
 
-<a id="org998a903"></a>
+<a id="orgd05f460"></a>
 
 ## 91 - Decode Ways
 
@@ -810,7 +811,7 @@ DP problem.
             return dp[-1]
 
 
-<a id="org3e9f584"></a>
+<a id="orgb002837"></a>
 
 ## 509 - Fibonacci Number
 
@@ -875,7 +876,7 @@ Note how long is the dp array. It shoud be N+1, since we start with the number 0
             return dp[-1]
 
 
-<a id="orgb4b62c9"></a>
+<a id="orgbe96d78"></a>
 
 ## 75 - Sort Colors
 
@@ -982,7 +983,7 @@ Note how long is the dp array. It shoud be N+1, since we start with the number 0
                         mi += 1
 
 
-<a id="orgb2fdd47"></a>
+<a id="orgc828bc4"></a>
 
 ## 78 - Subsets
 
@@ -1139,7 +1140,7 @@ Recursion, Backtracking, Bitmask
             return output
 
 
-<a id="orgade3b8e"></a>
+<a id="orgc38b898"></a>
 
 ## 79 - Word Search
 
@@ -1212,7 +1213,7 @@ Backtrack problem.
         word = "ABCCED"
 
 
-<a id="org177a595"></a>
+<a id="org505b79e"></a>
 
 ## 45 - Jump Game II
 
@@ -1267,7 +1268,7 @@ Greedy problem.
             return jumps
 
 
-<a id="org4b122a4"></a>
+<a id="org9fc4b19"></a>
 
 ## 1306 - Jump Game III
 
@@ -1342,7 +1343,7 @@ Remember to reset the mark if can not find along the path, so that it can search
                 return False
 
 
-<a id="org3cfebe9"></a>
+<a id="orgbe28933"></a>
 
 ## 84 - Largest Rectangle in Histogram
 
@@ -1526,7 +1527,7 @@ Two ways of solution.
         print(Solution().largestRectangleArea([2, 1, 5, 6, 2, 3]))
 
 
-<a id="org23ce5eb"></a>
+<a id="orgffd457c"></a>
 
 ## 85 - Maximal Rectangle
 
@@ -1611,7 +1612,7 @@ Two parts:
     print(Solution().maximalRectangle(maxtrix))
 
 
-<a id="org8faa9e8"></a>
+<a id="org1e1d50a"></a>
 
 ## 121 - Best Time to Buy and Sell Stock
 
@@ -1663,7 +1664,7 @@ Mark the minPrice and the minProfit
             return maxProfit
 
 
-<a id="orga0f7a9f"></a>
+<a id="orge89d040"></a>
 
 ## 122 - Best Time to Buy and Sell Stock II
 
@@ -1749,7 +1750,7 @@ Mark the minPrice and the minProfit
                 return res
 
 
-<a id="org6d99ebf"></a>
+<a id="orgf3a8f74"></a>
 
 ## 123 - Best Time to Buy and Sell Stock III
 
@@ -1868,7 +1869,7 @@ We only have to maintain two 1-dimentional states.
     print(Solution().maxProfit([3,3,5,0,0,3,1,4]))
 
 
-<a id="org895dda4"></a>
+<a id="org83ee170"></a>
 
 ## 188 - Best Time to Buy and Sell Stock IV
 
@@ -1933,7 +1934,7 @@ If it is too large(>= n/2), treat it as if with infinitive transactions. We don'
             return sell[-1]
 
 
-<a id="orge52e1b3"></a>
+<a id="orga9494ed"></a>
 
 ## 309 - Best Time to Buy and Sell Stock with Cooldown
 
@@ -1976,7 +1977,7 @@ If it is too large(>= n/2), treat it as if with infinitive transactions. We don'
             return dp_sell
 
 
-<a id="org27b3f8c"></a>
+<a id="orge43dcde"></a>
 
 ## 104 - Maximum Depth of Binary Tree
 
@@ -2014,7 +2015,7 @@ Recursion is your friend!
             return 1 + max(self.maxDepth(root.right), self.maxDepth(root.left)) if root else 0
 
 
-<a id="org967a7f4"></a>
+<a id="orgda126c7"></a>
 
 ## 21 - Merge Two Sorted Lists
 
@@ -2057,7 +2058,7 @@ Recursion is your friend!
 -   TODO Solution 2: How to do it none recursively
 
 
-<a id="org00dd672"></a>
+<a id="orgc2b1180"></a>
 
 ## 101 - Symmetric Tree
 
@@ -2119,7 +2120,7 @@ Recursion !
 -   TODO Solution 2: How to solve it non recursively
 
 
-<a id="orgc3e81fc"></a>
+<a id="orge6d39e1"></a>
 
 ## 198 - House Robber
 
@@ -2165,7 +2166,7 @@ Base Case: dp[0][0] = 0, dp[0][1] = 0
             return max(robbed, notRobbed)
 
 
-<a id="org74ed72b"></a>
+<a id="org702c9aa"></a>
 
 ## 300 - Longest Increasing Subsequence
 
@@ -2221,7 +2222,7 @@ Base Case: dp[0][0] = 0, dp[0][1] = 0
 -   TODO Solution 2: DP with binary search
 
 
-<a id="org3e33279"></a>
+<a id="org8961cc2"></a>
 
 ## 322 - Coin Change
 
@@ -2269,4 +2270,128 @@ Transition: dp[i] = min(dp[i], dp[i-coins[j]]+1)
                         dp[i] = min(dp[i], dp[i - coins[j]] + 1)
     
             return dp[-1] if dp[-1] != float('inf') else -1
+
+
+<a id="org8a20fc1"></a>
+
+## 152 - Maximum Product Subarray
+
+[leetcode](https://leetcode.com/problems/maximum-product-subarray/)
+
+
+### Problem
+
+    Given an integer array nums, find the contiguous subarray within an array (containing at least one number) which has the largest product.
+    
+    Example 1:
+    
+    Input: [2,3,-2,4]
+    Output: 6
+    Explanation: [2,3] has the largest product 6.
+    Example 2:
+    
+    Input: [-2,0,-1]
+    Output: 0
+    Explanation: The result cannot be 2, because [-2,-1] is not a subarray.
+
+
+### Notes
+
+DP problem:
+
+-   States:
+    We have to know two previous states to deduct the current max product:
+    
+    -   index
+    -   max for positive or min for negative
+    
+    So the DP Table is dp[i(index)][0 or 1(max or min)]
+
+-   Transition:
+    -   if nums[i] >= 0:
+        dp[i][0] = max(nums[i], dp[i-1][0] \* nums[i])
+        dp[i][1] = dp[i-1][1] \* nums[i]
+    
+    -   if nums[i] < 0:
+        
+        dp[i][0] = dp[i-1][1] \* nums[i])
+        dp[i][1] = min(nums[i], dp[i-1][0] \* nums[i]
+
+-   Base case:
+    
+    if there is only one element:
+    
+    dp[0][0] = dp[0][1] = nums[0]
+
+
+### Solution
+
+-   Solution 1: DP
+
+    Original Version:
+    
+        class Solution:
+            def maxProduct(self, nums):
+                if not nums:
+                    return 0
+        
+                dp = [[0] * 2 for i in range(len(nums))]
+                res = dp[0][0] = dp[0][1] = nums[0]
+        
+                for i in range(1, len(nums)):
+                    if nums[i] >= 0:
+                        dp[i][0] = max(nums[i], dp[i - 1][0] * nums[i])
+                        dp[i][1] = dp[i - 1][1] * nums[i]
+                    else:
+                        dp[i][0] = dp[i - 1][1] * nums[i]
+                        dp[i][1] = min(nums[i], nums[i] * dp[i - 1][0])
+                    res = max(res, dp[i][0])
+                return res
+    
+    Simplify Version 1:
+    
+        class Solution:
+            def maxProduct(self, nums):
+                if not nums:
+                    return 0
+        
+                pos = neg = res = nums[0]
+                for i in nums[1:]:
+                    if i>=0:
+                        pos = max(i, pos*i)
+                        neg = neg*i
+                    else:
+                        tmp = pos # Important: remember the value, because we are gonna alter it.
+                        pos = neg*i
+                        neg = min(tmp*i, i) # Use the original value
+                        # We also can write as this, but we should notice it only works in like python or ruby
+                        # pos, neg = neg*i, min(pos*i, i), simplify to version 3
+                    res = max(pos, res)
+                return res
+    
+    Simplify Version 2: 
+    
+        class Solution:
+            def maxProduct(self, nums):
+                if not nums:
+                    return 0
+        
+                pos = neg = res = nums[0]
+                for i in nums[1:]:
+                    if i>=0:
+                        pos, neg = max(i, pos*i), neg*i
+                    else:
+                        pos, neg = neg*i, min(i, pos*i)
+                    res = max(pos, res)
+                return res
+
+-   Solution 2: Prefix sum and Suffix sum
+
+        class Solution:
+            def maxProduct(self, nums):
+                rnums = nums[::-1]
+                for i in range(1, len(nums)):
+                    nums[i] *= nums[i-1] or 1
+                    rnums[i] *= rnums[i-1] or 1
+                return max(nums, rnums)
 
