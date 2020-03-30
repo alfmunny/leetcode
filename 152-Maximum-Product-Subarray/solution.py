@@ -1,13 +1,7 @@
 class Solution:
     def maxProduct(self, nums):
-        if not nums:
-            return 0
-        
-        pos = neg = res = nums[0]
-        for i in nums[1:]:
-            if i>=0:
-                pos, neg = max(i, pos*i), neg*i
-            else:
-                pos, neg = neg*i, min(i, pos*i)
-            res = max(pos, res)
-        return res
+        rnums = nums[::-1]
+        for i in range(1, len(nums)):
+            nums[i] *= nums[i-1] or 1
+            rnums[i] *= rnums[i-1] or 1
+        return max(nums+rnums)
