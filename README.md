@@ -4,38 +4,40 @@
 
 # Table of Contents
 
--   [LeetCode](#org5d938c8)
-    -   [41 - First Missing Positive](#org4c8d894)
-    -   [48 - Rotate Image](#org35bf994)
-    -   [53 - Maximum Subarray](#orgcdc993c)
-    -   [55 - Jump Game](#orge6c277d)
-    -   [62 - Unique Paths](#orgf88ca5b)
-    -   [64 - Minimum Path Sum](#org10282bc)
-    -   [70 - Climbing Stairs](#org9136f10)
-    -   [91 - Decode Ways](#orgd05f460)
-    -   [509 - Fibonacci Number](#orgb002837)
-    -   [75 - Sort Colors](#orgbe96d78)
-    -   [78 - Subsets](#orgc828bc4)
-    -   [79 - Word Search](#orgc38b898)
-    -   [45 - Jump Game II](#org505b79e)
-    -   [1306 - Jump Game III](#org9fc4b19)
-    -   [84 - Largest Rectangle in Histogram](#orgbe28933)
-    -   [85 - Maximal Rectangle](#orgffd457c)
-    -   [121 - Best Time to Buy and Sell Stock](#org1e1d50a)
-    -   [122 - Best Time to Buy and Sell Stock II](#orge89d040)
-    -   [123 - Best Time to Buy and Sell Stock III](#orgf3a8f74)
-    -   [188 - Best Time to Buy and Sell Stock IV](#org83ee170)
-    -   [309 - Best Time to Buy and Sell Stock with Cooldown](#orga9494ed)
-    -   [104 - Maximum Depth of Binary Tree](#orge43dcde)
-    -   [21 - Merge Two Sorted Lists](#orgda126c7)
-    -   [101 - Symmetric Tree](#orgc2b1180)
-    -   [198 - House Robber](#orge6d39e1)
-    -   [300 - Longest Increasing Subsequence](#org702c9aa)
-    -   [322 - Coin Change](#org8961cc2)
-    -   [152 - Maximum Product Subarray](#org8a20fc1)
+-   [LeetCode](#orgae849e0)
+    -   [41 - First Missing Positive](#org06d2d93)
+    -   [48 - Rotate Image](#org32a2087)
+    -   [53 - Maximum Subarray](#org08250cf)
+    -   [55 - Jump Game](#org0222633)
+    -   [62 - Unique Paths](#orge454850)
+    -   [64 - Minimum Path Sum](#org7f9505f)
+    -   [70 - Climbing Stairs](#orgfacfb41)
+    -   [91 - Decode Ways](#org9f9c957)
+    -   [509 - Fibonacci Number](#org6c20e97)
+    -   [75 - Sort Colors](#org92070b6)
+    -   [79 - Word Search](#org0550a74)
+    -   [45 - Jump Game II](#orged2f2c2)
+    -   [1306 - Jump Game III](#org888d77c)
+    -   [84 - Largest Rectangle in Histogram](#org1e4718e)
+    -   [85 - Maximal Rectangle](#org2e4eda5)
+    -   [121 - Best Time to Buy and Sell Stock](#org304059b)
+    -   [122 - Best Time to Buy and Sell Stock II](#orgdcad9a1)
+    -   [123 - Best Time to Buy and Sell Stock III](#orgf9f9c12)
+    -   [188 - Best Time to Buy and Sell Stock IV](#orga481e52)
+    -   [309 - Best Time to Buy and Sell Stock with Cooldown](#org42dce65)
+    -   [104 - Maximum Depth of Binary Tree](#org0bba20b)
+    -   [21 - Merge Two Sorted Lists](#org0dc0dda)
+    -   [101 - Symmetric Tree](#org3f0bef1)
+    -   [198 - House Robber](#org9ed5c3c)
+    -   [300 - Longest Increasing Subsequence](#orgf65074a)
+    -   [322 - Coin Change](#org69dae14)
+    -   [152 - Maximum Product Subarray](#orgcea552c)
+    -   [96 - Unique Binary Search Trees](#org6619b9d)
+    -   [221 - Maximal Square](#org5d4ac05)
+    -   [279 - Perfect Squares](#orgc621ebc)
 
 
-<a id="org4c8d894"></a>
+<a id="org06d2d93"></a>
 
 ## 41 - First Missing Positive
 
@@ -120,7 +122,7 @@ After all the numbers are in the right place, the first one, whose index + 1 != 
             return l + 1
 
 
-<a id="org35bf994"></a>
+<a id="org32a2087"></a>
 
 ## 48 - Rotate Image
 
@@ -309,7 +311,7 @@ After all the numbers are in the right place, the first one, whose index + 1 != 
         [print(*line) for line in matrix]
 
 
-<a id="orgcdc993c"></a>
+<a id="org08250cf"></a>
 
 ## 53 - Maximum Subarray
 
@@ -383,7 +385,7 @@ maxSum(i) = maxSum(i-1) + nums[i] only if maxSum(i-1) > 0
         print(Solution().maxSubArray([-2,1,-3,4,-1,2,1,-5,4]))
 
 
-<a id="orge6c277d"></a>
+<a id="org0222633"></a>
 
 ## 55 - Jump Game
 
@@ -461,7 +463,7 @@ Greedy algorithm. There are 2 approaches, from head or from tail.
         print(Solution().canJump([ 3,2,1,0,4 ] ))
 
 
-<a id="orgf88ca5b"></a>
+<a id="orge454850"></a>
 
 ## 62 - Unique Paths
 
@@ -543,7 +545,7 @@ It is a DP problem.
                 return dp[-1] if m and n else 0
 
 
-<a id="org10282bc"></a>
+<a id="org7f9505f"></a>
 
 ## 64 - Minimum Path Sum
 
@@ -682,7 +684,7 @@ Remember to handle the edge cases.
         print(Solution().minPathSum(grid))
 
 
-<a id="org9136f10"></a>
+<a id="orgfacfb41"></a>
 
 ## 70 - Climbing Stairs
 
@@ -742,7 +744,7 @@ So f(n) = f(n-1) + f(n-2)
             return dp[-1]
 
 
-<a id="orgd05f460"></a>
+<a id="org9f9c957"></a>
 
 ## 91 - Decode Ways
 
@@ -811,7 +813,7 @@ DP problem.
             return dp[-1]
 
 
-<a id="orgb002837"></a>
+<a id="org6c20e97"></a>
 
 ## 509 - Fibonacci Number
 
@@ -876,7 +878,7 @@ Note how long is the dp array. It shoud be N+1, since we start with the number 0
             return dp[-1]
 
 
-<a id="orgbe96d78"></a>
+<a id="org92070b6"></a>
 
 ## 75 - Sort Colors
 
@@ -906,199 +908,20 @@ Note how long is the dp array. It shoud be N+1, since we start with the number 0
 
 -   First attempt is to use two pointer.
 
-    There is a but a corner case: when two pointer are both at 1. How should we move the pointer.
+    There is a but a corner case: when two point+begin\_src python :results output 
+      class Solution:
     
-    We can use a another `while` unter this situation, initialize another pointer and search for 0 or 2 between
-    these two pointers. See Soution 1
-
--   Three Way Partition
-
-    three pointer, one for each. 
+    def subsets(self, nums):
+        res = [[]]
+        for i in sorted(nums):
+            res <del>= [item</del>[i] for item in res]
     
-    **Important**:
+    return res
     
-    Notice the condition for `while`: while mi <= hi
+      print(Solution().subsets([1, 2, 3]))
+    \#+end\_src
     
-    the middle move forward:
-    
-    1.  middle == 0, switch with left one, left + 1, middle + 1
-    2.  middle == 1, continue
-    3.  middle == 2, swtich with right one, right - 1
-
-
-### Solution
-
--   Solution 1
-
-        class Solution(object):
-            def sortColors(self, nums):
-                """
-                :type nums: List[int]
-                :rtype: None Do not return anything, modify nums in-place instead.
-                """
-        
-                lo = 0
-                hi = len(nums) - 1
-        
-                while (lo < hi):
-                    if nums[lo] == 0:
-                        lo += 1
-                    elif nums[hi] == 2:
-                        hi -= 1
-                    elif nums[lo] == 1 and nums[hi] == 1:
-                        mi = lo + 1
-                        while (mi < hi):
-                            if nums[mi] == 2 or nums[mi] == 0:
-                                nums[mi], nums[hi] = nums[hi], nums[mi]
-                                break
-                            else:
-                                mi += 1
-                        if mi == hi:
-                            return
-                    else:
-                        nums[lo], nums[hi] = nums[hi], nums[lo]
-
--   Solution 2: Three way partition
-
-    Notice the condition for `while`:
-    
-    It has to be <=. 
-    Because you every element behind hi, you have seen it. 
-    But not the element at hi. You have to check it at last.
-    
-        class Solution(object):
-            def sortColors(self, nums):
-        
-                lo, mi, hi = 0, 0, len(nums) - 1
-        
-                while mi <= hi: # Nottice!: here has to be <=
-                    if nums[mi] == 0:
-                        nums[mi], nums[lo] = nums[lo], nums[mi]
-                        lo += 1
-                        mi += 1
-                    elif nums[mi] == 2:
-                        nums[mi], nums[hi] = nums[hi], nums[mi]
-                        hi -= 1
-                    else:
-                        mi += 1
-
-
-<a id="orgc828bc4"></a>
-
-## 78 - Subsets
-
-
-### Problem
-
-[leetcode](https://leetcode.com/problems/subsets/)
-
-    Given a set of distinct integers, nums, return all possible subsets (the power set).
-    
-    Note: The solution set must not contain duplicate subsets.
-    
-    Example:
-    
-    Input: nums = [1,2,3]
-    Output:
-    [
-      [3],
-      [1],
-      [2],
-      [1,2,3],
-      [1,3],
-      [2,3],
-      [1,2],
-      []
-    ]
-
-
-### Notes
-
-Three strategies to solve a subset problem:
-
-Recursion, Backtracking, Bitmask
-
--   Recursion
-
-    Iterative version:
-    
-        Start from empty array [[]].
-        
-        Step 1: Take 1 into consideration, and add 1 to existing array [[], [1]]
-        
-        Step 2: Take 2 into consideration, and add 2 to existing array [[], [1], [2], [1, 2]]
-        
-        Step 3: Take 3 into consideration, and add 3 to existing array [[], [1], [2], [1, 2], [3], [1, 3], [2, 3], [1, 2, 3]]
-    
-    DFS version:
-    
-        [[]]
-        [[], [1]],
-        [[], [1], [1, 2]]
-        [[], [1], [1, 2], [1, 2, 3]]
-        [[], [1], [1, 2], [1, 2, 3], [1, 3]]
-        [[], [1], [1, 2], [1, 2, 3], [1, 3], [2]]
-        [[], [1], [1, 2], [1, 2, 3], [1, 3], [2], [2, 3]]
-        [[], [1], [1, 2], [1, 2, 3], [1, 3], [2], [2, 3], [3]]
-
--   Backtrack
-
-    Backtrack needs to know how many steps it shoud take to end.
-    
-        [1, 2, 3]
-        
-        Step 1: subsets of length 0: [[]]
-        Step 2: subsets of length 1: [[1], [2], [3]]
-        Step 3: subsets of length 2: [[1, 2], [2, 3], [1, 3]]
-        Step 4: subsets of length 3: [[1, 2, 3]]
-
--   Bitmask
-
-    > The idea is that we map each subset to a bitmask of length n, 
-    > where 1 on the ith position in bitmask means the presence of nums[i] in the subset, 
-    > and 0 means its absence.
-    
-    [1, 2, 3]
-    
-        [0, 0, 0] -> []
-        [0, 0, 1] -> [3]
-        [0, 1, 0] -> [2]
-        [1, 0, 0] -> [1]
-        [1, 0, 1] -> [1, 3]
-        [0, 1, 1] -> [2, 3]
-        [1, 1, 0] -> [1, 2]
-        [1, 1, 1] -> [1, 2, 3]
-
-
-### Solution
-
--   Solution 1: dfs (recursion)
-
-        class Solution(object):
-            def subsets(self, nums):
-                res = []
-                self.dfs(sorted(nums), 0, [], res)
-                return res
-        
-            def dfs(self, nums, index, path, res):
-                res.append(path)
-                for i in range(index, len(nums)):
-                    self.dfs(nums, i + 1, path + [nums[i]], res)
-        
-        print(Solution().subsets([1, 2, 3]))
-
--   Solution 2: iterative
-
-        class Solution:
-        
-            def subsets(self, nums):
-                res = [[]]
-                for i in sorted(nums):
-                    res += [item+[i] for item in res]
-        
-                return res
-        
-        print(Solution().subsets([1, 2, 3]))
+        [[], [1], [2], [1, 2], [3], [1, 3], [2, 3], [1, 2, 3]]
 
 -   Solution 3: backtrack
 
@@ -1140,7 +963,7 @@ Recursion, Backtracking, Bitmask
             return output
 
 
-<a id="orgc38b898"></a>
+<a id="org0550a74"></a>
 
 ## 79 - Word Search
 
@@ -1213,7 +1036,7 @@ Backtrack problem.
         word = "ABCCED"
 
 
-<a id="org505b79e"></a>
+<a id="orged2f2c2"></a>
 
 ## 45 - Jump Game II
 
@@ -1268,7 +1091,7 @@ Greedy problem.
             return jumps
 
 
-<a id="org9fc4b19"></a>
+<a id="org888d77c"></a>
 
 ## 1306 - Jump Game III
 
@@ -1343,7 +1166,7 @@ Remember to reset the mark if can not find along the path, so that it can search
                 return False
 
 
-<a id="orgbe28933"></a>
+<a id="org1e4718e"></a>
 
 ## 84 - Largest Rectangle in Histogram
 
@@ -1527,7 +1350,7 @@ Two ways of solution.
         print(Solution().largestRectangleArea([2, 1, 5, 6, 2, 3]))
 
 
-<a id="orgffd457c"></a>
+<a id="org2e4eda5"></a>
 
 ## 85 - Maximal Rectangle
 
@@ -1612,7 +1435,7 @@ Two parts:
     print(Solution().maximalRectangle(maxtrix))
 
 
-<a id="org1e1d50a"></a>
+<a id="org304059b"></a>
 
 ## 121 - Best Time to Buy and Sell Stock
 
@@ -1664,7 +1487,7 @@ Mark the minPrice and the minProfit
             return maxProfit
 
 
-<a id="orge89d040"></a>
+<a id="orgdcad9a1"></a>
 
 ## 122 - Best Time to Buy and Sell Stock II
 
@@ -1750,7 +1573,7 @@ Mark the minPrice and the minProfit
                 return res
 
 
-<a id="orgf3a8f74"></a>
+<a id="orgf9f9c12"></a>
 
 ## 123 - Best Time to Buy and Sell Stock III
 
@@ -1869,7 +1692,7 @@ We only have to maintain two 1-dimentional states.
     print(Solution().maxProfit([3,3,5,0,0,3,1,4]))
 
 
-<a id="org83ee170"></a>
+<a id="orga481e52"></a>
 
 ## 188 - Best Time to Buy and Sell Stock IV
 
@@ -1934,7 +1757,7 @@ If it is too large(>= n/2), treat it as if with infinitive transactions. We don'
             return sell[-1]
 
 
-<a id="orga9494ed"></a>
+<a id="org42dce65"></a>
 
 ## 309 - Best Time to Buy and Sell Stock with Cooldown
 
@@ -1977,7 +1800,7 @@ If it is too large(>= n/2), treat it as if with infinitive transactions. We don'
             return dp_sell
 
 
-<a id="orge43dcde"></a>
+<a id="org0bba20b"></a>
 
 ## 104 - Maximum Depth of Binary Tree
 
@@ -2015,7 +1838,7 @@ Recursion is your friend!
             return 1 + max(self.maxDepth(root.right), self.maxDepth(root.left)) if root else 0
 
 
-<a id="orgda126c7"></a>
+<a id="org0dc0dda"></a>
 
 ## 21 - Merge Two Sorted Lists
 
@@ -2058,7 +1881,7 @@ Recursion is your friend!
 -   TODO Solution 2: How to do it none recursively
 
 
-<a id="orgc2b1180"></a>
+<a id="org3f0bef1"></a>
 
 ## 101 - Symmetric Tree
 
@@ -2120,7 +1943,7 @@ Recursion !
 -   TODO Solution 2: How to solve it non recursively
 
 
-<a id="orge6d39e1"></a>
+<a id="org9ed5c3c"></a>
 
 ## 198 - House Robber
 
@@ -2166,7 +1989,7 @@ Base Case: dp[0][0] = 0, dp[0][1] = 0
             return max(robbed, notRobbed)
 
 
-<a id="org702c9aa"></a>
+<a id="orgf65074a"></a>
 
 ## 300 - Longest Increasing Subsequence
 
@@ -2222,7 +2045,7 @@ Base Case: dp[0][0] = 0, dp[0][1] = 0
 -   TODO Solution 2: DP with binary search
 
 
-<a id="org8961cc2"></a>
+<a id="org69dae14"></a>
 
 ## 322 - Coin Change
 
@@ -2272,7 +2095,7 @@ Transition: dp[i] = min(dp[i], dp[i-coins[j]]+1)
             return dp[-1] if dp[-1] != float('inf') else -1
 
 
-<a id="org8a20fc1"></a>
+<a id="orgcea552c"></a>
 
 ## 152 - Maximum Product Subarray
 
@@ -2393,5 +2216,298 @@ DP problem:
                 for i in range(1, len(nums)):
                     nums[i] *= nums[i-1] or 1
                     rnums[i] *= rnums[i-1] or 1
-                return max(nums, rnums)
+                return max(nums+rnums)
+    
+    Time: O(n)
+    Space: O(n)
+
+
+<a id="org6619b9d"></a>
+
+## 96 - Unique Binary Search Trees
+
+[leetcode](https://leetcode.com/problems/unique-binary-search-trees/)
+
+
+### Problem
+
+    Given n, how many structurally unique BST's (binary search trees) that store values 1 ... n?
+    
+    Example:
+    
+    Input: 3
+    Output: 5
+    Explanation:
+    Given n = 3, there are a total of 5 unique BST's:
+    
+       1         3     3      2      1
+        \       /     /      / \      \
+         3     2     1      1   3      2
+        /     /       \                 \
+       2     1         2                 3
+
+
+### Notes
+
+-   Solution 1: DP
+
+    In this dp problem, the hard part is to figure out the transition.
+    
+    -   States: n
+    -   Transition:
+        
+        Some intuition:
+        
+            assume dp[0] = 1
+            dp[1] = dp[0]*dp[0]
+            dp[2] = dp[0]*dp[1] + dp[0]*dp[1]
+            dp[3] = dp[0]*dp[2] + dp[1]*dp[1] + dp[2]*dp[0]
+            dp[4] = dp[0]*dp[3] + dp[1]*dp[2] + dp[2]*dp[1] + dp[3]*dp[0]
+            dp[5] = dp[0]*dp[4] + dp[1]*dp[3] + dp[2]*dp[2] + dp[3]*dp[1] + dp[4]*dp[0]
+            dp[6] = dp[0]*dp[5] + dp[1]*dp[4] + dp[2]*dp[3] + dp[3]*dp[2] + dp[4]*dp[1] + dp[5]*dp[0]
+        
+            for i in range(1, n+1):
+                for j in range(0, i):
+                    dp[i] += dp[j]*dp[i-1-j]
+    
+    -   Base case:
+        dp[0] = 1
+
+-   Solution 2: Catalan Number
+
+    [Catalan Number](https://en.wikipedia.org/wiki/Catalan_number)
+    
+        Cn = 1/(n+1)(2n n) = (2n)!/(n+1)!n!
+        
+        The first Catalan numbers for n = 0, 1, 2, 3, ... are
+        
+        1, 1, 2, 5, 14, 42, 132, 429, 1430, 4862, 16796, 58786, 208012, 
+        742900, 2674440, 9694845, 35357670, 129644790, 477638700, 1767263190, 
+        6564120420, 24466267020, 91482563640, 343059613650, 1289904147324, 4861946401452
+
+
+### Solution
+
+-   Solution 1: DP
+
+        class Solution:
+            def numTrees(self, n):
+                if n < 1:
+                    return 0
+        
+                dp = [0] * (n+1)
+                dp[0] = 1
+        
+                for i in range(1, n+1):
+                    for j in range(0, i):
+                        dp[i] += dp[j]*dp[i-1-j]
+        
+                return dp[n]
+
+-   Solutiojn 2: Catalan Number
+
+        import math
+        class Solution:
+            def numTrees(self, n):
+                return math.factorial(2*n)/(math.factorial(n)*math.factorial(n+1))
+
+
+<a id="org5d4ac05"></a>
+
+## 221 - Maximal Square
+
+[leetcode](https://leetcode.com/problems/maximal-square/)
+
+
+### Problem
+
+    Given a 2D binary matrix filled with 0's and 1's, find the largest square containing only 1's and return its area.
+    
+    Example:
+    
+    Input: 
+    
+    1 0 1 0 0
+    1 0 1 1 1
+    1 1 1 1 1
+    1 0 0 1 0
+    
+    Output: 4
+
+
+### Notes
+
+DP Problem:
+
+-   States:
+    
+    -   position -> [i][j]
+    -   how many continues 1 in vertical direction -> [i][j][0]
+    -   how many continues 1 in horizontal direction -> [i][j][1]
+    -   square value(or the length of the square) -> [i][j][2]
+    
+    dp[i][j][0 or 1 or 2]
+
+-   Transition:
+    
+        dp[i + 1][j + 1][0] = dp[i][j + 1][0] + 1
+        dp[i + 1][j + 1][1] = dp[i + 1][j][1] + 1
+        dp[i + 1][j + 1][2] = min(dp[i][j][2]+1, dp[i + 1][j + 1][0], dp[i + 1][j + 1][1])
+
+-   Base Case:
+    
+    One padding row on vertical and horizontal direction, with value 0
+
+
+### Solution
+
+-   **Original Version:** 
+
+    class Solution:
+        def maximalSquare(self, matrix):
+            if not matrix:
+                return 0
+    
+            dp = [[[0] * 3 for j in range(len(matrix[0]) + 1)] for i in range(len(matrix) + 1)]
+            res = 0
+            for i in range(len(matrix)):
+                for j in range(len(matrix[0])):
+                    if matrix[i][j] == "1":
+                        dp[i + 1][j + 1][0] = dp[i][j + 1][0] + 1
+                        dp[i + 1][j + 1][1] = dp[i + 1][j][1] + 1
+                        dp[i + 1][j + 1][2] = min(dp[i][j][2]+1, dp[i + 1][j + 1][0], dp[i + 1][j + 1][1])
+                        res = max(res, dp[i + 1][j + 1][2])
+    
+            return res*res
+
+Time: O(mn)
+Space: O(mn)
+
+-   **Simplified Version 1: optimize the space, 3xn space:** 
+
+    class Solution:
+        def maximalSquare(self, matrix):
+            if not matrix:
+                return 0
+    
+            dp = [[0] * 3 for j in range(len(matrix[0]) + 1)]
+            res = 0
+    
+            for i in range(len(matrix)):
+                for j in range(len(matrix[0])):
+                    if matrix[i][j] == "1":
+                        dp[j+1][0] = dp[j+1][0] + 1
+                        dp[j+1][1] = dp[j][1] + 1
+                        dp[j+1][2] = min(dp[j+1][2]+1, dp[j+1][0]+1, dp[j][1]+1)
+                        res = max(res, dp[j + 1][2])
+                    else:
+                        dp[j+1][0] = dp[j+1][1] = dp[j+1][2] = 0
+    
+            return res*res
+
+Space: O(n)
+
+-   **Simplified Version 2: n space:** 
+
+    class Solution:
+        def maximalSquare(self, matrix):
+            if not matrix:
+                return 0
+    
+            dp = [0 for j in range(len(matrix[0]) + 1)]
+            res = 0
+            prev = 0 # previous diagnol element
+    
+            for i in range(len(matrix)):
+                for j in range(len(matrix[0])):
+                    temp = dp[j+1]
+                    if matrix[i][j] == "1":
+                        dp[j+1] = min(prev, dp[j+1], dp[j]) + 1
+                        res = max(res, dp[j + 1])
+                    else:
+                        dp[j+1] = 0
+    
+                    prev = temp
+    
+            return res*res
+
+-   **Simplified Version 3: in place:** 
+
+    class Solution:
+        def maximalSquare(self, matrix):
+            if not matrix:
+                return 0
+            res = 0
+            m = len(matrix)
+            n = len(matrix[0])
+    
+            for i in range(m):
+                for j in range(n):
+                    if matrix[i][j] == "1":
+                        if i == 0 or j == 0:
+                            matrix[i][j] = 1
+                        else:
+                            matrix[i][j] = min(matrix[i - 1][j - 1],
+                                               matrix[i][j - 1],
+                                               matrix[i - 1][j]) + 1
+                        res = max(res, matrix[i][j])
+                    else:
+                        matrix[i][j] = 0
+    
+            return res * res
+
+Space: O(1)
+
+
+<a id="orgc621ebc"></a>
+
+## 279 - Perfect Squares
+
+[leetcode](https://leetcode.com/problems/perfect-squares/)
+
+
+### Problem
+
+    Given a positive integer n, find the least number of perfect square numbers (for example, 1, 4, 9, 16, ...) which sum to n.
+    
+    Example 1:
+    
+    Input: n = 12
+    Output: 3 
+    Explanation: 12 = 4 + 4 + 4.
+    Example 2:
+    
+    Input: n = 13
+    Output: 2
+    Explanation: 13 = 4 + 9.
+
+
+### Notes
+
+DP problem
+
+-   States: n
+-   Transition:
+-   dp[i] = min([_dp[i-j*j]+1 if i-j*j >= 0 else break for j in range(1, sqrt(i)+1)])
+
+-   Base case:
+    -   dp[0] = 0
+    -   dp[i] = i
+
+
+### Solution
+
+    import math
+    class Solution:
+        dp = [0]
+        def numSquares(self, n):
+            _dp = self.dp
+            if len(_dp) >= n + 1:
+                return _dp[n]
+            else:
+                for i in range(len(_dp), n+1):
+                    _dp += [min([_dp[i-j*j]+1 for j in range(1, int(math.sqrt(i))+1) if i-j*j >= 0])] 
+            return _dp[n]
+    
+    print(Solution().numSquares(12))
 

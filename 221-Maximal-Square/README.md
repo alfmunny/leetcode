@@ -53,8 +53,7 @@ DP Problem:
             if not matrix:
                 return 0
     
-            dp = [[[0] * 3 for j in range(len(matrix[0]) + 1)]
-                  for i in range(len(matrix) + 1)]
+            dp = [[[0] * 3 for j in range(len(matrix[0]) + 1)] for i in range(len(matrix) + 1)]
             res = 0
             for i in range(len(matrix)):
                 for j in range(len(matrix[0])):
@@ -113,7 +112,34 @@ Space: O(n)
                     else:
                         dp[j+1] = 0
     
-                    prev = dp[i+1]
+                    prev = temp
     
             return res*res
+
+-   **Simplified Version 3: in place:** 
+
+    class Solution:
+        def maximalSquare(self, matrix):
+            if not matrix:
+                return 0
+            res = 0
+            m = len(matrix)
+            n = len(matrix[0])
+    
+            for i in range(m):
+                for j in range(n):
+                    if matrix[i][j] == "1":
+                        if i == 0 or j == 0:
+                            matrix[i][j] = 1
+                        else:
+                            matrix[i][j] = min(matrix[i - 1][j - 1],
+                                               matrix[i][j - 1],
+                                               matrix[i - 1][j]) + 1
+                        res = max(res, matrix[i][j])
+                    else:
+                        matrix[i][j] = 0
+    
+            return res * res
+
+Space: O(1)
 
