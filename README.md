@@ -4,40 +4,42 @@
 
 # Table of Contents
 
--   [LeetCode](#orgae849e0)
-    -   [41 - First Missing Positive](#org06d2d93)
-    -   [48 - Rotate Image](#org32a2087)
-    -   [53 - Maximum Subarray](#org08250cf)
-    -   [55 - Jump Game](#org0222633)
-    -   [62 - Unique Paths](#orge454850)
-    -   [64 - Minimum Path Sum](#org7f9505f)
-    -   [70 - Climbing Stairs](#orgfacfb41)
-    -   [91 - Decode Ways](#org9f9c957)
-    -   [509 - Fibonacci Number](#org6c20e97)
-    -   [75 - Sort Colors](#org92070b6)
-    -   [79 - Word Search](#org0550a74)
-    -   [45 - Jump Game II](#orged2f2c2)
-    -   [1306 - Jump Game III](#org888d77c)
-    -   [84 - Largest Rectangle in Histogram](#org1e4718e)
-    -   [85 - Maximal Rectangle](#org2e4eda5)
-    -   [121 - Best Time to Buy and Sell Stock](#org304059b)
-    -   [122 - Best Time to Buy and Sell Stock II](#orgdcad9a1)
-    -   [123 - Best Time to Buy and Sell Stock III](#orgf9f9c12)
-    -   [188 - Best Time to Buy and Sell Stock IV](#orga481e52)
-    -   [309 - Best Time to Buy and Sell Stock with Cooldown](#org42dce65)
-    -   [104 - Maximum Depth of Binary Tree](#org0bba20b)
-    -   [21 - Merge Two Sorted Lists](#org0dc0dda)
-    -   [101 - Symmetric Tree](#org3f0bef1)
-    -   [198 - House Robber](#org9ed5c3c)
-    -   [300 - Longest Increasing Subsequence](#orgf65074a)
-    -   [322 - Coin Change](#org69dae14)
-    -   [152 - Maximum Product Subarray](#orgcea552c)
-    -   [96 - Unique Binary Search Trees](#org6619b9d)
-    -   [221 - Maximal Square](#org5d4ac05)
-    -   [279 - Perfect Squares](#orgc621ebc)
+-   [LeetCode](#org55d3522)
+    -   [41 - First Missing Positive](#org61cb2b9)
+    -   [48 - Rotate Image](#org6639099)
+    -   [53 - Maximum Subarray](#org5ce6df9)
+    -   [55 - Jump Game](#org8f06f48)
+    -   [62 - Unique Paths](#org3d53823)
+    -   [64 - Minimum Path Sum](#orga50bead)
+    -   [70 - Climbing Stairs](#orgeb57f73)
+    -   [91 - Decode Ways](#org7602f6e)
+    -   [509 - Fibonacci Number](#orgb29c736)
+    -   [75 - Sort Colors](#orgb79ecce)
+    -   [79 - Word Search](#org6327202)
+    -   [45 - Jump Game II](#org2bf76c5)
+    -   [1306 - Jump Game III](#orgf519e32)
+    -   [84 - Largest Rectangle in Histogram](#org60f7845)
+    -   [85 - Maximal Rectangle](#org75e5f97)
+    -   [121 - Best Time to Buy and Sell Stock](#org131bee5)
+    -   [122 - Best Time to Buy and Sell Stock II](#org22c6e02)
+    -   [123 - Best Time to Buy and Sell Stock III](#org58a3edd)
+    -   [188 - Best Time to Buy and Sell Stock IV](#orgcc7e06e)
+    -   [309 - Best Time to Buy and Sell Stock with Cooldown](#orga1eb9f9)
+    -   [104 - Maximum Depth of Binary Tree](#org2a45a15)
+    -   [21 - Merge Two Sorted Lists](#org7b6f75e)
+    -   [101 - Symmetric Tree](#org7e88183)
+    -   [198 - House Robber](#orgaf3a792)
+    -   [300 - Longest Increasing Subsequence](#org8eb9e0e)
+    -   [322 - Coin Change](#org846a5cb)
+    -   [152 - Maximum Product Subarray](#org0ee2cda)
+    -   [96 - Unique Binary Search Trees](#org0209d7b)
+    -   [221 - Maximal Square](#org717dedb)
+    -   [279 - Perfect Squares](#org2a4cbda)
+    -   [647 - Palindromic Substrings](#org96658ea)
+    -   [5 - Longest Palindromic Substring](#orgfb7cd4d)
 
 
-<a id="org06d2d93"></a>
+<a id="org61cb2b9"></a>
 
 ## 41 - First Missing Positive
 
@@ -122,7 +124,7 @@ After all the numbers are in the right place, the first one, whose index + 1 != 
             return l + 1
 
 
-<a id="org32a2087"></a>
+<a id="org6639099"></a>
 
 ## 48 - Rotate Image
 
@@ -311,7 +313,7 @@ After all the numbers are in the right place, the first one, whose index + 1 != 
         [print(*line) for line in matrix]
 
 
-<a id="org08250cf"></a>
+<a id="org5ce6df9"></a>
 
 ## 53 - Maximum Subarray
 
@@ -385,7 +387,7 @@ maxSum(i) = maxSum(i-1) + nums[i] only if maxSum(i-1) > 0
         print(Solution().maxSubArray([-2,1,-3,4,-1,2,1,-5,4]))
 
 
-<a id="org0222633"></a>
+<a id="org8f06f48"></a>
 
 ## 55 - Jump Game
 
@@ -463,7 +465,7 @@ Greedy algorithm. There are 2 approaches, from head or from tail.
         print(Solution().canJump([ 3,2,1,0,4 ] ))
 
 
-<a id="orge454850"></a>
+<a id="org3d53823"></a>
 
 ## 62 - Unique Paths
 
@@ -545,7 +547,7 @@ It is a DP problem.
                 return dp[-1] if m and n else 0
 
 
-<a id="org7f9505f"></a>
+<a id="orga50bead"></a>
 
 ## 64 - Minimum Path Sum
 
@@ -684,7 +686,7 @@ Remember to handle the edge cases.
         print(Solution().minPathSum(grid))
 
 
-<a id="orgfacfb41"></a>
+<a id="orgeb57f73"></a>
 
 ## 70 - Climbing Stairs
 
@@ -744,7 +746,7 @@ So f(n) = f(n-1) + f(n-2)
             return dp[-1]
 
 
-<a id="org9f9c957"></a>
+<a id="org7602f6e"></a>
 
 ## 91 - Decode Ways
 
@@ -813,7 +815,7 @@ DP problem.
             return dp[-1]
 
 
-<a id="org6c20e97"></a>
+<a id="orgb29c736"></a>
 
 ## 509 - Fibonacci Number
 
@@ -878,7 +880,7 @@ Note how long is the dp array. It shoud be N+1, since we start with the number 0
             return dp[-1]
 
 
-<a id="org92070b6"></a>
+<a id="orgb79ecce"></a>
 
 ## 75 - Sort Colors
 
@@ -963,7 +965,7 @@ Note how long is the dp array. It shoud be N+1, since we start with the number 0
             return output
 
 
-<a id="org0550a74"></a>
+<a id="org6327202"></a>
 
 ## 79 - Word Search
 
@@ -1036,7 +1038,7 @@ Backtrack problem.
         word = "ABCCED"
 
 
-<a id="orged2f2c2"></a>
+<a id="org2bf76c5"></a>
 
 ## 45 - Jump Game II
 
@@ -1091,7 +1093,7 @@ Greedy problem.
             return jumps
 
 
-<a id="org888d77c"></a>
+<a id="orgf519e32"></a>
 
 ## 1306 - Jump Game III
 
@@ -1166,7 +1168,7 @@ Remember to reset the mark if can not find along the path, so that it can search
                 return False
 
 
-<a id="org1e4718e"></a>
+<a id="org60f7845"></a>
 
 ## 84 - Largest Rectangle in Histogram
 
@@ -1350,7 +1352,7 @@ Two ways of solution.
         print(Solution().largestRectangleArea([2, 1, 5, 6, 2, 3]))
 
 
-<a id="org2e4eda5"></a>
+<a id="org75e5f97"></a>
 
 ## 85 - Maximal Rectangle
 
@@ -1435,7 +1437,7 @@ Two parts:
     print(Solution().maximalRectangle(maxtrix))
 
 
-<a id="org304059b"></a>
+<a id="org131bee5"></a>
 
 ## 121 - Best Time to Buy and Sell Stock
 
@@ -1487,7 +1489,7 @@ Mark the minPrice and the minProfit
             return maxProfit
 
 
-<a id="orgdcad9a1"></a>
+<a id="org22c6e02"></a>
 
 ## 122 - Best Time to Buy and Sell Stock II
 
@@ -1573,7 +1575,7 @@ Mark the minPrice and the minProfit
                 return res
 
 
-<a id="orgf9f9c12"></a>
+<a id="org58a3edd"></a>
 
 ## 123 - Best Time to Buy and Sell Stock III
 
@@ -1692,7 +1694,7 @@ We only have to maintain two 1-dimentional states.
     print(Solution().maxProfit([3,3,5,0,0,3,1,4]))
 
 
-<a id="orga481e52"></a>
+<a id="orgcc7e06e"></a>
 
 ## 188 - Best Time to Buy and Sell Stock IV
 
@@ -1757,7 +1759,7 @@ If it is too large(>= n/2), treat it as if with infinitive transactions. We don'
             return sell[-1]
 
 
-<a id="org42dce65"></a>
+<a id="orga1eb9f9"></a>
 
 ## 309 - Best Time to Buy and Sell Stock with Cooldown
 
@@ -1800,7 +1802,7 @@ If it is too large(>= n/2), treat it as if with infinitive transactions. We don'
             return dp_sell
 
 
-<a id="org0bba20b"></a>
+<a id="org2a45a15"></a>
 
 ## 104 - Maximum Depth of Binary Tree
 
@@ -1838,7 +1840,7 @@ Recursion is your friend!
             return 1 + max(self.maxDepth(root.right), self.maxDepth(root.left)) if root else 0
 
 
-<a id="org0dc0dda"></a>
+<a id="org7b6f75e"></a>
 
 ## 21 - Merge Two Sorted Lists
 
@@ -1881,7 +1883,7 @@ Recursion is your friend!
 -   TODO Solution 2: How to do it none recursively
 
 
-<a id="org3f0bef1"></a>
+<a id="org7e88183"></a>
 
 ## 101 - Symmetric Tree
 
@@ -1943,7 +1945,7 @@ Recursion !
 -   TODO Solution 2: How to solve it non recursively
 
 
-<a id="org9ed5c3c"></a>
+<a id="orgaf3a792"></a>
 
 ## 198 - House Robber
 
@@ -1989,7 +1991,7 @@ Base Case: dp[0][0] = 0, dp[0][1] = 0
             return max(robbed, notRobbed)
 
 
-<a id="orgf65074a"></a>
+<a id="org8eb9e0e"></a>
 
 ## 300 - Longest Increasing Subsequence
 
@@ -2045,7 +2047,7 @@ Base Case: dp[0][0] = 0, dp[0][1] = 0
 -   TODO Solution 2: DP with binary search
 
 
-<a id="org69dae14"></a>
+<a id="org846a5cb"></a>
 
 ## 322 - Coin Change
 
@@ -2095,7 +2097,7 @@ Transition: dp[i] = min(dp[i], dp[i-coins[j]]+1)
             return dp[-1] if dp[-1] != float('inf') else -1
 
 
-<a id="orgcea552c"></a>
+<a id="org0ee2cda"></a>
 
 ## 152 - Maximum Product Subarray
 
@@ -2222,7 +2224,7 @@ DP problem:
     Space: O(n)
 
 
-<a id="org6619b9d"></a>
+<a id="org0209d7b"></a>
 
 ## 96 - Unique Binary Search Trees
 
@@ -2312,7 +2314,7 @@ DP problem:
                 return math.factorial(2*n)/(math.factorial(n)*math.factorial(n+1))
 
 
-<a id="org5d4ac05"></a>
+<a id="org717dedb"></a>
 
 ## 221 - Maximal Square
 
@@ -2459,7 +2461,7 @@ Space: O(n)
 Space: O(1)
 
 
-<a id="orgc621ebc"></a>
+<a id="org2a4cbda"></a>
 
 ## 279 - Perfect Squares
 
@@ -2510,4 +2512,140 @@ DP problem
             return _dp[n]
     
     print(Solution().numSquares(12))
+
+
+<a id="org96658ea"></a>
+
+## 647 - Palindromic Substrings
+
+[leetcode](https://leetcode.com/problems/palindromic-substrings/)
+
+
+### Problem
+
+    
+    Given a string, your task is to count how many palindromic substrings in this string.
+    
+    The substrings with different start indexes or end indexes are counted as different substrings even they consist of same characters.
+    
+    Example 1:
+    
+    Input: "abc"
+    Output: 3
+    Explanation: Three palindromic strings: "a", "b", "c".
+     
+    
+    Example 2:
+    
+    Input: "aaa"
+    Output: 6
+    Explanation: Six palindromic strings: "a", "a", "a", "aa", "aa", "aaa".
+    
+    Note:
+    
+    The input string length won't exceed 1000.
+
+
+### Notes
+
+DP problem
+
+-   States:
+    
+    left\_index, right\_index, mark if `s[left_index, right_index+1]` is palindromic
+
+-   Transition:
+    
+        if s[l] == s[r]: # mark it only when both ends are same values
+        
+        dp[l][r] = 1 if r == l              # if only one element
+        dp[l][r] = 1 if r+1 == l            # if only two elements
+        dp[l][r] = 1 if dp[l+1][r+1] = 1    # if the string in between is palindromic
+        
+        results = results + 1
+
+-   Base case:
+    
+    initialize dp[i][j] = 0
+
+
+### Solution
+
+    class Solution:
+        def countSubstrings(self, s):
+            dp = [[0] * len(s) for i in range(len(s))]
+            res = 0
+            for r in range(len(s)):
+                for l in range(r+1):
+                    if s[r] == s[l]:
+                        if r == l or r+1 == l or dp[l+1][r-1] == 1:
+                            dp[l][r] = 1
+                            res += 1
+            return res
+    print(Solution().countSubstrings("aba"))
+
+
+<a id="orgfb7cd4d"></a>
+
+## 5 - Longest Palindromic Substring
+
+[leetcode](https://leetcode.com/problems/longest-palindromic-substring/)
+
+
+### Problem
+
+    Given a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.
+    
+    Example 1:
+    
+    Input: "babad"
+    Output: "bab"
+    Note: "aba" is also a valid answer.
+    Example 2:
+    
+    Input: "cbbd"
+    Output: "bb"
+
+
+### Notes
+
+DP problem
+
+-   States:
+    
+    left\_index, right\_index, mark if `s[left_index, right_index+1]` is palindromic
+
+-   Transition:
+    
+        if s[l] == s[r]: # mark it only when both ends are same values
+        
+        dp[l][r] = 1 if r == l              # if only one element
+        dp[l][r] = 1 if r+1 == l            # if only two elements
+        dp[l][r] = 1 if dp[l+1][r+1] = 1    # if the string in between is palindromic
+        
+        results = s[l:r+1] if r-l+1>len(results) # comparing the length, record the maximum
+
+-   Base case:
+    
+    initialize dp[i][j] = 0
+
+
+### Solution
+
+-   Solution 1: DP
+
+        class Solution:
+            def longestPalindrome(self, s: str) -> str:
+                dp = [[0] * len(s) for i in range(len(s))]
+                res = ""
+                for r in range(len(s)):
+                    for l in range(r + 1):
+                        if s[l] == s[r]:
+                            if l == r or l + 1 == r or dp[l + 1][r - 1] == 1:
+                                dp[l][r] = 1
+                                if r - l + 1 > len(res):
+                                    res = s[l:r + 1]
+                return res
+
+-   TODO Solution 2: Central Expansion
 
