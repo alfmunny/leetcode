@@ -1,53 +1,55 @@
 
-# LeetCode <code>[39/40]</code>
+# LeetCode <code>[41/42]</code>
 
 
 # Table of Contents
 
--   [LeetCode <code>[39/40]</code>](#org4d35537)
-    -   [41 - First Missing Positive](#orgdad99a7)
-    -   [48 - Rotate Image](#org1f03b8e)
-    -   [53 - Maximum Subarray](#org43f919d)
-    -   [55 - Jump Game](#orgd35f696)
-    -   [62 - Unique Paths](#org1e947e8)
-    -   [64 - Minimum Path Sum](#orgfaa1766)
-    -   [70 - Climbing Stairs](#org625a02e)
-    -   [91 - Decode Ways](#orgc134645)
-    -   [509 - Fibonacci Number](#org4aeda31)
-    -   [75 - Sort Colors](#org200c69f)
-    -   [79 - Word Search](#orga442d4c)
-    -   [45 - Jump  ame II](#orga27cf11)
-    -   [1306 - Jump Game III](#org782d877)
-    -   [84 - Largest Rectangle in Histogram](#org8f6de70)
-    -   [85 - Maximal Rectangle](#org3a3e080)
-    -   [121 - Best Time to Buy and Sell Stock](#org6f76cc9)
-    -   [122 - Best Time to Buy and Sell Stock II](#org114ef98)
-    -   [123 - Best Time to Buy and Sell Stock III](#org55b7beb)
-    -   [188 - Best Time to Buy and Sell Stock IV](#org07850fe)
-    -   [309 - Best Time to Buy and Sell Stock with Cooldown](#orgfdaf325)
-    -   [104 - Maximum Depth of Binary Tree](#org5e2a89d)
-    -   [21 - Merge Two Sorted Lists](#orgbcc2c2a)
-    -   [101 - Symmetric Tree](#org859d2dc)
-    -   [198 - House Robber](#orgee0df74)
-    -   [300 - Longest Increasing Subsequence](#org3c623e4)
-    -   [322 - Coin Change](#org5cd7996)
-    -   [152 - Maximum Product Subarray](#orgbfea294)
-    -   [96 - Unique Binary Search Trees](#orga193b52)
-    -   [221 - Maximal Square](#org21d7a8c)
-    -   [279 - Perfect Squares](#orgeae4a2f)
-    -   [647 - Palindromic Substrings](#org433c98e)
-    -   [5 - Longest Palindromic Substring](#org854c3e7)
-    -   [136 - Single Number](#org94f0c3c)
-    -   [202 - Happy Number](#orge25aa74)
-    -   [338 - Counting Bits](#orge579ce7)
-    -   [494 - Target Sum](#org9b251d1)
-    -   [283 - Move Zeros](#orgc305abb)
-    -   [416 - Partition Equal Subset Sum](#orgab27640)
-    -   [698 - Partition to K Equal Sum Subsets](#org12cc3e8)
-    -   [215 - Kth Largest Element in an Array](#org9452536)
+-   [LeetCode <code>[41/42]</code>](#org5bf5bd5)
+    -   [41 - First Missing Positive](#orgc43c0b6)
+    -   [48 - Rotate Image](#org6757f65)
+    -   [53 - Maximum Subarray](#orge4c55c5)
+    -   [55 - Jump Game](#orga006a2d)
+    -   [62 - Unique Paths](#orgee32675)
+    -   [64 - Minimum Path Sum](#org69e2610)
+    -   [70 - Climbing Stairs](#org18a7373)
+    -   [91 - Decode Ways](#orge944c55)
+    -   [509 - Fibonacci Number](#orga249e82)
+    -   [75 - Sort Colors](#org2aa21ca)
+    -   [79 - Word Search](#orgf51bd83)
+    -   [45 - Jump  ame II](#org561d722)
+    -   [1306 - Jump Game III](#org21905eb)
+    -   [84 - Largest Rectangle in Histogram](#org32938a4)
+    -   [85 - Maximal Rectangle](#org8934f21)
+    -   [121 - Best Time to Buy and Sell Stock](#org9721637)
+    -   [122 - Best Time to Buy and Sell Stock II](#org9e8b9fe)
+    -   [123 - Best Time to Buy and Sell Stock III](#orgec1d701)
+    -   [188 - Best Time to Buy and Sell Stock IV](#org93f588b)
+    -   [309 - Best Time to Buy and Sell Stock with Cooldown](#org61b699b)
+    -   [104 - Maximum Depth of Binary Tree](#org06a2063)
+    -   [21 - Merge Two Sorted Lists](#orgfb8573b)
+    -   [101 - Symmetric Tree](#org43d5a31)
+    -   [198 - House Robber](#orgb89894b)
+    -   [300 - Longest Increasing Subsequence](#org47da147)
+    -   [322 - Coin Change](#org1d673dd)
+    -   [152 - Maximum Product Subarray](#org8e1d843)
+    -   [96 - Unique Binary Search Trees](#org8ea3ee2)
+    -   [221 - Maximal Square](#org08f31e1)
+    -   [279 - Perfect Squares](#orgc00f091)
+    -   [647 - Palindromic Substrings](#org1a92df8)
+    -   [5 - Longest Palindromic Substring](#org5e53d5f)
+    -   [136 - Single Number](#org3b14b89)
+    -   [202 - Happy Number](#org92fa83a)
+    -   [338 - Counting Bits](#org57e27bb)
+    -   [494 - Target Sum](#orgd9bf15b)
+    -   [283 - Move Zeros](#org8d901a7)
+    -   [416 - Partition Equal Subset Sum](#org41cd874)
+    -   [698 - Partition to K Equal Sum Subsets](#orgf324966)
+    -   [215 - Kth Largest Element in an Array](#org65c395e)
+    -   [49 - Group Anagrams](#org19f1873)
+    -   [876 - Middle of the Linked List](#org6c8b5aa)
 
 
-<a id="orgdad99a7"></a>
+<a id="orgc43c0b6"></a>
 
 ## 41 - First Missing Positive
 
@@ -132,7 +134,7 @@ After all the numbers are in the right place, the first one, whose index + 1 != 
             return l + 1
 
 
-<a id="org1f03b8e"></a>
+<a id="org6757f65"></a>
 
 ## 48 - Rotate Image
 
@@ -321,7 +323,7 @@ After all the numbers are in the right place, the first one, whose index + 1 != 
         [print(*line) for line in matrix]
 
 
-<a id="org43f919d"></a>
+<a id="orge4c55c5"></a>
 
 ## 53 - Maximum Subarray
 
@@ -395,7 +397,7 @@ maxSum(i) = maxSum(i-1) + nums[i] only if maxSum(i-1) > 0
         print(Solution().maxSubArray([-2,1,-3,4,-1,2,1,-5,4]))
 
 
-<a id="orgd35f696"></a>
+<a id="orga006a2d"></a>
 
 ## 55 - Jump Game
 
@@ -473,7 +475,7 @@ Greedy algorithm. There are 2 approaches, from head or from tail.
         print(Solution().canJump([ 3,2,1,0,4 ] ))
 
 
-<a id="org1e947e8"></a>
+<a id="orgee32675"></a>
 
 ## 62 - Unique Paths
 
@@ -555,7 +557,7 @@ It is a DP problem.
                 return dp[-1] if m and n else 0
 
 
-<a id="orgfaa1766"></a>
+<a id="org69e2610"></a>
 
 ## 64 - Minimum Path Sum
 
@@ -694,7 +696,7 @@ Remember to handle the edge cases.
         print(Solution().minPathSum(grid))
 
 
-<a id="org625a02e"></a>
+<a id="org18a7373"></a>
 
 ## 70 - Climbing Stairs
 
@@ -754,7 +756,7 @@ So f(n) = f(n-1) + f(n-2)
             return dp[-1]
 
 
-<a id="orgc134645"></a>
+<a id="orge944c55"></a>
 
 ## 91 - Decode Ways
 
@@ -823,7 +825,7 @@ DP problem.
             return dp[-1]
 
 
-<a id="org4aeda31"></a>
+<a id="orga249e82"></a>
 
 ## 509 - Fibonacci Number
 
@@ -888,7 +890,7 @@ Note how long is the dp array. It shoud be N+1, since we start with the number 0
             return dp[-1]
 
 
-<a id="org200c69f"></a>
+<a id="org2aa21ca"></a>
 
 ## 75 - Sort Colors
 
@@ -973,7 +975,7 @@ Note how long is the dp array. It shoud be N+1, since we start with the number 0
             return output
 
 
-<a id="orga442d4c"></a>
+<a id="orgf51bd83"></a>
 
 ## 79 - Word Search
 
@@ -1046,7 +1048,7 @@ Backtrack problem.
         word = "ABCCED"
 
 
-<a id="orga27cf11"></a>
+<a id="org561d722"></a>
 
 ## 45 - Jump  ame II
 
@@ -1100,7 +1102,7 @@ if (i `= curEnd):
     cur
 
 
-<a id="org782d877"></a>
+<a id="org21905eb"></a>
 
 ## 1306 - Jump Game III
 
@@ -1174,7 +1176,7 @@ if self.canReach(arr, start - step) or self.canReach(arr, start + step):
 else:
 
 
-<a id="org8f6de70"></a>
+<a id="org32938a4"></a>
 
 ## 84 - Largest Rectangle in Histogram
 
@@ -1353,7 +1355,7 @@ Two ways of solution.
             r
 
 
-<a id="org3a3e080"></a>
+<a id="org8934f21"></a>
 
 ## 85 - Maximal Rectangle
 
@@ -1437,7 +1439,7 @@ return res
 maxtrix = [["1","0","1","0","0"],["1","0","1","1","1"],["1","1","1","1","1"],["1","0","0",
 
 
-<a id="org6f76cc9"></a>
+<a id="org9721637"></a>
 
 ## 121 - Best Time to Buy and Sell Stock
 
@@ -1489,7 +1491,7 @@ for price in prices:
         maxProfit = price 
 
 
-<a id="org114ef98"></a>
+<a id="org9e8b9fe"></a>
 
 ## 122 - Best Time to Buy and Sell Stock II
 
@@ -1574,7 +1576,7 @@ for price in prices:
                   if (prices[i-1] < prices[i]):
 
 
-<a id="org55b7beb"></a>
+<a id="orgec1d701"></a>
 
 ## 123 - Best Time to Buy and Sell Stock III
 
@@ -1706,7 +1708,7 @@ We only have to maintain two 1-dimentional states.
 [-   
 
 
-<a id="org07850fe"></a>
+<a id="org93f588b"></a>
 
 ## 188 - Best Time to Buy and Sell Stock IV
 
@@ -1769,7 +1771,7 @@ for price in prices:
         sell[i] = max(sel
 
 
-<a id="orgfdaf325"></a>
+<a id="org61b699b"></a>
 
 ## 309 - Best Time to Buy and Sell Stock with Cooldown
 
@@ -1811,7 +1813,7 @@ for price in prices:
     dp\_pre\_0 = tmp
 
 
-<a id="org5e2a89d"></a>
+<a id="org06a2063"></a>
 
 ## 104 - Maximum Depth of Binary Tree
 
@@ -1850,7 +1852,7 @@ Recursion is your friend!
           return 1 + max(self.maxDepth(root.right), self.maxDepth(
 
 
-<a id="orgbcc2c2a"></a>
+<a id="orgfb8573b"></a>
 
 ## 21 - Merge Two Sorted Lists
 
@@ -1893,7 +1895,7 @@ Recursion is your friend!
 -   
 
 
-<a id="org859d2dc"></a>
+<a id="org43d5a31"></a>
 
 ## 101 - Symmetric Tree
 
@@ -1955,7 +1957,7 @@ Recursion !
     \#+end\_sr
 
 
-<a id="orgee0df74"></a>
+<a id="orgb89894b"></a>
 
 ## 198 - House Robber
 
@@ -2001,7 +2003,7 @@ Base Case: dp[0][0] = 0, dp[0][1] = 0
               robbed, notRobbed = notRobbed + i, max(robbed, notRobbed)
 
 
-<a id="org3c623e4"></a>
+<a id="org47da147"></a>
 
 ## 300 - Longest Increasing Subsequence
 
@@ -2024,40 +2026,66 @@ Base Case: dp[0][0] = 0, dp[0][1] = 0
     Follow up: Could you improve it to O(n log n) time complexity?
 
 
-### Notes
-
--   Solution 1: DP with O(n^2)
-
-    DP problem
-    
-    States: index, dp[index] = longest increasing subsequence at this position
-    
-    Transition: if nums[j] < nums[i]: dp[i] = max(dp[i], dp[j] + 1) 
-    
-    Base Case: dp[0] = 1
-
--   Solution 2: DP with binary search
-
-
 ### Solution
 
+DP problem.
+
+States: index, dp[index] = longest increasing subsequence at this position
+
+Transition: if nums[j] < nums[i]: dp[i] = max(dp[i], dp[j] + 1) 
+
+Base Case: dp[0] = 1
+
 -   Solution 1: DP with O(n^2)
 
-    \#+begin\_src python 
-      class Solution:
-          def lengthOfLIS(self, nums):
-              dp = [1] \* len(nums)
+        class Solution:
+            def lengthOfLIS(self, nums):
+                dp = [1] * len(nums)
+        
+                for i in range(1, len(nums)):
+                    for j in range(i):
+                       if nums[j] < nums[i]:
+                           dp[i] = max(dp[i], dp[j] + 1)
+        
+               return max(dp) if nums else 0
+
+-   Solution 2: DP with binary search for LIS
+
+        class Solution:
+            def lengthOfLIS(self, nums):
+                if not nums:
+                    return 0
+                dp = [nums[0]]
+                for i in range(1, len(nums)):
+                    if nums[i] > dp[-1]:
+                        dp.append(nums[i])
+                    else:
+                        j = self.binarySearch(dp, nums[i])
+                        dp[j] = nums[i]
+        
+                    print(dp)
+                return len(dp)
+        
+            def binarySearch(self, nums, target):
+                l = 0
+                r = len(nums) - 1
+                while l <= r:
+                    mid = (l + r) // 2
+                    if nums[mid] > target:
+                        r = mid - 1
+                    elif nums[mid] < target:
+                        l = mid + 1
+                    else:
+                        return mid
+        
+                return l 
     
-    for i in range(1, len(nums)):
-        for j in range(i):
-           if nums[j] < nums[i]:
-               dp[i] = max(dp[i], dp[j] + 1)
+    Time: O(nlogn)
     
-             return max(dp) if nums else 0
-    \#+ends
+    Space: O(n)
 
 
-<a id="org5cd7996"></a>
+<a id="org1d673dd"></a>
 
 ## 322 - Coin Change
 
@@ -2107,7 +2135,7 @@ Transition: dp[i] = min(dp[i], dp[i-coins[j]]+1)
             return dp[-1] if dp[-1] != float('inf') else -1
 
 
-<a id="orgbfea294"></a>
+<a id="org8e1d843"></a>
 
 ## 152 - Maximum Product Subarray
 
@@ -2234,7 +2262,7 @@ DP problem:
     Space: O(n)
 
 
-<a id="orga193b52"></a>
+<a id="org8ea3ee2"></a>
 
 ## 96 - Unique Binary Search Trees
 
@@ -2324,7 +2352,7 @@ DP problem:
                 return math.factorial(2*n)/(math.factorial(n)*math.factorial(n+1))
 
 
-<a id="org21d7a8c"></a>
+<a id="org08f31e1"></a>
 
 ## 221 - Maximal Square
 
@@ -2471,7 +2499,7 @@ Space: O(n)
 Space: O(1)
 
 
-<a id="orgeae4a2f"></a>
+<a id="orgc00f091"></a>
 
 ## 279 - Perfect Squares
 
@@ -2524,7 +2552,7 @@ DP problem
     print(Solution().numSquares(12))
 
 
-<a id="org433c98e"></a>
+<a id="org1a92df8"></a>
 
 ## 647 - Palindromic Substrings
 
@@ -2595,7 +2623,7 @@ DP problem
     print(Solution().countSubstrings("aba"))
 
 
-<a id="org854c3e7"></a>
+<a id="org5e53d5f"></a>
 
 ## 5 - Longest Palindromic Substring
 
@@ -2660,7 +2688,7 @@ DP problem
 -   Solution 2: Central Expansion
 
 
-<a id="org94f0c3c"></a>
+<a id="org3b14b89"></a>
 
 ## 136 - Single Number
 
@@ -2730,7 +2758,7 @@ DP problem
         print(reduce(operator.xor, nums))
 
 
-<a id="orge25aa74"></a>
+<a id="org92fa83a"></a>
 
 ## 202 - Happy Number
 
@@ -2788,7 +2816,7 @@ Hash Table
             return n == 1
 
 
-<a id="orge579ce7"></a>
+<a id="org57e27bb"></a>
 
 ## 338 - Counting Bits
 
@@ -2875,7 +2903,7 @@ DP problem
                 return res[:num+1]
 
 
-<a id="org9b251d1"></a>
+<a id="orgd9bf15b"></a>
 
 ## 494 - Target Sum
 
@@ -3040,7 +3068,7 @@ It means there are 2 ways to reach 0 (5 - offset)
         print(Solution().findTargetSumWays([1, 1, 1, 1, 1], 3))
 
 
-<a id="orgc305abb"></a>
+<a id="org8d901a7"></a>
 
 ## 283 - Move Zeros
 
@@ -3085,7 +3113,7 @@ One pointer keeps going forward.
             return nums
 
 
-<a id="orgab27640"></a>
+<a id="org41cd874"></a>
 
 ## 416 - Partition Equal Subset Sum
 
@@ -3175,7 +3203,7 @@ When the transition is only depend on the last row, usually you always can trans
     Space: O(1) maybe, depends on the sum of the array, the bits can be longer
 
 
-<a id="org12cc3e8"></a>
+<a id="orgf324966"></a>
 
 ## 698 - Partition to K Equal Sum Subsets
 
@@ -3204,7 +3232,7 @@ When the transition is only depend on the last row, usually you always can trans
 ### Solution
 
 
-<a id="org9452536"></a>
+<a id="org65c395e"></a>
 
 ## 215 - Kth Largest Element in an Array
 
@@ -3266,7 +3294,7 @@ in each iteration to keep the first kth largest element in the array
     
     Space: O(k)
 
--   Solution 2: partition to find the kth largest
+-   Solution 2: Partition to find the kth largest
 
         class Solution:
             def findKthLargest(self, nums, k):
@@ -3279,7 +3307,6 @@ in each iteration to keep the first kth largest element in the array
                     return nums[pos]
         
             def partition(self, nums, l, r):
-                # 1, 5 ,9, 2, 4, 6, 8, 5
                 p = r
         
                 while(l < r):
@@ -3287,11 +3314,119 @@ in each iteration to keep the first kth largest element in the array
                         l += 1
                     while l < r and nums[r] <= nums[p]:
                         r -= 1
-        
                     nums[l], nums[r] = nums[r], nums[l]
-        
                 nums[l], nums[p] = nums[p], nums[l]
-                print(nums)
-        
                 return l
+    
+    Time: O(klogn)
+    
+    Space: O(1)
+
+
+<a id="org19f1873"></a>
+
+## 49 - Group Anagrams
+
+[leetcode](https://leetcode.com/problems/group-anagrams/)
+
+
+### Problem
+
+    Given an array of strings, group anagrams together.
+    
+    Example:
+    
+    Input: ["eat", "tea", "tan", "ate", "nat", "bat"],
+    Output:
+    [
+      ["ate","eat","tea"],
+      ["nat","tan"],
+      ["bat"]
+    ]
+    Note:
+    
+    All inputs will be in lowercase.
+    The order of your output does not matter.
+
+
+### Solution
+
+Use the sorted string as key in hash table
+
+    import collections
+    class Solution:
+        def groupAnagrams(self, strs):
+            ans = collections.defaultdict(list)
+            for s in strs:
+                ans[tuple(sorted(s))].append(s)
+            return list(ans.values())
+
+Or use the counter
+
+    import collections
+    class Solution:
+        def groupAnagrams(self, strs):
+            ans = collections.defaultdict(list)
+            for s in strs:
+                a = [0] * 26
+                for c in s:
+                    a[ord(c) - ord('a')] += 1
+                ans[tuple(a)].append(s)
+            return list(ans.values())
+
+
+<a id="org6c8b5aa"></a>
+
+## 876 - Middle of the Linked List
+
+[leetcode](https://leetcode.com/problems/middle-of-the-linked-list/)
+
+
+### Problem
+
+    Given a non-empty, singly linked list with head node head, return a middle node of linked list.
+    
+    If there are two middle nodes, return the second middle node.
+    
+     
+    
+    Example 1:
+    
+    Input: [1,2,3,4,5]
+    Output: Node 3 from this list (Serialization: [3,4,5])
+    The returned node has value 3.  (The judge's serialization of this node is [3,4,5]).
+    Note that we returned a ListNode object ans, such that:
+    ans.val = 3, ans.next.val = 4, ans.next.next.val = 5, and ans.next.next.next = NULL.
+    Example 2:
+    
+    Input: [1,2,3,4,5,6]
+    Output: Node 4 from this list (Serialization: [4,5,6])
+    Since the list has two middle nodes with values 3 and 4, we return the second one.
+
+
+### Solution
+
+-   Solution 1: two-pointer
+
+        class Solution:
+            def middleNode(self, head: ListNode) -> ListNode:
+                p1 = p2 = head
+                while p2 and p2.next:
+                    p2 = p2.next.next
+                    p1 = p1.next
+        
+                return p1
+
+-   Solution 2: counter
+
+        class Solution:
+            def middleNode(self, head):
+                mid = head
+                count = 0
+                while head:
+                    count += 1
+                    if count % 2 == 0:
+                        mid = mid.next
+                    head = head.next
+                return mid
 

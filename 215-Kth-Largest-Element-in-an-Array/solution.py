@@ -9,7 +9,6 @@ class Solution:
             return nums[pos]
 
     def partition(self, nums, l, r):
-        # 1, 5 ,9, 2, 4, 6, 8, 5
         p = r
 
         while(l < r):
@@ -17,10 +16,6 @@ class Solution:
                 l += 1
             while l < r and nums[r] <= nums[p]:
                 r -= 1
-                
             nums[l], nums[r] = nums[r], nums[l]
-
         nums[l], nums[p] = nums[p], nums[l]
-        print(nums)
-
         return l
