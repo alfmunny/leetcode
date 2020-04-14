@@ -1,58 +1,58 @@
-
-# LeetCode <code>[41/42]</code>
+# LeetCode <code>[46/47]</code>
 
 
 # Table of Contents
 
--   [LeetCode <code>[41/42]</code>](#org5bf5bd5)
-    -   [41 - First Missing Positive](#orgc43c0b6)
-    -   [48 - Rotate Image](#org6757f65)
-    -   [53 - Maximum Subarray](#orge4c55c5)
-    -   [55 - Jump Game](#orga006a2d)
-    -   [62 - Unique Paths](#orgee32675)
-    -   [64 - Minimum Path Sum](#org69e2610)
-    -   [70 - Climbing Stairs](#org18a7373)
-    -   [91 - Decode Ways](#orge944c55)
-    -   [509 - Fibonacci Number](#orga249e82)
-    -   [75 - Sort Colors](#org2aa21ca)
-    -   [79 - Word Search](#orgf51bd83)
-    -   [45 - Jump  ame II](#org561d722)
-    -   [1306 - Jump Game III](#org21905eb)
-    -   [84 - Largest Rectangle in Histogram](#org32938a4)
-    -   [85 - Maximal Rectangle](#org8934f21)
-    -   [121 - Best Time to Buy and Sell Stock](#org9721637)
-    -   [122 - Best Time to Buy and Sell Stock II](#org9e8b9fe)
-    -   [123 - Best Time to Buy and Sell Stock III](#orgec1d701)
-    -   [188 - Best Time to Buy and Sell Stock IV](#org93f588b)
-    -   [309 - Best Time to Buy and Sell Stock with Cooldown](#org61b699b)
-    -   [104 - Maximum Depth of Binary Tree](#org06a2063)
-    -   [21 - Merge Two Sorted Lists](#orgfb8573b)
-    -   [101 - Symmetric Tree](#org43d5a31)
-    -   [198 - House Robber](#orgb89894b)
-    -   [300 - Longest Increasing Subsequence](#org47da147)
-    -   [322 - Coin Change](#org1d673dd)
-    -   [152 - Maximum Product Subarray](#org8e1d843)
-    -   [96 - Unique Binary Search Trees](#org8ea3ee2)
-    -   [221 - Maximal Square](#org08f31e1)
-    -   [279 - Perfect Squares](#orgc00f091)
-    -   [647 - Palindromic Substrings](#org1a92df8)
-    -   [5 - Longest Palindromic Substring](#org5e53d5f)
-    -   [136 - Single Number](#org3b14b89)
-    -   [202 - Happy Number](#org92fa83a)
-    -   [338 - Counting Bits](#org57e27bb)
-    -   [494 - Target Sum](#orgd9bf15b)
-    -   [283 - Move Zeros](#org8d901a7)
-    -   [416 - Partition Equal Subset Sum](#org41cd874)
-    -   [698 - Partition to K Equal Sum Subsets](#orgf324966)
-    -   [215 - Kth Largest Element in an Array](#org65c395e)
-    -   [49 - Group Anagrams](#org19f1873)
-    -   [876 - Middle of the Linked List](#org6c8b5aa)
-
-
-<a id="orgc43c0b6"></a>
+-   [LeetCode <code>[46/47]</code>](#org5cf213a)
+    -   [41 - First Missing Positive](#org251abd3)
+    -   [48 - Rotate Image](#orgb975dac)
+    -   [53 - Maximum Subarray](#orga206180)
+    -   [55 - Jump Game](#orgd777c43)
+    -   [62 - Unique Paths](#orgcd1cbe5)
+    -   [64 - Minimum Path Sum](#org70e7dfa)
+    -   [70 - Climbing Stairs](#orgf3d0cde)
+    -   [91 - Decode Ways](#org1db337f)
+    -   [509 - Fibonacci Number](#org84bee1a)
+    -   [75 - Sort Colors](#org393c40a)
+    -   [79 - Word Search](#org25c944b)
+    -   [45 - Jump Game II](#orgf038f87)
+    -   [1306 - Jump Game III](#orgec5a351)
+    -   [84 - Largest Rectangle in Histogram](#orgcaf6e78)
+    -   [85 - Maximal Rectangle](#org8bb51f1)
+    -   [121 - Best Time to Buy and Sell Stock](#org2c342fc)
+    -   [122 - Best Time to Buy and Sell Stock II](#org7a24443)
+    -   [123 - Best Time to Buy and Sell Stock III](#org52b31ba)
+    -   [188 - Best Time to Buy and Sell Stock IV](#orgad9a521)
+    -   [309 - Best Time to Buy and Sell Stock with Cooldown](#org8dc45a7)
+    -   [104 - Maximum Depth of Binary Tree](#org362df26)
+    -   [21 - Merge Two Sorted Lists](#org426dad8)
+    -   [101 - Symmetric Tree](#org15fccda)
+    -   [198 - House Robber](#org0d26db1)
+    -   [300 - Longest Increasing Subsequence](#org91bdc9c)
+    -   [322 - Coin Change](#org744da1d)
+    -   [152 - Maximum Product Subarray](#org73a1df8)
+    -   [96 - Unique Binary Search Trees](#orge0e427d)
+    -   [221 - Maximal Square](#org66c5901)
+    -   [279 - Perfect Squares](#orgb7fe6cc)
+    -   [647 - Palindromic Substrings](#orge997abd)
+    -   [5 - Longest Palindromic Substring](#orgd489111)
+    -   [136 - Single Number](#orgd6e6f67)
+    -   [202 - Happy Number](#org55d3064)
+    -   [338 - Counting Bits](#orga1e7e84)
+    -   [494 - Target Sum](#org7ccef09)
+    -   [283 - Move Zeros](#orgf31a5dc)
+    -   [416 - Partition Equal Subset Sum](#orgf3dd3aa)
+    -   [698 - Partition to K Equal Sum Subsets](#org672a505)
+    -   [215 - Kth Largest Element in an Array](#org53c1090)
+    -   [49 - Group Anagrams](#orgecb29fa)
+    -   [876 - Middle of the Linked List](#org607884a)
+    -   [844 - Backspace String Compare](#orgca90822)
+    -   [155 - Min Stack](#org19a4158)
+    -   [543 - Diameter of Binary Tree](#org2aa7b0d)
+    -   [1046 - Last Stone Weight](#org0e4591c)
+    -   [525 - Contiguous Array](#org81fd8bd)
 
 ## 41 - First Missing Positive
-
 
 ### Problem
 
@@ -77,14 +77,13 @@
     
     Your algorithm should run in O(n) time and uses constant extra space.
 
-
 ### Notes
 
 Run in O(n) time and uses constant extra space
 
 1.  Say the length of the array is l, the number must be in 1&#x2026;l+1 (also l possible numbers)
     
-    For example 
+    For example
     
     [1, 2, 3, 4], the first missing positive is 5.
     
@@ -116,30 +115,27 @@ After all the numbers are in the right place, the first one, whose index + 1 != 
     
     So you have to do it recursively, with \`while\`.
 
-
 ### Solution
 
-    class Solution(object):
-        def firstMissingPositive(self, nums):
-            l = len(nums)
-            for i in range(l):
-                # Note!: here has to be using while
-                while (nums[i] > 0 and nums[i] <= l and nums[nums[i] - 1] != nums[i]):
-                    nums[nums[i]-1], nums[i] = nums[i], nums[nums[i]-1]
-    
-            for i, n in enumerate(nums):
-                if (n != i+1):
-                    return i + 1
-    
-            return l + 1
+```python
+class Solution(object):
+    def firstMissingPositive(self, nums):
+        l = len(nums)
+        for i in range(l):
+            # Note!: here has to be using while
+            while (nums[i] > 0 and nums[i] <= l and nums[nums[i] - 1] != nums[i]):
+                nums[nums[i]-1], nums[i] = nums[i], nums[nums[i]-1]
 
+        for i, n in enumerate(nums):
+            if (n != i+1):
+                return i + 1
 
-<a id="org6757f65"></a>
+        return l + 1
+```
 
 ## 48 - Rotate Image
 
 [leetcode](https://leetcode.com/problems/rotate-image/)
-
 
 ### Problem
 
@@ -184,16 +180,15 @@ After all the numbers are in the right place, the first one, whose index + 1 != 
       [16, 7,10,11]
     ]
 
-
 ### Notes
 
 -   Naive solution, to do it one by one.
 
-    **Important**: 
+    **Important**:
     
-    You go from the outside into the middle. So the main loop is half of the dimension. 
+    You go from the outside into the middle. So the main loop is half of the dimension.
     
-    The inner loop should also shrink its size everytime. Begins at i and ends and n-2-i, **not n-1-i**. 
+    The inner loop should also shrink its size everytime. Begins at i and ends and n-2-i, **not n-1-i**.
     
     Because you don't want to swap the last one. The last one n-1-i has already been swapped with the i.
 
@@ -201,134 +196,64 @@ After all the numbers are in the right place, the first one, whose index + 1 != 
 
     Swap the diagnoal elements and reverse each line in the matrix.
     
-    <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-    
-    
-    <colgroup>
-    <col  class="org-right" />
-    
-    <col  class="org-right" />
-    
-    <col  class="org-right" />
-    
-    <col  class="org-left" />
-    
-    <col  class="org-right" />
-    
-    <col  class="org-right" />
-    
-    <col  class="org-right" />
-    
-    <col  class="org-left" />
-    
-    <col  class="org-right" />
-    
-    <col  class="org-right" />
-    
-    <col  class="org-right" />
-    </colgroup>
-    <tbody>
-    <tr>
-    <td class="org-right">1</td>
-    <td class="org-right">2</td>
-    <td class="org-right">3</td>
-    <td class="org-left">swap</td>
-    <td class="org-right">1</td>
-    <td class="org-right">4</td>
-    <td class="org-right">7</td>
-    <td class="org-left">reverse</td>
-    <td class="org-right">7</td>
-    <td class="org-right">4</td>
-    <td class="org-right">1</td>
-    </tr>
-    
-    
-    <tr>
-    <td class="org-right">4</td>
-    <td class="org-right">5</td>
-    <td class="org-right">6</td>
-    <td class="org-left">&#x2014;></td>
-    <td class="org-right">2</td>
-    <td class="org-right">5</td>
-    <td class="org-right">8</td>
-    <td class="org-left">-&#x2013;&#x2014;></td>
-    <td class="org-right">8</td>
-    <td class="org-right">5</td>
-    <td class="org-right">2</td>
-    </tr>
-    
-    
-    <tr>
-    <td class="org-right">7</td>
-    <td class="org-right">8</td>
-    <td class="org-right">9</td>
-    <td class="org-left">&#xa0;</td>
-    <td class="org-right">3</td>
-    <td class="org-right">6</td>
-    <td class="org-right">9</td>
-    <td class="org-left">&#xa0;</td>
-    <td class="org-right">9</td>
-    <td class="org-right">6</td>
-    <td class="org-right">3</td>
-    </tr>
-    </tbody>
-    </table>
-
+    | 1 | 2 | 3 | swap      | 1 | 4 | 7 | reverse            | 7 | 4 | 1 |
+    | 4 | 5 | 6 | &#x2014;> | 2 | 5 | 8 | -&#x2013;&#x2014;> | 8 | 5 | 2 |
+    | 7 | 8 | 9 |           | 3 | 6 | 9 |                    | 9 | 6 | 3 |
 
 ### Solution
 
 -   Solution 1: Straightforward
 
-        class Solution(object):
-            def rotate(self, matrix):
-                """
-                :type matrix: List[List[int]]
-                :rtype: None Do not return anything, modify matrix in-place instead.
-                """
-                n = len(matrix)
-        
-                for i in range(n//2):
-                    # Shrink the dimension
-                    # Do not include the last element
-                    for j in range(i, n-i-1):
-                        tmp = matrix[i][j]
-                        matrix[i][j] = matrix[n-1-j][i]
-                        matrix[n-1-j][i] = matrix[n-1-i][n-1-j]
-                        matrix[n-1-i][n-1-j] = matrix[j][n-1-i]
-                        matrix[j][n-1-i] = tmp
-        
-        matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
-        Solution().rotate(matrix)
-        [print(*line) for line in matrix]
+    ```python
+    class Solution(object):
+        def rotate(self, matrix):
+            """
+            :type matrix: List[List[int]]
+            :rtype: None Do not return anything, modify matrix in-place instead.
+            """
+            n = len(matrix)
+    
+            for i in range(n//2):
+                # Shrink the dimension
+                # Do not include the last element
+                for j in range(i, n-i-1):
+                    tmp = matrix[i][j]
+                    matrix[i][j] = matrix[n-1-j][i]
+                    matrix[n-1-j][i] = matrix[n-1-i][n-1-j]
+                    matrix[n-1-i][n-1-j] = matrix[j][n-1-i]
+                    matrix[j][n-1-i] = tmp
+    
+    matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+    Solution().rotate(matrix)
+    [print(*line) for line in matrix]
+    ```
 
 -   Solution 2:
 
-        class Solution(object):
-            def rotate(self, matrix):
-                """
-                :type matrix: List[List[int]]
-                :rtype: None Do not return anything, modify matrix in-place instead.
-                """
-                n = len(matrix)
-        
-                for i in range(n):
-                    for j in range(i, n):
-                        matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
-        
-                for i in range(n):
-                    matrix[i].reverse()
-        
-        matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
-        Solution().rotate(matrix)
-        [print(*line) for line in matrix]
-
-
-<a id="orge4c55c5"></a>
+    ```python
+    class Solution(object):
+        def rotate(self, matrix):
+            """
+            :type matrix: List[List[int]]
+            :rtype: None Do not return anything, modify matrix in-place instead.
+            """
+            n = len(matrix)
+    
+            for i in range(n):
+                for j in range(i, n):
+                    matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
+    
+            for i in range(n):
+                matrix[i].reverse()
+    
+    matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+    Solution().rotate(matrix)
+    [print(*line) for line in matrix]
+    ```
 
 ## 53 - Maximum Subarray
 
 [leetcode](https://leetcode.com/problems/maximum-subarray/)
-
 
 ### Problem
 
@@ -343,7 +268,6 @@ After all the numbers are in the right place, the first one, whose index + 1 != 
     
     If you have figured out the O(n) solution, try coding another solution using the divide and conquer approach, which is more subtle.
 
-
 ### Notes
 
 Dynamic programming problem.
@@ -352,57 +276,56 @@ Use nums[i] always store the maximum sum.
 
 maxSum(i) = maxSum(i-1) + nums[i] only if maxSum(i-1) > 0
 
-
 ### Solution
 
 -   Solution 1: use a extra dp array
 
-        class Solution(object):
-            def maxSubArray(self, nums):
-                """
-                :type nums: List[int]
-                :rtype: int
-                """
-                curSum = maxSum = nums[0]
-        
-                for num in nums[1:]:
-                  curSum = max(num, curSum+num)
-                  maxSum = max(curSum, maxSum)
-        
-                return maxSum
-        
-        print(Solution().maxSubArray([-2,1,-3,4,-1,2,1,-5,4]))
+    ```python
+    class Solution(object):
+        def maxSubArray(self, nums):
+            """
+            :type nums: List[int]
+            :rtype: int
+            """
+            curSum = maxSum = nums[0]
+    
+            for num in nums[1:]:
+              curSum = max(num, curSum+num)
+              maxSum = max(curSum, maxSum)
+    
+            return maxSum
+    
+    print(Solution().maxSubArray([-2,1,-3,4,-1,2,1,-5,4]))
+    ```
 
 -   Solution 2: no extra space, in place modify
 
-        class Solution(object):
-            def maxSubArray(self, nums):
-                """
-                :type nums: List[int]
-                :rtype: int
-                """
-        
-                if len(nums) == 0:
-                    return 0
-        
-                ret = nums[0]
-        
-                for i in range(1, len(nums)):
-                    if nums[i - 1] > 0:
-                        nums[i] += nums[i - 1]
-        
-                    ret = max(ret, nums[i])
-        
-                return ret
-        print(Solution().maxSubArray([-2,1,-3,4,-1,2,1,-5,4]))
-
-
-<a id="orga006a2d"></a>
+    ```python
+    class Solution(object):
+        def maxSubArray(self, nums):
+            """
+            :type nums: List[int]
+            :rtype: int
+            """
+    
+            if len(nums) == 0:
+                return 0
+    
+            ret = nums[0]
+    
+            for i in range(1, len(nums)):
+                if nums[i - 1] > 0:
+                    nums[i] += nums[i - 1]
+    
+                ret = max(ret, nums[i])
+    
+            return ret
+    print(Solution().maxSubArray([-2,1,-3,4,-1,2,1,-5,4]))
+    ```
 
 ## 55 - Jump Game
 
 [leetcode](https://leetcode.com/problems/jump-game/)
-
 
 ### Problem
 
@@ -425,7 +348,6 @@ maxSum(i) = maxSum(i-1) + nums[i] only if maxSum(i-1) > 0
     Explanation: You will always arrive at index 3 no matter what. Its maximum
                  jump length is 0, which makes it impossible to reach the last index.
 
-
 ### Notes
 
 Greedy algorithm. There are 2 approaches, from head or from tail.
@@ -434,53 +356,56 @@ Greedy algorithm. There are 2 approaches, from head or from tail.
 
     always remember the furthest reachable index.
     
-        reach = max(i + nums[i], reach) if i <= reach
+    ```python
+    reach = max(i + nums[i], reach) if i <= reach
+    ```
 
 -   Start from tail
 
     always remember the last position it can reach.
     
-        lastPos = i if i + nums[i] >= lastPos
-
+    ```python
+    lastPos = i if i + nums[i] >= lastPos
+    ```
 
 ### Solition
 
 -   Solution 1: start from head
 
-        class Solution():
-            def canJump(self, nums):
-                reach = 0
-        
-                for i in range(len(nums)):
-                    if i <= reach:
-                        reach = max(i + nums[i], reach)
-        
-                return reach >= len(nums) - 1
-        
-        print(Solution().canJump([ 2,3,1,1,4 ]))
-        print(Solution().canJump([ 3,2,1,0,4 ] ))
+    ```python
+    class Solution():
+        def canJump(self, nums):
+            reach = 0
+    
+            for i in range(len(nums)):
+                if i <= reach:
+                    reach = max(i + nums[i], reach)
+    
+            return reach >= len(nums) - 1
+    
+    print(Solution().canJump([ 2,3,1,1,4 ]))
+    print(Solution().canJump([ 3,2,1,0,4 ] ))
+    ```
 
 -   Solution 2: start from tail
 
-        class Solution():
-            def canJump(self, nums):
-                lastPos = len(nums) - 1
-                for i in reversed(range(len(nums))):
-                    if i + nums[i] >= lastPos:
-                        lastPos = i
-        
-                return lastPos == 0
-        
-        print(Solution().canJump([ 2,3,1,1,4 ]))
-        print(Solution().canJump([ 3,2,1,0,4 ] ))
-
-
-<a id="orgee32675"></a>
+    ```python
+    class Solution():
+        def canJump(self, nums):
+            lastPos = len(nums) - 1
+            for i in reversed(range(len(nums))):
+                if i + nums[i] >= lastPos:
+                    lastPos = i
+    
+            return lastPos == 0
+    
+    print(Solution().canJump([ 2,3,1,1,4 ]))
+    print(Solution().canJump([ 3,2,1,0,4 ] ))
+    ```
 
 ## 62 - Unique Paths
 
 [leetcode](https://leetcode.com/problems/unique-paths/)
-
 
 ### Problem
 
@@ -506,12 +431,11 @@ Greedy algorithm. There are 2 approaches, from head or from tail.
     Input: m = 7, n = 3
     Output: 28
 
-
 ### Notes
 
-It is a DP problem. 
+It is a DP problem.
 
-1.  There are only two possibilities to arrive at the finish point 
+1.  There are only two possibilities to arrive at the finish point
     1.  arrive at that point from above
     2.  arrive at that point from left
 
@@ -522,47 +446,51 @@ It is a DP problem.
 
 -   UniquePath with 2-D DP
 
-        dp[i][j] = dp[i-1][j] + dp[i][j-1]
+    ```python
+    dp[i][j] = dp[i-1][j] + dp[i][j-1]
+    ```
     
     After you have the edge, you go levelly to the bottom.
 
 -   UniquePath with 1-D DP
 
-        dp[j] = dp[j - 1] + dp[j]
-
+    ```python
+    dp[j] = dp[j - 1] + dp[j]
+    ```
 
 ### Solution
 
 -   Solution 1: 2-D DP
 
-        class Solution():
-            def uniquePath(self, m, n):
-                dp = [[1 for j in range(n)] for i in range(m)]
-                for i in range(1, m):
-                    for j in range(1, n):
-                        dp[i][j] = dp[i][j - 1] + dp[i - 1][j]
-        
-                return dp[-1][-1] if m and n else 0
+    ```python
+    class Solution():
+        def uniquePath(self, m, n):
+            dp = [[1 for j in range(n)] for i in range(m)]
+            for i in range(1, m):
+                for j in range(1, n):
+                    dp[i][j] = dp[i][j - 1] + dp[i - 1][j]
+    
+            return dp[-1][-1] if m and n else 0
+    ```
 
 -   Solution 2: 1-D DP
 
-        class Solution():
-            def uniquePath(self, m, n):
-                dp = [1] * n
-        
-                for i in range(1, m):
-                    for j in range(1, n):
-                        dp[j] = dp[j - 1] + dp[j]
-        
-                return dp[-1] if m and n else 0
-
-
-<a id="org69e2610"></a>
+    ```python
+    class Solution():
+        def uniquePath(self, m, n):
+            dp = [1] * n
+    
+            for i in range(1, m):
+                for j in range(1, n):
+                    dp[j] = dp[j - 1] + dp[j]
+    
+            return dp[-1] if m and n else 0
+    
+    ```
 
 ## 64 - Minimum Path Sum
 
 [leetcode](https://leetcode.com/problems/minimum-path-sum/)
-
 
 ### Problem
 
@@ -581,10 +509,9 @@ It is a DP problem.
     Output: 7
     Explanation: Because the path 1→3→1→1→1 minimizes the sum.
 
-
 ### Notes
 
-Thinking: <del>It seems to be a greedy algorithm problem.</del>
+Thinking: ~~It seems to be a greedy algorithm problem.~~
 
 It is a dp problem.
 
@@ -594,114 +521,115 @@ dp[i][j] = min(dp[i][j-1], dp[i-1][j]) + grid[i][j]
 
 Remember to handle the edge cases.
 
-
 ### Solution
 
 -   Solution 1: 2D DP
 
     -   Inplace DP
     
-        class Solution(object):
-            def minPathSum(self, grid):
-                """
-                :type grid: List[List[int]]
-                :rtype: int
-                """
-                m = len(grid)
-                n = len(grid[0])
-        
-                for i in range(m):
-                    for j in range(n):
-                        if i == 0:
-                            if j == 0:
-                                continue
-                            else:
-                                grid[i][j] += grid[i][j-1]
+    ```python
+    class Solution(object):
+        def minPathSum(self, grid):
+            """
+            :type grid: List[List[int]]
+            :rtype: int
+            """
+            m = len(grid)
+            n = len(grid[0])
+    
+            for i in range(m):
+                for j in range(n):
+                    if i == 0:
+                        if j == 0:
+                            continue
                         else:
-                            if j == 0:
-                                grid[i][j] += grid[i-1][j]
-                            else:
-                                grid[i][j] += min(grid[i-1][j], grid[i][j-1])
-                return grid[-1][-1] if m and n else 0
-        
-        
-        grid = [[1,3,1],[1,5,1],[4,2,1]]
-        
-        print(Solution().minPathSum(grid))
+                            grid[i][j] += grid[i][j-1]
+                    else:
+                        if j == 0:
+                            grid[i][j] += grid[i-1][j]
+                        else:
+                            grid[i][j] += min(grid[i-1][j], grid[i][j-1])
+            return grid[-1][-1] if m and n else 0
+    
+    
+    grid = [[1,3,1],[1,5,1],[4,2,1]]
+    
+    print(Solution().minPathSum(grid))
+    ```
     
     -   Additional DP with auxiliary columns
     
-        import sys
-        class Solution(object):
-            def minPathSum(self, grid):
-                """
-                :type grid: List[List[int]]
-                :rtype: int
-                """
-                m = len(grid)
-                n = len(grid[0])
-        
-                dp = [[ 0 for i in range(n+1)] for j in range(m+1)]
-        
-                for i in range(len(dp)):
-                  dp[i][0] = sys.maxsize
-        
-                for i in range(len(dp[0])):
-                    dp[0][i] = sys.maxsize
-        
-                dp[1][1] = grid[0][0]
-        
-                for i in range(1, m+1):
-                    for j in range(1, n+1):
-                        if i == 1 and j == 1: 
-                            continue
-                        else:
-                            dp[i][j] = min(dp[i-1][j], dp[i][j-1]) + grid[i-1][j-1]
-        
-        
-                return dp[-1][-1] if m and n else 0
-        
-        
-        grid = [[1,3,1],[1,5,1],[4,2,1]]
-        
-        print(Solution().minPathSum(grid))
+    ```python
+    import sys
+    class Solution(object):
+        def minPathSum(self, grid):
+            """
+            :type grid: List[List[int]]
+            :rtype: int
+            """
+            m = len(grid)
+            n = len(grid[0])
+    
+            dp = [[ 0 for i in range(n+1)] for j in range(m+1)]
+    
+            for i in range(len(dp)):
+              dp[i][0] = sys.maxsize
+    
+            for i in range(len(dp[0])):
+                dp[0][i] = sys.maxsize
+    
+            dp[1][1] = grid[0][0]
+    
+            for i in range(1, m+1):
+                for j in range(1, n+1):
+                    if i == 1 and j == 1: 
+                        continue
+                    else:
+                        dp[i][j] = min(dp[i-1][j], dp[i][j-1]) + grid[i-1][j-1]
+    
+    
+            return dp[-1][-1] if m and n else 0
+    
+    
+    grid = [[1,3,1],[1,5,1],[4,2,1]]
+    
+    print(Solution().minPathSum(grid))
+    ```
 
 -   Solution 2: 1D DP
 
-        import sys
-        class Solution(object):
-            def minPathSum(self, grid):
-                """
-                :type grid: List[List[int]]
-                :rtype: int
-                """
-                m = len(grid)
-                n = len(grid[0])
-        
-                dp = [sys.maxsize for i in range(n+1)]
-                dp[1] = grid[0][0]
-        
-                for i in range(m):
-                    for j in range(n):
-                      if i == 1 and j == 1:
-                          continue
-                      else:
-                        dp[j+1] = min(dp[j+1], dp[j]) + grid[i][j]
-        
-                return dp[-1] if m and n else 0
-        
-        
-        grid = [[1,3,1],[1,5,1],[4,2,1]]
-        
-        print(Solution().minPathSum(grid))
-
-
-<a id="org18a7373"></a>
+    ```python
+    import sys
+    class Solution(object):
+        def minPathSum(self, grid):
+            """
+            :type grid: List[List[int]]
+            :rtype: int
+            """
+            m = len(grid)
+            n = len(grid[0])
+    
+            dp = [sys.maxsize for i in range(n+1)]
+            dp[1] = grid[0][0]
+    
+            for i in range(m):
+                for j in range(n):
+                  if i == 1 and j == 1:
+                      continue
+                  else:
+                    dp[j+1] = min(dp[j+1], dp[j]) + grid[i][j]
+    
+            return dp[-1] if m and n else 0
+    
+    
+    grid = [[1,3,1],[1,5,1],[4,2,1]]
+    
+    print(Solution().minPathSum(grid))
+    ```
 
 ## 70 - Climbing Stairs
 
 [leetcode](https://leetcode.com/problems/climbing-stairs/)
-
 
 ### Problem
 
@@ -727,41 +655,37 @@ Remember to handle the edge cases.
     2. 1 step + 2 steps
     3. 2 steps + 1 step
 
-
 ### Notes
 
 The distinct ways to take n stair cases:
 
-1.  take one step at last, the distinct ways to take n-1 stair cases  -> f(n-1) ways
+1.  take one step at last, the distinct ways to take n-1 stair cases -> f(n-1) ways
 2.  take two steps at last, the distinct ways to take n-2 stair cases -> f(n-2) ways
 
 So f(n) = f(n-1) + f(n-2)
 
-
 ### Solution
 
-    class Solution():
-        def climbStairs(self, n):
-            if n < 2:
-                return n
-    
-            dp = [0] * n
-    
-            dp[0] = 1
-            dp[1] = 2
-    
-            for i in range(2, n):
-                dp[i] = dp[i-1] + dp[i-2]
-    
-            return dp[-1]
+```python
+class Solution():
+    def climbStairs(self, n):
+        if n < 2:
+            return n
 
+        dp = [0] * n
 
-<a id="orge944c55"></a>
+        dp[0] = 1
+        dp[1] = 2
+
+        for i in range(2, n):
+            dp[i] = dp[i-1] + dp[i-2]
+
+        return dp[-1]
+```
 
 ## 91 - Decode Ways
 
 [leetcode](https://leetcode.com/problems/decode-ways)
-
 
 ### Problem
 
@@ -784,7 +708,6 @@ So f(n) = f(n-1) + f(n-2)
     Output: 3
     Explanation: It could be decoded as "BZ" (2 26), "VF" (22 6), or "BBF" (2 2 6).
 
-
 ### Notes
 
 DP problem.
@@ -799,38 +722,35 @@ DP problem.
 1.  Corner cases: "0" -> 0, "1002" -> 0
 2.  Notice the padding
 
-
 ### Solution
 
-    class Solution():
-        def numsDecodings(self, s):
-    
-            if not s:
-              return 0
-    
-            n = len(s)
-    
-            dp = [0] * (n + 1)
-    
-            dp[0] = 1
-    
-            for i in range(1, n+1):
-    
-                if s[i-1: i] != '0':
-                    dp[i] = dp[i-1]
-    
-                if i != 1 and '10' <= s[i-2:i] <= '26':
-                    dp[i] += dp[i-2]
-    
-            return dp[-1]
+```python
+class Solution():
+    def numsDecodings(self, s):
 
+        if not s:
+          return 0
 
-<a id="orga249e82"></a>
+        n = len(s)
+
+        dp = [0] * (n + 1)
+
+        dp[0] = 1
+
+        for i in range(1, n+1):
+
+            if s[i-1: i] != '0':
+                dp[i] = dp[i-1]
+
+            if i != 1 and '10' <= s[i-2:i] <= '26':
+                dp[i] += dp[i-2]
+
+        return dp[-1]
+```
 
 ## 509 - Fibonacci Number
 
 [leetcode](https://leetcode.com/problems/fibonacci-number/)
-
 
 ### Problem
 
@@ -858,7 +778,6 @@ DP problem.
     Output: 3
     Explanation: F(4) = F(3) + F(2) = 2 + 1 = 3.
 
-
 ### Notes
 
 DP Problem.
@@ -867,35 +786,32 @@ DP Problem.
 
 Note how long is the dp array. It shoud be N+1, since we start with the number 0.
 
-
 ### Solution
 
-    class Solution(object):
-        def fib(self, N):
-            """
-            :type N: int
-            :rtype: int
-            """
-            if N < 2:
-                return N
-    
-            dp = [0] * (N + 1)
-    
-            dp[0] = 0
-            dp[1] = 1
-    
-            for i in range(2, N + 1):
-                dp[i] = dp[i - 1] + dp[i - 2]
-    
-            return dp[-1]
+```python
+class Solution(object):
+    def fib(self, N):
+        """
+        :type N: int
+        :rtype: int
+        """
+        if N < 2:
+            return N
 
+        dp = [0] * (N + 1)
 
-<a id="org2aa21ca"></a>
+        dp[0] = 0
+        dp[1] = 1
+
+        for i in range(2, N + 1):
+            dp[i] = dp[i - 1] + dp[i - 2]
+
+        return dp[-1]
+```
 
 ## 75 - Sort Colors
 
 [leetcode](https://leetcode.com/problems/sort-colors/)
-
 
 ### Problem
 
@@ -915,72 +831,68 @@ Note how long is the dp array. It shoud be N+1, since we start with the number 0
     First, iterate the array counting number of 0's, 1's, and 2's, then overwrite array with total number of 0's, then 1's and followed by 2's.
     Could you come up with a one-pass algorithm using only constant space?
 
-
 ### Notes
 
 -   First attempt is to use two pointer.
 
-    There is a but a corner case: when two point+begin\_src python :results output 
-      class Solution:
+    There is a but a corner case: when two point+begin\_src python :results output class Solution:
     
-    def subsets(self, nums):
-        res = [[]]
-        for i in sorted(nums):
-            res <del>= [item</del>[i] for item in res]
+    def subsets(self, nums): res = [[]] for i in sorted(nums): res ~~= [item~~[i] for item in res]
     
     return res
     
-      print(Solution().subsets([1, 2, 3]))
-    \#+end\_src
+    print(Solution().subsets([1, 2, 3])) \#+end\_src
     
         [[], [1], [2], [1, 2], [3], [1, 3], [2, 3], [1, 2, 3]]
 
 -   Solution 3: backtrack
 
-        
-        class Solution(object):
-        
-            def subsets(self, nums):
-                output = []
-                for k in range(0, len(nums)+1):
-                    temp = []
-                    self.backtrack(0, k, nums, temp, output)
-        
-                return output
-        
-            def backtrack(self, begin, length, nums, temp, output):
-        
-                if length == len(temp):
-                    output.append(temp[:])
-        
-                for i in range(begin, len(nums)):
-                    temp.append(nums[i])
-                    self.backtrack(i+1, length, nums, temp, output)
-                    temp.pop()
-        
-        
-        print(Solution().subsets([1, 2, 3]))
+    ```python
+    
+    class Solution(object):
+    
+        def subsets(self, nums):
+            output = []
+            for k in range(0, len(nums)+1):
+                temp = []
+                self.backtrack(0, k, nums, temp, output)
+    
+            return output
+    
+        def backtrack(self, begin, length, nums, temp, output):
+    
+            if length == len(temp):
+                output.append(temp[:])
+    
+            for i in range(begin, len(nums)):
+                temp.append(nums[i])
+                self.backtrack(i+1, length, nums, temp, output)
+                temp.pop()
+    
+    
+    print(Solution().subsets([1, 2, 3]))
+    
+    
+    ```
 
 -   Solution 4: bitmask
 
-        
-        class Solution():
-          def subsets(self, nums):
-            n = len(nums)
-            output = []
-            for i in range(2**n, 2**(n+1)):
-              bitmask = bin(i)[3:]
-              output.append([nums[i] for i in range(n) if bitmask[i] == '1' ])
-        
-            return output
-
-
-<a id="orgf51bd83"></a>
+    ```python
+    
+    class Solution():
+      def subsets(self, nums):
+        n = len(nums)
+        output = []
+        for i in range(2**n, 2**(n+1)):
+          bitmask = bin(i)[3:]
+          output.append([nums[i] for i in range(n) if bitmask[i] == '1' ])
+    
+        return output
+    ```
 
 ## 79 - Word Search
 
 [leetcode](https://leetcode.com/problems/word-search/)
-
 
 ### Problem
 
@@ -1001,59 +913,55 @@ Note how long is the dp array. It shoud be N+1, since we start with the number 0
     Given word = "SEE", return true.
     Given word = "ABCB", return false.
 
-
 ### Notes
 
-Backtrack problem. 
+Backtrack problem.
 
 1.  when found, mark the point to one.
 2.  Use dfs to go down from this point.
 3.  Can't go down anymore, mark the point back to zero (backtrack step).
 
-
 ### Solution
 
 -   Solution 1: Backtrack, dfs
 
-        class Solution:
-            def exist(self, board, word):
-                m = [[0 for j in range(len(board[0]))] for i in range(len(board))]
-                for i in range(len(board)):
-                    for j in range(len(board[0])):
-                        if self.exist_rec(board, word, i, j, m):
-                            return True
-                return False
-        
-            def exist_rec(self, board, word, i, j, m):
-                if len(word) == 0:
-                    return True
-        
-                if i < 0 or j < 0 or i >= len(board) or j >= len(board[0]):
-                    return False
-        
-                if board[i][j] == word[0] and m[i][j] == 0:
-                    m[i][j] = 1
-        
-                    if self.exist_rec(board, word[1:], i - 1, j, m) or \
-                    self.exist_rec(board, word[1:], i + 1, j, m) or \
-                    self.exist_rec(board, word[1:], i, j - 1, m) or \
-                    self.exist_rec(board, word[1:], i, j + 1, m):
+    ```python
+    class Solution:
+        def exist(self, board, word):
+            m = [[0 for j in range(len(board[0]))] for i in range(len(board))]
+            for i in range(len(board)):
+                for j in range(len(board[0])):
+                    if self.exist_rec(board, word, i, j, m):
                         return True
-                    else:
-                        m[i][j] = 0
-        
+            return False
+    
+        def exist_rec(self, board, word, i, j, m):
+            if len(word) == 0:
+                return True
+    
+            if i < 0 or j < 0 or i >= len(board) or j >= len(board[0]):
                 return False
-        
-        board = [["A", "B", "C", "E"], ["S", "F", "C", "S"], ["A", "D", "E", "E"]]
-        word = "ABCCED"
+    
+            if board[i][j] == word[0] and m[i][j] == 0:
+                m[i][j] = 1
+    
+                if self.exist_rec(board, word[1:], i - 1, j, m) or \
+                self.exist_rec(board, word[1:], i + 1, j, m) or \
+                self.exist_rec(board, word[1:], i, j - 1, m) or \
+                self.exist_rec(board, word[1:], i, j + 1, m):
+                    return True
+                else:
+                    m[i][j] = 0
+    
+            return False
+    
+    board = [["A", "B", "C", "E"], ["S", "F", "C", "S"], ["A", "D", "E", "E"]]
+    word = "ABCCED"
+    ```
 
-
-<a id="org561d722"></a>
-
-## 45 - Jump  ame II
+## 45 - Jump Game II
 
 [leetcode](https://leetcode.com/problems/jump-game-ii/)
-
 
 ### Problem
 
@@ -1073,7 +981,6 @@ Backtrack problem.
          
     You can assume that you can always reach the last index.
 
-
 ### Notes
 
 Greedy problem.
@@ -1082,32 +989,21 @@ Greedy problem.
 2.  current index reach to end, jump once.
 3.  next interval is [end, reach]
 
-
 ### Solution
 
-\#+begin\_src python 
-  class Solution:
-      def jump(self, nums):
+\#+begin\_src python class Solution: def jump(self, nums):
 
-jumps = 0
-curFurthest = 0
-curEnd = 0
+jumps = 0 curFurthest = 0 curEnd = 0
 
 for i in range(len(nums) - 1):
 
 curFurthest = max(curFurthest, i + nums[i])
 
-if (i `= curEnd):
-                  jumps +` 1
-    cur
-
-
-<a id="org21905eb"></a>
+if (i `= curEnd): jumps +` 1 cur
 
 ## 1306 - Jump Game III
 
 [leetcode](https://leetcode.com/problems/jump-game-iii/submissions/)
-
 
 ### Problem
 
@@ -1144,7 +1040,6 @@ if (i `= curEnd):
     0 <= arr[i] < arr.length
     0 <= start < arr.length
 
-
 ### Notes
 
 Use dfs to search for 0. Mark the visited place to trigger stop.
@@ -1153,35 +1048,21 @@ Use dfs to search for 0. Mark the visited place to trigger stop.
 
 Remember to reset the mark if can not find along the path, so that it can search into another path.
 
-
 ### Solution
 
-\#+begin\_src python  
-  class Solution:
-      def canReach(self, arr, start):
-          if start >= len(arr) or start < 0:
-              return False
+\#+begin\_src python class Solution: def canReach(self, arr, start): if start >= len(arr) or start < 0: return False
 
-if arr[start] == 0:
-    return True
+if arr[start] == 0: return True
 
-if arr[start] == -1:
-    return False
+if arr[start] == -1: return False
 
-step = arr[start]
-arr[start] = -1
+step = arr[start] arr[start] = -1
 
-if self.canReach(arr, start - step) or self.canReach(arr, start + step):
-    return True
-else:
-
-
-<a id="org32938a4"></a>
+if self.canReach(arr, start - step) or self.canReach(arr, start + step): return True else:
 
 ## 84 - Largest Rectangle in Histogram
 
 [leetcode](https://leetcode.com/problems/largest-rectangle-in-histogram/)
-
 
 ### Problem
 
@@ -1192,12 +1073,9 @@ else:
     Input: [2,1,5,6,2,3]
     Output: 10
 
-![img](Algorithms/2020-03-23_00-34-37_histogram.png)
-Above is a histogram where width of each bar is 1, given height = [2,1,5,6,2,3].
+![img](Algorithms/2020-03-23_00-34-37_histogram.png) Above is a histogram where width of each bar is 1, given height = [2,1,5,6,2,3].
 
-![img](Algorithms/2020-03-23_00-35-27_histogram_area.png)
-The largest rectangle is shown in the shaded area, which has area = 10 unit.
-
+![img](Algorithms/2020-03-23_00-35-27_histogram_area.png) The largest rectangle is shown in the shaded area, which has area = 10 unit.
 
 ### Notes
 
@@ -1234,47 +1112,49 @@ Two ways of solution.
     2.  if current entry is not smaller than the top, push it into stack
     3.  go through the left entries in the stack. The lefts ones are all have the longest bar at the top.
 
-
 ### Solution
 
 -   Solution 1: brute-force
 
-        class Solution:
-            def largestRectangleArea(self, heights):
-        
-                if not heights:
-                    return 0
-        
-                n = len(heights)
-                res = 0
-        
-                left = [ i for i in range(n) ]
-                right = [ i for i in range(n) ]
-        
-                # caculate for the left edge
-                for i in range(n):
-                    p = i
-                    while p >= 0:
-                        if heights[p] < heights[i]:
-                            break
-                        p -= 1
-                    left[i] = p
-        
-                # caculate for the right edge
-                for i in range(n):
-                    p = i
-                    while p < n:
-                        if heights[p] < heights[i]:
-                            break
-                        p += 1
-                    right[i] = p
-        
-                for i in range(n):
-                    res = max(res, heights[i] * (right[i] - left[i] - 1))
-        
-                return res
-        
-        print(Solution().largestRectangleArea([2, 1, 5, 6, 2, 3]))
+    ```python
+    class Solution:
+        def largestRectangleArea(self, heights):
+    
+            if not heights:
+                return 0
+    
+            n = len(heights)
+            res = 0
+    
+            left = [ i for i in range(n) ]
+            right = [ i for i in range(n) ]
+    
+            # caculate for the left edge
+            for i in range(n):
+                p = i
+                while p >= 0:
+                    if heights[p] < heights[i]:
+                        break
+                    p -= 1
+                left[i] = p
+    
+            # caculate for the right edge
+            for i in range(n):
+                p = i
+                while p < n:
+                    if heights[p] < heights[i]:
+                        break
+                    p += 1
+                right[i] = p
+    
+            for i in range(n):
+                res = max(res, heights[i] * (right[i] - left[i] - 1))
+    
+            return res
+    
+    print(Solution().largestRectangleArea([2, 1, 5, 6, 2, 3]))
+    
+    ```
     
     O(n^2)
     
@@ -1284,83 +1164,82 @@ Two ways of solution.
 
 -   Solution 2: improved version
 
-        class Solution:
-            def largestRectangleArea(self, heights):
-                if not heights:
-                    return 0
-        
-                res = 0
-                n = len(heights)
-                left = [1] * n
-                right = [1] * n
-        
-                # caculate left[]
-                for i in range(n):
-                    p = i - 1
-                    while p >= 0:
-                        if heights[p] >= heights[i]:
-                            left[i] += left[p]
-                            # jump backward
-                            p -= left[p]
-                        else:
-                            break
-        
-                # caculate right[]
-                for i in range(n - 1, -1, -1):
-                    p = i + 1
-                    while p < n:
-                        if heights[p] >= heights[i]:
-                            right[i] += right[p]
-                            # jump forward
-                            p += right[p]
-                        else:
-                            break
-        
-                for i in range(n):
-                    res = max(res, heights[i] * (left[i] + right[i] - 1))
-        
-                return res
-        
-        print(Solution().largestRectangleArea([2, 1, 5, 6, 2, 3]))
+    ```python
+    class Solution:
+        def largestRectangleArea(self, heights):
+            if not heights:
+                return 0
     
-    Generale Case: O(n), because it uses the jump
-    Worst Case: O(n^2)
+            res = 0
+            n = len(heights)
+            left = [1] * n
+            right = [1] * n
+    
+            # caculate left[]
+            for i in range(n):
+                p = i - 1
+                while p >= 0:
+                    if heights[p] >= heights[i]:
+                        left[i] += left[p]
+                        # jump backward
+                        p -= left[p]
+                    else:
+                        break
+    
+            # caculate right[]
+            for i in range(n - 1, -1, -1):
+                p = i + 1
+                while p < n:
+                    if heights[p] >= heights[i]:
+                        right[i] += right[p]
+                        # jump forward
+                        p += right[p]
+                    else:
+                        break
+    
+            for i in range(n):
+                res = max(res, heights[i] * (left[i] + right[i] - 1))
+    
+            return res
+    
+    print(Solution().largestRectangleArea([2, 1, 5, 6, 2, 3]))
+    
+    ```
+    
+    Generale Case: O(n), because it uses the jump Worst Case: O(n^2)
 
 -   Solution 3: stack
 
-    \#+begin\_src python :results output
-      class Solution:
-          def largestRectangleArea(self, heights):
+    ```python
+    class Solution:
+        def largestRectangleArea(self, heights):
     
-    stack = []
-    n = len(heights)
-    res = 0
-    index = 0
+            stack = []
+            n = len(heights)
+            res = 0
+            index = 0
     
-    while index < n:
+            while index < n:
     
-    if not stack or heights[stack[-1]] <= heights[index]:
-        stack.append(index)
-        index += 1
-    else:
-        top = stack.pop()
-        area = (heights[top] \*
-                ((index - stack[-1] - 1) if stack else index))
+                if not stack or heights[stack[-1]] <= heights[index]:
+                    stack.append(index)
+                    index += 1
+                else:
+                    top = stack.pop()
+                    area = (heights[top] *
+                            ((index - stack[-1] - 1) if stack else index))
     
-    res = max(res, area)
+                    res = max(res, area)
     
-    while stack:
-        h = stack.pop()
-        res = max(
-            r
-
-
-<a id="org8934f21"></a>
+            while stack:
+                h = stack.pop()
+                res = max(
+                    r
+    ```
 
 ## 85 - Maximal Rectangle
 
 [leetcode](https://leetcode.com/problems/maximal-rectangle/)
-
 
 ### Problem
 
@@ -1377,7 +1256,6 @@ Two ways of solution.
     ]    
     Output: 6
 
-
 ### Notes
 
 Two parts:
@@ -1385,66 +1263,39 @@ Two parts:
 1.  generate a heights histogram for every row.
 2.  apple "largest rectangle in histogram" on each row of histogram
 
-
 ### Solution
 
-\#+begin\_src python :results output
-  class Solution:
-      def maximalRectangle(self, matrix):
-          if not matrix or not matrix[0]:
-              return 0
+\#+begin\_src python :results output class Solution: def maximalRectangle(self, matrix): if not matrix or not matrix[0]: return 0
 
-m = len(matrix)
-n = len(matrix[0])
+m = len(matrix) n = len(matrix[0])
 
 histograms = [[0] \* n for i in range(m)]
 
 res = 0
 
-for i in range(m):
-    for j in range(n):
-        if matrix[i][j] == "1":
-            histograms[i][j] = histograms[i - 1][j] + 1 if i > 0 else 1
+for i in range(m): for j in range(n): if matrix[i][j] == "1": histograms[i][j] = histograms[i - 1][j] + 1 if i > 0 else 1
 
-for histogram in histograms:
-    res = max(res, self.largestRectangleHistogram(histogram))
+for histogram in histograms: res = max(res, self.largestRectangleHistogram(histogram))
 
 return res
 
 def largestRectangleHistogram(self, histogram):
 
-if not histogram:
-    return 0
+if not histogram: return 0
 
-stack = []
-res = 0
-index = 0
-n = len(histogram)
+stack = [] res = 0 index = 0 n = len(histogram)
 
-while index < n:
-    if not stack or histogram[index] >= histogram[stack[-1]]:
-        stack.append(index)
-        index += 1
-    else:
-        res = max(
-            res, histogram[stack.pop()] \*
-            ((index - stack[-1] - 1) if stack else index))
+while index < n: if not stack or histogram[index] >= histogram[stack[-1]]: stack.append(index) index += 1 else: res = max( res, histogram[stack.pop()] \* ((index - stack[-1] - 1) if stack else index))
 
-while stack:
-    height = histogram[stack.pop()]
-    res = max(res, height \* ((n - stack[-1] - 1) if stack else n))
+while stack: height = histogram[stack.pop()] res = max(res, height \* ((n - stack[-1] - 1) if stack else n))
 
 return res
 
 maxtrix = [["1","0","1","0","0"],["1","0","1","1","1"],["1","1","1","1","1"],["1","0","0",
 
-
-<a id="org9721637"></a>
-
 ## 121 - Best Time to Buy and Sell Stock
 
 [leetcode](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)
-
 
 ### Problem
 
@@ -1467,36 +1318,21 @@ maxtrix = [["1","0","1","0","0"],["1","0","1","1","1"],["1","1","1","1","1"],["1
     Output: 0
     Explanation: In this case, no transaction is done, i.e. max profit = 0.
 
-
 ### Notes
 
 Mark the minPrice and the minProfit
 
-
 ### Solution
 
-\#+begin\_src python  
-  class Solution:
-      def maxProfit(self, prices):
-          if not prices:
-              return 0
+\#+begin\_src python class Solution: def maxProfit(self, prices): if not prices: return 0
 
-minPrice = prices[0]
-maxProfit = 0
+minPrice = prices[0] maxProfit = 0
 
-for price in prices:
-    if price < minPrice:
-        minPrice = price
-    if price - minPrice > maxProfit:
-        maxProfit = price 
-
-
-<a id="org9e8b9fe"></a>
+for price in prices: if price < minPrice: minPrice = price if price - minPrice > maxProfit: maxProfit = price
 
 ## 122 - Best Time to Buy and Sell Stock II
 
 [leetcode](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii)
-
 
 ### Problem
 
@@ -1525,7 +1361,6 @@ for price in prices:
     Output: 0
     Explanation: In this case, no transaction is done, i.e. max profit = 0.
 
-
 ### Notes
 
 -   Solution 1
@@ -1534,54 +1369,45 @@ for price in prices:
 
 -   Solution 2
 
-    Simplify the solution 1:
-    we can sum up the profit when we go up step by step. 
-
+    Simplify the solution 1: we can sum up the profit when we go up step by step.
 
 ### Solution
 
 -   Solution 1:
 
-        class Solution:
-            def maxProfit(self, prices):
-                if not prices:
-                    return 0
-        
-                valley = prices[0]
-                maxProfit = 0
-                res = 0
-        
-                for price in prices:
-                    if price - valley < maxProfit:
-                        valley = price # new valley
-                        res += maxProfit # add the current maxProfit
-                        maxProfit = 0 # reset current maxProfit
-                    else:
-                        maxProfit = price - valley # update the maxProfit when we still go up
-        
-                # remember to add the last maxProfit.
-                # 1. When we are on the peak. maxProfit > 0, it should be added
-                # 2. When we are in the vally, maxProfit = 0, would not affect the value
-                res += maxProfit
-        
-                return res
+    ```python
+    class Solution:
+        def maxProfit(self, prices):
+            if not prices:
+                return 0
+    
+            valley = prices[0]
+            maxProfit = 0
+            res = 0
+    
+            for price in prices:
+                if price - valley < maxProfit:
+                    valley = price # new valley
+                    res += maxProfit # add the current maxProfit
+                    maxProfit = 0 # reset current maxProfit
+                else:
+                    maxProfit = price - valley # update the maxProfit when we still go up
+    
+            # remember to add the last maxProfit.
+            # 1. When we are on the peak. maxProfit > 0, it should be added
+            # 2. When we are in the vally, maxProfit = 0, would not affect the value
+            res += maxProfit
+    
+            return res
+    ```
 
 -   Solution 2:
 
-    \#+begin\_src python  
-      class Solution:
-          def maxProfit(self, prices):
-              res = 0
-              for i in range(1, len(prices)):
-                  if (prices[i-1] < prices[i]):
-
-
-<a id="orgec1d701"></a>
+    \#+begin\_src python class Solution: def maxProfit(self, prices): res = 0 for i in range(1, len(prices)): if (prices[i-1] < prices[i]):
 
 ## 123 - Best Time to Buy and Sell Stock III
 
 [leetcode](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/)
-
 
 ### Problem
 
@@ -1610,7 +1436,6 @@ for price in prices:
     Output: 0
     Explanation: In this case, no transaction is done, i.e. max profit = 0.
 
-
 ### Notes
 
 A very good article about how to solve this kind of problem generally. [[Reference]​](https://labuladong.gitbook.io/algo/dong-tai-gui-hua-xi-lie/tuan-mie-gu-piao-wen-ti)
@@ -1621,8 +1446,7 @@ DP problem have three main sub problems:
 2.  states transition => Transition
 3.  base cases => Padding or initializtion
 
-DP is also a form of brute force method. We have to find all the states of the problem.
-And we try to use the sub-states to apply the state transitions to simplify the calculation.
+DP is also a form of brute force method. We have to find all the states of the problem. And we try to use the sub-states to apply the state transitions to simplify the calculation.
 
 How many states do we have in all:
 
@@ -1642,9 +1466,9 @@ State Transition:
     
     It can transit from two states:
     
-    -   I do not have stock yesterday               => state[n-1][k][0]
+    -   I do not have stock yesterday => state[n-1][k][0]
     
-    -   I do have stock yesterday, and I sell it    => state[n-1][k][1] + price
+    -   I do have stock yesterday, and I sell it => state[n-1][k][1] + price
 
 2.  state[n][k][1] = max(state[n-1][k][1], state[n-1][k-1][0] - prices)
     
@@ -1652,68 +1476,56 @@ State Transition:
     
     It can transit from two states:
     
-    -   I do have stock yesterday                   => state[n-1][k][1]
+    -   I do have stock yesterday => state[n-1][k][1]
     
-    -   I don't have stock yesterday, and I buy it  => state[n-1][k-1][1] - price
-
+    -   I don't have stock yesterday, and I buy it => state[n-1][k-1][1] - price
 
 ### Solution
 
-    class Solution:
-        def maxProfit(self, prices):
-            max_k = 2
-            dp = [ [ [0] * 2 for k in range(max_k + 1) ] for i in range(len(prices))]
-            for i in range(len(prices)):
-                for k in range(1, max_k + 1):
-                    if i == 0:
-                        dp[i][k][0] = 0
-                        dp[i][k][1] = -prices[i]
-                    else:
-                        dp[i][k][0] = max(dp[i-1][k][0], dp[i-1][k][1] + prices[i])
-                        dp[i][k][1] = max(dp[i-1][k][1], dp[i-1][k-1][0] - prices[i])
-    
-            return dp[-1][max_k][0]
+```python
+class Solution:
+    def maxProfit(self, prices):
+        max_k = 2
+        dp = [ [ [0] * 2 for k in range(max_k + 1) ] for i in range(len(prices))]
+        for i in range(len(prices)):
+            for k in range(1, max_k + 1):
+                if i == 0:
+                    dp[i][k][0] = 0
+                    dp[i][k][1] = -prices[i]
+                else:
+                    dp[i][k][0] = max(dp[i-1][k][0], dp[i-1][k][1] + prices[i])
+                    dp[i][k][1] = max(dp[i-1][k][1], dp[i-1][k-1][0] - prices[i])
+
+        return dp[-1][max_k][0]
+```
 
 Simple Version: reduce the DP-Table
 
 We only have to maintain two 1-dimentional states.
 
-    import sys
-    class Solution:
-        def maxProfit(self, prices):
-            buy = [-sys.maxsize] * 3
-            sell = [0] * 3
-            for price in prices:
-                buy[1] = max(buy[1], sell[0]-price)
-                buy[2] = max(buy[2], sell[1]-price)
-                sell[1] = max(sell[1], buy[1]+price)
-                sell[2] = max(sell[2], buy[2]+price)
-                print(buy)
-                print(sell)
-            return sell[2]
-    
-    print(Solution().maxProfit([3,3,5,0,0,3,1,4]))
+```python
+import sys
+class Solution:
+    def maxProfit(self, prices):
+        buy = [-sys.maxsize] * 3
+        sell = [0] * 3
+        for price in prices:
+            buy[1] = max(buy[1], sell[0]-price)
+            buy[2] = max(buy[2], sell[1]-price)
+            sell[1] = max(sell[1], buy[1]+price)
+            sell[2] = max(sell[2], buy[2]+price)
+            print(buy)
+            print(sell)
+        return sell[2]
 
-\#+begin\_example
-[-9223372036854775807, -3, -3]
-[0, 0, 0]
-[-9223372036854775807, -3, -3]
-[0, 0, 0]
-[-9223372036854775807, -3, -3]
-[0, 2, 2]
-[-9223372036854775807, 0, 2]
-[0, 2, 2]
-[-9223372036854775807, 0, 2]
-[0, 2, 2]
-[-   
+print(Solution().maxProfit([3,3,5,0,0,3,1,4]))
+```
 
-
-<a id="org93f588b"></a>
+\#+begin\_example [-9223372036854775807, -3, -3] [0, 0, 0] [-9223372036854775807, -3, -3] [0, 0, 0] [-9223372036854775807, -3, -3] [0, 2, 2] [-9223372036854775807, 0, 2] [0, 2, 2] [-9223372036854775807, 0, 2] [0, 2, 2] [-
 
 ## 188 - Best Time to Buy and Sell Stock IV
 
 [leetcode](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/)
-
 
 ### Problem
 
@@ -1737,46 +1549,25 @@ We only have to maintain two 1-dimentional states.
     Explanation: Buy on day 2 (price = 2) and sell on day 3 (price = 6), profit = 6-2 = 4.
                  Then buy on day 5 (price = 0) and sell on day 6 (price = 3), profit = 3-0 = 3.
 
-
 ### Notes
 
 See problem 121, 122 and 123.
 
-Note the k.
-If it is too large(>= n/2), treat it as if with infinitive transactions. We don't want to loop through a too large k.
-
+Note the k. If it is too large(>= n/2), treat it as if with infinitive transactions. We don't want to loop through a too large k.
 
 ### Solution
 
-\#+begin\_src python 
-  class Solution:
-      def maxProfit(self, k, prices):
-          if not prices:
-              return 0
+\#+begin\_src python class Solution: def maxProfit(self, k, prices): if not prices: return 0
 
-n = len(prices)
-if k >= n//2: # treat it as infinitive transactions
-    res = 0
-    for i in range(1, n):
-        if prices[i] > prices[i-1]:
-            res += prices[i] - prices[i-1]
-    return res
+n = len(prices) if k >= n//2: # treat it as infinitive transactions res = 0 for i in range(1, n): if prices[i] > prices[i-1]: res += prices[i] - prices[i-1] return res
 
-buy = [-sys.maxsize] \* (k+1)
-sell = [0] \* (k+1)
+buy = [-sys.maxsize] \* (k+1) sell = [0] \* (k+1)
 
-for price in prices:
-    for i in range(1, k+1):
-        buy[i] = max(buy[i], sell[i-1]-price)
-        sell[i] = max(sel
-
-
-<a id="org61b699b"></a>
+for price in prices: for i in range(1, k+1): buy[i] = max(buy[i], sell[i-1]-price) sell[i] = max(sel
 
 ## 309 - Best Time to Buy and Sell Stock with Cooldown
 
 [leetcode](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown)
-
 
 ### Problem
 
@@ -1792,33 +1583,17 @@ for price in prices:
     Output: 3 
     Explanation: transactions = [buy, sell, cooldown, buy, sell]
 
-
 ### Notes
-
 
 ### Solution
 
-\#+begin\_src python 
-  import sys
-  class Solution:
-      def maxProfit(self, prices):
-          dp\_buy = -sys.maxsize
-          dp\_sell = 0
-          dp\_pre\_0 = 0
+\#+begin\_src python import sys class Solution: def maxProfit(self, prices): dp\_buy = -sys.maxsize dp\_sell = 0 dp\_pre\_0 = 0
 
-for price in prices:
-    tmp = dp\_sell
-    dp\_sell = max(dp\_sell, dp\_buy + price)
-    dp\_buy = max(dp\_buy, dp\_pre\_0 - price)
-    dp\_pre\_0 = tmp
-
-
-<a id="org06a2063"></a>
+for price in prices: tmp = dp\_sell dp\_sell = max(dp\_sell, dp\_buy + price) dp\_buy = max(dp\_buy, dp\_pre\_0 - price) dp\_pre\_0 = tmp
 
 ## 104 - Maximum Depth of Binary Tree
 
 [leetcode](https://leetcode.com/problems/maximum-depth-of-binary-tree/)
-
 
 ### Problem
 
@@ -1838,26 +1613,17 @@ for price in prices:
         /  \
        15   7
 
-
 ### Notes
 
 Recursion is your friend!
 
-
 ### Solution
 
-\#+begin\_src python 
-  class Solution:
-      def maxDepth(self, root):
-          return 1 + max(self.maxDepth(root.right), self.maxDepth(
-
-
-<a id="orgfb8573b"></a>
+\#+begin\_src python class Solution: def maxDepth(self, root): return 1 + max(self.maxDepth(root.right), self.maxDepth(
 
 ## 21 - Merge Two Sorted Lists
 
 [leetcode](https://leetcode.com/problems/merge-two-sorted-lists/)
-
 
 ### Problem
 
@@ -1868,39 +1634,35 @@ Recursion is your friend!
     Input: 1->2->4, 1->3->4
     Output: 1->1->2->3->4->4
 
-
 ### Notes
 
 Recursion is your friend!
-
 
 ### Solution
 
 -   Solution 1: Recursive
 
-        class Solution:
-            def mergeTwoLists(self, l1, l2):
-                if not l1:
-                    return l2
-                if not l2:
-                    return l1
-        
-                if l1.val > l2.val:
-                    l2.next = self.mergeTwoLists(l1, l2.next)
-                    return l2
-                else:
-                    l1.next = self.mergeTwoLists(l1.next, l2)
-                    return l1
+    ```python
+    class Solution:
+        def mergeTwoLists(self, l1, l2):
+            if not l1:
+                return l2
+            if not l2:
+                return l1
+    
+            if l1.val > l2.val:
+                l2.next = self.mergeTwoLists(l1, l2.next)
+                return l2
+            else:
+                l1.next = self.mergeTwoLists(l1.next, l2)
+                return l1
+    ```
 
 -   
-
-
-<a id="org43d5a31"></a>
 
 ## 101 - Symmetric Tree
 
 [leetcode](https://leetcode.com/problems/symmetric-tree/)
-
 
 ### Problem
 
@@ -1923,46 +1685,23 @@ Recursion is your friend!
        \   \
        3    3
 
-
 ### Notes
 
 Recursion !
-
 
 ### Solution
 
 -   Solution 1: recursive
 
-    \#+begin\_src python
-      class Solution:
-          def isSymmetric(self, root):
-              if not root:
-                  return True
-              return self.isMirrored(root.left, root.right)
+    \#+begin\_src python class Solution: def isSymmetric(self, root): if not root: return True return self.isMirrored(root.left, root.right)
     
     def isMirrored(self, left, right):
     
-              if not left and not right:
-                  return True
-              elif not left:
-                  return False
-              elif not right:
-                  return False
-              else:
-                  if left.val == right.val:
-                      return self.isMirrored(left.left, right.right) and \\
-                          self.isMirrored(left.right, right.left)
-                  else:
-                      return False
-    \#+end\_sr
-
-
-<a id="orgb89894b"></a>
+    if not left and not right: return True elif not left: return False elif not right: return False else: if left.val == right.val: return self.isMirrored(left.left, right.right) and \\ self.isMirrored(left.right, right.left) else: return False \#+end\_sr
 
 ## 198 - House Robber
 
 [leetcode](https://leetcode.com/problems/house-robber/)
-
 
 ### Problem
 
@@ -1983,7 +1722,6 @@ Recursion !
     Explanation: Rob house 1 (money = 2), rob house 3 (money = 9) and rob house 5 (money = 1).
                  Total amount you can rob = 2 + 9 + 1 = 12.
 
-
 ### Notes
 
 States: 1. house, 2. rob or not rob -> dp[i][0 or 1]
@@ -1992,23 +1730,13 @@ Transition: dp[i][0] = max(dp[i-1][0], dp[i-1][1]), dp[i][1] = dp[i-1][0] + nums
 
 Base Case: dp[0][0] = 0, dp[0][1] = 0
 
-
 ### Solution
 
-\#+begin\_src python
-  class Solution:
-      def rob(self, nums):
-          robbed, notRobbed = 0, 0
-          for i in nums:
-              robbed, notRobbed = notRobbed + i, max(robbed, notRobbed)
-
-
-<a id="org47da147"></a>
+\#+begin\_src python class Solution: def rob(self, nums): robbed, notRobbed = 0, 0 for i in nums: robbed, notRobbed = notRobbed + i, max(robbed, notRobbed)
 
 ## 300 - Longest Increasing Subsequence
 
 [leetcode](https://leetcode.com/problems/longest-increasing-subsequence/)
-
 
 ### Problem
 
@@ -2025,72 +1753,71 @@ Base Case: dp[0][0] = 0, dp[0][1] = 0
     Your algorithm should run in O(n2) complexity.
     Follow up: Could you improve it to O(n log n) time complexity?
 
-
 ### Solution
 
 DP problem.
 
 States: index, dp[index] = longest increasing subsequence at this position
 
-Transition: if nums[j] < nums[i]: dp[i] = max(dp[i], dp[j] + 1) 
+Transition: if nums[j] < nums[i]: dp[i] = max(dp[i], dp[j] + 1)
 
 Base Case: dp[0] = 1
 
 -   Solution 1: DP with O(n^2)
 
-        class Solution:
-            def lengthOfLIS(self, nums):
-                dp = [1] * len(nums)
-        
-                for i in range(1, len(nums)):
-                    for j in range(i):
-                       if nums[j] < nums[i]:
-                           dp[i] = max(dp[i], dp[j] + 1)
-        
-               return max(dp) if nums else 0
+    ```python
+    class Solution:
+        def lengthOfLIS(self, nums):
+            dp = [1] * len(nums)
+    
+            for i in range(1, len(nums)):
+                for j in range(i):
+                   if nums[j] < nums[i]:
+                       dp[i] = max(dp[i], dp[j] + 1)
+    
+           return max(dp) if nums else 0
+    ```
 
 -   Solution 2: DP with binary search for LIS
 
-        class Solution:
-            def lengthOfLIS(self, nums):
-                if not nums:
-                    return 0
-                dp = [nums[0]]
-                for i in range(1, len(nums)):
-                    if nums[i] > dp[-1]:
-                        dp.append(nums[i])
-                    else:
-                        j = self.binarySearch(dp, nums[i])
-                        dp[j] = nums[i]
-        
-                    print(dp)
-                return len(dp)
-        
-            def binarySearch(self, nums, target):
-                l = 0
-                r = len(nums) - 1
-                while l <= r:
-                    mid = (l + r) // 2
-                    if nums[mid] > target:
-                        r = mid - 1
-                    elif nums[mid] < target:
-                        l = mid + 1
-                    else:
-                        return mid
-        
-                return l 
+    ```python
+    class Solution:
+        def lengthOfLIS(self, nums):
+            if not nums:
+                return 0
+            dp = [nums[0]]
+            for i in range(1, len(nums)):
+                if nums[i] > dp[-1]:
+                    dp.append(nums[i])
+                else:
+                    j = self.binarySearch(dp, nums[i])
+                    dp[j] = nums[i]
+    
+                print(dp)
+            return len(dp)
+    
+        def binarySearch(self, nums, target):
+            l = 0
+            r = len(nums) - 1
+            while l <= r:
+                mid = (l + r) // 2
+                if nums[mid] > target:
+                    r = mid - 1
+                elif nums[mid] < target:
+                    l = mid + 1
+                else:
+                    return mid
+    
+            return l 
+    ```
     
     Time: O(nlogn)
     
     Space: O(n)
 
-
-<a id="org1d673dd"></a>
-
 ## 322 - Coin Change
 
 [leetcode](https://leetcode.com/problems/coin-change/)
-
 
 ### Problem
 
@@ -2109,7 +1836,6 @@ Base Case: dp[0] = 1
     Note:
     You may assume that you have an infinite number of each kind of coin.
 
-
 ### Notes
 
 DP problem
@@ -2118,29 +1844,26 @@ States: amount
 
 Transition: dp[i] = min(dp[i], dp[i-coins[j]]+1)
 
-
 ### Solution
 
-    class Solution:
-        def coinChange(self, coins, amount):
-            dp = [float('inf')] * (amount + 1)
-    
-            dp[0] = 0
-    
-            for i in range(1, amount + 1):
-                for j in range(len(coins)):
-                    if i - coins[j] >= 0:
-                        dp[i] = min(dp[i], dp[i - coins[j]] + 1)
-    
-            return dp[-1] if dp[-1] != float('inf') else -1
+```python
+class Solution:
+    def coinChange(self, coins, amount):
+        dp = [float('inf')] * (amount + 1)
 
+        dp[0] = 0
 
-<a id="org8e1d843"></a>
+        for i in range(1, amount + 1):
+            for j in range(len(coins)):
+                if i - coins[j] >= 0:
+                    dp[i] = min(dp[i], dp[i - coins[j]] + 1)
+
+        return dp[-1] if dp[-1] != float('inf') else -1
+```
 
 ## 152 - Maximum Product Subarray
 
 [leetcode](https://leetcode.com/problems/maximum-product-subarray/)
-
 
 ### Problem
 
@@ -2157,13 +1880,11 @@ Transition: dp[i] = min(dp[i], dp[i-coins[j]]+1)
     Output: 0
     Explanation: The result cannot be 2, because [-2,-1] is not a subarray.
 
-
 ### Notes
 
 DP problem:
 
--   States:
-    We have to know two previous states to deduct the current max product:
+-   States: We have to know two previous states to deduct the current max product:
     
     -   index
     -   max for positive or min for negative
@@ -2171,14 +1892,11 @@ DP problem:
     So the DP Table is dp[i(index)][0 or 1(max or min)]
 
 -   Transition:
-    -   if nums[i] >= 0:
-        dp[i][0] = max(nums[i], dp[i-1][0] \* nums[i])
-        dp[i][1] = dp[i-1][1] \* nums[i]
+    -   if nums[i] >= 0: dp[i][0] = max(nums[i], dp[i-1][0] \* nums[i]) dp[i][1] = dp[i-1][1] \* nums[i]
     
     -   if nums[i] < 0:
         
-        dp[i][0] = dp[i-1][1] \* nums[i])
-        dp[i][1] = min(nums[i], dp[i-1][0] \* nums[i]
+        dp[i][0] = dp[i-1][1] \* nums[i]) dp[i][1] = min(nums[i], dp[i-1][0] \* nums[i]
 
 -   Base case:
     
@@ -2186,88 +1904,90 @@ DP problem:
     
     dp[0][0] = dp[0][1] = nums[0]
 
-
 ### Solution
 
 -   Solution 1: DP
 
     Original Version:
     
-        class Solution:
-            def maxProduct(self, nums):
-                if not nums:
-                    return 0
-        
-                dp = [[0] * 2 for i in range(len(nums))]
-                res = dp[0][0] = dp[0][1] = nums[0]
-        
-                for i in range(1, len(nums)):
-                    if nums[i] >= 0:
-                        dp[i][0] = max(nums[i], dp[i - 1][0] * nums[i])
-                        dp[i][1] = dp[i - 1][1] * nums[i]
-                    else:
-                        dp[i][0] = dp[i - 1][1] * nums[i]
-                        dp[i][1] = min(nums[i], nums[i] * dp[i - 1][0])
-                    res = max(res, dp[i][0])
-                return res
+    ```python
+    class Solution:
+        def maxProduct(self, nums):
+            if not nums:
+                return 0
+    
+            dp = [[0] * 2 for i in range(len(nums))]
+            res = dp[0][0] = dp[0][1] = nums[0]
+    
+            for i in range(1, len(nums)):
+                if nums[i] >= 0:
+                    dp[i][0] = max(nums[i], dp[i - 1][0] * nums[i])
+                    dp[i][1] = dp[i - 1][1] * nums[i]
+                else:
+                    dp[i][0] = dp[i - 1][1] * nums[i]
+                    dp[i][1] = min(nums[i], nums[i] * dp[i - 1][0])
+                res = max(res, dp[i][0])
+            return res
+    ```
     
     Simplify Version 1:
     
-        class Solution:
-            def maxProduct(self, nums):
-                if not nums:
-                    return 0
-        
-                pos = neg = res = nums[0]
-                for i in nums[1:]:
-                    if i>=0:
-                        pos = max(i, pos*i)
-                        neg = neg*i
-                    else:
-                        tmp = pos # Important: remember the value, because we are gonna alter it.
-                        pos = neg*i
-                        neg = min(tmp*i, i) # Use the original value
-                        # We also can write as this, but we should notice it only works in like python or ruby
-                        # pos, neg = neg*i, min(pos*i, i), simplify to version 3
-                    res = max(pos, res)
-                return res
+    ```python
+    class Solution:
+        def maxProduct(self, nums):
+            if not nums:
+                return 0
     
-    Simplify Version 2: 
+            pos = neg = res = nums[0]
+            for i in nums[1:]:
+                if i>=0:
+                    pos = max(i, pos*i)
+                    neg = neg*i
+                else:
+                    tmp = pos # Important: remember the value, because we are gonna alter it.
+                    pos = neg*i
+                    neg = min(tmp*i, i) # Use the original value
+                    # We also can write as this, but we should notice it only works in like python or ruby
+                    # pos, neg = neg*i, min(pos*i, i), simplify to version 3
+                res = max(pos, res)
+            return res
+    ```
     
-        class Solution:
-            def maxProduct(self, nums):
-                if not nums:
-                    return 0
-        
-                pos = neg = res = nums[0]
-                for i in nums[1:]:
-                    if i>=0:
-                        pos, neg = max(i, pos*i), neg*i
-                    else:
-                        pos, neg = neg*i, min(i, pos*i)
-                    res = max(pos, res)
-                return res
+    Simplify Version 2:
+    
+    ```python
+    class Solution:
+        def maxProduct(self, nums):
+            if not nums:
+                return 0
+    
+            pos = neg = res = nums[0]
+            for i in nums[1:]:
+                if i>=0:
+                    pos, neg = max(i, pos*i), neg*i
+                else:
+                    pos, neg = neg*i, min(i, pos*i)
+                res = max(pos, res)
+            return res
+    ```
 
 -   Solution 2: Prefix sum and Suffix sum
 
-        class Solution:
-            def maxProduct(self, nums):
-                rnums = nums[::-1]
-                for i in range(1, len(nums)):
-                    nums[i] *= nums[i-1] or 1
-                    rnums[i] *= rnums[i-1] or 1
-                return max(nums+rnums)
+    ```python
+    class Solution:
+        def maxProduct(self, nums):
+            rnums = nums[::-1]
+            for i in range(1, len(nums)):
+                nums[i] *= nums[i-1] or 1
+                rnums[i] *= rnums[i-1] or 1
+            return max(nums+rnums)
+    ```
     
-    Time: O(n)
-    Space: O(n)
-
-
-<a id="org8ea3ee2"></a>
+    Time: O(n) Space: O(n)
 
 ## 96 - Unique Binary Search Trees
 
 [leetcode](https://leetcode.com/problems/unique-binary-search-trees/)
-
 
 ### Problem
 
@@ -2285,7 +2005,6 @@ DP problem:
          3     2     1      1   3      2
         /     /       \                 \
        2     1         2                 3
-
 
 ### Notes
 
@@ -2306,12 +2025,13 @@ DP problem:
             dp[5] = dp[0]*dp[4] + dp[1]*dp[3] + dp[2]*dp[2] + dp[3]*dp[1] + dp[4]*dp[0]
             dp[6] = dp[0]*dp[5] + dp[1]*dp[4] + dp[2]*dp[3] + dp[3]*dp[2] + dp[4]*dp[1] + dp[5]*dp[0]
         
-            for i in range(1, n+1):
-                for j in range(0, i):
-                    dp[i] += dp[j]*dp[i-1-j]
+        ```python
+        for i in range(1, n+1):
+            for j in range(0, i):
+                dp[i] += dp[j]*dp[i-1-j]
+        ```
     
-    -   Base case:
-        dp[0] = 1
+    -   Base case: dp[0] = 1
 
 -   Solution 2: Catalan Number
 
@@ -2325,39 +2045,38 @@ DP problem:
         742900, 2674440, 9694845, 35357670, 129644790, 477638700, 1767263190, 
         6564120420, 24466267020, 91482563640, 343059613650, 1289904147324, 4861946401452
 
-
 ### Solution
 
 -   Solution 1: DP
 
-        class Solution:
-            def numTrees(self, n):
-                if n < 1:
-                    return 0
-        
-                dp = [0] * (n+1)
-                dp[0] = 1
-        
-                for i in range(1, n+1):
-                    for j in range(0, i):
-                        dp[i] += dp[j]*dp[i-1-j]
-        
-                return dp[n]
+    ```python
+    class Solution:
+        def numTrees(self, n):
+            if n < 1:
+                return 0
+    
+            dp = [0] * (n+1)
+            dp[0] = 1
+    
+            for i in range(1, n+1):
+                for j in range(0, i):
+                    dp[i] += dp[j]*dp[i-1-j]
+    
+            return dp[n]
+    ```
 
 -   Solutiojn 2: Catalan Number
 
-        import math
-        class Solution:
-            def numTrees(self, n):
-                return math.factorial(2*n)/(math.factorial(n)*math.factorial(n+1))
-
-
-<a id="org08f31e1"></a>
+    ```python
+    import math
+    class Solution:
+        def numTrees(self, n):
+            return math.factorial(2*n)/(math.factorial(n)*math.factorial(n+1))
+    ```
 
 ## 221 - Maximal Square
 
 [leetcode](https://leetcode.com/problems/maximal-square/)
-
 
 ### Problem
 
@@ -2373,7 +2092,6 @@ DP problem:
     1 0 0 1 0
     
     Output: 4
-
 
 ### Notes
 
@@ -2398,113 +2116,115 @@ DP Problem:
     
     One padding row on vertical and horizontal direction, with value 0
 
-
 ### Solution
 
 -   **Original Version:** 
 
-    class Solution:
-        def maximalSquare(self, matrix):
-            if not matrix:
-                return 0
-    
-            dp = [[[0] * 3 for j in range(len(matrix[0]) + 1)] for i in range(len(matrix) + 1)]
-            res = 0
-            for i in range(len(matrix)):
-                for j in range(len(matrix[0])):
-                    if matrix[i][j] == "1":
-                        dp[i + 1][j + 1][0] = dp[i][j + 1][0] + 1
-                        dp[i + 1][j + 1][1] = dp[i + 1][j][1] + 1
-                        dp[i + 1][j + 1][2] = min(dp[i][j][2]+1, dp[i + 1][j + 1][0], dp[i + 1][j + 1][1])
-                        res = max(res, dp[i + 1][j + 1][2])
-    
-            return res*res
+```python
+class Solution:
+    def maximalSquare(self, matrix):
+        if not matrix:
+            return 0
 
-Time: O(mn)
-Space: O(mn)
+        dp = [[[0] * 3 for j in range(len(matrix[0]) + 1)] for i in range(len(matrix) + 1)]
+        res = 0
+        for i in range(len(matrix)):
+            for j in range(len(matrix[0])):
+                if matrix[i][j] == "1":
+                    dp[i + 1][j + 1][0] = dp[i][j + 1][0] + 1
+                    dp[i + 1][j + 1][1] = dp[i + 1][j][1] + 1
+                    dp[i + 1][j + 1][2] = min(dp[i][j][2]+1, dp[i + 1][j + 1][0], dp[i + 1][j + 1][1])
+                    res = max(res, dp[i + 1][j + 1][2])
+
+        return res*res
+```
+
+Time: O(mn) Space: O(mn)
 
 -   **Simplified Version 1: optimize the space, 3xn space:** 
 
-    class Solution:
-        def maximalSquare(self, matrix):
-            if not matrix:
-                return 0
-    
-            dp = [[0] * 3 for j in range(len(matrix[0]) + 1)]
-            res = 0
-    
-            for i in range(len(matrix)):
-                for j in range(len(matrix[0])):
-                    if matrix[i][j] == "1":
-                        dp[j+1][0] = dp[j+1][0] + 1
-                        dp[j+1][1] = dp[j][1] + 1
-                        dp[j+1][2] = min(dp[j+1][2]+1, dp[j+1][0]+1, dp[j][1]+1)
-                        res = max(res, dp[j + 1][2])
-                    else:
-                        dp[j+1][0] = dp[j+1][1] = dp[j+1][2] = 0
-    
-            return res*res
+```python
+class Solution:
+    def maximalSquare(self, matrix):
+        if not matrix:
+            return 0
+
+        dp = [[0] * 3 for j in range(len(matrix[0]) + 1)]
+        res = 0
+
+        for i in range(len(matrix)):
+            for j in range(len(matrix[0])):
+                if matrix[i][j] == "1":
+                    dp[j+1][0] = dp[j+1][0] + 1
+                    dp[j+1][1] = dp[j][1] + 1
+                    dp[j+1][2] = min(dp[j+1][2]+1, dp[j+1][0]+1, dp[j][1]+1)
+                    res = max(res, dp[j + 1][2])
+                else:
+                    dp[j+1][0] = dp[j+1][1] = dp[j+1][2] = 0
+
+        return res*res
+```
 
 Space: O(n)
 
 -   **Simplified Version 2: n space:** 
 
-    class Solution:
-        def maximalSquare(self, matrix):
-            if not matrix:
-                return 0
-    
-            dp = [0 for j in range(len(matrix[0]) + 1)]
-            res = 0
-            prev = 0 # previous diagnol element
-    
-            for i in range(len(matrix)):
-                for j in range(len(matrix[0])):
-                    temp = dp[j+1]
-                    if matrix[i][j] == "1":
-                        dp[j+1] = min(prev, dp[j+1], dp[j]) + 1
-                        res = max(res, dp[j + 1])
-                    else:
-                        dp[j+1] = 0
-    
-                    prev = temp
-    
-            return res*res
+```python
+class Solution:
+    def maximalSquare(self, matrix):
+        if not matrix:
+            return 0
+
+        dp = [0 for j in range(len(matrix[0]) + 1)]
+        res = 0
+        prev = 0 # previous diagnol element
+
+        for i in range(len(matrix)):
+            for j in range(len(matrix[0])):
+                temp = dp[j+1]
+                if matrix[i][j] == "1":
+                    dp[j+1] = min(prev, dp[j+1], dp[j]) + 1
+                    res = max(res, dp[j + 1])
+                else:
+                    dp[j+1] = 0
+
+                prev = temp
+
+        return res*res
+```
 
 -   **Simplified Version 3: in place:** 
 
-    class Solution:
-        def maximalSquare(self, matrix):
-            if not matrix:
-                return 0
-            res = 0
-            m = len(matrix)
-            n = len(matrix[0])
-    
-            for i in range(m):
-                for j in range(n):
-                    if matrix[i][j] == "1":
-                        if i == 0 or j == 0:
-                            matrix[i][j] = 1
-                        else:
-                            matrix[i][j] = min(matrix[i - 1][j - 1],
-                                               matrix[i][j - 1],
-                                               matrix[i - 1][j]) + 1
-                        res = max(res, matrix[i][j])
+```python
+class Solution:
+    def maximalSquare(self, matrix):
+        if not matrix:
+            return 0
+        res = 0
+        m = len(matrix)
+        n = len(matrix[0])
+
+        for i in range(m):
+            for j in range(n):
+                if matrix[i][j] == "1":
+                    if i == 0 or j == 0:
+                        matrix[i][j] = 1
                     else:
-                        matrix[i][j] = 0
-    
-            return res * res
+                        matrix[i][j] = min(matrix[i - 1][j - 1],
+                                           matrix[i][j - 1],
+                                           matrix[i - 1][j]) + 1
+                    res = max(res, matrix[i][j])
+                else:
+                    matrix[i][j] = 0
+
+        return res * res
+```
 
 Space: O(1)
-
-
-<a id="orgc00f091"></a>
 
 ## 279 - Perfect Squares
 
 [leetcode](https://leetcode.com/problems/perfect-squares/)
-
 
 ### Problem
 
@@ -2521,7 +2241,6 @@ Space: O(1)
     Output: 2
     Explanation: 13 = 4 + 9.
 
-
 ### Notes
 
 DP problem
@@ -2534,30 +2253,27 @@ DP problem
     -   dp[0] = 0
     -   dp[i] = i
 
-
 ### Solution
 
-    import math
-    class Solution:
-        dp = [0]
-        def numSquares(self, n):
-            _dp = self.dp
-            if len(_dp) >= n + 1:
-                return _dp[n]
-            else:
-                for i in range(len(_dp), n+1):
-                    _dp += [min([_dp[i-j*j]+1 for j in range(1, int(math.sqrt(i))+1) if i-j*j >= 0])] 
+```python
+import math
+class Solution:
+    dp = [0]
+    def numSquares(self, n):
+        _dp = self.dp
+        if len(_dp) >= n + 1:
             return _dp[n]
-    
-    print(Solution().numSquares(12))
+        else:
+            for i in range(len(_dp), n+1):
+                _dp += [min([_dp[i-j*j]+1 for j in range(1, int(math.sqrt(i))+1) if i-j*j >= 0])] 
+        return _dp[n]
 
-
-<a id="org1a92df8"></a>
+print(Solution().numSquares(12))
+```
 
 ## 647 - Palindromic Substrings
 
 [leetcode](https://leetcode.com/problems/palindromic-substrings/)
-
 
 ### Problem
 
@@ -2583,7 +2299,6 @@ DP problem
     
     The input string length won't exceed 1000.
 
-
 ### Notes
 
 DP problem
@@ -2606,29 +2321,26 @@ DP problem
     
     initialize dp[i][j] = 0
 
-
 ### Solution
 
-    class Solution:
-        def countSubstrings(self, s):
-            dp = [[0] * len(s) for i in range(len(s))]
-            res = 0
-            for r in range(len(s)):
-                for l in range(r+1):
-                    if s[r] == s[l]:
-                        if r == l or r+1 == l or dp[l+1][r-1] == 1:
-                            dp[l][r] = 1
-                            res += 1
-            return res
-    print(Solution().countSubstrings("aba"))
-
-
-<a id="org5e53d5f"></a>
+```python
+class Solution:
+    def countSubstrings(self, s):
+        dp = [[0] * len(s) for i in range(len(s))]
+        res = 0
+        for r in range(len(s)):
+            for l in range(r+1):
+                if s[r] == s[l]:
+                    if r == l or r+1 == l or dp[l+1][r-1] == 1:
+                        dp[l][r] = 1
+                        res += 1
+        return res
+print(Solution().countSubstrings("aba"))
+```
 
 ## 5 - Longest Palindromic Substring
 
 [leetcode](https://leetcode.com/problems/longest-palindromic-substring/)
-
 
 ### Problem
 
@@ -2643,7 +2355,6 @@ DP problem
     
     Input: "cbbd"
     Output: "bb"
-
 
 ### Notes
 
@@ -2667,33 +2378,30 @@ DP problem
     
     initialize dp[i][j] = 0
 
-
 ### Solution
 
 -   Solution 1: DP
 
-        class Solution:
-            def longestPalindrome(self, s: str) -> str:
-                dp = [[0] * len(s) for i in range(len(s))]
-                res = ""
-                for r in range(len(s)):
-                    for l in range(r + 1):
-                        if s[l] == s[r]:
-                            if l == r or l + 1 == r or dp[l + 1][r - 1] == 1:
-                                dp[l][r] = 1
-                                if r - l + 1 > len(res):
-                                    res = s[l:r + 1]
-                return res
+    ```python
+    class Solution:
+        def longestPalindrome(self, s: str) -> str:
+            dp = [[0] * len(s) for i in range(len(s))]
+            res = ""
+            for r in range(len(s)):
+                for l in range(r + 1):
+                    if s[l] == s[r]:
+                        if l == r or l + 1 == r or dp[l + 1][r - 1] == 1:
+                            dp[l][r] = 1
+                            if r - l + 1 > len(res):
+                                res = s[l:r + 1]
+            return res
+    ```
 
 -   Solution 2: Central Expansion
-
-
-<a id="org3b14b89"></a>
 
 ## 136 - Single Number
 
 [leetcode](https://leetcode.com/problems/single-number/)
-
 
 ### Problem
 
@@ -2712,7 +2420,6 @@ DP problem
     Input: [4,1,2,1,2]
     Output: 4
 
-
 ### Notes
 
 -   Solution 1: Hash Table
@@ -2721,49 +2428,50 @@ DP problem
 
     Consider XOR all element together. The left number is the single number.
 
-
 ### Solution
 
 -   Solution 1: Hash Table
 
-        class Solution:
-            def singleNumber(self, nums):
-                table = {}
-                for i in nums:
-                    table[i] = table.get(i, 0) + 1
-                for k in table:
-                    if table[k] == 1:
-                        return k
+    ```python
+    class Solution:
+        def singleNumber(self, nums):
+            table = {}
+            for i in nums:
+                table[i] = table.get(i, 0) + 1
+            for k in table:
+                if table[k] == 1:
+                    return k
+    ```
 
 -   Solution 2: Bit manipulation for finding the single number
 
-        class Solution:
-            def singleNumber(self, nums):
-        
-                res = 0
-        
-                for i in nums:
-                    res ^= i
-        
-                return res
-        
-        print(Solution().singleNumber([2, 2, 5, 1, 8, 1, 9, 8, 9]))
+    ```python
+    class Solution:
+        def singleNumber(self, nums):
+    
+            res = 0
+    
+            for i in nums:
+                res ^= i
+    
+            return res
+    
+    print(Solution().singleNumber([2, 2, 5, 1, 8, 1, 9, 8, 9]))
+    ```
 
 -   Solution 3: Python reduce
 
-        from functools import reduce
-        import operator
-        nums = [2, 2, 5, 1, 8, 1, 9, 8, 9]
-        print(reduce(lambda x, y: x ^ y, nums))
-        print(reduce(operator.xor, nums))
-
-
-<a id="org92fa83a"></a>
+    ```python
+    from functools import reduce
+    import operator
+    nums = [2, 2, 5, 1, 8, 1, 9, 8, 9]
+    print(reduce(lambda x, y: x ^ y, nums))
+    print(reduce(operator.xor, nums))
+    ```
 
 ## 202 - Happy Number
 
 [leetcode](https://leetcode.com/problems/happy-number/)
-
 
 ### Problem
 
@@ -2781,47 +2489,43 @@ DP problem
     62 + 82 = 100
     12 + 02 + 02 = 1
 
-
 ### Notes
 
 Hash Table
 
-
 ### Solution
 
-    class Solution:
-        def isHappy(self, n):
-            table = {}
-    
-            while n != 1:
-                x = n
-                n = 0
-                while x != 0:
-                    n += (x % 10)**2
-                    x //= 10
-    
-                if table.get(n):
-                    return False
-                else:
-                    table[n] = 1
-            return True
-    
-    
-    class Solution:
-        def isHappy(self, n):
-            mem = set()
-            while n not in mem:
-                mem.add(n)
-                n = sum(int(i)**2 for i in str(n))
-            return n == 1
+```python
+class Solution:
+    def isHappy(self, n):
+        table = {}
+
+        while n != 1:
+            x = n
+            n = 0
+            while x != 0:
+                n += (x % 10)**2
+                x //= 10
+
+            if table.get(n):
+                return False
+            else:
+                table[n] = 1
+        return True
 
 
-<a id="org57e27bb"></a>
+class Solution:
+    def isHappy(self, n):
+        mem = set()
+        while n not in mem:
+            mem.add(n)
+            n = sum(int(i)**2 for i in str(n))
+        return n == 1
+```
 
 ## 338 - Counting Bits
 
 [leetcode](https://leetcode.com/problems/counting-bits/)
-
 
 ### Problem
 
@@ -2835,7 +2539,6 @@ Hash Table
     
     Input: 5
     Output: [0,1,1,2,1,2]
-
 
 ### Notes
 
@@ -2869,46 +2572,47 @@ DP problem
     
     dp[i] = dp[i & (i-1)] + 1
 
-
 ### Solution
 
 -   Solution 1: DP
 
-        class Solution:
-            def countBits(self, num):
-                offset = 1
-                dp = [0] * (num + 1)
-                for i in range(1, num + 1):
-                    if offset * 2 == i:
-                        offset *= 2
-                    dp[i] = dp[i - offset] + 1
-                return dp
+    ```python
+    class Solution:
+        def countBits(self, num):
+            offset = 1
+            dp = [0] * (num + 1)
+            for i in range(1, num + 1):
+                if offset * 2 == i:
+                    offset *= 2
+                dp[i] = dp[i - offset] + 1
+            return dp
+    ```
 
 -   Solution 2: Bit manipulation on couting bits
 
-        class Solution:
-            def countBits(self, num):
-                dp = [0] * (num + 1)
-                for i in range(1, num + 1):
-                    dp[i] = dp[i & (i - 1)] + 1
-                return dp
+    ```python
+    class Solution:
+        def countBits(self, num):
+            dp = [0] * (num + 1)
+            for i in range(1, num + 1):
+                dp[i] = dp[i & (i - 1)] + 1
+            return dp
+    ```
 
 -   Solution 3:
 
-        class Solution(object):
-            def countBits(self, num):
-                res=[0]
-                while len(res)<=num:
-                    res+=[i+1 for i in res]
-                return res[:num+1]
-
-
-<a id="orgd9bf15b"></a>
+    ```python
+    class Solution(object):
+        def countBits(self, num):
+            res=[0]
+            while len(res)<=num:
+                res+=[i+1 for i in res]
+            return res[:num+1]
+    ```
 
 ## 494 - Target Sum
 
 [leetcode](https://leetcode.com/problems/target-sum/)
-
 
 ### Problem
 
@@ -2932,7 +2636,6 @@ DP problem
     The length of the given array is positive and will not exceed 20.
     The sum of elements in the given array will not exceed 1000.
     Your output answer is guaranteed to be fitted in a 32-bit integer.
-
 
 ### Solution
 
@@ -2959,7 +2662,7 @@ What states do we have to calculate the current result, which is the number of w
     
     Add an offset of sum = 5
     
-    0,  1,  2,  3,  4, 5, 6, 7, 8, 9, 10  -> 11 numbers
+    0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 -> 11 numbers
     
     dp should have a length of 2sum(nums) + 1
 
@@ -2967,29 +2670,33 @@ What states do we have to calculate the current result, which is the number of w
 
 We need all the sum values of the previous number to calculate the current one.
 
-    for j in range(2sum+1):
-        if dp[i-1][j] > 0: # only check the ones, which have been reached
-          if j+nums[i] < 2sum + 1: # sign + to the current number, we transit from j to j+nums[i]
-            dp[i][j+nums[i]] += dp[i-1][j]
-          if j-nums[i] >= 0: # sign + to the current number, we transit from j to j-nums[i]
-            dp[i][j-nums[i]] += dp[i-1][j]
+```python
+for j in range(2sum+1):
+    if dp[i-1][j] > 0: # only check the ones, which have been reached
+      if j+nums[i] < 2sum + 1: # sign + to the current number, we transit from j to j+nums[i]
+        dp[i][j+nums[i]] += dp[i-1][j]
+      if j-nums[i] >= 0: # sign + to the current number, we transit from j to j-nums[i]
+        dp[i][j-nums[i]] += dp[i-1][j]
+```
 
 -   Base case:
 
 We start from the offset.
 
-    # the first number with symbols 
-    dp[0][offset+nums[0]] +=1
-    dp[0][offset-nums[0]] +=1 
+```python
+# the first number with symbols 
+dp[0][offset+nums[0]] +=1
+dp[0][offset-nums[0]] +=1 
+```
 
-**Important**:
-You have to use += 1, not only = 1, because the number can be 0.
+**Important**: You have to use += 1, not only = 1, because the number can be 0.
 
-For exmaple: we take sum = 5
-When the first number is 1 (not 0):
+For exmaple: we take sum = 5 When the first number is 1 (not 0):
 
-    d[0][0+sum + 1] += 1 -> dp[0][6] = 1
-    d[0][0+sum - 1] += 1 -> dp[0][4] = 1
+```python
+d[0][0+sum + 1] += 1 -> dp[0][6] = 1
+d[0][0+sum - 1] += 1 -> dp[0][4] = 1
+```
 
 It means:
 
@@ -2999,43 +2706,46 @@ there is one ways to reach -1 (4 - offset)
 
 When the first number is 0:
 
-    d[0][0+sum + 1] += 1 -> dp[0][5] = 1
-    d[0][0+sum - 1] += 1 -> dp[0][5] = 2
+```python
+d[0][0+sum + 1] += 1 -> dp[0][5] = 1
+d[0][0+sum - 1] += 1 -> dp[0][5] = 2
+```
 
 It means there are 2 ways to reach 0 (5 - offset)
 
 -   Solution 1: 2D - DP
 
-        class Solution():
-            def findTargetSumWays(self, nums, S):
-                l = len(nums)
-                n = 2 * sum(nums) + 1
-                offset = sum(nums)
-        
-                dp = [[0] * n for i in nums]
-        
-                if not nums:
-                    return 0
-        
-                # base case
-                dp[0][offset - nums[0]] += 1
-                dp[0][offset + nums[0]] += 1
-        
-                for i in range(1, len(nums)):
-                    for j in range(n):
-                        if dp[i-1][j] > 0:
-                            if j + nums[i] < n:
-                                dp[i][j + nums[i]] += dp[i-1][j]
-                            if j - nums[i] >= 0:
-                                dp[i][j - nums[i]] += dp[i-1][j]
-        
-                return dp[-1][offset + S]
-        
-        
-        print(Solution().findTargetSumWays([1, 1, 1, 1, 1], 3))
+    ```python
+    class Solution():
+        def findTargetSumWays(self, nums, S):
+            l = len(nums)
+            n = 2 * sum(nums) + 1
+            offset = sum(nums)
     
-    Time: O(l\*n)
-    Space: O(l\*n)
+            dp = [[0] * n for i in nums]
+    
+            if not nums:
+                return 0
+    
+            # base case
+            dp[0][offset - nums[0]] += 1
+            dp[0][offset + nums[0]] += 1
+    
+            for i in range(1, len(nums)):
+                for j in range(n):
+                    if dp[i-1][j] > 0:
+                        if j + nums[i] < n:
+                            dp[i][j + nums[i]] += dp[i-1][j]
+                        if j - nums[i] >= 0:
+                            dp[i][j - nums[i]] += dp[i-1][j]
+    
+            return dp[-1][offset + S]
+    
+    
+    print(Solution().findTargetSumWays([1, 1, 1, 1, 1], 3))
+    ```
+    
+    Time: O(l\*n) Space: O(l\*n)
 
 -   Solution 2: 1D - DP
 
@@ -3043,37 +2753,35 @@ It means there are 2 ways to reach 0 (5 - offset)
     
     So we only have to maintain two dp arrays to record previous values and current values respectly.
     
-        class Solution:
-            def findTargetSumWays(self, nums, S):
-                if not nums:
-                    return 0
-                l = len(nums)
-                n = 2 * sum(nums) + 1
-                offset = sum(nums)
-                dp = [[0] * n for i in nums]
-        
-                dp[0][offset + nums[0]] += 1
-                dp[0][offset - nums[0]] += 1
-        
-                for i in range(1, l):
-                    for j in range(n):
-                        if dp[i - 1][j] > 0:
-                            if dp[i - 1][j] < n:
-                                dp[i][j + nums[i]] += dp[i - 1][j]
-                            if dp[i - 1][j] >= 0:
-                                dp[i][j - nums[i]] += dp[i - 1][j]
-        
-                return dp[-1][offset + S]
-        
-        print(Solution().findTargetSumWays([1, 1, 1, 1, 1], 3))
-
-
-<a id="org8d901a7"></a>
+    ```python
+    class Solution:
+        def findTargetSumWays(self, nums, S):
+            if not nums:
+                return 0
+            l = len(nums)
+            n = 2 * sum(nums) + 1
+            offset = sum(nums)
+            dp = [[0] * n for i in nums]
+    
+            dp[0][offset + nums[0]] += 1
+            dp[0][offset - nums[0]] += 1
+    
+            for i in range(1, l):
+                for j in range(n):
+                    if dp[i - 1][j] > 0:
+                        if dp[i - 1][j] < n:
+                            dp[i][j + nums[i]] += dp[i - 1][j]
+                        if dp[i - 1][j] >= 0:
+                            dp[i][j - nums[i]] += dp[i - 1][j]
+    
+            return dp[-1][offset + S]
+    
+    print(Solution().findTargetSumWays([1, 1, 1, 1, 1], 3))
+    ```
 
 ## 283 - Move Zeros
 
 [leetcode](https://leetcode.com/problems/move-zeroes/)
-
 
 ### Problem
 
@@ -3088,7 +2796,6 @@ It means there are 2 ways to reach 0 (5 - offset)
     You must do this in-place without making a copy of the array.
     Minimize the total number of operations.
 
-
 ### Solution
 
 Two pointers.
@@ -3097,28 +2804,26 @@ One pointer is for the start of 0.
 
 One pointer keeps going forward.
 
-    class Solution:
-        def moveZeros(self, nums):
-    
-            p1, p2 = 0, 0
-    
-            for p2 < len(nums):
-                if nums[p1] != 0:
-                    p1 += 1
-                elif nums[p2] != 0:
-                    nums[p1], nums[p2] = nums[p2], nums[p1]
-                    p1 += 1
-                p2 += 1
-    
-            return nums
+```python
+class Solution:
+    def moveZeros(self, nums):
 
+        p1, p2 = 0, 0
 
-<a id="org41cd874"></a>
+        for p2 < len(nums):
+            if nums[p1] != 0:
+                p1 += 1
+            elif nums[p2] != 0:
+                nums[p1], nums[p2] = nums[p2], nums[p1]
+                p1 += 1
+            p2 += 1
+
+        return nums
+```
 
 ## 416 - Partition Equal Subset Sum
 
 [leetcode](https://leetcode.com/problems/partition-equal-subset-sum/)
-
 
 ### Problem
 
@@ -3147,38 +2852,37 @@ One pointer keeps going forward.
     
     Explanation: The array cannot be partitioned into equal sum subsets.
 
-
 ### Solution
 
 DP problem, it is similar to problem 494 Target Sum.
 
-Maintain a dp table: dp[i][sum]. Don't forget to the offset. 
+Maintain a dp table: dp[i][sum]. Don't forget to the offset.
 
-Transition:
-dp[i][j-nums[i]] += dp[i-1][j]
-dp[i][j+nums[i]] += dp[i-1][j]
+Transition: dp[i][j-nums[i]] += dp[i-1][j] dp[i][j+nums[i]] += dp[i-1][j]
 
 When the transition is only depend on the last row, usually you always can transform the dp table to 1 dimensional.
 
 -   Solution 1: 1D-DP
 
-        class Solution:
-            def canPartition(slef, nums):
-                nums_sum = sum(nums)
-                if nums_sum % 2 != 0:
-                    return False
-        
-                target = nums_sum//2
-                n = target + 1
-        
-                dp = [False] * n
-                dp[0] = True
-                for i in range(len(nums)):
-                    for j in reversed(range(nums[i], n)):
-                        dp[j] = dp[j-nums[i]] or dp[j]
-                        if dp[target]:
-                            return True
-                return dp[target]
+    ```python
+    class Solution:
+        def canPartition(slef, nums):
+            nums_sum = sum(nums)
+            if nums_sum % 2 != 0:
+                return False
+    
+            target = nums_sum//2
+            n = target + 1
+    
+            dp = [False] * n
+            dp[0] = True
+            for i in range(len(nums)):
+                for j in reversed(range(nums[i], n)):
+                    dp[j] = dp[j-nums[i]] or dp[j]
+                    if dp[target]:
+                        return True
+            return dp[target]
+    ```
     
     Time: O(len(nums)\*sum(nums))
     
@@ -3186,29 +2890,27 @@ When the transition is only depend on the last row, usually you always can trans
 
 -   Solution 2: Bit manipulation for maintaning the dp table
 
-        class Solution:
-            def canPartition(self, nums):
-                s = sum(nums)
-                if s%2 != 0:
-                    return False
-        
-                bits = 1
-                for i in nums:
-                    bits |= bits << i
-        
-                return (bits >> (s//2)) & 1 == 1
+    ```python
+    class Solution:
+        def canPartition(self, nums):
+            s = sum(nums)
+            if s%2 != 0:
+                return False
+    
+            bits = 1
+            for i in nums:
+                bits |= bits << i
+    
+            return (bits >> (s//2)) & 1 == 1
+    ```
     
     Time: O(n)
     
     Space: O(1) maybe, depends on the sum of the array, the bits can be longer
 
-
-<a id="orgf324966"></a>
-
 ## 698 - Partition to K Equal Sum Subsets
 
 [leetcode](https://leetcode.com/problems/partition-to-k-equal-sum-subsets/)
-
 
 ### Problem
 
@@ -3228,16 +2930,11 @@ When the transition is only depend on the last row, usually you always can trans
     1 <= k <= len(nums) <= 16.
     0 < nums[i] < 10000.
 
-
 ### Solution
-
-
-<a id="org65c395e"></a>
 
 ## 215 - Kth Largest Element in an Array
 
 [leetcode](https://leetcode.com/problems/kth-largest-element-in-an-array/)
-
 
 ### Problem
 
@@ -3264,31 +2961,31 @@ When the transition is only depend on the last row, usually you always can trans
     Note:
     You may assume k is always valid, 1 ≤ k ≤ array's length.
 
-
 ### Solution
 
-The naive solution would be to maintain an array of length k and update the array 
-in each iteration to keep the first kth largest element in the array
+The naive solution would be to maintain an array of length k and update the array in each iteration to keep the first kth largest element in the array
 
 -   Solution 1: Array of k
 
-        class Solution:
-            def findKthLargest(self, nums, k):
-                l = []
-        
-                for i in nums:
-                    if not l:
+    ```python
+    class Solution:
+        def findKthLargest(self, nums, k):
+            l = []
+    
+            for i in nums:
+                if not l:
+                    l.append(i)
+                else:
+                    len0 = len(l)
+                    for j in range(len(l)):
+                        if i >= l[j]:
+                            l = l[0:j] + [i] + l[j:]
+                            break
+                    if len0 == len(l) and len0 != k:
                         l.append(i)
-                    else:
-                        len0 = len(l)
-                        for j in range(len(l)):
-                            if i >= l[j]:
-                                l = l[0:j] + [i] + l[j:]
-                                break
-                        if len0 == len(l) and len0 != k:
-                            l.append(i)
-                        l = l[0:k]
-                return l[-1]
+                    l = l[0:k]
+            return l[-1]
+    ```
     
     Time: O(nk)
     
@@ -3296,39 +2993,37 @@ in each iteration to keep the first kth largest element in the array
 
 -   Solution 2: Partition to find the kth largest
 
-        class Solution:
-            def findKthLargest(self, nums, k):
-                pos = self.partition(nums, 0, len(nums) - 1)
-                if pos + 1 < k:
-                    return self.findKthLargest(nums[pos + 1:], k - pos - 1)
-                elif pos + 1 > k:
-                    return self.findKthLargest(nums[0:pos], k)
-                else:
-                    return nums[pos]
-        
-            def partition(self, nums, l, r):
-                p = r
-        
-                while(l < r):
-                    while l < r and nums[l] > nums[p]:
-                        l += 1
-                    while l < r and nums[r] <= nums[p]:
-                        r -= 1
-                    nums[l], nums[r] = nums[r], nums[l]
-                nums[l], nums[p] = nums[p], nums[l]
-                return l
+    ```python
+    class Solution:
+        def findKthLargest(self, nums, k):
+            pos = self.partition(nums, 0, len(nums) - 1)
+            if pos + 1 < k:
+                return self.findKthLargest(nums[pos + 1:], k - pos - 1)
+            elif pos + 1 > k:
+                return self.findKthLargest(nums[0:pos], k)
+            else:
+                return nums[pos]
+    
+        def partition(self, nums, l, r):
+            p = r
+    
+            while(l < r):
+                while l < r and nums[l] > nums[p]:
+                    l += 1
+                while l < r and nums[r] <= nums[p]:
+                    r -= 1
+                nums[l], nums[r] = nums[r], nums[l]
+            nums[l], nums[p] = nums[p], nums[l]
+            return l
+    ```
     
     Time: O(klogn)
     
     Space: O(1)
 
-
-<a id="org19f1873"></a>
-
 ## 49 - Group Anagrams
 
 [leetcode](https://leetcode.com/problems/group-anagrams/)
-
 
 ### Problem
 
@@ -3348,39 +3043,38 @@ in each iteration to keep the first kth largest element in the array
     All inputs will be in lowercase.
     The order of your output does not matter.
 
-
 ### Solution
 
 Use the sorted string as key in hash table
 
-    import collections
-    class Solution:
-        def groupAnagrams(self, strs):
-            ans = collections.defaultdict(list)
-            for s in strs:
-                ans[tuple(sorted(s))].append(s)
-            return list(ans.values())
+```python
+import collections
+class Solution:
+    def groupAnagrams(self, strs):
+        ans = collections.defaultdict(list)
+        for s in strs:
+            ans[tuple(sorted(s))].append(s)
+        return list(ans.values())
+```
 
 Or use the counter
 
-    import collections
-    class Solution:
-        def groupAnagrams(self, strs):
-            ans = collections.defaultdict(list)
-            for s in strs:
-                a = [0] * 26
-                for c in s:
-                    a[ord(c) - ord('a')] += 1
-                ans[tuple(a)].append(s)
-            return list(ans.values())
-
-
-<a id="org6c8b5aa"></a>
+```python
+import collections
+class Solution:
+    def groupAnagrams(self, strs):
+        ans = collections.defaultdict(list)
+        for s in strs:
+            a = [0] * 26
+            for c in s:
+                a[ord(c) - ord('a')] += 1
+            ans[tuple(a)].append(s)
+        return list(ans.values())
+```
 
 ## 876 - Middle of the Linked List
 
 [leetcode](https://leetcode.com/problems/middle-of-the-linked-list/)
-
 
 ### Problem
 
@@ -3403,30 +3097,376 @@ Or use the counter
     Output: Node 4 from this list (Serialization: [4,5,6])
     Since the list has two middle nodes with values 3 and 4, we return the second one.
 
-
 ### Solution
 
 -   Solution 1: two-pointer
 
-        class Solution:
-            def middleNode(self, head: ListNode) -> ListNode:
-                p1 = p2 = head
-                while p2 and p2.next:
-                    p2 = p2.next.next
-                    p1 = p1.next
-        
-                return p1
+    ```python
+    class Solution:
+        def middleNode(self, head: ListNode) -> ListNode:
+            p1 = p2 = head
+            while p2 and p2.next:
+                p2 = p2.next.next
+                p1 = p1.next
+    
+            return p1
+    ```
 
 -   Solution 2: counter
 
-        class Solution:
-            def middleNode(self, head):
-                mid = head
-                count = 0
-                while head:
-                    count += 1
-                    if count % 2 == 0:
-                        mid = mid.next
-                    head = head.next
-                return mid
+    ```python
+    class Solution:
+        def middleNode(self, head):
+            mid = head
+            count = 0
+            while head:
+                count += 1
+                if count % 2 == 0:
+                    mid = mid.next
+                head = head.next
+            return mid
+    ```
 
+## 844 - Backspace String Compare
+
+[leetcode](https://leetcode.com/problems/backspace-string-compare/)
+
+### Problem
+
+    Given two strings S and T, return if they are equal when both are typed into empty text editors. # means a backspace character.
+    
+    Example 1:
+    
+    Input: S = "ab#c", T = "ad#c"
+    Output: true
+    Explanation: Both S and T become "ac".
+    Example 2:
+    
+    Input: S = "ab##", T = "c#d#"
+    Output: true
+    Explanation: Both S and T become "".
+    Example 3:
+    
+    Input: S = "a##c", T = "#a#c"
+    Output: true
+    Explanation: Both S and T become "c".
+    Example 4:
+    
+    Input: S = "a#c", T = "b"
+    Output: false
+    Explanation: S becomes "c" while T becomes "b".
+    Note:
+    
+    1 <= S.length <= 200
+    1 <= T.length <= 200
+    S and T only contain lowercase letters and '#' characters.
+
+### Solution
+
+-   Solution 1: stack
+
+    ```python
+    class Solution:
+        def backspaceCompare(self, S, T):
+            return self.build(S) == self.build(T)
+    
+        def build(self, s):
+            res = []
+    
+            for c in s:
+                if c != "#":
+                    res.append(c)
+                elif res:
+                    res.pop()
+    
+            return "".join(res)
+    
+    print(Solution().backspaceCompare("ac#cc#", "ab#c"))
+    ```
+    
+    ```python
+    from functools import reduce
+    
+    class Solution:
+        def backspaceCompare(self, S, T):
+            def back(res, c):
+                if c != "#":
+                    res.append(c)
+                elif res:
+                    res.pop()
+                return res
+    
+            return reduce(back, S, []) == reduce(back, T, [])
+    
+    print(Solution().backspaceCompare("ac#cc#", "ab#c"))
+    ```
+
+-   Solution 2: two pointer, reserve
+
+    ```python
+    class Solution:
+        def backspaceCompare(self, S, T):
+            pS, pT = len(S) - 1, len(T) - 1
+            backS, backT = 0, 0
+    
+            while pS >= 0 or pT >= 0:
+                while pS >= 0:
+                    if S[pS] == "#":
+                        backS += 1
+                        pS -= 1
+                    elif backS:
+                        backS -= 1
+                        pS -= 1
+                    else:
+                        break
+    
+                while pT >= 0:
+                    if T[pT] == "#":
+                        backT += 1
+                        pT -= 1
+                    elif backT:
+                        backT -= 1
+                        pT -= 1
+                    else:
+                        break
+    
+                if not (pS >= 0 and pT >= 0 and S[pS] == T[pT]):
+                    return pS == pT == -1
+    
+                pS -= 1
+                pT -= 1
+    
+            return True
+    print(Solution().backspaceCompare("###ac#b", "ab#b"))
+    ```
+
+## 155 - Min Stack
+
+[leetcode](https://leetcode.com/problemset/all/?search=Min%20Stack)
+
+### Problem
+
+    Design a stack that supports push, pop, top, and retrieving the minimum element in constant time.
+    
+    push(x) -- Push element x onto stack.
+    pop() -- Removes the element on top of the stack.
+    top() -- Get the top element.
+    getMin() -- Retrieve the minimum element in the stack.
+     
+    
+    Example:
+    
+    MinStack minStack = new MinStack();
+    minStack.push(-2);
+    minStack.push(0);
+    minStack.push(-3);
+    minStack.getMin();   --> Returns -3.
+    minStack.pop();
+    minStack.top();      --> Returns 0.
+    minStack.getMin();   --> Returns -2.
+
+### Solution
+
+Use a second stack to keep track of the min value. Pay attention to the return value. Remember to return None when there is no result.
+
+```python
+class MinStack:
+    def __init__(self):
+        """
+        initialize your data structure here.
+        """
+        self.stack = []
+        self.min = []
+
+    def push(self, x: int) -> None:
+        self.stack.append(x)
+        if not self.getMin() or self.getMin() >= x:
+            self.min.append(x)
+
+    def pop(self) -> None:
+        if self.stack:
+            x = self.stack.pop()
+            if x == self.min[-1]:
+                self.min.pop()
+
+    def top(self) -> int:
+        if self.stack:
+            return self.stack[-1]
+        else:
+            return None
+
+    def getMin(self) -> int:
+        if self.min:
+            return self.min[-1]
+        else:
+            return None
+```
+
+## 543 - Diameter of Binary Tree
+
+[leetcode](https://leetcode.com/problems/diameter-of-binary-tree/)
+
+### Problem
+
+    Given a binary tree, you need to compute the length of the diameter of the tree. The diameter of a binary tree is the length of the longest path between any two nodes in a tree. This path may or may not pass through the root.
+    
+    Example:
+    Given a binary tree
+              1
+             / \
+            2   3
+           / \     
+          4   5    
+    Return 3, which is the length of the path [4,2,1,3] or [5,2,1,3].
+    
+    Note: The length of path between two nodes is represented by the number of edges between them.
+
+### Solution
+
+```python
+class Solution:
+    def diameterOfBinaryTree(self, root: TreeNode) -> int:
+        if not root:
+            return 0
+        elif not root.right and not root.left:
+            return 0
+        elif not root.right:
+            return max(self.diameterOfBinaryTree(root.left),
+                       1 + self.height(root.left))
+        elif not root.left:
+            return max(self.diameterOfBinaryTree(root.right),
+                       1 + self.height(root.right))
+        else:
+            return max(self.diameterOfBinaryTree(root.right),
+                       self.diameterOfBinaryTree(root.left),
+                       self.height(root.left) + self.height(root.right) + 2)
+
+    def height(self, root):
+
+        if not root:
+            return 0
+        if not root.right and not root.left:
+            return 0
+
+        return 1 + max(self.height(root.left), self.height(root.right))
+```
+
+```python
+class Solution:
+    def diameterOfBinaryTree(self, root):
+        self.ans = 0
+
+        def depth(node):
+            if not node:
+                return 0
+            r = depth(node.right)
+            l = depth(node.left)
+            self.ans = max(self.ans, r+l)
+            return 1 + max(r, l)
+        depth(root)
+        return self.ans
+
+
+```
+
+## 1046 - Last Stone Weight
+
+[leetcode](https://leetcode.com/problems/last-stone-weight/)
+
+### Problem
+
+    We have a collection of stones, each stone has a positive integer weight.
+    
+    Each turn, we choose the two heaviest stones and smash them together.  Suppose the stones have weights x and y with x <= y.  The result of this smash is:
+    
+    If x == y, both stones are totally destroyed;
+    If x != y, the stone of weight x is totally destroyed, and the stone of weight y has new weight y-x.
+    At the end, there is at most 1 stone left.  Return the weight of this stone (or 0 if there are no stones left.)
+    
+     
+    
+    Example 1:
+    
+    Input: [2,7,4,1,8,1]
+    Output: 1
+    Explanation: 
+    We combine 7 and 8 to get 1 so the array converts to [2,4,1,1,1] then,
+    we combine 2 and 4 to get 2 so the array converts to [2,1,1,1] then,
+    we combine 2 and 1 to get 1 so the array converts to [1,1,1] then,
+    we combine 1 and 1 to get 0 so the array converts to [1] then that's the value of last stone.
+
+### Solution
+
+Priority queue, max heap can be used here.
+
+```python
+class Solution:
+    def lastStoneWeight(self, stones):
+        res = [ -s for s in stones ] 
+
+        heapq.heapify(res)
+
+        while len(res) > 1 :
+            y = heapq.heappop(res)
+            x = heapq.heappop(res)
+            if y != x:
+                heapq.heappush(res, y-x)
+
+        return res[0]*-1 if res else 0
+
+```
+
+## 525 - Contiguous Array
+
+[leetcode](https://leetcode.com/problems/contiguous-array)
+
+### Problem
+
+    Given a binary array, find the maximum length of a contiguous subarray with equal number of 0 and 1.
+    
+    Example 1:
+    Input: [0,1]
+    Output: 2
+    Explanation: [0, 1] is the longest contiguous subarray with equal number of 0 and 1.
+    Example 2:
+    Input: [0,1,0]
+    Output: 2
+    Explanation: [0, 1] (or [1, 0]) is a longest contiguous subarray with equal number of 0 and 1.
+    Note: The length of the given binary array will not exceed 50,000.
+
+### Solution
+
+We keep a count, which decrease 1 if 0, increase 1 if 1.
+
+If at x and y, they have the same value v of count, then the numbers between x+1 and y have the equal number of 1s and 0s. The max length = y - (x + 1) + 1 = y - x
+
+And after that, if we found at index w, it also has value v of count. The max length should be w - x.
+
+So we have to maintain a hashmap h using the values of count as keys, and the first index of that count as its value.
+
+The `maxlen = max(maxlen, h[count])` if current count in the map.
+
+**Important**
+
+We have an initial value of the map.
+
+h[0] = -1 (If count == 0 at index i, we have all the numbers between h[0] + 1 and i. And h[0] + 1 should at index 0, so h[0] = -1)
+
+Consider the input [0, 1]:
+
+    Index 0: h[-1] = 0, maxlen = 0
+    Index 1: h[0] = -1, maxlen = 1 - (-1) = 2
+    maxlen = 2
+
+```python
+class Solution:
+    def findMaxLength(self, nums):
+        h = {0: -1}
+
+        count = ans = 0
+        for i in range(len(nums)):
+            count += 1 if nums[0] else -1
+            ans = max(ans, h.setdefault(count, i))
+
+        return ans
+```
