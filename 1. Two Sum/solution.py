@@ -21,5 +21,3 @@ class Solution2(object):
                 h[num] = i
             else:
                 return [h[n], i]
-
-

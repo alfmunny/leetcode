@@ -1,176 +1,80 @@
-# 84 - Largest Rectangle in Histogram
-
-[leetcode](https://leetcode.com/problems/largest-rectangle-in-histogram/)
+# 41 - First Missing Positive
 
 ## Problem
 
-    Given n non-negative integers representing the histogram's bar height where the width of each bar is 1, find the area of largest rectangle in the histogram.
-         
-    Example:
-         
-    Input: [2,1,5,6,2,3]
-    Output: 10
-
-![img](Algorithms/2020-03-23_00-34-37_histogram.png) Above is a histogram where width of each bar is 1, given height = [2,1,5,6,2,3].
-
-![img](Algorithms/2020-03-23_00-35-27_histogram_area.png) The largest rectangle is shown in the shaded area, which has area = 10 unit.
+    Given an unsorted integer array, find the smallest missing positive integer.
+    
+    Example 1:
+    
+    Input: [1,2,0]
+    Output: 3
+    
+    Example 2:
+    
+    Input: [3,4,-1,1]
+    Output: 2
+    
+    Example 3:
+    
+    Input: [7,8,9,11,12]
+    Output: 1
+    
+    Note:
+    
+    Your algorithm should run in O(n) time and uses constant extra space.
 
 ## Notes
 
-Main idea is to caculate both left edge and right edge for every entry in the array
+Run in O(n) time and uses constant extra space
 
-Two ways of solution.
+1.  Say the length of the array is l, the number must be in 1&#x2026;l+1 (also l possible numbers)
+    
+    For example
+    
+    [1, 2, 3, 4], the first missing positive is 5.
+    
+    [7, 8, 9, 10], the first missing positive is 1
+    
+    It means you can use the array as a constant space. The result must be (one of the indexes + 1).
 
-### Brute Force
+2.  We put the number in the right place. When it is 10, we swap it with A[9].
 
-Generate two arrays left[] and right[] to keep the two edges of every entry.
+After all the numbers are in the right place, the first one, whose index + 1 != number, it is the missing one
 
-1.  one loop to caculate left[].
-2.  one loop to caculate right[].
-3.  one loop to go through all the edges to caculate the square.
+### How to put the numer in the right place
 
-### Improvement of the brute force
+Use the \`while\` to swap the numbers. Only \`if\` can not do the same job.
 
-We can:
+Consider nums = [3, 4, -1, 1].
 
-store the number of the left bars, which are >= current bar, in left[]
+Only with if:
 
-store the number of the right bars, which are >= current bar, in right[]
+First Loop: swap 3 and -1
 
-How to avoid duplicating searching.
+nums = [-1, 4, 3, 1]
 
-1.  left[current] = left[current - 1]
-2.  jump left[current - 1] steps to check the next interval of the array
+Second Loop: swap 4 and 1
 
-### Stack
+nums = [-1, 1, 3, 4]
 
-Create a stack to store the index of the entry.
+And the process stops. Because 4 is already in the right place. You miss to put the 1 in the right place.
 
-1.  if current entry is smaller than the top, we find the right edge of the top entry. pop it out and caculate the the max square of the top entry
-2.  if current entry is not smaller than the top, push it into stack
-3.  go through the left entries in the stack. The lefts ones are all have the longest bar at the top.
+So you have to do it recursively, with \`while\`.
 
 ## Solution
 
-### Solution 1: brute-force
-
 ```python
-class Solution:
-    def largestRectangleArea(self, heights):
+class Solution(object):
+    def firstMissingPositive(self, nums):
+        l = len(nums)
+        for i in range(l):
+            # Note!: here has to be using while
+            while (nums[i] > 0 and nums[i] <= l and nums[nums[i] - 1] != nums[i]):
+                nums[nums[i]-1], nums[i] = nums[i], nums[nums[i]-1]
 
-        if not heights:
-            return 0
+        for i, n in enumerate(nums):
+            if (n != i+1):
+                return i + 1
 
-        n = len(heights)
-        res = 0
-
-        left = [ i for i in range(n) ]
-        right = [ i for i in range(n) ]
-
-        # caculate for the left edge
-        for i in range(n):
-            p = i
-            while p >= 0:
-                if heights[p] < heights[i]:
-                    break
-                p -= 1
-            left[i] = p
-
-        # caculate for the right edge
-        for i in range(n):
-            p = i
-            while p < n:
-                if heights[p] < heights[i]:
-                    break
-                p += 1
-            right[i] = p
-
-        for i in range(n):
-            res = max(res, heights[i] * (right[i] - left[i] - 1))
-
-        return res
-
-print(Solution().largestRectangleArea([2, 1, 5, 6, 2, 3]))
-
-```
-
-O(n^2)
-
-It will execeed time limit on leetcode.
-
-    10 
-
-### Solution 2: improved version
-
-```python
-class Solution:
-    def largestRectangleArea(self, heights):
-        if not heights:
-            return 0
-
-        res = 0
-        n = len(heights)
-        left = [1] * n
-        right = [1] * n
-
-        # caculate left[]
-        for i in range(n):
-            p = i - 1
-            while p >= 0:
-                if heights[p] >= heights[i]:
-                    left[i] += left[p]
-                    # jump backward
-                    p -= left[p]
-                else:
-                    break
-
-        # caculate right[]
-        for i in range(n - 1, -1, -1):
-            p = i + 1
-            while p < n:
-                if heights[p] >= heights[i]:
-                    right[i] += right[p]
-                    # jump forward
-                    p += right[p]
-                else:
-                    break
-
-        for i in range(n):
-            res = max(res, heights[i] * (left[i] + right[i] - 1))
-
-        return res
-
-print(Solution().largestRectangleArea([2, 1, 5, 6, 2, 3]))
-
-```
-
-Generale Case: O(n), because it uses the jump Worst Case: O(n^2)
-
-### Solution 3: stack
-
-```python
-class Solution:
-    def largestRectangleArea(self, heights):
-
-        stack = []
-        n = len(heights)
-        res = 0
-        index = 0
-
-        while index < n:
-
-            if not stack or heights[stack[-1]] <= heights[index]:
-                stack.append(index)
-                index += 1
-            else:
-                top = stack.pop()
-                area = (heights[top] *
-                        ((index - stack[-1] - 1) if stack else index))
-
-                res = max(res, area)
-
-        while stack:
-            h = stack.pop()
-            res = max(
-                r
+        return l + 1
 ```
