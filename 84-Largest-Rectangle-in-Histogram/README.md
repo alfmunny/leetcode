@@ -1,80 +1,117 @@
-# 41 - First Missing Positive
+# 48 - Rotate Image
+
+[leetcode](https://leetcode.com/problems/rotate-image/)
 
 ## Problem
 
-    Given an unsorted integer array, find the smallest missing positive integer.
+    You are given an n x n 2D matrix representing an image.
     
-    Example 1:
-    
-    Input: [1,2,0]
-    Output: 3
-    
-    Example 2:
-    
-    Input: [3,4,-1,1]
-    Output: 2
-    
-    Example 3:
-    
-    Input: [7,8,9,11,12]
-    Output: 1
+    Rotate the image by 90 degrees (clockwise).
     
     Note:
     
-    Your algorithm should run in O(n) time and uses constant extra space.
+    You have to rotate the image in-place, which means you have to modify the input 2D matrix directly. DO NOT allocate another 2D matrix and do the rotation.
+    
+    Example 1:
+    
+    Given input matrix = 
+    [
+      [1,2,3],
+      [4,5,6],
+      [7,8,9]
+    ],
+    
+    rotate the input matrix in-place such that it becomes:
+    [
+      [7,4,1],
+      [8,5,2],
+      [9,6,3]
+    ]
+    Example 2:
+    
+    Given input matrix =
+    [
+      [ 5, 1, 9,11],
+      [ 2, 4, 8,10],
+      [13, 3, 6, 7],
+      [15,14,12,16]
+    ], 
+    
+    rotate the input matrix in-place such that it becomes:
+    [
+      [15,13, 2, 5],
+      [14, 3, 4, 1],
+      [12, 6, 8, 9],
+      [16, 7,10,11]
+    ]
 
 ## Notes
 
-Run in O(n) time and uses constant extra space
+### Naive solution, to do it one by one.
 
-1.  Say the length of the array is l, the number must be in 1&#x2026;l+1 (also l possible numbers)
-    
-    For example
-    
-    [1, 2, 3, 4], the first missing positive is 5.
-    
-    [7, 8, 9, 10], the first missing positive is 1
-    
-    It means you can use the array as a constant space. The result must be (one of the indexes + 1).
+**Important**:
 
-2.  We put the number in the right place. When it is 10, we swap it with A[9].
+You go from the outside into the middle. So the main loop is half of the dimension.
 
-After all the numbers are in the right place, the first one, whose index + 1 != number, it is the missing one
+The inner loop should also shrink its size everytime. Begins at i and ends and n-2-i, **not n-1-i**.
 
-### How to put the numer in the right place
+Because you don't want to swap the last one. The last one n-1-i has already been swapped with the i.
 
-Use the \`while\` to swap the numbers. Only \`if\` can not do the same job.
+### Another solution: how to rotate a matrix faster
 
-Consider nums = [3, 4, -1, 1].
+Swap the diagnoal elements and reverse each line in the matrix.
 
-Only with if:
-
-First Loop: swap 3 and -1
-
-nums = [-1, 4, 3, 1]
-
-Second Loop: swap 4 and 1
-
-nums = [-1, 1, 3, 4]
-
-And the process stops. Because 4 is already in the right place. You miss to put the 1 in the right place.
-
-So you have to do it recursively, with \`while\`.
+| 1 | 2 | 3 | swap      | 1 | 4 | 7 | reverse            | 7 | 4 | 1 |
+| 4 | 5 | 6 | &#x2014;> | 2 | 5 | 8 | -&#x2013;&#x2014;> | 8 | 5 | 2 |
+| 7 | 8 | 9 |           | 3 | 6 | 9 |                    | 9 | 6 | 3 |
 
 ## Solution
 
+### Solution 1: Straightforward
+
 ```python
 class Solution(object):
-    def firstMissingPositive(self, nums):
-        l = len(nums)
-        for i in range(l):
-            # Note!: here has to be using while
-            while (nums[i] > 0 and nums[i] <= l and nums[nums[i] - 1] != nums[i]):
-                nums[nums[i]-1], nums[i] = nums[i], nums[nums[i]-1]
+    def rotate(self, matrix):
+        """
+        :type matrix: List[List[int]]
+        :rtype: None Do not return anything, modify matrix in-place instead.
+        """
+        n = len(matrix)
 
-        for i, n in enumerate(nums):
-            if (n != i+1):
-                return i + 1
+        for i in range(n//2):
+            # Shrink the dimension
+            # Do not include the last element
+            for j in range(i, n-i-1):
+                tmp = matrix[i][j]
+                matrix[i][j] = matrix[n-1-j][i]
+                matrix[n-1-j][i] = matrix[n-1-i][n-1-j]
+                matrix[n-1-i][n-1-j] = matrix[j][n-1-i]
+                matrix[j][n-1-i] = tmp
 
-        return l + 1
+matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+Solution().rotate(matrix)
+[print(*line) for line in matrix]
+```
+
+### Solution 2:
+
+```python
+class Solution(object):
+    def rotate(self, matrix):
+        """
+        :type matrix: List[List[int]]
+        :rtype: None Do not return anything, modify matrix in-place instead.
+        """
+        n = len(matrix)
+
+        for i in range(n):
+            for j in range(i, n):
+                matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
+
+        for i in range(n):
+            matrix[i].reverse()
+
+matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+Solution().rotate(matrix)
+[print(*line) for line in matrix]
 ```

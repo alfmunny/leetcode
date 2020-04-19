@@ -1,61 +1,336 @@
-# LeetCode <code>[46/47]</code>
+# Notes
+
+## Inbox
+
+Random notes, which are not categorized.
+
+### RVM install ruby 2.3 failed because of openssl on Mac OS
+
+[Reference](https://github.com/rvm/rvm/issues/4781)
+
+An old openssl has to be installed.
+
+```shell
+cd /usr/local/src
+curl -O https://www.openssl.org/source/openssl-1.0.2t.tar.gz
+tar xzf openssl-1.0.2t.tar.gz
+cd openssl-1.0.2t
+./Configure darwin64-x86_64-cc
+make
+sudo make install
+
+rvm install 2.3.8 --with-openssl-dir=/usr/local/ssl
+```
+
+The better solution is to use rbenv to manage ruby versions, because it can download the right version of openssl according to the ruby version.
+
+### Backup dotfiles
+
+Try .dotfiles configuration.
+
+```shell
+git init --bare
+```
+
+[How to use bare repository to share files](https://wrong.wang/blog/20190708-%E5%8F%AF%E8%83%BD%E6%98%AF%E7%9B%AE%E5%89%8D%E6%9C%80%E7%AE%80%E5%8D%95%E6%96%B9%E4%BE%BF%E7%9A%84%E7%AE%A1%E7%90%86dotfiles%E7%9A%84%E6%96%B9%E6%B3%95%E4%BD%BF%E7%94%A8%E8%A3%B8git%E4%BB%93%E5%BA%93/)
+
+## Emacs
+
+### Install Emacs
+
+#### install
+
+emacs.app
+
+```shell
+brew cask install emacs
+git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+```
+
+but it does create the path for command line. [Tips for emacs setup on OS X](https://emacsformacosx.com/tips).
+
+#### develop branch
+
+```shell
+git checkout develop #use the master version
+```
+
+#### org-indent-mode
+
+```emacs-lisp
+(setq org-startup-indented t)
+```
+
+### Timestamp
+
+`, d t`:
+
+    active timestamp: <2020-02-09 23:00 Sun>
+
+`, d T`:
+
+    inactive timestamp [2020-02-09 Sun]
+
+[info:org#Timestamps](org#Timestamps)
+
+### Tags
+
+`, i t`: add tags to headline
+
+`SPC a o m`: open a org-tags-view
+
+### Tree
+
+`, s a`: add archive tag
+
+`, s n`: narrow to the subtree
+
+`, s N`: widen
+
+### Search
+
+`SPC s s`: search in current buffer
+
+`SPC s f`: fuzzy search for files
+
+`SPC s d`: ag search in current dir
+
+`SPC s r f`: rg search in files
+
+`SPC a o m`: search with tags in agenda files
+
+`SPC a o r`: full text search in agenda files
+
+`SPC a o s`: search with keywords in agenda files
+
+Custom Commands:
+
+`SPC o s`: helm-org-agenda-files-heading search headings in agenda files. Bind this to a shortcut.
+
+[How to bind keys](#org6065e20)
+
+### Todo keywords <code>[2/2]</code>
+
+-   [X] Add more keywords
+    
+    ```emacs-lisp
+    (setq org-todo-keywords '((sequence "iTODO(t)i" "PROGRESS(p)" "|" "DONE(d)" "CANCELLED(c)")))
+    ```
+    
+    [org-todo-keywords](file:///Users/yzhang/.spacemacs)
+
+-   [X] Add the highlights of the keywords
+    
+    ```emacs-lisp
+    (custom-set-variables 
+     '(org-todo-keyword-faces
+       (quote
+        (("TODO" . "#dc752f")
+         ("PROGRESS" . "#4f97d7")
+         ("DONE" . "#86dc2f"))))
+     )
+    ```
+    
+    [org-todo-keyword-faces](file:///Users/yzhang/.spacemacs)
+    
+    If the effects are not taken, use org-mode-restart to clear the caches in Emacs.
+
+### Code Block
+
+`C-c, C-,` or `, i b`: open code block templates
+
+`C-c, C-,`: open code block templates
+
+`C-c, C-'`: edit code block in separate window
+
+`C-c, C-C`: edit code block in separate window
+
+`C-c, C-v, t`: tangle code block in buffer
+
+`SPC u, C-c, C-v, t`: tangle current code block
+
+```python
+print "This Is A python code"
+print "hahaha"
+```
+
+    Traceback (most recent call last):
+      File "<stdin>", line 1, in <module>
+      File "/var/folders/r1/7yb2s12s3n984c8c2h9zcr1r0000gp/T/babel-kfYcwh/python-Cm1OAh", line 1
+        print "This Is A python code"
+                                    ^
+    SyntaxError: Missing parentheses in call to 'print'
+
+```shell
+cd ~
+```
+
+```ruby
+puts "this"
+```
+
+```python
+print("this")
+```
+
+### Org-mode
+
+[The Org Manual](https://github.com/mudan/mudan.github.io/blob/master/Emacs/The_Org_Manual/The_Org_Manual.org) [Org Mode - Organize Your Life In Plain Text](http://doc.norang.ca/org-mode.html)
+
+### Org-agenda
+
+`C-c a`: trigger org-agenda menu
+
+```emacs-lisp
+(setq org-agenda-files (quote
+                        ("~/OneDrive/org/notes.org"
+                         "~/OneDrive/org/gtd.org")))
+```
+
+[org-agenda-files](file:///Users/yzhang/.spacemacs)
+
+### Org-capture
+
+`C-c c`: trigger org-capture
+
+Add template for org-captur
+
+```emacs-lisp
+(setq org-capture-templates
+      '(("n" "Notes" entry (file+headline "~/OneDrive/org/notes.org" "Notes"))
+        ("t" "ToDo" entry (file+headline "~/OneDrive/org/gtd.org" "Tasks")
+         "* TODO %?\n  %i\n  %a")
+        ))
+```
+
+[org-capture-templates](file:///Users/yzhang/.spacemacs)
+
+### Org-habit
+
+1.  configuration in `org-modules`
+    
+    ```emacs-lisp
+    (defun dotspacemacs/user-config ()
+      "Configuration for user code:
+    This function is called at the very end of Spacemacs startup, after layer
+    configuration.
+    Put your configuration code here, except for variables that should be set
+    before packages are loaded."
+      (setq org-modules (quote (org-habit)))
+      (setq org-agenda-files '("~/OneDrive/org/gtd.org"))
+      )
+    ```
+
+2.  add a **schedule** to a TODO task.
+3.  add `:STYLE: habit` to the task.
+
+`C-k` toggle habit in agenda view
+
+### Org-refile
+
+Problem after installation of the develop branch.
+
+```shell
+# org-refile does not work. org-copy-subtree: Invalid function: org-preserve-local-variables
+cd ~/.emacs.d && git pull --rebase; find ~/.emacs.d/elpa/2*/develop/org-plus-contrib* -name '*.elc' -delete
+```
+
+[Reference](https://github.com/syl20bnr/spacemacs/issues/11801)
+
+`, s r`: open refile window
+
+```emacs-lisp
+(setq org-refile-targets '((org-agenda-files :maxlevel . 3)))
+(setq org-refile-use-outline-path 'file)
+(setq org-outline-path-complete-in-steps nil)
+```
+
+<file:///Users/yzhang/.spacemacs>
+
+### Export
+
+`SPC m e e` open export menu
+
+### Archive tasks
+
+Options:
+
+-   :Archive: tag, `, s a`
+    
+    Maybe suitable for some project
+
+-   Archive to `C-c C-x A` (org-archive-to-archive-sibling)
+    
+    For major categories, like this one Tasks
+
+-   Use org-refile, refile it to a structured notes, `, s r`
+    
+    Important notes, which has to be taken into notes
+
+-   Archive to \*\_archive, `, s A`
+    
+    Not needed anymore
+    
+    Reference: [info:org#Archiving](org#Archiving)
+
+### Binding keys
+
+```emacs-lisp
+(spacemacs/declare-prefix "o" "custom")
+(spacemacs/set-leader-keys "os" 'helm-org-agenda-files-headings)
+```
+
+[binding-keys](https://develop.spacemacs.org/doc/DOCUMENTATION.html#binding-keys)
+
+### Multi-line editing
+
+`g-r-A` multi editing using visual selection
+
+`g-r-q` quit register
+
+### Clock
+
+`, C i`: clock in
+
+`, C o`: clock out
+
+`, C R`: clock report
+
+    :LOGBOOK:
+    CLOCK: [2020-02-13 Thu 17:04]--[2020-02-13 Thu 17:06] =>  0:02
+    :END:
+
+### Python mode
+
+`SPC m s b`: send buffer `SPC m s B`: send buffer and switch to REPL `SPC m s f`: send function and switch to REPL `SPC m s i`: start the inferior REPL process `SPC m c c`: execute current file in a comint shell
+
+### Diary-date
+
+## Vim
+
+# Books
+
+## Cracking Interview
+
+# Algorithms
+
+## LeetCode <code>[52/53]</code>
 
 
 # Table of Contents
 
-1.  [LeetCode <code>[46/47]</code>](#orgdd10fc5)
-    1.  [41 - First Missing Positive](#org4f2b7fc)
-    2.  [48 - Rotate Image](#orgfdf2c8d)
-    3.  [53 - Maximum Subarray](#org01b46f4)
-    4.  [55 - Jump Game](#orga7e527d)
-    5.  [62 - Unique Paths](#orgcf12613)
-    6.  [64 - Minimum Path Sum](#orgf6bdfba)
-    7.  [70 - Climbing Stairs](#org2dd49fb)
-    8.  [91 - Decode Ways](#org4bf6a5a)
-    9.  [509 - Fibonacci Number](#orgf12781c)
-    10. [75 - Sort Colors](#orgd6b9887)
-    11. [79 - Word Search](#orgf630f14)
-    12. [45 - Jump Game II](#org0ab11a1)
-    13. [1306 - Jump Game III](#orgf83bed3)
-    14. [84 - Largest Rectangle in Histogram](#org188f728)
-    15. [85 - Maximal Rectangle](#org2e6576e)
-    16. [121 - Best Time to Buy and Sell Stock](#org9dba87e)
-    17. [122 - Best Time to Buy and Sell Stock II](#org98cab4e)
-    18. [123 - Best Time to Buy and Sell Stock III](#org78c58df)
-    19. [188 - Best Time to Buy and Sell Stock IV](#org944512b)
-    20. [309 - Best Time to Buy and Sell Stock with Cooldown](#org0f5cf88)
-    21. [104 - Maximum Depth of Binary Tree](#orgb8e4f77)
-    22. [21 - Merge Two Sorted Lists](#orgad2879c)
-    23. [101 - Symmetric Tree](#org6fb44ff)
-    24. [198 - House Robber](#org2f12502)
-    25. [300 - Longest Increasing Subsequence](#org06966b8)
-    26. [322 - Coin Change](#org5bcb5ab)
-    27. [152 - Maximum Product Subarray](#org10ee423)
-    28. [96 - Unique Binary Search Trees](#org0508ef5)
-    29. [221 - Maximal Square](#orgab984d5)
-    30. [279 - Perfect Squares](#org6632a91)
-    31. [647 - Palindromic Substrings](#org9112e20)
-    32. [5 - Longest Palindromic Substring](#org3ac7fcf)
-    33. [136 - Single Number](#org4c1a766)
-    34. [202 - Happy Number](#org8152b0b)
-    35. [338 - Counting Bits](#org6e211ad)
-    36. [494 - Target Sum](#orge8da37c)
-    37. [283 - Move Zeros](#orgc0d6d63)
-    38. [416 - Partition Equal Subset Sum](#org8cabcc2)
-    39. [698 - Partition to K Equal Sum Subsets](#orgf83319d)
-    40. [215 - Kth Largest Element in an Array](#orga499b04)
-    41. [49 - Group Anagrams](#org0435fc4)
-    42. [876 - Middle of the Linked List](#org973439a)
-    43. [844 - Backspace String Compare](#org3a8db39)
-    44. [155 - Min Stack](#org85d50c5)
-    45. [543 - Diameter of Binary Tree](#org8aa1a9d)
-    46. [1046 - Last Stone Weight](#org1288264)
-    47. [525 - Contiguous Array](#org638ab71)
-    48. [Perform String Shifts](#org119a68e)
+1.  [Notes](#orgb04630e)
+    1.  [Inbox](#orgb40432a)
+    2.  [Emacs](#org9a5a392)
+    3.  [Vim](#orgd211f56)
+2.  [Books](#orgdbbf304)
+    1.  [Cracking Interview](#org1800442)
+3.  [Algorithms](#orge5aa3ac)
+    1.  [LeetCode <code>[52/53]</code>](#orgdd80dba)
 
-## 41 - First Missing Positive
+### 41 - First Missing Positive
 
-### Problem
+#### Problem
 
     Given an unsorted integer array, find the smallest missing positive integer.
     
@@ -78,7 +353,7 @@
     
     Your algorithm should run in O(n) time and uses constant extra space.
 
-### Notes
+#### Notes
 
 Run in O(n) time and uses constant extra space
 
@@ -96,7 +371,7 @@ Run in O(n) time and uses constant extra space
 
 After all the numbers are in the right place, the first one, whose index + 1 != number, it is the missing one
 
-#### How to put the numer in the right place
+##### How to put the numer in the right place
 
 Use the \`while\` to swap the numbers. Only \`if\` can not do the same job.
 
@@ -116,7 +391,7 @@ And the process stops. Because 4 is already in the right place. You miss to put 
 
 So you have to do it recursively, with \`while\`.
 
-### Solution
+#### Solution
 
 ```python
 class Solution(object):
@@ -134,11 +409,11 @@ class Solution(object):
         return l + 1
 ```
 
-## 48 - Rotate Image
+### 48 - Rotate Image
 
 [leetcode](https://leetcode.com/problems/rotate-image/)
 
-### Problem
+#### Problem
 
     You are given an n x n 2D matrix representing an image.
     
@@ -181,9 +456,9 @@ class Solution(object):
       [16, 7,10,11]
     ]
 
-### Notes
+#### Notes
 
-#### Naive solution, to do it one by one.
+##### Naive solution, to do it one by one.
 
 **Important**:
 
@@ -193,7 +468,7 @@ The inner loop should also shrink its size everytime. Begins at i and ends and n
 
 Because you don't want to swap the last one. The last one n-1-i has already been swapped with the i.
 
-#### Another solution: how to rotate a matrix faster
+##### Another solution: how to rotate a matrix faster
 
 Swap the diagnoal elements and reverse each line in the matrix.
 
@@ -201,9 +476,9 @@ Swap the diagnoal elements and reverse each line in the matrix.
 | 4 | 5 | 6 | &#x2014;> | 2 | 5 | 8 | -&#x2013;&#x2014;> | 8 | 5 | 2 |
 | 7 | 8 | 9 |           | 3 | 6 | 9 |                    | 9 | 6 | 3 |
 
-### Solution
+#### Solution
 
-#### Solution 1: Straightforward
+##### Solution 1: Straightforward
 
 ```python
 class Solution(object):
@@ -229,7 +504,7 @@ Solution().rotate(matrix)
 [print(*line) for line in matrix]
 ```
 
-#### Solution 2:
+##### Solution 2:
 
 ```python
 class Solution(object):
@@ -252,11 +527,11 @@ Solution().rotate(matrix)
 [print(*line) for line in matrix]
 ```
 
-## 53 - Maximum Subarray
+### 53 - Maximum Subarray
 
 [leetcode](https://leetcode.com/problems/maximum-subarray/)
 
-### Problem
+#### Problem
 
     Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.
     
@@ -269,7 +544,7 @@ Solution().rotate(matrix)
     
     If you have figured out the O(n) solution, try coding another solution using the divide and conquer approach, which is more subtle.
 
-### Notes
+#### Notes
 
 Dynamic programming problem.
 
@@ -277,9 +552,9 @@ Use nums[i] always store the maximum sum.
 
 maxSum(i) = maxSum(i-1) + nums[i] only if maxSum(i-1) > 0
 
-### Solution
+#### Solution
 
-#### Solution 1: use a extra dp array
+##### Solution 1: use a extra dp array
 
 ```python
 class Solution(object):
@@ -299,7 +574,7 @@ class Solution(object):
 print(Solution().maxSubArray([-2,1,-3,4,-1,2,1,-5,4]))
 ```
 
-#### Solution 2: no extra space, in place modify
+##### Solution 2: no extra space, in place modify
 
 ```python
 class Solution(object):
@@ -324,11 +599,11 @@ class Solution(object):
 print(Solution().maxSubArray([-2,1,-3,4,-1,2,1,-5,4]))
 ```
 
-## 55 - Jump Game
+### 55 - Jump Game
 
 [leetcode](https://leetcode.com/problems/jump-game/)
 
-### Problem
+#### Problem
 
     Given an array of non-negative integers, you are initially positioned at the first index of the array.
     
@@ -349,11 +624,11 @@ print(Solution().maxSubArray([-2,1,-3,4,-1,2,1,-5,4]))
     Explanation: You will always arrive at index 3 no matter what. Its maximum
                  jump length is 0, which makes it impossible to reach the last index.
 
-### Notes
+#### Notes
 
 Greedy algorithm. There are 2 approaches, from head or from tail.
 
-#### Start from head
+##### Start from head
 
 always remember the furthest reachable index.
 
@@ -361,7 +636,7 @@ always remember the furthest reachable index.
 reach = max(i + nums[i], reach) if i <= reach
 ```
 
-#### Start from tail
+##### Start from tail
 
 always remember the last position it can reach.
 
@@ -369,9 +644,9 @@ always remember the last position it can reach.
 lastPos = i if i + nums[i] >= lastPos
 ```
 
-### Solition
+#### Solition
 
-#### Solution 1: start from head
+##### Solution 1: start from head
 
 ```python
 class Solution():
@@ -388,7 +663,7 @@ print(Solution().canJump([ 2,3,1,1,4 ]))
 print(Solution().canJump([ 3,2,1,0,4 ] ))
 ```
 
-#### Solution 2: start from tail
+##### Solution 2: start from tail
 
 ```python
 class Solution():
@@ -404,11 +679,11 @@ print(Solution().canJump([ 2,3,1,1,4 ]))
 print(Solution().canJump([ 3,2,1,0,4 ] ))
 ```
 
-## 62 - Unique Paths
+### 62 - Unique Paths
 
 [leetcode](https://leetcode.com/problems/unique-paths/)
 
-### Problem
+#### Problem
 
     A robot is located at the top-left corner of a m x n grid (marked 'Start' in the diagram below).
     
@@ -432,7 +707,7 @@ print(Solution().canJump([ 3,2,1,0,4 ] ))
     Input: m = 7, n = 3
     Output: 28
 
-### Notes
+#### Notes
 
 It is a DP problem.
 
@@ -445,7 +720,7 @@ It is a DP problem.
 4.  Optimize it to one dimension.
 5.  Complexity O(m \* n)
 
-#### UniquePath with 2-D DP
+##### UniquePath with 2-D DP
 
 ```python
 dp[i][j] = dp[i-1][j] + dp[i][j-1]
@@ -453,15 +728,15 @@ dp[i][j] = dp[i-1][j] + dp[i][j-1]
 
 After you have the edge, you go levelly to the bottom.
 
-#### UniquePath with 1-D DP
+##### UniquePath with 1-D DP
 
 ```python
 dp[j] = dp[j - 1] + dp[j]
 ```
 
-### Solution
+#### Solution
 
-#### Solution 1: 2-D DP
+##### Solution 1: 2-D DP
 
 ```python
 class Solution():
@@ -474,7 +749,7 @@ class Solution():
         return dp[-1][-1] if m and n else 0
 ```
 
-#### Solution 2: 1-D DP
+##### Solution 2: 1-D DP
 
 ```python
 class Solution():
@@ -489,11 +764,11 @@ class Solution():
 
 ```
 
-## 64 - Minimum Path Sum
+### 64 - Minimum Path Sum
 
 [leetcode](https://leetcode.com/problems/minimum-path-sum/)
 
-### Problem
+#### Problem
 
     Given a m x n grid filled with non-negative numbers, find a path from top left to bottom right which minimizes the sum of all numbers along its path.
     
@@ -510,7 +785,7 @@ class Solution():
     Output: 7
     Explanation: Because the path 1→3→1→1→1 minimizes the sum.
 
-### Notes
+#### Notes
 
 Thinking: ~~It seems to be a greedy algorithm problem.~~
 
@@ -522,9 +797,9 @@ dp[i][j] = min(dp[i][j-1], dp[i-1][j]) + grid[i][j]
 
 Remember to handle the edge cases.
 
-### Solution
+#### Solution
 
-#### Solution 1: 2D DP
+##### Solution 1: 2D DP
 
 -   Inplace DP
 
@@ -597,10 +872,12 @@ grid = [[1,3,1],[1,5,1],[4,2,1]]
 print(Solution().minPathSum(grid))
 ```
 
-#### Solution 2: 1D DP
+##### Solution 2: 1D DP
 
 ```python
 import sys
+
+
 class Solution(object):
     def minPathSum(self, grid):
         """
@@ -610,29 +887,29 @@ class Solution(object):
         m = len(grid)
         n = len(grid[0])
 
-        dp = [sys.maxsize for i in range(n+1)]
+        dp = [sys.maxsize for i in range(n + 1)]
         dp[1] = grid[0][0]
 
         for i in range(m):
             for j in range(n):
-              if i == 1 and j == 1:
-                  continue
-              else:
-                dp[j+1] = min(dp[j+1], dp[j]) + grid[i][j]
+                if i == 0 and j == 0:
+                    continue
+                else:
+                    dp[j + 1] = min(dp[j + 1], dp[j]) + grid[i][j]
 
         return dp[-1] if m and n else 0
 
 
-grid = [[1,3,1],[1,5,1],[4,2,1]]
+grid = [[1, 3, 1], [1, 5, 1], [4, 2, 1]]
 
 print(Solution().minPathSum(grid))
 ```
 
-## 70 - Climbing Stairs
+### 70 - Climbing Stairs
 
 [leetcode](https://leetcode.com/problems/climbing-stairs/)
 
-### Problem
+#### Problem
 
     You are climbing a stair case. It takes n steps to reach to the top.
     
@@ -656,7 +933,7 @@ print(Solution().minPathSum(grid))
     2. 1 step + 2 steps
     3. 2 steps + 1 step
 
-### Notes
+#### Notes
 
 The distinct ways to take n stair cases:
 
@@ -665,7 +942,7 @@ The distinct ways to take n stair cases:
 
 So f(n) = f(n-1) + f(n-2)
 
-### Solution
+#### Solution
 
 ```python
 class Solution():
@@ -684,11 +961,11 @@ class Solution():
         return dp[-1]
 ```
 
-## 91 - Decode Ways
+### 91 - Decode Ways
 
 [leetcode](https://leetcode.com/problems/decode-ways)
 
-### Problem
+#### Problem
 
     A message containing letters from A-Z is being encoded to numbers using the following mapping:
     
@@ -709,7 +986,7 @@ class Solution():
     Output: 3
     Explanation: It could be decoded as "BZ" (2 26), "VF" (22 6), or "BBF" (2 2 6).
 
-### Notes
+#### Notes
 
 DP problem.
 
@@ -723,7 +1000,7 @@ DP problem.
 1.  Corner cases: "0" -> 0, "1002" -> 0
 2.  Notice the padding
 
-### Solution
+#### Solution
 
 ```python
 class Solution():
@@ -749,11 +1026,11 @@ class Solution():
         return dp[-1]
 ```
 
-## 509 - Fibonacci Number
+### 509 - Fibonacci Number
 
 [leetcode](https://leetcode.com/problems/fibonacci-number/)
 
-### Problem
+#### Problem
 
     The Fibonacci numbers, commonly denoted F(n) form a sequence, called the Fibonacci sequence, such that each number is the sum of the two preceding ones, starting from 0 and 1. That is,
     
@@ -779,7 +1056,7 @@ class Solution():
     Output: 3
     Explanation: F(4) = F(3) + F(2) = 2 + 1 = 3.
 
-### Notes
+#### Notes
 
 DP Problem.
 
@@ -787,7 +1064,7 @@ DP Problem.
 
 Note how long is the dp array. It shoud be N+1, since we start with the number 0.
 
-### Solution
+#### Solution
 
 ```python
 class Solution(object):
@@ -810,11 +1087,11 @@ class Solution(object):
         return dp[-1]
 ```
 
-## 75 - Sort Colors
+### 75 - Sort Colors
 
 [leetcode](https://leetcode.com/problems/sort-colors/)
 
-### Problem
+#### Problem
 
     Given an array with n objects colored red, white or blue, sort them in-place so that objects of the same color are adjacent, with the colors in the order red, white and blue.
     
@@ -832,9 +1109,9 @@ class Solution(object):
     First, iterate the array counting number of 0's, 1's, and 2's, then overwrite array with total number of 0's, then 1's and followed by 2's.
     Could you come up with a one-pass algorithm using only constant space?
 
-### Notes
+#### Notes
 
-#### First attempt is to use two pointer.
+##### First attempt is to use two pointer.
 
 There is a but a corner case: when two point+begin\_src python :results output class Solution:
 
@@ -846,7 +1123,7 @@ print(Solution().subsets([1, 2, 3])) \#+end\_src
 
     [[], [1], [2], [1, 2], [3], [1, 3], [2, 3], [1, 2, 3]]
 
-#### Solution 3: backtrack
+##### Solution 3: backtrack
 
 ```python
 
@@ -876,7 +1153,7 @@ print(Solution().subsets([1, 2, 3]))
 
 ```
 
-#### Solution 4: bitmask
+##### Solution 4: bitmask
 
 ```python
 
@@ -891,11 +1168,11 @@ class Solution():
     return output
 ```
 
-## 79 - Word Search
+### 79 - Word Search
 
 [leetcode](https://leetcode.com/problems/word-search/)
 
-### Problem
+#### Problem
 
     Given a 2D board and a word, find if the word exists in the grid.
     
@@ -914,7 +1191,7 @@ class Solution():
     Given word = "SEE", return true.
     Given word = "ABCB", return false.
 
-### Notes
+#### Notes
 
 Backtrack problem.
 
@@ -922,9 +1199,9 @@ Backtrack problem.
 2.  Use dfs to go down from this point.
 3.  Can't go down anymore, mark the point back to zero (backtrack step).
 
-### Solution
+#### Solution
 
-#### Solution 1: Backtrack, dfs
+##### Solution 1: Backtrack, dfs
 
 ```python
 class Solution:
@@ -960,11 +1237,11 @@ board = [["A", "B", "C", "E"], ["S", "F", "C", "S"], ["A", "D", "E", "E"]]
 word = "ABCCED"
 ```
 
-## 45 - Jump Game II
+### 45 - Jump Game II
 
 [leetcode](https://leetcode.com/problems/jump-game-ii/)
 
-### Problem
+#### Problem
 
     Given an array of non-negative integers, you are initially positioned at the first index of the array.
          
@@ -982,7 +1259,7 @@ word = "ABCCED"
          
     You can assume that you can always reach the last index.
 
-### Notes
+#### Notes
 
 Greedy problem.
 
@@ -990,7 +1267,7 @@ Greedy problem.
 2.  current index reach to end, jump once.
 3.  next interval is [end, reach]
 
-### Solution
+#### Solution
 
 \#+begin\_src python class Solution: def jump(self, nums):
 
@@ -1002,11 +1279,11 @@ curFurthest = max(curFurthest, i + nums[i])
 
 if (i `= curEnd): jumps +` 1 cur
 
-## 1306 - Jump Game III
+### 1306 - Jump Game III
 
 [leetcode](https://leetcode.com/problems/jump-game-iii/submissions/)
 
-### Problem
+#### Problem
 
     Given an array of non-negative integers arr, you are initially positioned at start index of the array. When you are at index i, you can jump to i + arr[i] or i - arr[i], check if you can reach to any index with value 0.
          
@@ -1041,7 +1318,7 @@ if (i `= curEnd): jumps +` 1 cur
     0 <= arr[i] < arr.length
     0 <= start < arr.length
 
-### Notes
+#### Notes
 
 Use dfs to search for 0. Mark the visited place to trigger stop.
 
@@ -1049,7 +1326,7 @@ Use dfs to search for 0. Mark the visited place to trigger stop.
 
 Remember to reset the mark if can not find along the path, so that it can search into another path.
 
-### Solution
+#### Solution
 
 \#+begin\_src python class Solution: def canReach(self, arr, start): if start >= len(arr) or start < 0: return False
 
@@ -1061,11 +1338,11 @@ step = arr[start] arr[start] = -1
 
 if self.canReach(arr, start - step) or self.canReach(arr, start + step): return True else:
 
-## 84 - Largest Rectangle in Histogram
+### 84 - Largest Rectangle in Histogram
 
 [leetcode](https://leetcode.com/problems/largest-rectangle-in-histogram/)
 
-### Problem
+#### Problem
 
     Given n non-negative integers representing the histogram's bar height where the width of each bar is 1, find the area of largest rectangle in the histogram.
          
@@ -1078,13 +1355,13 @@ if self.canReach(arr, start - step) or self.canReach(arr, start + step): return 
 
 ![img](Algorithms/2020-03-23_00-35-27_histogram_area.png) The largest rectangle is shown in the shaded area, which has area = 10 unit.
 
-### Notes
+#### Notes
 
 Main idea is to caculate both left edge and right edge for every entry in the array
 
 Two ways of solution.
 
-#### Brute Force
+##### Brute Force
 
 Generate two arrays left[] and right[] to keep the two edges of every entry.
 
@@ -1092,7 +1369,7 @@ Generate two arrays left[] and right[] to keep the two edges of every entry.
 2.  one loop to caculate right[].
 3.  one loop to go through all the edges to caculate the square.
 
-#### Improvement of the brute force
+##### Improvement of the brute force
 
 We can:
 
@@ -1105,7 +1382,7 @@ How to avoid duplicating searching.
 1.  left[current] = left[current - 1]
 2.  jump left[current - 1] steps to check the next interval of the array
 
-#### Stack
+##### Stack
 
 Create a stack to store the index of the entry.
 
@@ -1113,9 +1390,9 @@ Create a stack to store the index of the entry.
 2.  if current entry is not smaller than the top, push it into stack
 3.  go through the left entries in the stack. The lefts ones are all have the longest bar at the top.
 
-### Solution
+#### Solution
 
-#### Solution 1: brute-force
+##### Solution 1: brute-force
 
 ```python
 class Solution:
@@ -1163,7 +1440,7 @@ It will execeed time limit on leetcode.
 
     10 
 
-#### Solution 2: improved version
+##### Solution 2: improved version
 
 ```python
 class Solution:
@@ -1209,7 +1486,7 @@ print(Solution().largestRectangleArea([2, 1, 5, 6, 2, 3]))
 
 Generale Case: O(n), because it uses the jump Worst Case: O(n^2)
 
-#### Solution 3: stack
+##### Solution 3: stack
 
 ```python
 class Solution:
@@ -1238,11 +1515,11 @@ class Solution:
                 r
 ```
 
-## 85 - Maximal Rectangle
+### 85 - Maximal Rectangle
 
 [leetcode](https://leetcode.com/problems/maximal-rectangle/)
 
-### Problem
+#### Problem
 
     Given a 2D binary matrix filled with 0's and 1's, find the largest rectangle containing only 1's and return its area.
          
@@ -1257,14 +1534,14 @@ class Solution:
     ]    
     Output: 6
 
-### Notes
+#### Notes
 
 Two parts:
 
 1.  generate a heights histogram for every row.
 2.  apple "largest rectangle in histogram" on each row of histogram
 
-### Solution
+#### Solution
 
 \#+begin\_src python :results output class Solution: def maximalRectangle(self, matrix): if not matrix or not matrix[0]: return 0
 
@@ -1294,11 +1571,11 @@ return res
 
 maxtrix = [["1","0","1","0","0"],["1","0","1","1","1"],["1","1","1","1","1"],["1","0","0",
 
-## 121 - Best Time to Buy and Sell Stock
+### 121 - Best Time to Buy and Sell Stock
 
 [leetcode](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)
 
-### Problem
+#### Problem
 
     Say you have an array for which the ith element is the price of a given stock on day i.
          
@@ -1319,11 +1596,11 @@ maxtrix = [["1","0","1","0","0"],["1","0","1","1","1"],["1","1","1","1","1"],["1
     Output: 0
     Explanation: In this case, no transaction is done, i.e. max profit = 0.
 
-### Notes
+#### Notes
 
 Mark the minPrice and the minProfit
 
-### Solution
+#### Solution
 
 \#+begin\_src python class Solution: def maxProfit(self, prices): if not prices: return 0
 
@@ -1331,11 +1608,11 @@ minPrice = prices[0] maxProfit = 0
 
 for price in prices: if price < minPrice: minPrice = price if price - minPrice > maxProfit: maxProfit = price
 
-## 122 - Best Time to Buy and Sell Stock II
+### 122 - Best Time to Buy and Sell Stock II
 
 [leetcode](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii)
 
-### Problem
+#### Problem
 
     Say you have an array for which the ith element is the price of a given stock on day i.
          
@@ -1362,19 +1639,19 @@ for price in prices: if price < minPrice: minPrice = price if price - minPrice >
     Output: 0
     Explanation: In this case, no transaction is done, i.e. max profit = 0.
 
-### Notes
+#### Notes
 
-#### Solution 1
+##### Solution 1
 
 Find the valley and peak, save the local maxProfit, add it up when new valley is found.
 
-#### Solution 2
+##### Solution 2
 
 Simplify the solution 1: we can sum up the profit when we go up step by step.
 
-### Solution
+#### Solution
 
-#### Solution 1:
+##### Solution 1:
 
 ```python
 class Solution:
@@ -1402,15 +1679,15 @@ class Solution:
         return res
 ```
 
-#### Solution 2:
+##### Solution 2:
 
 \#+begin\_src python class Solution: def maxProfit(self, prices): res = 0 for i in range(1, len(prices)): if (prices[i-1] < prices[i]):
 
-## 123 - Best Time to Buy and Sell Stock III
+### 123 - Best Time to Buy and Sell Stock III
 
 [leetcode](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/)
 
-### Problem
+#### Problem
 
     Say you have an array for which the ith element is the price of a given stock on day i.
          
@@ -1437,7 +1714,7 @@ class Solution:
     Output: 0
     Explanation: In this case, no transaction is done, i.e. max profit = 0.
 
-### Notes
+#### Notes
 
 A very good article about how to solve this kind of problem generally. [[Reference]​](https://labuladong.gitbook.io/algo/dong-tai-gui-hua-xi-lie/tuan-mie-gu-piao-wen-ti)
 
@@ -1481,7 +1758,7 @@ State Transition:
     
     -   I don't have stock yesterday, and I buy it => state[n-1][k-1][1] - price
 
-### Solution
+#### Solution
 
 ```python
 class Solution:
@@ -1524,11 +1801,11 @@ print(Solution().maxProfit([3,3,5,0,0,3,1,4]))
 
 \#+begin\_example [-9223372036854775807, -3, -3] [0, 0, 0] [-9223372036854775807, -3, -3] [0, 0, 0] [-9223372036854775807, -3, -3] [0, 2, 2] [-9223372036854775807, 0, 2] [0, 2, 2] [-9223372036854775807, 0, 2] [0, 2, 2] [-
 
-## 188 - Best Time to Buy and Sell Stock IV
+### 188 - Best Time to Buy and Sell Stock IV
 
 [leetcode](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/)
 
-### Problem
+#### Problem
 
     Say you have an array for which the i-th element is the price of a given stock on day i.
          
@@ -1550,13 +1827,13 @@ print(Solution().maxProfit([3,3,5,0,0,3,1,4]))
     Explanation: Buy on day 2 (price = 2) and sell on day 3 (price = 6), profit = 6-2 = 4.
                  Then buy on day 5 (price = 0) and sell on day 6 (price = 3), profit = 3-0 = 3.
 
-### Notes
+#### Notes
 
 See problem 121, 122 and 123.
 
 Note the k. If it is too large(>= n/2), treat it as if with infinitive transactions. We don't want to loop through a too large k.
 
-### Solution
+#### Solution
 
 \#+begin\_src python class Solution: def maxProfit(self, k, prices): if not prices: return 0
 
@@ -1566,11 +1843,11 @@ buy = [-sys.maxsize] \* (k+1) sell = [0] \* (k+1)
 
 for price in prices: for i in range(1, k+1): buy[i] = max(buy[i], sell[i-1]-price) sell[i] = max(sel
 
-## 309 - Best Time to Buy and Sell Stock with Cooldown
+### 309 - Best Time to Buy and Sell Stock with Cooldown
 
 [leetcode](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown)
 
-### Problem
+#### Problem
 
     Say you have an array for which the ith element is the price of a given stock on day i.
          
@@ -1584,19 +1861,19 @@ for price in prices: for i in range(1, k+1): buy[i] = max(buy[i], sell[i-1]-pric
     Output: 3 
     Explanation: transactions = [buy, sell, cooldown, buy, sell]
 
-### Notes
+#### Notes
 
-### Solution
+#### Solution
 
 \#+begin\_src python import sys class Solution: def maxProfit(self, prices): dp\_buy = -sys.maxsize dp\_sell = 0 dp\_pre\_0 = 0
 
 for price in prices: tmp = dp\_sell dp\_sell = max(dp\_sell, dp\_buy + price) dp\_buy = max(dp\_buy, dp\_pre\_0 - price) dp\_pre\_0 = tmp
 
-## 104 - Maximum Depth of Binary Tree
+### 104 - Maximum Depth of Binary Tree
 
 [leetcode](https://leetcode.com/problems/maximum-depth-of-binary-tree/)
 
-### Problem
+#### Problem
 
     Given a binary tree, find its maximum depth.
          
@@ -1614,19 +1891,19 @@ for price in prices: tmp = dp\_sell dp\_sell = max(dp\_sell, dp\_buy + price) dp
         /  \
        15   7
 
-### Notes
+#### Notes
 
 Recursion is your friend!
 
-### Solution
+#### Solution
 
 \#+begin\_src python class Solution: def maxDepth(self, root): return 1 + max(self.maxDepth(root.right), self.maxDepth(
 
-## 21 - Merge Two Sorted Lists
+### 21 - Merge Two Sorted Lists
 
 [leetcode](https://leetcode.com/problems/merge-two-sorted-lists/)
 
-### Problem
+#### Problem
 
     Merge two sorted linked lists and return it as a new list. The new list should be made by splicing together the nodes of the first two lists.
          
@@ -1635,13 +1912,13 @@ Recursion is your friend!
     Input: 1->2->4, 1->3->4
     Output: 1->1->2->3->4->4
 
-### Notes
+#### Notes
 
 Recursion is your friend!
 
-### Solution
+#### Solution
 
-#### Solution 1: Recursive
+##### Solution 1: Recursive
 
 ```python
 class Solution:
@@ -1659,11 +1936,11 @@ class Solution:
             return l1
 ```
 
-## 101 - Symmetric Tree
+### 101 - Symmetric Tree
 
 [leetcode](https://leetcode.com/problems/symmetric-tree/)
 
-### Problem
+#### Problem
 
     Given a binary tree, check whether it is a mirror of itself (ie, symmetric around its center).
          
@@ -1684,13 +1961,13 @@ class Solution:
        \   \
        3    3
 
-### Notes
+#### Notes
 
 Recursion !
 
-### Solution
+#### Solution
 
-#### Solution 1: recursive
+##### Solution 1: recursive
 
 \#+begin\_src python class Solution: def isSymmetric(self, root): if not root: return True return self.isMirrored(root.left, root.right)
 
@@ -1698,11 +1975,11 @@ def isMirrored(self, left, right):
 
 if not left and not right: return True elif not left: return False elif not right: return False else: if left.val == right.val: return self.isMirrored(left.left, right.right) and \\ self.isMirrored(left.right, right.left) else: return False \#+end\_sr
 
-## 198 - House Robber
+### 198 - House Robber
 
 [leetcode](https://leetcode.com/problems/house-robber/)
 
-### Problem
+#### Problem
 
     You are a professional robber planning to rob houses along a street. Each house has a certain amount of money stashed, the only constraint stopping you from robbing each of them is that adjacent houses have security system connected and it will automatically contact the police if two adjacent houses were broken into on the same night.
          
@@ -1721,7 +1998,7 @@ if not left and not right: return True elif not left: return False elif not righ
     Explanation: Rob house 1 (money = 2), rob house 3 (money = 9) and rob house 5 (money = 1).
                  Total amount you can rob = 2 + 9 + 1 = 12.
 
-### Notes
+#### Notes
 
 States: 1. house, 2. rob or not rob -> dp[i][0 or 1]
 
@@ -1729,15 +2006,15 @@ Transition: dp[i][0] = max(dp[i-1][0], dp[i-1][1]), dp[i][1] = dp[i-1][0] + nums
 
 Base Case: dp[0][0] = 0, dp[0][1] = 0
 
-### Solution
+#### Solution
 
 \#+begin\_src python class Solution: def rob(self, nums): robbed, notRobbed = 0, 0 for i in nums: robbed, notRobbed = notRobbed + i, max(robbed, notRobbed)
 
-## 300 - Longest Increasing Subsequence
+### 300 - Longest Increasing Subsequence
 
 [leetcode](https://leetcode.com/problems/longest-increasing-subsequence/)
 
-### Problem
+#### Problem
 
     Given an unsorted array of integers, find the length of longest increasing subsequence.
          
@@ -1752,7 +2029,7 @@ Base Case: dp[0][0] = 0, dp[0][1] = 0
     Your algorithm should run in O(n2) complexity.
     Follow up: Could you improve it to O(n log n) time complexity?
 
-### Solution
+#### Solution
 
 DP problem.
 
@@ -1762,7 +2039,7 @@ Transition: if nums[j] < nums[i]: dp[i] = max(dp[i], dp[j] + 1)
 
 Base Case: dp[0] = 1
 
-#### Solution 1: DP with O(n^2)
+##### Solution 1: DP with O(n^2)
 
 ```python
 class Solution:
@@ -1777,7 +2054,7 @@ class Solution:
        return max(dp) if nums else 0
 ```
 
-#### Solution 2: DP with binary search for LIS
+##### Solution 2: DP with binary search for LIS
 
 ```python
 class Solution:
@@ -1814,11 +2091,11 @@ Time: O(nlogn)
 
 Space: O(n)
 
-## 322 - Coin Change
+### 322 - Coin Change
 
 [leetcode](https://leetcode.com/problems/coin-change/)
 
-### Problem
+#### Problem
 
     You are given coins of different denominations and a total amount of money amount. Write a function to compute the fewest number of coins that you need to make up that amount. If that amount of money cannot be made up by any combination of the coins, return -1.
     
@@ -1835,7 +2112,7 @@ Space: O(n)
     Note:
     You may assume that you have an infinite number of each kind of coin.
 
-### Notes
+#### Notes
 
 DP problem
 
@@ -1843,7 +2120,7 @@ States: amount
 
 Transition: dp[i] = min(dp[i], dp[i-coins[j]]+1)
 
-### Solution
+#### Solution
 
 ```python
 class Solution:
@@ -1860,11 +2137,11 @@ class Solution:
         return dp[-1] if dp[-1] != float('inf') else -1
 ```
 
-## 152 - Maximum Product Subarray
+### 152 - Maximum Product Subarray
 
 [leetcode](https://leetcode.com/problems/maximum-product-subarray/)
 
-### Problem
+#### Problem
 
     Given an integer array nums, find the contiguous subarray within an array (containing at least one number) which has the largest product.
     
@@ -1879,7 +2156,7 @@ class Solution:
     Output: 0
     Explanation: The result cannot be 2, because [-2,-1] is not a subarray.
 
-### Notes
+#### Notes
 
 DP problem:
 
@@ -1903,9 +2180,9 @@ DP problem:
     
     dp[0][0] = dp[0][1] = nums[0]
 
-### Solution
+#### Solution
 
-#### Solution 1: DP
+##### Solution 1: DP
 
 Original Version:
 
@@ -1970,7 +2247,7 @@ class Solution:
         return res
 ```
 
-#### Solution 2: Prefix sum and Suffix sum
+##### Solution 2: Prefix sum and Suffix sum
 
 ```python
 class Solution:
@@ -1984,11 +2261,11 @@ class Solution:
 
 Time: O(n) Space: O(n)
 
-## 96 - Unique Binary Search Trees
+### 96 - Unique Binary Search Trees
 
 [leetcode](https://leetcode.com/problems/unique-binary-search-trees/)
 
-### Problem
+#### Problem
 
     Given n, how many structurally unique BST's (binary search trees) that store values 1 ... n?
     
@@ -2005,9 +2282,9 @@ Time: O(n) Space: O(n)
         /     /       \                 \
        2     1         2                 3
 
-### Notes
+#### Notes
 
-#### Solution 1: DP
+##### Solution 1: DP
 
 In this dp problem, the hard part is to figure out the transition.
 
@@ -2032,7 +2309,7 @@ In this dp problem, the hard part is to figure out the transition.
 
 -   Base case: dp[0] = 1
 
-#### Solution 2: Catalan Number
+##### Solution 2: Catalan Number
 
 [Catalan Number](https://en.wikipedia.org/wiki/Catalan_number)
 
@@ -2044,9 +2321,9 @@ In this dp problem, the hard part is to figure out the transition.
     742900, 2674440, 9694845, 35357670, 129644790, 477638700, 1767263190, 
     6564120420, 24466267020, 91482563640, 343059613650, 1289904147324, 4861946401452
 
-### Solution
+#### Solution
 
-#### Solution 1: DP
+##### Solution 1: DP
 
 ```python
 class Solution:
@@ -2064,7 +2341,7 @@ class Solution:
         return dp[n]
 ```
 
-#### Solutiojn 2: Catalan Number
+##### Solutiojn 2: Catalan Number
 
 ```python
 import math
@@ -2073,11 +2350,11 @@ class Solution:
         return math.factorial(2*n)/(math.factorial(n)*math.factorial(n+1))
 ```
 
-## 221 - Maximal Square
+### 221 - Maximal Square
 
 [leetcode](https://leetcode.com/problems/maximal-square/)
 
-### Problem
+#### Problem
 
     Given a 2D binary matrix filled with 0's and 1's, find the largest square containing only 1's and return its area.
     
@@ -2092,7 +2369,7 @@ class Solution:
     
     Output: 4
 
-### Notes
+#### Notes
 
 DP Problem:
 
@@ -2115,7 +2392,7 @@ DP Problem:
     
     One padding row on vertical and horizontal direction, with value 0
 
-### Solution
+#### Solution
 
 -   **Original Version:** 
 
@@ -2221,11 +2498,11 @@ class Solution:
 
 Space: O(1)
 
-## 279 - Perfect Squares
+### 279 - Perfect Squares
 
 [leetcode](https://leetcode.com/problems/perfect-squares/)
 
-### Problem
+#### Problem
 
     Given a positive integer n, find the least number of perfect square numbers (for example, 1, 4, 9, 16, ...) which sum to n.
     
@@ -2240,7 +2517,7 @@ Space: O(1)
     Output: 2
     Explanation: 13 = 4 + 9.
 
-### Notes
+#### Notes
 
 DP problem
 
@@ -2252,7 +2529,7 @@ DP problem
     -   dp[0] = 0
     -   dp[i] = i
 
-### Solution
+#### Solution
 
 ```python
 import math
@@ -2270,11 +2547,11 @@ class Solution:
 print(Solution().numSquares(12))
 ```
 
-## 647 - Palindromic Substrings
+### 647 - Palindromic Substrings
 
 [leetcode](https://leetcode.com/problems/palindromic-substrings/)
 
-### Problem
+#### Problem
 
     
     Given a string, your task is to count how many palindromic substrings in this string.
@@ -2298,7 +2575,7 @@ print(Solution().numSquares(12))
     
     The input string length won't exceed 1000.
 
-### Notes
+#### Notes
 
 DP problem
 
@@ -2320,7 +2597,7 @@ DP problem
     
     initialize dp[i][j] = 0
 
-### Solution
+#### Solution
 
 ```python
 class Solution:
@@ -2337,11 +2614,11 @@ class Solution:
 print(Solution().countSubstrings("aba"))
 ```
 
-## 5 - Longest Palindromic Substring
+### 5 - Longest Palindromic Substring
 
 [leetcode](https://leetcode.com/problems/longest-palindromic-substring/)
 
-### Problem
+#### Problem
 
     Given a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.
     
@@ -2355,7 +2632,7 @@ print(Solution().countSubstrings("aba"))
     Input: "cbbd"
     Output: "bb"
 
-### Notes
+#### Notes
 
 DP problem
 
@@ -2377,9 +2654,9 @@ DP problem
     
     initialize dp[i][j] = 0
 
-### Solution
+#### Solution
 
-#### Solution 1: DP
+##### Solution 1: DP
 
 ```python
 class Solution:
@@ -2396,13 +2673,13 @@ class Solution:
         return res
 ```
 
-#### Solution 2: Central Expansion
+##### Solution 2: Central Expansion
 
-## 136 - Single Number
+### 136 - Single Number
 
 [leetcode](https://leetcode.com/problems/single-number/)
 
-### Problem
+#### Problem
 
     Given a non-empty array of integers, every element appears twice except for one. Find that single one.
     
@@ -2419,17 +2696,17 @@ class Solution:
     Input: [4,1,2,1,2]
     Output: 4
 
-### Notes
+#### Notes
 
-#### Solution 1: Hash Table
+##### Solution 1: Hash Table
 
-#### Solution 2: Bit manipulation
+##### Solution 2: Bit manipulation
 
 Consider XOR all element together. The left number is the single number.
 
-### Solution
+#### Solution
 
-#### Solution 1: Hash Table
+##### Solution 1: Hash Table
 
 ```python
 class Solution:
@@ -2442,7 +2719,7 @@ class Solution:
                 return k
 ```
 
-#### Solution 2: Bit manipulation for finding the single number
+##### Solution 2: Bit manipulation for finding the single number
 
 ```python
 class Solution:
@@ -2458,7 +2735,7 @@ class Solution:
 print(Solution().singleNumber([2, 2, 5, 1, 8, 1, 9, 8, 9]))
 ```
 
-#### Solution 3: Python reduce
+##### Solution 3: Python reduce
 
 ```python
 from functools import reduce
@@ -2468,11 +2745,11 @@ print(reduce(lambda x, y: x ^ y, nums))
 print(reduce(operator.xor, nums))
 ```
 
-## 202 - Happy Number
+### 202 - Happy Number
 
 [leetcode](https://leetcode.com/problems/happy-number/)
 
-### Problem
+#### Problem
 
     Write an algorithm to determine if a number is "happy".
     
@@ -2488,11 +2765,11 @@ print(reduce(operator.xor, nums))
     62 + 82 = 100
     12 + 02 + 02 = 1
 
-### Notes
+#### Notes
 
 Hash Table
 
-### Solution
+#### Solution
 
 ```python
 class Solution:
@@ -2522,11 +2799,11 @@ class Solution:
         return n == 1
 ```
 
-## 338 - Counting Bits
+### 338 - Counting Bits
 
 [leetcode](https://leetcode.com/problems/counting-bits/)
 
-### Problem
+#### Problem
 
     Given a non negative integer number num. For every numbers i in the range 0 ≤ i ≤ num calculate the number of 1's in their binary representation and return them as an array.
     
@@ -2539,7 +2816,7 @@ class Solution:
     Input: 5
     Output: [0,1,1,2,1,2]
 
-### Notes
+#### Notes
 
 DP problem
 
@@ -2571,9 +2848,9 @@ DP problem
     
     dp[i] = dp[i & (i-1)] + 1
 
-### Solution
+#### Solution
 
-#### Solution 1: DP
+##### Solution 1: DP
 
 ```python
 class Solution:
@@ -2587,7 +2864,7 @@ class Solution:
         return dp
 ```
 
-#### Solution 2: Bit manipulation on couting bits
+##### Solution 2: Bit manipulation on couting bits
 
 ```python
 class Solution:
@@ -2598,7 +2875,7 @@ class Solution:
         return dp
 ```
 
-#### Solution 3:
+##### Solution 3:
 
 ```python
 class Solution(object):
@@ -2609,11 +2886,11 @@ class Solution(object):
         return res[:num+1]
 ```
 
-## 494 - Target Sum
+### 494 - Target Sum
 
 [leetcode](https://leetcode.com/problems/target-sum/)
 
-### Problem
+#### Problem
 
     You are given a list of non-negative integers, a1, a2, ..., an, and a target, S. Now you have 2 symbols + and -. For each integer, you should choose one from + and - as its new symbol.
     
@@ -2636,7 +2913,7 @@ class Solution(object):
     The sum of elements in the given array will not exceed 1000.
     Your output answer is guaranteed to be fitted in a 32-bit integer.
 
-### Solution
+#### Solution
 
 DP problem. The hardest part of this problem is to find the states.
 
@@ -2712,7 +2989,7 @@ d[0][0+sum - 1] += 1 -> dp[0][5] = 2
 
 It means there are 2 ways to reach 0 (5 - offset)
 
-#### Solution 1: 2D - DP
+##### Solution 1: 2D - DP
 
 ```python
 class Solution():
@@ -2746,7 +3023,7 @@ print(Solution().findTargetSumWays([1, 1, 1, 1, 1], 3))
 
 Time: O(l\*n) Space: O(l\*n)
 
-#### Solution 2: 1D - DP
+##### Solution 2: 1D - DP
 
 We notice that, to calculate the dp array at the current index, we only have to know one previous row.
 
@@ -2778,11 +3055,11 @@ class Solution:
 print(Solution().findTargetSumWays([1, 1, 1, 1, 1], 3))
 ```
 
-## 283 - Move Zeros
+### 283 - Move Zeros
 
 [leetcode](https://leetcode.com/problems/move-zeroes/)
 
-### Problem
+#### Problem
 
     Given an array nums, write a function to move all 0's to the end of it while maintaining the relative order of the non-zero elements.
     
@@ -2795,7 +3072,7 @@ print(Solution().findTargetSumWays([1, 1, 1, 1, 1], 3))
     You must do this in-place without making a copy of the array.
     Minimize the total number of operations.
 
-### Solution
+#### Solution
 
 Two pointers.
 
@@ -2820,11 +3097,11 @@ class Solution:
         return nums
 ```
 
-## 416 - Partition Equal Subset Sum
+### 416 - Partition Equal Subset Sum
 
 [leetcode](https://leetcode.com/problems/partition-equal-subset-sum/)
 
-### Problem
+#### Problem
 
     Given a non-empty array containing only positive integers, find if the array can be partitioned into two subsets such that the sum of elements in both subsets is equal.
     
@@ -2851,7 +3128,7 @@ class Solution:
     
     Explanation: The array cannot be partitioned into equal sum subsets.
 
-### Solution
+#### Solution
 
 DP problem, it is similar to problem 494 Target Sum.
 
@@ -2861,7 +3138,7 @@ Transition: dp[i][j-nums[i]] += dp[i-1][j] dp[i][j+nums[i]] += dp[i-1][j]
 
 When the transition is only depend on the last row, usually you always can transform the dp table to 1 dimensional.
 
-#### Solution 1: 1D-DP
+##### Solution 1: 1D-DP
 
 ```python
 class Solution:
@@ -2887,7 +3164,7 @@ Time: O(len(nums)\*sum(nums))
 
 Space: O(len(nums)\*sum(nums))
 
-#### Solution 2: Bit manipulation for maintaning the dp table
+##### Solution 2: Bit manipulation for maintaning the dp table
 
 ```python
 class Solution:
@@ -2907,11 +3184,11 @@ Time: O(n)
 
 Space: O(1) maybe, depends on the sum of the array, the bits can be longer
 
-## 698 - Partition to K Equal Sum Subsets
+### 698 - Partition to K Equal Sum Subsets
 
 [leetcode](https://leetcode.com/problems/partition-to-k-equal-sum-subsets/)
 
-### Problem
+#### Problem
 
     Given an array of integers nums and a positive integer k, find whether it's possible to divide this array into k non-empty subsets whose sums are all equal.
     
@@ -2929,13 +3206,13 @@ Space: O(1) maybe, depends on the sum of the array, the bits can be longer
     1 <= k <= len(nums) <= 16.
     0 < nums[i] < 10000.
 
-### Solution
+#### Solution
 
-## 215 - Kth Largest Element in an Array
+### 215 - Kth Largest Element in an Array
 
 [leetcode](https://leetcode.com/problems/kth-largest-element-in-an-array/)
 
-### Problem
+#### Problem
 
     215. Kth Largest Element in an Array
     Medium
@@ -2960,11 +3237,11 @@ Space: O(1) maybe, depends on the sum of the array, the bits can be longer
     Note:
     You may assume k is always valid, 1 ≤ k ≤ array's length.
 
-### Solution
+#### Solution
 
 The naive solution would be to maintain an array of length k and update the array in each iteration to keep the first kth largest element in the array
 
-#### Solution 1: Array of k
+##### Solution 1: Array of k
 
 ```python
 class Solution:
@@ -2990,7 +3267,7 @@ Time: O(nk)
 
 Space: O(k)
 
-#### Solution 2: Partition to find the kth largest
+##### Solution 2: Partition to find the kth largest
 
 ```python
 class Solution:
@@ -3020,11 +3297,11 @@ Time: O(klogn)
 
 Space: O(1)
 
-## 49 - Group Anagrams
+### 49 - Group Anagrams
 
 [leetcode](https://leetcode.com/problems/group-anagrams/)
 
-### Problem
+#### Problem
 
     Given an array of strings, group anagrams together.
     
@@ -3042,7 +3319,7 @@ Space: O(1)
     All inputs will be in lowercase.
     The order of your output does not matter.
 
-### Solution
+#### Solution
 
 Use the sorted string as key in hash table
 
@@ -3071,11 +3348,11 @@ class Solution:
         return list(ans.values())
 ```
 
-## 876 - Middle of the Linked List
+### 876 - Middle of the Linked List
 
 [leetcode](https://leetcode.com/problems/middle-of-the-linked-list/)
 
-### Problem
+#### Problem
 
     Given a non-empty, singly linked list with head node head, return a middle node of linked list.
     
@@ -3096,9 +3373,9 @@ class Solution:
     Output: Node 4 from this list (Serialization: [4,5,6])
     Since the list has two middle nodes with values 3 and 4, we return the second one.
 
-### Solution
+#### Solution
 
-#### Solution 1: two-pointer
+##### Solution 1: two-pointer
 
 ```python
 class Solution:
@@ -3111,7 +3388,7 @@ class Solution:
         return p1
 ```
 
-#### Solution 2: counter
+##### Solution 2: counter
 
 ```python
 class Solution:
@@ -3126,11 +3403,11 @@ class Solution:
         return mid
 ```
 
-## 844 - Backspace String Compare
+### 844 - Backspace String Compare
 
 [leetcode](https://leetcode.com/problems/backspace-string-compare/)
 
-### Problem
+#### Problem
 
     Given two strings S and T, return if they are equal when both are typed into empty text editors. # means a backspace character.
     
@@ -3160,9 +3437,9 @@ class Solution:
     1 <= T.length <= 200
     S and T only contain lowercase letters and '#' characters.
 
-### Solution
+#### Solution
 
-#### Solution 1: stack
+##### Solution 1: stack
 
 ```python
 class Solution:
@@ -3200,7 +3477,7 @@ class Solution:
 print(Solution().backspaceCompare("ac#cc#", "ab#c"))
 ```
 
-#### Solution 2: two pointer, reserve
+##### Solution 2: two pointer, reserve
 
 ```python
 class Solution:
@@ -3239,11 +3516,11 @@ class Solution:
 print(Solution().backspaceCompare("###ac#b", "ab#b"))
 ```
 
-## 155 - Min Stack
+### 155 - Min Stack
 
 [leetcode](https://leetcode.com/problemset/all/?search=Min%20Stack)
 
-### Problem
+#### Problem
 
     Design a stack that supports push, pop, top, and retrieving the minimum element in constant time.
     
@@ -3264,7 +3541,7 @@ print(Solution().backspaceCompare("###ac#b", "ab#b"))
     minStack.top();      --> Returns 0.
     minStack.getMin();   --> Returns -2.
 
-### Solution
+#### Solution
 
 Use a second stack to keep track of the min value. Pay attention to the return value. Remember to return None when there is no result.
 
@@ -3301,11 +3578,11 @@ class MinStack:
             return None
 ```
 
-## 543 - Diameter of Binary Tree
+### 543 - Diameter of Binary Tree
 
 [leetcode](https://leetcode.com/problems/diameter-of-binary-tree/)
 
-### Problem
+#### Problem
 
     Given a binary tree, you need to compute the length of the diameter of the tree. The diameter of a binary tree is the length of the longest path between any two nodes in a tree. This path may or may not pass through the root.
     
@@ -3320,7 +3597,7 @@ class MinStack:
     
     Note: The length of path between two nodes is represented by the number of edges between them.
 
-### Solution
+#### Solution
 
 ```python
 class Solution:
@@ -3368,11 +3645,11 @@ class Solution:
 
 ```
 
-## 1046 - Last Stone Weight
+### 1046 - Last Stone Weight
 
 [leetcode](https://leetcode.com/problems/last-stone-weight/)
 
-### Problem
+#### Problem
 
     We have a collection of stones, each stone has a positive integer weight.
     
@@ -3394,7 +3671,7 @@ class Solution:
     we combine 2 and 1 to get 1 so the array converts to [1,1,1] then,
     we combine 1 and 1 to get 0 so the array converts to [1] then that's the value of last stone.
 
-### Solution
+#### Solution
 
 Priority queue, max heap can be used here.
 
@@ -3415,11 +3692,11 @@ class Solution:
 
 ```
 
-## 525 - Contiguous Array
+### 525 - Contiguous Array
 
 [leetcode](https://leetcode.com/problems/contiguous-array)
 
-### Problem
+#### Problem
 
     Given a binary array, find the maximum length of a contiguous subarray with equal number of 0 and 1.
     
@@ -3433,7 +3710,7 @@ class Solution:
     Explanation: [0, 1] (or [1, 0]) is a longest contiguous subarray with equal number of 0 and 1.
     Note: The length of the given binary array will not exceed 50,000.
 
-### Solution
+#### Solution
 
 We keep a count, which decrease 1 if 0, increase 1 if 1.
 
@@ -3470,11 +3747,11 @@ class Solution:
         return ans
 ```
 
-## Perform String Shifts
+### Perform String Shifts
 
 [leetcode](https://leetcode.com/explore/other/card/30-day-leetcoding-challenge/529/week-2/3299/)
 
-### Problem
+#### Problem
 
     You are given a string s containing lowercase English letters, and a matrix shift, where shift[i] = [direction, amount]:
     
@@ -3502,7 +3779,7 @@ class Solution:
     [0,2] means shift to left by 2. "fgabcde" -> "abcdefg"
     [1,3] means shift to right by 3. "abcdefg" -> "efgabcd"
 
-### Solution
+#### Solution
 
 ```python
 class Solution:
@@ -3510,4 +3787,274 @@ class Solution:
         count = sum([ (-1+2*x)*y for x, y in shift ]) % len(s)
         ds = s + s
         return ds[len(s)-count: 2*len(s) - count] 
+```
+
+### 238 - Product of Array Except Self
+
+[leetcode](https://leetcode.com/problems/product-of-array-except-self/)
+
+#### Problem
+
+    238. Product of Array Except Self
+    Medium
+    
+    4145
+    
+    358
+    
+    Add to List
+    
+    Share
+    Given an array nums of n integers where n > 1,  return an array output such that output[i] is equal to the product of all the elements of nums except nums[i].
+    
+    Example:
+    
+    Input:  [1,2,3,4]
+    Output: [24,12,8,6]
+    Constraint: It's guaranteed that the product of the elements of any prefix or suffix of the array (including the whole array) fits in a 32 bit integer.
+    
+    Note: Please solve it without division and in O(n).
+    
+    Follow up:
+    Could you solve it with constant space complexity? (The output array does not count as extra space for the purpose of space complexity analysis.)
+
+#### Solution
+
+##### Solution 1: prefix product and suffix product
+
+```python
+class Solution:
+    def productExceptSelf(self, nums):
+        n = len(nums)
+        ans = [0] * n
+        ans[0] = 1
+
+        for i in range(1, n):
+            ans[i] = ans[i-1] * nums[i-1]
+
+        R = 1
+        for i in reversed(range(n)):
+            ans[i] = ans[i] * R
+            R *= nums[i]
+
+        return ans
+
+print(Solution().productExceptSelf([1, 2, 3, 4]))
+```
+
+### 678 - Valid Parenthesis String
+
+[leetcode](https://leetcode.com/problems/valid-parenthesis-string/)
+
+#### Problem
+
+    Given a string containing only three types of characters: '(', ')' and '*', write a function to check whether this string is valid. We define the validity of a string by these rules:
+    
+    Any left parenthesis '(' must have a corresponding right parenthesis ')'.
+    Any right parenthesis ')' must have a corresponding left parenthesis '('.
+    Left parenthesis '(' must go before the corresponding right parenthesis ')'.
+    '*' could be treated as a single right parenthesis ')' or a single left parenthesis '(' or an empty string.
+    An empty string is also valid.
+    Example 1:
+    Input: "()"
+    Output: True
+    Example 2:
+    Input: "(*)"
+    Output: True
+    Example 3:
+    Input: "(*))"
+    Output: True
+    Note:
+    The string size will be in the range [1, 100].
+
+#### Solution
+
+##### Solution 1: cmin and cmax to valida to parenthesis
+
+```python
+class Solution:
+    def checkValidString(self, s: str) -> bool:
+        counter_max = 0
+        counter_min = 0
+
+        for c in s:
+            if c == "(":
+                counter_max += 1
+                counter_min += 1
+            elif c == ")":
+                counter_max -= 1
+                counter_min = max(counter_min-1, 0)
+            else:
+                counter_max += 1
+                counter_min = max(counter_min-1, 0)
+
+            if counter_max < 0:
+                return False
+
+        return counter_min == 0
+```
+
+### 200 - Number of Islands
+
+[leetcode](https://leetcode.com/problems/number-of-islands/)
+
+#### Problem
+
+    Given a 2d grid map of '1's (land) and '0's (water), count the number of islands. An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. You may assume all four edges of the grid are all surrounded by water.
+    
+    Example 1:
+    
+    Input:
+    11110
+    11010
+    11000
+    00000
+    
+    Output: 1
+    Example 2:
+    
+    Input:
+    11000
+    11000
+    00100
+    00011
+    
+    Output: 3
+
+#### Solution
+
+DFS problem. Straight forward.
+
+```python
+class Solution:
+    def numIslands(self, grid):
+        if not grid:
+            return 0
+        h = len(grid)
+        w = len(grid[0])
+        ans = 0
+        m = [ [0] * w for x in range(h) ]
+        for i in range(h):
+            for j in range(w):
+                if grid[i][j] == "1" and m[i][j] == 0:
+                    self.dfs(grid, i, j, m)
+                    ans += 1
+        return ans
+
+    def dfs(self, grid, i, j, m):
+        if i < 0 or i >= len(grid) or j < 0 or j >= len(grid[0]) or grid[i][j] == "0" or m[i][j] == 1:
+            return None
+        else:
+            m[i][j] = 1
+            self.dfs(grid, i, j+1, m)
+            self.dfs(grid, i, j-1, m)
+            self.dfs(grid, i-1, j, m)
+            self.dfs(grid, i+1, j, m)
+        return None
+```
+
+### 46 - Permutations
+
+[leetcode](https://leetcode.com/problems/permutations-ii/)
+
+#### Problem
+
+    Given a collection of distinct integers, return all possible permutations.
+    
+    Example:
+    
+    Input: [1,2,3]
+    Output:
+    [
+      [1,2,3],
+      [1,3,2],
+      [2,1,3],
+      [2,3,1],
+      [3,1,2],
+      [3,2,1]
+    ]
+
+#### Solution
+
+```python
+class Solution:
+    def permute(self, nums):
+        ans = []
+        self.backtrack([], nums, ans)
+        return ans
+
+    def backtrack(self, path, nums, ans):
+        if not nums:
+            ans.append(path[:])
+            return
+        for i, v in enumerate(nums):
+            self.backtrack(path+[v], nums[:i]+nums[i+1:], ans)
+```
+
+### 47 - Permutations II
+
+[leetcode](https://leetcode.com/problems/permutations-ii/)
+
+#### Problem
+
+    Given a collection of numbers that might contain duplicates, return all possible unique permutations.
+    
+    Example:
+    
+    Input: [1,1,2]
+    Output:
+    [
+      [1,1,2],
+      [1,2,1],
+      [2,1,1]
+    ]
+
+#### Solution
+
+Backtrack problem.
+
+Framework of backtrack problem:
+
+1.  choose a path
+2.  selection pool
+3.  return condition
+
+    ans = []
+    
+    def backtrack(path, pool):
+    
+      if meet condition:
+        ans.add(path)
+        return
+    
+      for selection in pool:
+      
+        path.add(selection)
+        backtrack(path, new_pool)
+        path.remove(selection)
+
+**Important**:
+
+Pay attention, you must add a copy of the path to result, not the path it self. It may get modified afterwards.
+
+```python
+class Solution:
+    def permuteUnique(self, nums):
+        ans = []
+        self.backtrack([], nums, ans)
+        return ans
+
+    def backtrack(self, path, pool, ans):
+        if not pool:
+            ans.append(path[:])
+            return
+
+        t = {}
+
+        for i, v in enumerate(pool):
+            if v not in t:
+                t[v] = 1
+                self.backtrack(path+[v], pool[:i]+pool[i+1:], ans)
+
+print(Solution().permuteUnique([1,1,2]))
 ```
