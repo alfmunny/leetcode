@@ -2,7 +2,7 @@
 
 Notes and solutions for problems on [LeetCode](www.leetcode.com)
 
-Blog: [LeetCode In The Shell](alfmunny.com/leetcode-blog)
+Blog: [LeetCode In The Shell](http://alfmunny.com/leetcode-blog)
 
 ## How to start
 
