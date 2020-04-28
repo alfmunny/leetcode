@@ -32,8 +32,8 @@ class Solution {
             int M = text1.size();
             int N = text2.size();
             int dp[M+1][N+1]; // padding
-            memset(dp, 0, M*N*sizeof(int)); // initialization
-
+            memset(dp, 0, (M+1)*(N+1)*sizeof(int)); // initialization
+            
             for (int i = 0; i < M; i++)
                 for (int j = 0; j < N; j++) {
                     if (text1[i] == text2[j])
