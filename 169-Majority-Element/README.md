@@ -40,6 +40,8 @@ Space: O(n)
 
 ### Solution 2: Boyer-Moore Majority Vote Algorithm
 
+<http://www.cs.utexas.edu/~moore/best-ideas/mjrty/index.html>
+
 This algorithm works only when the majorty exists.
 
 For array like [1, 1, 2, 2, 2, 1], it return 2. But it is not a majority element.
