@@ -32,6 +32,17 @@
 
 ## Solution
 
+The hardest part of this problem is to figure out what is the transition.
+
+The current state should be determined by index i, j for each string respectively.
+
+1.  States: dp[i][j] means the longest common subsequence for text1 til index i and text2 til index j
+2.  Transition:
+    
+    if text1[i] `= text2[j]: dp[i][j] = dp[i-1][j-1] if text1[i] !` text2[j]: dp[i][j] = max(dp[i-1][j], dp[i][j-1])
+
+3.  Base Case: we need padding for i = 0 and j = 0
+
 ```python
 class Solution:
     def longestCommonSubsequence(self, text1: str, text2: str) -> int:
