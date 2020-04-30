@@ -18,6 +18,12 @@ Output: [5,6]
 
 ## Solution
 
+Move all the numbers to its position. For example, 4 move to index 3, 3 move to index 2 and so on.
+
+The numbers at index i, which are not equal i + 1, are the ones disappeared.
+
+The operation is in-place.
+
 ```python
 class Solution:
     def findDisappearedNumbers(self, nums):
@@ -28,3 +34,7 @@ class Solution:
 
         return [i+1 for i in range(len(nums)) if nums[i] != i+1]
 ```
+
+Time: O(N)
+
+Space: O(1)
