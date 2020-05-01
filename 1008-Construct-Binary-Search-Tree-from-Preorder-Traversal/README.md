@@ -25,7 +25,7 @@ If next value is smaller then current low bound, we construct the right node.
 
 If next value is larger then current low bound, we jump out of the funciton.
 
-Let the recursive jump back to the last level and do repeat the same proccess
+Let the recursive jump back to the last level and repeat the same proccess
 
 ```python
 class Solution:

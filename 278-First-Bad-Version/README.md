@@ -35,7 +35,7 @@ class Solution:
         l, r, mid = 1, n, (1+n) // 2
 
         while l != mid:
-            if !isBadVersion(mid):
+            if not isBadVersion(mid):
                 l = mid
             else:
                 r = mid
