@@ -37,18 +37,18 @@
 
 We can do it recursively with a memo, to reduce the search depth.  
 
-On every node, we have 2 status, which determines our next move:  
+On every node, we have 2 statuses, which will determine our next move:  
 
--   Status:
-
--   current node is reachable
--   Wether the parent node was robbed?
-
-So we can define a recursive function with two parameters:  
-
-```python
-def robRec(root, isRobbed)
-```
+-   Status:  
+    
+    1.  Existence of current node
+    2.  Wether the parent node was robbed?
+    
+    So we can define a recursive function with two parameters:  
+    
+    ```python
+    def robRec(root, isRobbed)
+    ```
 
 -   Transition:  
     
@@ -82,7 +82,7 @@ def robRec(root, isRobbed)
     ans = max(rob, not_rob)
     ```
 
--   Initial state is  
+-   Initial state  
     
     ```python
     root = root
