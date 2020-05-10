@@ -34,7 +34,7 @@ Stack.
 
 1.  Add the starting point to stack
 2.  Stack pop. Fill the point, add its valid neighbours to the stack.
-3.  Repeat 2 util stack is empty
+3.  Repeat 2 until stack is empty
 
 **Important**:  
 
