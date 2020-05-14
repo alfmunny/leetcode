@@ -1,4 +1,4 @@
-# 402 Remove K Digits
+# 402 - Remove K Digits
 
 [leetcode](https://leetcode.com/problems/remove-k-digits/)
 

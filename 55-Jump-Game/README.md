@@ -1,29 +1,79 @@
-# 55. Jump Game
+# 55 - Jump Game
 
+[leetcode](https://leetcode.com/problems/jump-game/)
 
-Given an array of non-negative integers, you are initially positioned at the first index of the array.
+## Problem
 
-Each element in the array represents your maximum jump length at that position.
+    Given an array of non-negative integers, you are initially positioned at the first index of the array.
+    
+    Each element in the array represents your maximum jump length at that position.
+    
+    Determine if you are able to reach the last index.
+    
+    Example 1:
+    
+    Input: [2,3,1,1,4]
+    Output: true
+    Explanation: Jump 1 step from index 0 to 1, then 3 steps to the last index.
+    
+    Example 2:
+    
+    Input: [3,2,1,0,4]
+    Output: false
+    Explanation: You will always arrive at index 3 no matter what. Its maximum
+                 jump length is 0, which makes it impossible to reach the last index.
 
-Determine if you are able to reach the last index.
+## Notes
 
-Example 1:
+Greedy algorithm. There are 2 approaches, from head or from tail.
 
-Input: [2,3,1,1,4]
-Output: true
-Explanation: Jump 1 step from index 0 to 1, then 3 steps to the last index.
+### Start from head
 
-Example 2:
+always remember the furthest reachable index.
 
-Input: [3,2,1,0,4]
-Output: false
-Explanation: You will always arrive at index 3 no matter what. Its maximum 
-jump length is 0, which makes it impossible to reach the last index.
+```python
+reach = max(i + nums[i], reach) if i <= reach
+```
 
-Notes:
+### Start from tail
 
-1. use backtracing to brute force recursivly.
-2. use dynamic programming to reduce the time complexity.
-3. remove the recursive part.
-4. greedy solution, only remember the last position.
+always remember the last position it can reach.
 
+```python
+lastPos = i if i + nums[i] >= lastPos
+```
+
+## Solition
+
+### Solution 1: start from head
+
+```python
+class Solution():
+    def canJump(self, nums):
+        reach = 0
+
+        for i in range(len(nums)):
+            if i <= reach:
+                reach = max(i + nums[i], reach)
+
+        return reach >= len(nums) - 1
+
+print(Solution().canJump([ 2,3,1,1,4 ]))
+print(Solution().canJump([ 3,2,1,0,4 ] ))
+```
+
+### Solution 2: start from tail
+
+```python
+class Solution():
+    def canJump(self, nums):
+        lastPos = len(nums) - 1
+        for i in reversed(range(len(nums))):
+            if i + nums[i] >= lastPos:
+                lastPos = i
+
+        return lastPos == 0
+
+print(Solution().canJump([ 2,3,1,1,4 ]))
+print(Solution().canJump([ 3,2,1,0,4 ] ))
+```
