@@ -40,6 +40,8 @@ Consider the input [0, 1]:
     Index 1: h[0] = -1, maxlen = 1 - (-1) = 2
     maxlen = 2
 
+### Solution: counting contiguous 1s and 0s with a Hashmap
+
 ```python
 class Solution:
     def findMaxLength(self, nums):
