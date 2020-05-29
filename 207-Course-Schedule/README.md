@@ -72,10 +72,10 @@ class Solution:
 
         for pre in prerequisites:
             v, w = pre
-            adj[w] = v
+            adj[w].append(v)
             degree[v] += 1
 
-        q = [v for v in adj if not degree[v]]
+        q = [v for v in range(numCourses) if not degree[v]]
         order = []
 
         while q:
