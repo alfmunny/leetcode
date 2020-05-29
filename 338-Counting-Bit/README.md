@@ -84,3 +84,18 @@ class Solution(object):
             res+=[i+1 for i in res]
         return res[:num+1]
 ```
+
+### Solution 4:
+
+```python
+class Solution:
+    def countBits(self, num):
+        dp = [0] * (num + 1)
+        for i in range(1, num+1):
+            if not i % 2:
+                dp[i] = dp[i >> 1]
+            else:
+                dp[i] = dp[i >> 1] + 1
+
+        return dp[num]
+```
