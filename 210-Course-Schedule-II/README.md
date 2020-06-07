@@ -1,4 +1,4 @@
-# 210-Course-Schedule-II
+# 210 - Course Schedule II
 
 [leetcode](https://leetcode.com/problems/course-schedule-ii/)
 
