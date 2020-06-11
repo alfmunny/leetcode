@@ -18,50 +18,36 @@
 
 ## Solution
 
-Backtrack problem.
+The tricky part is how to avoid duplicates.
 
-Framework of backtrack problem:
+First sort the array.
 
-1.  choose a path
-2.  selection pool
-3.  return condition
+When chose the next element, if it is the same as the previous one and the previous one is now not choosen, we should skip it, because it means the previous one has been already choosen for this position before.
 
-    ans = []
-    
-    def backtrack(path, pool):
-    
-      if meet condition:
-        ans.add(path)
-        return
-    
-      for selection in pool:
-      
-        path.add(selection)
-        backtrack(path, new_pool)
-        path.remove(selection)
-
-**Important**:
-
-Pay attention, you must add a copy of the path to result, not the path it self. It may get modified afterwards.
+    if i > 0 and nums[i] == nums[i-1] and not marked[i-1]:
+      continue
 
 ```python
 class Solution:
-    def permuteUnique(self, nums):
+    def permuteUnique(self, nums: List[int]) -> List[List[int]]:
+        marked = [False] * len(nums)
         ans = []
-        self.backtrack([], nums, ans)
+        self.dfs(sorted(nums), marked, [], ans)
         return ans
 
-    def backtrack(self, path, pool, ans):
-        if not pool:
-            ans.append(path[:])
+    def dfs(self, nums, marked, path, ans):
+        if len(path) == len(nums):
+            ans.append(list(path))
             return
 
-        t = {}
-
-        for i, v in enumerate(pool):
-            if v not in t:
-                t[v] = 1
-                self.backtrack(path+[v], pool[:i]+pool[i+1:], ans)
-
-print(Solution().permuteUnique([1,1,2]))
+        for i in range(len(nums)):
+            if i > 0 and nums[i] == nums[i-1] and not marked[i-1]:
+                continue
+            if marked[i]:
+                continue
+            marked[i] = True
+            path.append(nums[i])
+            self.dfs(nums, marked, path, ans)
+            marked[i] = False
+            path.pop()
 ```
