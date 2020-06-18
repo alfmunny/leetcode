@@ -27,6 +27,18 @@
 
 ## Solution
 
+Clockwise turn with help of step and direction array
+
+    step = [[0, 1], [1, 0], [0, -1], [-1, 0]]
+    di = 0
+    
+    i, i = i + step[di][0], j + step[di][1]
+    
+    Clockwise Turn:
+    
+    di = (di + 1) % 4
+    i, j = i+step[di][0], j + step[di][1]                                                       
+
 ```python
 class Solution:
     def spiralOrder(self, matrix: List[List[int]]) -> List[int]:
