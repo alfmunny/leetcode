@@ -1,52 +1,52 @@
-#[Unique Paths II](https://leetcode.com/problems/unique-paths-ii/)
+# 63 - Unique Paths II
 
-## Notes
+[leetcode](https://leetcode.com/problems/unique-paths-ii/)
 
-It is almost the same question of unique paths.
-The only difference is to set the value of the obstacle position to zero.
+## Problem
 
-To note that, the initial matrix should be also modified under the consideration of the obstacles.
+    A robot is located at the top-left corner of a m x n grid (marked 'Start' in the diagram below).
+    
+    The robot can only move either down or right at any point in time. The robot is trying to reach the bottom-right corner of the grid (marked 'Finish' in the diagram below).
+    
+    Now consider if some obstacles are added to the grids. How many unique paths would there be?
+    
+    An obstacle and empty space is marked as 1 and 0 respectively in the grid.
+    
+    Note: m and n will be at most 100.
+    
+    Example 1:
+    
+    Input:
+    [
+      [0,0,0],
+      [0,1,0],
+      [0,0,0]
+    ]
+    Output: 2
+    Explanation:
+    There is one obstacle in the middle of the 3x3 grid above.
+    There are two ways to reach the bottom-right corner:
+    1. Right -> Right -> Down -> Down
+    2. Down -> Down -> Right -> Right
 
-For example when the 
+## Solution
 
-when there is no obstacle.
+```python
+class Solution:
+    def uniquePathsWithObstacles(self, obstacleGrid: List[List[int]]) -> int:
+        if not obstacleGrid:
+            return 0
 
-The initial dp matrix would be
+        m, n = len(obstacleGrid), len(obstacleGrid[0])
 
-|1|0|0|
-|1|0|0|
-|1|0|0|
+        dp = [[0] * (n+1) for _ in range(m+1)]
 
-But when the input matrix has an obstabcle in the first line or first column:
+        dp[0][1] = 1
 
-|0|1|0|
-|0|0|0|
-|0|0|0|
+        for i in range(m):
+            for j in range(n):
+                if not obstacleGrid[i][j]:
+                    dp[i+1][j+1] = dp[i+1][j] + dp[i][j+1]
 
-or 
-
-|0|0|0|
-|1|0|0|
-|0|0|0|
-
-The initial dp matrix would be
-
-|1|0|0|
-|1|0|0|
-|1|0|0|
-
-or 
-
-|1|1|1|
-|0|0|0|
-|0|0|0|
-
-
-1. There are only two possibilities to arrive at the finish point 
-    1. arrive at that point from above
-    2. arrive at that point from left
-
-2. So the ways to arrive at current point is equal the ways from above plus the ways from left. dp[i][j] = dp[i][j-1] + dp[i - 1][j]. 
-dp[i][j] = 0 when an obstacle is at this position.
-3. Dynamic programming. Maintain a two dimensional matrix.
-4. Complexity O(m * n)
+        return dp[-1][-1]
+```
