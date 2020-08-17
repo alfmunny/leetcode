@@ -1,32 +1,15 @@
 class Solution:
     def searchMatrix(self, matrix, target):
-        """
-        :type matrix: List[List[int]]
-        :type target: int
-        :rtype: bool
-        """
         if not matrix or not matrix[0]:
             return False
-        
-        j = 0
-    
-        for row in matrix:
-            if row[j] > target:
-                while row[j] > target:
-                    j -= 1
-                    if j < 0:
-                        return False
 
-                
-            elif row[j] < target:
-                while row[j] < target:
-                    j += 1
-                    if j == len(matrix[0]):
-                        j = 0
-                        break
+        i, j = 0, len(matrix[0]) - 1
+        while i < len(matrix) and j >= 0 :
             
-            
-            if row[j] == target:
+            if matrix[i][j] == target:
                 return True
-            
+            elif matrix[i][j] > target:
+                j -= 1
+            else:
+                i += 1
         return False

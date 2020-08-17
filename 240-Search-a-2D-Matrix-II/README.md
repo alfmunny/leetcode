@@ -26,6 +26,8 @@
 
 ## Solution
 
+### Solution 1
+
 ```python
 class Solution:
     def searchMatrix(self, matrix, target):
@@ -58,5 +60,31 @@ class Solution:
             if row[j] == target:
                 return True
 
+        return False
+```
+
+### Solution 2: Like a binary tree
+
+Start from upper right corner.
+
+If matrix[i][j] > target: col - 1
+
+if matrix[i][j] < target: row + 1
+
+```python
+class Solution:
+    def searchMatrix(self, matrix, target):
+        if not matrix or not matrix[0]:
+            return False
+
+        i, j = 0, len(matrix[0]) - 1
+        while i < len(matrix) and j >= 0 :
+
+            if matrix[i][j] == target:
+                return True
+            elif matrix[i][j] > target:
+                j -= 1
+            else:
+                i += 1
         return False
 ```
