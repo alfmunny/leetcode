@@ -56,7 +56,11 @@ class Solution:
         return 1 + max(self.height(root.right), self.height(root.left))
 ```
 
+This method has to calculate the height mutiple times, which costs a lot of time.
+
 ### Solution 2: one pass
+
+It is a dfs method, which only go over all nodes one time.
 
 ```python
 class Solution:
