@@ -18,20 +18,15 @@ class Solution:
         if not head.next:
             return TreeNode(head.val)
 
-        slow = head
-        fast = head.next.next
+        pre, slow, fast = None, head, head
 
         while fast and fast.next:
-            fast = fast.next.next
-            slow = slow.next
+            pre, slow, fast = slow, slow.next, fast.next.next
 
-        tmp = slow.next
-        slow.next = None
-
-        root = TreeNode(tmp.val)
-
+        pre.next = None
+        root = TreeNode(slow.val)
         root.left = self.sortedListToBST(head)
-        root.right = self.sortedListToBST(tmp.next)
+        root.right = self.sortedListToBST(slow.next)
 
         return root
 ```
