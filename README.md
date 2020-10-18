@@ -1,6 +1,6 @@
 # LeetCode
 
-Notes and solutions for problems on [LeetCode](www.leetcode.com)
+Notes and solutions for problems on [LeetCode](http://www.leetcode.com)
 
 Blog: [LeetCode In The Shell](http://alfmunny.com/leetcode-blog)
 
