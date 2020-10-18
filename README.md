@@ -17,3 +17,7 @@ Blog: [LeetCode In The Shell](http://alfmunny.com/leetcode-blog)
 2. [Algorithms 4th](https://algs4.cs.princeton.edu/home/)
 3. [Cracking The Coding Interview](http://www.crackingthecodinginterview.com/)
 4. [Data Structure and Algorithms in Python](https://github.com/hardikpansuria/Free-Algorithm-Books/blob/master/book/Data%20Structures%20%26%20Algorithms%20in%20Python.pdf)
+
+## LICENSE
+
+MIT
