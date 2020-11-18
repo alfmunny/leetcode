@@ -13,9 +13,31 @@
     Input: head = 1->4->3->2->5->2, x = 3
     Output: 1->2->2->4->3->5
 
-Notes:
+## Solution
 
-Two pointers:
+### Solution 1: Two Dummy Pointers
+
+Simple version: just create two list, and append them in the end
+
+```python
+class Solution:
+    def partition(self, head: ListNode, x: int) -> ListNode:
+        p1 = l1 = ListNode(0)
+        p2 = l2 = ListNode(0)
+        while head:
+            if head.val < x:
+                p1.next, p1 = head, head
+            else:
+                p2.next, p2 = head, head
+            head.next, head = None, head.next
+
+        p1.next = l2.next
+        return l1.next                
+```
+
+### Solution 2: In place
+
+Inplace swap with Two pointers:
 
 p1: mark the end of smaller part
 
@@ -25,8 +47,6 @@ Addtional prev pointer for the swap.
 
 1.  Use a dummy node to make it possible to swap the smaller one to the head
 2.  Note the case when p1 == prev, no need to swap, just move p1 forward
-
-## Solution
 
 ```python
 class Solution:
