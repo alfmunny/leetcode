@@ -68,3 +68,17 @@ class Solution:
             k -= 1
         return ret
 ```
+
+### Solution 3: Binary Search
+
+```python
+class Solution:
+    def kthSmallest(self, matrix):
+        lo, hi = len(matrix), len(matrix[0])
+        while lo < hi:
+            mid = (lo+hi)//2
+            if sum(bisect.bisect_right(matrix[row], mid) for row in matrix) < k:
+                lo = mid+1
+            else:
+                hi = mid
+```
