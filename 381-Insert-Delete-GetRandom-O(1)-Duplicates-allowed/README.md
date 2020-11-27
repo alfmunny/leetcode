@@ -35,6 +35,15 @@
 
 ## Solution
 
+Notes:
+
+Remove is tricky.
+
+1.  Find the index of the element to remove in Hash.
+2.  Replace the element with the last element in array, and pop the last one.
+3.  Don't forget to update the index of copied element in Hash.
+4.  You have to firstly add the new index and then delete. There is a corner case when there is only one element. If you delete it first and then add, the same index is added back to hash.
+
 ```python
 class RandomizedCollection:
 
