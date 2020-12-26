@@ -18,7 +18,7 @@ Blog: [LeetCode In The Shell](http://alfmunny.com/leetcode-blog)
 3. [Cracking The Coding Interview](http://www.crackingthecodinginterview.com/)
 4. [Data Structure and Algorithms in Python](https://github.com/hardikpansuria/Free-Algorithm-Books/blob/master/book/Data%20Structures%20%26%20Algorithms%20in%20Python.pdf)
 
-## Problem Lists
+## Problem Lists (Updating)
 
 ### Linked List
 
@@ -46,7 +46,7 @@ Blog: [LeetCode In The Shell](http://alfmunny.com/leetcode-blog)
 
 | Problems                                                                                      | Hints         | Level  |
 |-----------------------------------------------------------------------------------------------|---------------|--------|
-| [208. Implement Trie(Prefix Tree)](https://leetcode.com/problems/implement-trie-prefix-tree/) | Mark end word | Medium |
+| [208. Implement Trie(Prefix Tree)](https://leetcode.com/problems/implement-trie-prefix-tree/) | mark end of word | Medium |
 
 ### DFS
 
