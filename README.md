@@ -37,6 +37,7 @@ Blog: [LeetCode In The Shell](http://alfmunny.com/leetcode-blog)
 ### Dynamic Programming
 
 | Problems                                                  | Hints                  | Level  |
+|-----------------------------------------------------------|------------------------|--------|
 | [55. Jump Game](https://leetcode.com/problems/jump-game/) | maintain maximum reach | Medium |
 |                                                           |                        |        |
 |                                                           |                        |        |
@@ -44,6 +45,7 @@ Blog: [LeetCode In The Shell](http://alfmunny.com/leetcode-blog)
 ### Trie
 
 | Problems                                                                                      | Hints         | Level  |
+|-----------------------------------------------------------------------------------------------|---------------|--------|
 | [208. Implement Trie(Prefix Tree)](https://leetcode.com/problems/implement-trie-prefix-tree/) | Mark end word | Medium |
 
 ### DFS
