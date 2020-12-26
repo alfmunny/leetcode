@@ -22,37 +22,55 @@ Use a "END" Symbol for word ending.
 
 ```python
 class Trie:
+
     def __init__(self):
+        """
+        Initialize your data structure here.
+        """
         self.root = Node()
 
-    def search(self, s):
+
+    def insert(self, word: str) -> None:
+        """
+        Inserts a word into the trie.
+        """
         node = self.root
-        for c in s:
-            node = node.next[ord(c) - ord('a')]
+        for c in word:
+            node = node.next[c]
+
+        node.isWord = True
+
+    def search(self, word: str) -> bool:
+        """
+        Returns if the word is in the trie.
+        """
+        node = self.root
+
+        for c in word:
+            node = node.next.get(c)
             if not node:
                 return False
-        return node.next[26] != None
 
-    def insert(self, s):
-        node = self.root
-        for c in s:
-            i = ord(c) - ord('a')
-            if not node.next[i]:
-                node.next[i] = Node()
-            node = node.next[i]
-        node.next[26] = Node()
+        return node.isWord
 
-    def startsWith(self, s):
+
+    def startsWith(self, prefix: str) -> bool:
+        """
+        Returns if there is any word in the trie that starts with the given prefix.
+        """
         node = self.root
-        for c in s:
-            node = node.next[ord(c) - ord('a')]
+        for c in prefix:
+            node = node.next.get(c)
             if not node:
                 return False
+
         return True
 
 class Node:
     def __init__(self):
-        self.next = [ None for i in range(27) ]
+        self.next = defaultdict(Node)
+        self.isWord = False
+
 
 s = Trie()
 

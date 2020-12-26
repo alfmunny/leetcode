@@ -55,6 +55,8 @@ class Solution():
         for i in range(len(nums)):
             if i <= reach:
                 reach = max(i + nums[i], reach)
+            else:
+              break
 
         return reach >= len(nums) - 1
 
