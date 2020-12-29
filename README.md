@@ -36,21 +36,26 @@ Blog: [LeetCode In The Shell](http://alfmunny.com/leetcode-blog)
 
 ### Dynamic Programming
 
-| Problems                                                  | Hints                  | Level  |
-|-----------------------------------------------------------|------------------------|--------|
-| [55. Jump Game](https://leetcode.com/problems/jump-game/) | maintain maximum reach | Medium |
-|                                                           |                        |        |
-|                                                           |                        |        |
-|                                                           |                        |        |
+| Problems      | Hints                  | Level  |
+|---------------|------------------------|--------|
+| 55. Jump Game | maintain maximum reach | Medium |
+
 ### Trie
 
-| Problems                                                                                      | Hints         | Level  |
-|-----------------------------------------------------------------------------------------------|---------------|--------|
-| [208. Implement Trie(Prefix Tree)](https://leetcode.com/problems/implement-trie-prefix-tree/) | mark end of word | Medium |
+| Problems                           | Hints            | Level  |
+|------------------------------------|------------------|--------|
+| 208. Implement Trie(Prefix Tree) | mark end of word | Medium |
 
 ### DFS
 
+| Problems                                       | Hints                    | Level  | Rating |
+|------------------------------------------------|--------------------------|--------|--------|
+| [236. Lowest Common Ancestor of a Binary Tree] | DFS + Divide and Conquer | Medium |      5 |
+
 ### BFS
+| Problems                                 | Hints | Level  |
+|------------------------------------------|-------|--------|
+| 515. Find Largest Value in Each Tree Row | BFS   | Medium |
 
 ### Graph Problems
 
