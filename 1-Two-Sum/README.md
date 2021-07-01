@@ -1,6 +1,6 @@
 # [1. Two Sum](https://leetcode.com/problems/two-sum/)
 
-ven an array of integers, return indices of the two numbers such that they add up to a specific target.
+Given an array of integers, return indices of the two numbers such that they add up to a specific target.
 
 You may assume that each input would have exactly one solution, and you may not use the same element twice.
 
@@ -33,7 +33,7 @@ class Solution1(object):
 ```
 
 3. Hash Table. One Pass
-    
+
     Find the complement in the Hash Table, save the number and its index into the Hash Table.
     The Hash Table is like a table of all complements. All numbers which do not has its complement in the table, can be the potential complement for the next ones.
 
